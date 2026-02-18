@@ -32,7 +32,7 @@
     "href": "posts/01wk_2.html#c.-인덱스로-벡터의-원소를-뽑는-방법",
     "title": "01wk-2: 파이썬은 좋은 계산기다 (1)",
     "section": "C. 인덱스로 벡터의 원소를 뽑는 방법",
-    "text": "C. 인덱스로 벡터의 원소를 뽑는 방법\n\nx = [11,22,33,-22,-33,-44]\n\n- 첫번째 원소를 뽑고 싶다면?\n\nx[0]\n\n11\n\n\n- 두번째 원소를 뽑고 싶다면?\n\nx[1]\n\n22\n\n\n- 마지막 원소를 뽑고 싶다면?\n\nx[5]\n\n-44\n\n\n\nx[-1]\n\n-44\n\n\n- 마지막에서 두번째 원소를 뽑고 싶다면?\n\nx[4]\n\n-33\n\n\n\nx[-2]\n\n-33\n\n\n- index = 0,1,2 에 해당하는 원소만 추출\n\nx[0:3] # 마지막 인덱스 3은 포함되지 않음\n\n[11, 22, 33]\n\n\n- index = 2,3,4 에 해당하는 원소만 추출\n\nx[2:5] # 2,3,4에 해당하는 인덱스만 추출\n\n[33, -22, -33]\n\n\n- x[0:3]와 같이 처음 시작점이 0인 경우 생략가능\n\nx[:3]\n\n[11, 22, 33]\n\n\n- x[k:]와 같은 코드는 index=k에서 끝까지 뽑는다는 의미이다.\n\nx[3:6] #3,4,5\n\n[-22, -33, -44]\n\n\n\nx[3:]\n\n[-22, -33, -44]"
+    "text": "C. 인덱스로 벡터의 원소를 뽑는 방법\n이 방법은 list일 때나 numpy(np.array)에서나 똑같이 동작함\n\nx = [11,22,33,-22,-33,-44]\n\n- 첫번째 원소를 뽑고 싶다면?\n\nx[0]\n\n11\n\n\n- 두번째 원소를 뽑고 싶다면?\n\nx[1]\n\n22\n\n\n- 마지막 원소를 뽑고 싶다면?\n\nx[5]\n\n-44\n\n\n\nx[-1]\n\n-44\n\n\n- 마지막에서 두번째 원소를 뽑고 싶다면?\n\nx[4]\n\n-33\n\n\n\nx[-2]\n\n-33\n\n\n- index = 0,1,2 에 해당하는 원소만 추출\n\nx[0:3] # 마지막 인덱스 3은 포함되지 않음\n\n[11, 22, 33]\n\n\n- index = 2,3,4 에 해당하는 원소만 추출\n\nx[2:5] # 2,3,4에 해당하는 인덱스만 추출\n\n[33, -22, -33]\n\n\n- x[0:3]와 같이 처음 시작점이 0인 경우 생략가능\n\nx[:3]\n\n[11, 22, 33]\n\n\n- x[k:]와 같은 코드는 index=k에서 끝까지 뽑는다는 의미이다.\n\nx[3:6] #3,4,5\n\n[-22, -33, -44]\n\n\n\nx[3:]\n\n[-22, -33, -44]"
   },
   {
     "objectID": "posts/01wk_2.html#d.-np.cumsum-np.cumprod",
@@ -53,7 +53,7 @@
     "href": "posts/01wk_2.html#f.-np.argmax-np.argmin",
     "title": "01wk-2: 파이썬은 좋은 계산기다 (1)",
     "section": "F. np.argmax, np.argmin",
-    "text": "F. np.argmax, np.argmin\n- 예시1\n\narr = np.array([1,2,3,2,1,0])\narr\n\narray([1, 2, 3, 2, 1, 0])\n\n\n\nnp.argmax(arr),np.argmin(arr)\n\n(np.int64(2), np.int64(5))\n\n\n# 예제 – 두 함수의 교점\n\\(-1 \\leq x \\leq 3\\) 에서\n\n\\(f(x)=(x-1)^2\\) 와\n\\(g(x)=-2x+5\\)\n\n의 교점의 좌표를 구하여라.\n(풀이)\n\nx = np.linspace(-1,3,101)\nf = (x-1)**2\ng = -2*x+5\nplt.plot(x,f,label=r\"$f(x)=(x-1)^2$\")\nplt.plot(x,g,label=r\"$g(x)=-2x+5$\")\nplt.legend()\n\n\n\n\n\n\n\n\n\nx[np.argmin(abs(f-g))]\n\nnp.float64(2.0)\n\n\n\n2,(2-1)**2\n\n(2, 1)\n\n\n\n이것이 교점의 좌표"
+    "text": "F. np.argmax, np.argmin\n- 예시1\n\narr = np.array([1,2,3,2,1,0])\narr\n\narray([1, 2, 3, 2, 1, 0])\n\n\n\nnp.argmax(arr),np.argmin(arr)\n\n(np.int64(2), np.int64(5))\n\n\n# 예제 – 두 함수의 교점\n\\(-1 \\leq x \\leq 3\\) 에서\n\n\\(f(x)=(x-1)^2\\) 와\n\\(g(x)=-2x+5\\)\n\n의 교점의 좌표를 구하여라.\n\nx = np.linspace(1.8,2.2,101)\nf = (x-1)**2\ng = -2*x+5\nplt.plot(x,f,'.')\nplt.plot(x,g,'.')\n\n\n\n\n\n\n\n\n(풀이)\n\nx = np.linspace(-1,3,101)\nf = (x-1)**2\ng = -2*x+5\nplt.plot(x,f,label=r\"$f(x)=(x-1)^2$\")\nplt.plot(x,g,label=r\"$g(x)=-2x+5$\")\nplt.legend()\n\n\n\n\n\n\n\n\n\nx[np.argmin(abs(f-g))]\n\nnp.float64(2.0)\n\n\n\n2,(2-1)**2\n\n(2, 1)\n\n\n\n이것이 교점의 좌표"
   },
   {
     "objectID": "index.html",

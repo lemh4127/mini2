@@ -29,7 +29,7 @@
 </section>
 <section id="imports" class="level1">
 <h1>2. Imports</h1>
-<div id="9101dde5" class="cell" data-execution_count="1">
+<div id="9101dde5" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="im" style="color: #00769E;
 background-color: null;
 font-style: inherit;">import</span> numpy <span class="im" style="color: #00769E;
@@ -48,14 +48,14 @@ font-style: inherit;">as</span> plt</span></code></pre></div></div>
 <ol type="1">
 <li>프로그래밍 - 프로그램(게임, 예약시스템 등)을 만드는 행위 데이터 과학에서의 프로그래밍? 복잡한 연산, 계산 등을 도와주는 도구 (=계산기) 복잡한 계산도 가능한</li>
 </ol>
-<div id="c49a7e00" class="cell" data-execution_count="73">
+<div id="c49a7e00" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><span class="im" style="color: #00769E;
 background-color: null;
 font-style: inherit;">import</span> numpy <span class="im" style="color: #00769E;
 background-color: null;
 font-style: inherit;">as</span> np</span></code></pre></div></div>
 </div>
-<div id="c82064b8" class="cell" data-execution_count="74">
+<div id="c82064b8" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1">np.mean([<span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">1</span>, <span class="dv" style="color: #AD0000;
@@ -71,7 +71,7 @@ font-style: inherit;">5</span>])</span></code></pre></div></div>
 <pre><code>np.float64(3.0)</code></pre>
 </div>
 </div>
-<div id="d25f9848" class="cell" data-outputid="925faab6-2b9c-4e87-b23e-f70cb2b49278" data-execution_count="68">
+<div id="d25f9848" class="cell" data-outputid="925faab6-2b9c-4e87-b23e-f70cb2b49278" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1">np.cos(np.pi) <span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># 삼각함수의 값 계산</span></span></code></pre></div></div>
@@ -79,7 +79,7 @@ font-style: inherit;"># 삼각함수의 값 계산</span></span></code></pre></d
 <pre><code>np.float64(-1.0)</code></pre>
 </div>
 </div>
-<div id="68854a5d" class="cell" data-outputid="8d37166f-a236-4cdd-8686-6d5a56124643" data-execution_count="69">
+<div id="68854a5d" class="cell" data-outputid="8d37166f-a236-4cdd-8686-6d5a56124643" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1">np.mean(np.array([<span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">1</span>,<span class="dv" style="color: #AD0000;
@@ -99,7 +99,7 @@ font-style: inherit;"># 평균을 계산</span></span></code></pre></div></div>
 <li><img src="https://latex.codecogs.com/png.latex?y=2x-5"></li>
 <li><img src="https://latex.codecogs.com/png.latex?%5Cfrac%7Be%5Ey%7D%7B1+e%5Ey%7D"></li>
 </ul>
-<div id="eddf3d3f" class="cell" data-execution_count="70">
+<div id="eddf3d3f" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">11</span><span class="op" style="color: #5E5E5E;
@@ -111,7 +111,7 @@ font-style: inherit;">22</span></span></code></pre></div></div>
 <pre><code>33</code></pre>
 </div>
 </div>
-<div id="9ce8100b" class="cell" data-outputid="18e3261b-eeab-4796-9625-a60e7baa6a92" data-execution_count="71">
+<div id="9ce8100b" class="cell" data-outputid="18e3261b-eeab-4796-9625-a60e7baa6a92" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1">x <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
@@ -140,7 +140,7 @@ font-style: inherit;">+</span>np.exp(y))</span></code></pre></div></div>
 </div>
 </div>
 <p><code>-</code> 그림도 그려줌..</p>
-<div id="24e2cb53" class="cell" data-execution_count="75">
+<div id="24e2cb53" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><span class="im" style="color: #00769E;
 background-color: null;
 font-style: inherit;">import</span> matplotlib.pyplot <span class="im" style="color: #00769E;
@@ -169,7 +169,7 @@ font-style: inherit;">'o'</span>)</span></code></pre></div></div>
 </div>
 </div>
 </div>
-<div id="74f08393" class="cell" data-outputid="f297618d-4f4b-401a-fd03-be0bf89d679d" data-execution_count="72">
+<div id="74f08393" class="cell" data-outputid="f297618d-4f4b-401a-fd03-be0bf89d679d" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1">x <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> np.array([<span class="dv" style="color: #AD0000;
@@ -215,7 +215,7 @@ font-style: inherit;">'o'</span>)</span></code></pre></div></div>
 <section id="수능-124623" class="level1">
 <h1>4. 2024 수능 – 1,2,4,6,23</h1>
 <p><img src="https://github.com/guebin/PP2024/blob/main/imgs/2024-수능-1.png?raw=true" class="img-fluid"></p>
-<div id="4e917499" class="cell">
+<div id="4e917499" class="cell" data-execution_count="12">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1">(<span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">24</span>)<span class="op" style="color: #5E5E5E;
@@ -246,7 +246,7 @@ font-style: inherit;">#연습(2026.02.14.)</span></span></code></pre></div></div
 </div>
 </div>
 <p><code>(풀이)</code></p>
-<div id="21f019d3" class="cell" data-outputid="c9ac2942-01f3-4810-d9b8-000c6e869ea9" data-execution_count="7">
+<div id="21f019d3" class="cell" data-outputid="c9ac2942-01f3-4810-d9b8-000c6e869ea9" data-execution_count="13">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1">(<span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">24</span>)<span class="op" style="color: #5E5E5E;
@@ -275,7 +275,7 @@ font-style: inherit;">3</span>)</span></code></pre></div></div>
 </div>
 </div>
 <p><img src="https://github.com/guebin/PP2024/blob/main/imgs/2024-수능-2.png?raw=true" class="img-fluid"></p>
-<div id="d0c14ea8" class="cell" data-execution_count="85">
+<div id="d0c14ea8" class="cell" data-execution_count="14">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1">h<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span><span class="fl" style="color: #AD0000;
@@ -328,7 +328,7 @@ font-style: inherit;">/</span>h</span></code></pre></div></div>
 <pre><code>4.000007002957773</code></pre>
 </div>
 </div>
-<div id="e615cf87" class="cell" data-execution_count="80">
+<div id="e615cf87" class="cell" data-execution_count="15">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1">f(<span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">0</span>)</span></code></pre></div></div>
@@ -336,7 +336,7 @@ font-style: inherit;">0</span>)</span></code></pre></div></div>
 <pre><code>3</code></pre>
 </div>
 </div>
-<div id="d0567e3e" class="cell" data-execution_count="81">
+<div id="d0567e3e" class="cell" data-execution_count="16">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1">f(<span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">1</span>)</span></code></pre></div></div>
@@ -345,7 +345,7 @@ font-style: inherit;">1</span>)</span></code></pre></div></div>
 </div>
 </div>
 <p><code>(풀이)</code></p>
-<div id="182418d4" class="cell" data-outputid="be43f6bd-1588-4d32-ec17-0a9f0017b383" data-execution_count="8">
+<div id="182418d4" class="cell" data-outputid="be43f6bd-1588-4d32-ec17-0a9f0017b383" data-execution_count="17">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1">h <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="fl" style="color: #AD0000;
@@ -397,7 +397,7 @@ font-style: inherit;">/</span>h</span></code></pre></div></div>
 </div>
 </div>
 <p><img src="https://github.com/guebin/PP2024/blob/main/imgs/2024-수능-4.png?raw=true" class="img-fluid"></p>
-<div id="5b66383f" class="cell">
+<div id="5b66383f" class="cell" data-execution_count="18">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1">a<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
@@ -427,7 +427,7 @@ font-style: inherit;">+</span>a</span></code></pre></div></div>
 </div>
 </div>
 <p><code>(풀이)</code></p>
-<div id="3fd94f09" class="cell" data-outputid="a7532948-9881-481b-d034-600a91cd6164" data-execution_count="9">
+<div id="3fd94f09" class="cell" data-outputid="a7532948-9881-481b-d034-600a91cd6164" data-execution_count="19">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1">a <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
@@ -456,7 +456,7 @@ font-style: inherit;">+</span> a</span></code></pre></div></div>
 </div>
 <p><img src="https://github.com/guebin/PP2024/blob/main/imgs/2024-수능-6.png?raw=true" class="img-fluid"></p>
 <p>대입하지 않고 풀 수 있나? s4 = a1 + a2 + a3 + a4 s2 = a1 + a2 s4 - s2 = a3 + a4 3<em>a4 = a3 + a4 2</em>a4 = a3 r = 1/2</p>
-<div id="d6204ccc" class="cell" data-execution_count="102">
+<div id="d6204ccc" class="cell" data-execution_count="20">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1">r <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
@@ -498,7 +498,7 @@ font-style: inherit;">3</span>)</span></code></pre></div></div>
 </div>
 </div>
 <p><code>(풀이)</code></p>
-<div id="065b8a5d" class="cell" data-outputid="98ac0d83-a7cd-42c5-9e58-e193c6091bad" data-execution_count="10">
+<div id="065b8a5d" class="cell" data-outputid="98ac0d83-a7cd-42c5-9e58-e193c6091bad" data-execution_count="21">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1">r <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="fl" style="color: #AD0000;
@@ -577,13 +577,13 @@ font-style: inherit;">3</span>]</span></code></pre></div></div>
 <pre><code>(np.float64(4.5), np.float64(4.5))</code></pre>
 </div>
 </div>
-<div id="5793eef2" class="cell" data-outputid="6cfc51f0-4a50-4bca-b982-04d85c751a75" data-execution_count="11">
+<div id="5793eef2" class="cell" data-outputid="6cfc51f0-4a50-4bca-b982-04d85c751a75" data-execution_count="22">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1">an</span></code></pre></div></div>
 <div class="cell-output cell-output-display">
 <pre><code>array([12.  ,  6.  ,  3.  ,  1.5 ,  0.75])</code></pre>
 </div>
 </div>
-<div id="ba23e80b" class="cell" data-outputid="16cd96d9-c727-40d2-e6ca-4f35e1bdd67c" data-execution_count="12">
+<div id="ba23e80b" class="cell" data-outputid="16cd96d9-c727-40d2-e6ca-4f35e1bdd67c" data-execution_count="23">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">12</span><span class="op" style="color: #5E5E5E;
@@ -596,7 +596,7 @@ font-style: inherit;">6</span></span></code></pre></div></div>
 </div>
 </div>
 <p><img src="https://github.com/guebin/PP2024/blob/main/imgs/2024-수능-미적-23.png?raw=true" class="img-fluid"></p>
-<div id="c83ded8e" class="cell" data-execution_count="105">
+<div id="c83ded8e" class="cell" data-execution_count="24">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1">x<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span><span class="fl" style="color: #AD0000;
@@ -626,7 +626,7 @@ font-style: inherit;">*</span>x)</span></code></pre></div></div>
 </div>
 </div>
 <p><code>(풀이)</code></p>
-<div id="ad1cc25a" class="cell" data-outputid="5c3d1f37-15af-470b-d153-ce67f74a5124" data-execution_count="13">
+<div id="ad1cc25a" class="cell" data-outputid="5c3d1f37-15af-470b-d153-ce67f74a5124" data-execution_count="25">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1">x <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="fl" style="color: #AD0000;
@@ -659,7 +659,7 @@ font-style: inherit;">*</span>x)</span></code></pre></div></div>
 <section id="수능---3724" class="level1">
 <h1>5. 2024 수능 - 3,7,24</h1>
 <p><img src="https://github.com/guebin/PP2024/blob/main/imgs/2024-수능-3.png?raw=true" class="img-fluid"></p>
-<div id="3cc8bf15" class="cell" data-execution_count="115">
+<div id="3cc8bf15" class="cell" data-execution_count="26">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">#2026.2.14</span></span>
@@ -759,7 +759,7 @@ font-style: inherit;">"</span>) </span>
 </div>
 </div>
 <p><code>(풀이)</code></p>
-<div id="f01cdc67" class="cell" data-outputid="5606ef5a-75c4-4d61-8e2b-e22213833299" data-execution_count="14">
+<div id="f01cdc67" class="cell" data-outputid="5606ef5a-75c4-4d61-8e2b-e22213833299" data-execution_count="27">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb44" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1">theta <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> np.linspace(<span class="dv" style="color: #AD0000;
@@ -852,7 +852,7 @@ font-style: inherit;">"</span>)</span>
 </div>
 </div>
 </div>
-<div id="ee3908cc" class="cell" data-outputid="3d24701e-a698-4888-81e4-2cd2874acc2e" data-execution_count="15">
+<div id="ee3908cc" class="cell" data-outputid="3d24701e-a698-4888-81e4-2cd2874acc2e" data-execution_count="28">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb45" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1">plt.plot(np.sin(<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">-</span>theta),label<span class="op" style="color: #5E5E5E;
@@ -928,7 +928,7 @@ font-style: inherit;">"</span>)</span>
 </div>
 </div>
 </div>
-<div id="1afc152c" class="cell" data-outputid="dd51b056-894f-4b56-b0b1-276175542387" data-execution_count="16">
+<div id="1afc152c" class="cell" data-outputid="dd51b056-894f-4b56-b0b1-276175542387" data-execution_count="29">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb46" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1">plt.plot(np.sin(<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">-</span>theta)[<span class="dv" style="color: #AD0000;
@@ -967,7 +967,7 @@ font-style: inherit;">'o'</span>)</span></code></pre></div></div>
 </div>
 </div>
 </div>
-<div id="37c85b55" class="cell" data-outputid="66c03de7-1467-46d6-b15c-88a991bd7d02" data-execution_count="17">
+<div id="37c85b55" class="cell" data-outputid="66c03de7-1467-46d6-b15c-88a991bd7d02" data-execution_count="30">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb47" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1">np.sin(<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">-</span>theta)[<span class="dv" style="color: #AD0000;
@@ -982,7 +982,7 @@ font-style: inherit;"># 이중에서 0.33333... 에 가장 가까운것은 끝�
        0.37166246, 0.35688622, 0.34202014, 0.32706796, 0.31203345])</code></pre>
 </div>
 </div>
-<div id="e3b8eadb" class="cell" data-outputid="7519372b-07e1-4a1f-c914-bdcdd7b02056" data-execution_count="18">
+<div id="e3b8eadb" class="cell" data-outputid="7519372b-07e1-4a1f-c914-bdcdd7b02056" data-execution_count="31">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb49" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1">np.sin(<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">-</span>theta)[<span class="dv" style="color: #AD0000;
@@ -994,7 +994,7 @@ font-style: inherit;"># 이 값이 0.3333에 가장 가까움</span></span></cod
 <pre><code>np.float64(0.32706796331742194)</code></pre>
 </div>
 </div>
-<div id="88a258f3" class="cell" data-outputid="ab77da00-a9a5-4266-be3e-387bacfefea2" data-execution_count="19">
+<div id="88a258f3" class="cell" data-outputid="ab77da00-a9a5-4266-be3e-387bacfefea2" data-execution_count="32">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb51" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1">theta[<span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">78</span>] <span class="co" style="color: #5E5E5E;
@@ -1004,7 +1004,7 @@ font-style: inherit;"># 이것이 theta 값</span></span></code></pre></div></di
 <pre><code>np.float64(5.949986086344305)</code></pre>
 </div>
 </div>
-<div id="723efc6d" class="cell" data-outputid="ad97a934-d3fa-4fca-9977-d998f886be13" data-execution_count="20">
+<div id="723efc6d" class="cell" data-outputid="ad97a934-d3fa-4fca-9977-d998f886be13" data-execution_count="33">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb53" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb53-1">np.tan(<span class="fl" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">5.949986086344305</span>) <span class="co" style="color: #5E5E5E;
@@ -1014,7 +1014,7 @@ font-style: inherit;"># 이게 답이다</span></span></code></pre></div></div>
 <pre><code>np.float64(-0.34610336503441297)</code></pre>
 </div>
 </div>
-<div id="9bee137d" class="cell" data-outputid="c13bc792-0cc3-4f63-ede0-e7e81a1e608d" data-execution_count="21">
+<div id="9bee137d" class="cell" data-outputid="c13bc792-0cc3-4f63-ede0-e7e81a1e608d" data-execution_count="34">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb55" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb55-1"><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">-</span>np.sqrt(<span class="dv" style="color: #AD0000;
@@ -1063,21 +1063,24 @@ font-style: inherit;"># 보기와 비교하면???</span></span></code></pre></di
 </div>
 </div>
 <p><img src="https://github.com/guebin/PP2024/blob/main/imgs/2024-수능-7.png?raw=true" class="img-fluid"></p>
-<div id="d8589dec" class="cell" data-execution_count="121">
+<div id="4160b613" class="cell" data-execution_count="35">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb57" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb57-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
-font-style: inherit;">#def f(x):</span></span>
-<span id="cb57-2"> <span class="co" style="color: #5E5E5E;
+font-style: inherit;">#2026.2.18.</span></span>
+<span id="cb57-2"><span class="co" style="color: #5E5E5E;
 background-color: null;
-font-style: inherit;">#   return(1/3)*x**3-2*x**2-12*x+4</span></span>
+font-style: inherit;">#x=0</span></span>
 <span id="cb57-3"><span class="co" style="color: #5E5E5E;
 background-color: null;
-font-style: inherit;">#f(0)</span></span></code></pre></div></div>
+font-style: inherit;">#def f(x):</span></span>
+<span id="cb57-4"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#    return (1/3)*x**3-2*x**2-12*x+4</span></span></code></pre></div></div>
 </div>
-<div id="06431e54" class="cell" data-execution_count="126">
+<div id="c80436d8" class="cell" data-execution_count="36">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb58" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb58-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
-font-style: inherit;"># 위의 방식 말고 다른 방식으로 해보자. </span></span>
+font-style: inherit;">#함수를 다르게 선언해 보기</span></span>
 <span id="cb58-2">f <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="kw" style="color: #003B4F;
@@ -1117,8 +1120,188 @@ font-style: inherit;">+</span><span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">4</span></span></code></pre></div></div>
 </div>
-<div id="6cd62066" class="cell" data-execution_count="133">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb59" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb59-1">x <span class="op" style="color: #5E5E5E;
+<p>&lt;연습&gt; 1. x -&gt; 2x g = lambda x: 2*x</p>
+<ol start="2" type="1">
+<li>x -&gt; (x-1)^2 g = lambda x: (x-1)**2</li>
+</ol>
+<div id="fa090fee" class="cell" data-execution_count="37">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb59" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb59-1">g <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">lambda</span> x: (x<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>)<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">**</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span></span>
+<span id="cb59-2">g(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>)</span></code></pre></div></div>
+<div class="cell-output cell-output-display">
+<pre><code>4</code></pre>
+</div>
+</div>
+<div id="18a5632e" class="cell" data-execution_count="38">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb61" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb61-1">x <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> np.linspace(<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">5</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">8</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">101</span>)</span>
+<span id="cb61-2">f(x)</span></code></pre></div></div>
+<div class="cell-output cell-output-display">
+<pre><code>array([-27.66666667, -23.49423433, -19.554008  , -15.84159367,
+       -12.35259733,  -9.082625  ,  -6.02728267,  -3.18217633,
+        -0.542912  ,   1.89490433,   4.13566667,   6.183769  ,
+         8.04360533,   9.71956967,  11.216056  ,  12.53745833,
+        13.68817067,  14.672587  ,  15.49510133,  16.16010767,
+        16.672     ,  17.03517233,  17.25401867,  17.332933  ,
+        17.27630933,  17.08854167,  16.774024  ,  16.33715033,
+        15.78231467,  15.113911  ,  14.33633333,  13.45397567,
+        12.471232  ,  11.39249633,  10.22216267,   8.964625  ,
+         7.62427733,   6.20551367,   4.712728  ,   3.15031433,
+         1.52266667,  -0.165821  ,  -1.91075467,  -3.70774033,
+        -5.552384  ,  -7.44029167,  -9.36706933, -11.328323  ,
+       -13.31965867, -15.33668233, -17.375     , -19.43021767,
+       -21.49794133, -23.573777  , -25.65333067, -27.73220833,
+       -29.806016  , -31.87035967, -33.92084533, -35.953079  ,
+       -37.96266667, -39.94521433, -41.896328  , -43.81161367,
+       -45.68667733, -47.517125  , -49.29856267, -51.02659633,
+       -52.696832  , -54.30487567, -55.84633333, -57.316811  ,
+       -58.71191467, -60.02725033, -61.258424  , -62.40104167,
+       -63.45070933, -64.403033  , -65.25361867, -65.99807233,
+       -66.632     , -67.15100767, -67.55070133, -67.826687  ,
+       -67.97457067, -67.98995833, -67.868456  , -67.60566967,
+       -67.19720533, -66.638669  , -65.92566667, -65.05380433,
+       -64.018688  , -62.81592367, -61.44111733, -59.889875  ,
+       -58.15780267, -56.24050633, -54.133592  , -51.83266567,
+       -49.33333333])</code></pre>
+</div>
+</div>
+<div id="b07e5fea" class="cell" data-execution_count="39">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb63" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb63-1"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#위 결과를 토대로 그래프를 그려보면</span></span>
+<span id="cb63-2">plt.plot(x,f(x),<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'o'</span>)</span></code></pre></div></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="https://your-website-url.example.com/posts/01wk_2_files/figure-html/cell-38-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="fecc3153" class="cell" data-execution_count="40">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb64" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb64-1"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#최댓값 구하기</span></span>
+<span id="cb64-2"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#arr = np.array([1,2,3,2,2])</span></span>
+<span id="cb64-3"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#np.max(arr) -&gt; 최대값을 구함</span></span>
+<span id="cb64-4"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#np.argmax(arr) #최대값에서의 인덱스</span></span></code></pre></div></div>
+</div>
+<div id="fd358cae" class="cell" data-execution_count="41">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb65" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb65-1"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#np.max(f(x)) #최댓값</span></span>
+<span id="cb65-2">np.argmax(f(x)) <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#몇번째 인덱스인지</span></span></code></pre></div></div>
+<div class="cell-output cell-output-display">
+<pre><code>np.int64(23)</code></pre>
+</div>
+</div>
+<div id="3c9a84e5" class="cell" data-execution_count="42">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb67" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb67-1">np.argmin(f(x))</span></code></pre></div></div>
+<div class="cell-output cell-output-display">
+<pre><code>np.int64(85)</code></pre>
+</div>
+</div>
+<div id="4396a973" class="cell" data-execution_count="43">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb69" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb69-1">x[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">85</span>]<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span>x[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">23</span>]</span></code></pre></div></div>
+<div class="cell-output cell-output-display">
+<pre><code>np.float64(8.06)</code></pre>
+</div>
+</div>
+<div id="d8589dec" class="cell" data-execution_count="44">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb71" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb71-1"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#def f(x):</span></span>
+<span id="cb71-2"> <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#   return(1/3)*x**3-2*x**2-12*x+4</span></span>
+<span id="cb71-3"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#f(0)</span></span></code></pre></div></div>
+</div>
+<div id="06431e54" class="cell" data-execution_count="45">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb72" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb72-1"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># 위의 방식 말고 다른 방식으로 해보자. </span></span>
+<span id="cb72-2">f <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">lambda</span> x: (<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>)<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span>x<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">**</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span>x<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">**</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">12</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span>x<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">4</span></span></code></pre></div></div>
+</div>
+<div id="6cd62066" class="cell" data-execution_count="46">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb73" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb73-1">x <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> np.linspace(<span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -1129,19 +1312,19 @@ background-color: null;
 font-style: inherit;">7</span>,<span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">101</span>)</span>
-<span id="cb59-2">plt.plot(x,f(x),<span class="st" style="color: #20794D;
+<span id="cb73-2">plt.plot(x,f(x),<span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">'.'</span>)</span></code></pre></div></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="https://your-website-url.example.com/posts/01wk_2_files/figure-html/cell-36-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="https://your-website-url.example.com/posts/01wk_2_files/figure-html/cell-45-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
-<div id="1bcc030e" class="cell" data-execution_count="144">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb60" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb60-1">x <span class="op" style="color: #5E5E5E;
+<div id="1bcc030e" class="cell" data-execution_count="47">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb74" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb74-1">x <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> np.linspace(<span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -1152,21 +1335,21 @@ background-color: null;
 font-style: inherit;">7</span>,<span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">101</span>)</span>
-<span id="cb60-2">arr <span class="op" style="color: #5E5E5E;
+<span id="cb74-2">arr <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> np.array(f(x))</span>
-<span id="cb60-3"><span class="co" style="color: #5E5E5E;
+<span id="cb74-3"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">#np.max(arr), np.min(arr)  # 최대, 최소 값 구하기</span></span>
-<span id="cb60-4">np.argmax(arr), np.argmin(arr) <span class="co" style="color: #5E5E5E;
+<span id="cb74-4">np.argmax(arr), np.argmin(arr) <span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">#그게 몇번째인지</span></span></code></pre></div></div>
 <div class="cell-output cell-output-display">
 <pre><code>(np.int64(25), np.int64(92))</code></pre>
 </div>
 </div>
-<div id="7a6c0fa4" class="cell" data-execution_count="146">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb62" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb62-1">x[<span class="dv" style="color: #AD0000;
+<div id="7a6c0fa4" class="cell" data-execution_count="48">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb76" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb76-1">x[<span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">92</span>]<span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -1177,34 +1360,31 @@ font-style: inherit;">25</span>]</span></code></pre></div></div>
 <pre><code>np.float64(8.04)</code></pre>
 </div>
 </div>
-<div id="b1300dbb" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb64" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb64-1"><span class="co" style="color: #5E5E5E;
+<div id="b1300dbb" class="cell" data-execution_count="49">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb78" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb78-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">#lamdba로 함수 만들기 연습</span></span>
-<span id="cb64-2"><span class="co" style="color: #5E5E5E;
+<span id="cb78-2"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># g = lambda x: 2*x</span></span>
-<span id="cb64-3"><span class="co" style="color: #5E5E5E;
+<span id="cb78-3"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># g(3)</span></span></code></pre></div></div>
-<div class="cell-output cell-output-display">
-<pre><code>6</code></pre>
-</div>
 </div>
 <p><code>(풀이)</code></p>
-<div id="25f1aec1" class="cell" data-execution_count="22">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb66" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb66-1">x<span class="op" style="color: #5E5E5E;
+<div id="25f1aec1" class="cell" data-execution_count="50">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb79" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb79-1">x<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">0</span></span>
-<span id="cb66-2"><span class="co" style="color: #5E5E5E;
+<span id="cb79-2"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">#def f(x):</span></span>
-<span id="cb66-3"><span class="co" style="color: #5E5E5E;
+<span id="cb79-3"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">#    return (1/3)*x**3 - 2*x**2 -12*x +4</span></span>
-<span id="cb66-4">f <span class="op" style="color: #5E5E5E;
+<span id="cb79-4">f <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="kw" style="color: #003B4F;
 background-color: null;
@@ -1243,8 +1423,8 @@ font-style: inherit;">+</span><span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">4</span></span></code></pre></div></div>
 </div>
-<div id="62f5fac8" class="cell" data-outputid="c8c21f28-4b06-497f-c5c7-5d692613e894" data-execution_count="23">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb67" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb67-1">x <span class="op" style="color: #5E5E5E;
+<div id="62f5fac8" class="cell" data-outputid="c8c21f28-4b06-497f-c5c7-5d692613e894" data-execution_count="51">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb80" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb80-1">x <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> np.linspace(<span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -1255,19 +1435,19 @@ background-color: null;
 font-style: inherit;">8</span>,<span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">101</span>)</span>
-<span id="cb67-2">plt.plot(x,f(x),<span class="st" style="color: #20794D;
+<span id="cb80-2">plt.plot(x,f(x),<span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">'.'</span>)</span></code></pre></div></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="https://your-website-url.example.com/posts/01wk_2_files/figure-html/cell-41-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="https://your-website-url.example.com/posts/01wk_2_files/figure-html/cell-50-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
-<div id="62f2ecbd" class="cell" data-outputid="2a0e0407-4b2b-4095-9a6f-82fed4f4fca5" data-execution_count="24">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb68" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb68-1">arr <span class="op" style="color: #5E5E5E;
+<div id="62f2ecbd" class="cell" data-outputid="2a0e0407-4b2b-4095-9a6f-82fed4f4fca5" data-execution_count="52">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb81" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb81-1">arr <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> np.array([<span class="dv" style="color: #AD0000;
 background-color: null;
@@ -1284,19 +1464,19 @@ background-color: null;
 font-style: inherit;">2</span>,<span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">44</span>])</span>
-<span id="cb68-2">np.argmax(arr)</span></code></pre></div></div>
+<span id="cb81-2">np.argmax(arr)</span></code></pre></div></div>
 <div class="cell-output cell-output-display">
 <pre><code>np.int64(5)</code></pre>
 </div>
 </div>
-<div id="347a7269" class="cell" data-outputid="7b28d44a-e04a-4602-8521-29c749086252" data-execution_count="25">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb70" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb70-1">np.argmax(f(x)), np.argmin(f(x))</span></code></pre></div></div>
+<div id="347a7269" class="cell" data-outputid="7b28d44a-e04a-4602-8521-29c749086252" data-execution_count="53">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb83" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb83-1">np.argmax(f(x)), np.argmin(f(x))</span></code></pre></div></div>
 <div class="cell-output cell-output-display">
 <pre><code>(np.int64(23), np.int64(85))</code></pre>
 </div>
 </div>
-<div id="520a4d11" class="cell" data-outputid="95d41be9-ac31-47cb-b2ca-9e016bd7a1e3" data-execution_count="26">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb72" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb72-1">x[<span class="dv" style="color: #AD0000;
+<div id="520a4d11" class="cell" data-outputid="95d41be9-ac31-47cb-b2ca-9e016bd7a1e3" data-execution_count="54">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb85" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb85-1">x[<span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">85</span>]<span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -1308,9 +1488,138 @@ font-style: inherit;">23</span>]</span></code></pre></div></div>
 </div>
 </div>
 <p><img src="https://github.com/guebin/PP2024/blob/main/imgs/2024-수능-미적-24.png?raw=true" class="img-fluid"></p>
+<div id="4bb208a3" class="cell" data-execution_count="55">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb87" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb87-1">t <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> np.linspace(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">100</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">100</span>)</span>
+<span id="cb87-2">x <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> np.log(t<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">**</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>)</span>
+<span id="cb87-3">y <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> np.sin(np.pi<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span>t)</span></code></pre></div></div>
+</div>
+<div id="fce9548b" class="cell" data-execution_count="56">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb88" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb88-1">plt.plot(x,y,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'.'</span>)</span></code></pre></div></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="https://your-website-url.example.com/posts/01wk_2_files/figure-html/cell-55-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>위 그래프에서 마지막 점 두개로 기울기를 구하면, 접선의 기울기값과 근사한 값을 구할 수 있을 것임</p>
+<div id="7edf9b17" class="cell" data-execution_count="57">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb89" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb89-1"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#마지막 점 구할때는 그 인덱스를 지정할 수 있지만, '-1' 등을 활용할 수 있음</span></span>
+<span id="cb89-2">x[<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>], y[<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>]</span></code></pre></div></div>
+<div class="cell-output cell-output-display">
+<pre><code>(np.float64(0.6931471805599453), np.float64(1.2246467991473532e-16))</code></pre>
+</div>
+</div>
+<div id="c494cc96" class="cell" data-execution_count="58">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb91" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb91-1">x[<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>], y[<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>]</span></code></pre></div></div>
+<div class="cell-output cell-output-display">
+<pre><code>(np.float64(0.6781853078827329), np.float64(0.031410759078128236))</code></pre>
+</div>
+</div>
+<div id="06c477cf" class="cell" data-execution_count="59">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb93" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb93-1">(y[<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>]<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span>y[<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>]) <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span> (x[<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>]<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span>x[<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>])</span></code></pre></div></div>
+<div class="cell-output cell-output-display">
+<pre><code>np.float64(-2.0993868719367015)</code></pre>
+</div>
+</div>
+<div id="c579ad06" class="cell" data-execution_count="60">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb95" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb95-1">(<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>)<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span>np.pi, (<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>)<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span>np.pi</span></code></pre></div></div>
+<div class="cell-output cell-output-display">
+<pre><code>(-1.0471975511965976, -2.0943951023931953)</code></pre>
+</div>
+</div>
 <p><code>(풀이)</code></p>
-<div id="2e8ec2e7" class="cell" data-execution_count="27">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb74" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb74-1">t <span class="op" style="color: #5E5E5E;
+<div id="2e8ec2e7" class="cell" data-execution_count="61">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb97" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb97-1">t <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> np.linspace(<span class="dv" style="color: #AD0000;
 background-color: null;
@@ -1323,7 +1632,7 @@ background-color: null;
 font-style: inherit;">1</span>,<span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">100</span>)</span>
-<span id="cb74-2">x <span class="op" style="color: #5E5E5E;
+<span id="cb97-2">x <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> np.log(t<span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -1334,26 +1643,26 @@ background-color: null;
 font-style: inherit;">+</span><span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">1</span>)</span>
-<span id="cb74-3">y <span class="op" style="color: #5E5E5E;
+<span id="cb97-3">y <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> np.sin(np.pi<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">*</span>t)</span></code></pre></div></div>
 </div>
-<div id="643a1189" class="cell" data-outputid="2e86d017-022b-4f04-f9ec-a2c8f742ff8f" data-execution_count="28">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb75" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb75-1">plt.plot(x,y,<span class="st" style="color: #20794D;
+<div id="643a1189" class="cell" data-outputid="2e86d017-022b-4f04-f9ec-a2c8f742ff8f" data-execution_count="62">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb98" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb98-1">plt.plot(x,y,<span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">'.'</span>)</span></code></pre></div></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="https://your-website-url.example.com/posts/01wk_2_files/figure-html/cell-46-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="https://your-website-url.example.com/posts/01wk_2_files/figure-html/cell-61-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
-<div id="623dcdc4" class="cell" data-outputid="a2757431-7098-41fc-bd95-ee8ad2e8ffe7" data-execution_count="29">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb76" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb76-1">x[<span class="op" style="color: #5E5E5E;
+<div id="623dcdc4" class="cell" data-outputid="a2757431-7098-41fc-bd95-ee8ad2e8ffe7" data-execution_count="63">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb99" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb99-1">x[<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">-</span><span class="dv" style="color: #AD0000;
 background-color: null;
@@ -1368,8 +1677,8 @@ font-style: inherit;"># 마지막점</span></span></code></pre></div></div>
 <pre><code>(np.float64(0.6931471805599453), np.float64(1.2246467991473532e-16))</code></pre>
 </div>
 </div>
-<div id="5e94fe45" class="cell" data-outputid="1827e79d-cf54-4684-c651-2715547804a4" data-execution_count="30">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb78" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb78-1">x[<span class="op" style="color: #5E5E5E;
+<div id="5e94fe45" class="cell" data-outputid="1827e79d-cf54-4684-c651-2715547804a4" data-execution_count="64">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb101" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb101-1">x[<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">-</span><span class="dv" style="color: #AD0000;
 background-color: null;
@@ -1384,8 +1693,8 @@ font-style: inherit;"># 마지막에서 두번째점</span></span></code></pre><
 <pre><code>(np.float64(0.6781853078827329), np.float64(0.031410759078128236))</code></pre>
 </div>
 </div>
-<div id="bda8d3ef" class="cell" data-outputid="053a1f52-44e8-4e78-9330-5a5421800317" data-execution_count="31">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb80" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb80-1">(y[<span class="op" style="color: #5E5E5E;
+<div id="bda8d3ef" class="cell" data-outputid="053a1f52-44e8-4e78-9330-5a5421800317" data-execution_count="65">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb103" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb103-1">(y[<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">-</span><span class="dv" style="color: #AD0000;
 background-color: null;
@@ -1412,8 +1721,8 @@ font-style: inherit;">1</span>])</span></code></pre></div></div>
 <pre><code>np.float64(-2.0993868719367015)</code></pre>
 </div>
 </div>
-<div id="40d91d2e" class="cell" data-outputid="ef2a26a3-104d-4725-fad7-bbd31a791eb5" data-execution_count="32">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb82" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb82-1"><span class="op" style="color: #5E5E5E;
+<div id="40d91d2e" class="cell" data-outputid="ef2a26a3-104d-4725-fad7-bbd31a791eb5" data-execution_count="66">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb105" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb105-1"><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">-</span><span class="dv" style="color: #AD0000;
 background-color: null;
@@ -1472,12 +1781,12 @@ font-style: inherit;"># 따라서 답은 2번</span></span></code></pre></div></
 <section id="a.-함수를-선언하는-두-가지-방법" class="level2">
 <h2 class="anchored" data-anchor-id="a.-함수를-선언하는-두-가지-방법">A. 함수를 선언하는 두 가지 방법</h2>
 <p><code>-</code> 방법1: <code>def</code>를 이용하는 방법</p>
-<div id="09ede1e0" class="cell" data-execution_count="33">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb84" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb84-1"><span class="kw" style="color: #003B4F;
+<div id="09ede1e0" class="cell" data-execution_count="67">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb107" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb107-1"><span class="kw" style="color: #003B4F;
 background-color: null;
 font-weight: bold;
 font-style: inherit;">def</span> f(x):</span>
-<span id="cb84-2">    <span class="cf" style="color: #003B4F;
+<span id="cb107-2">    <span class="cf" style="color: #003B4F;
 background-color: null;
 font-weight: bold;
 font-style: inherit;">return</span> x<span class="op" style="color: #5E5E5E;
@@ -1486,8 +1795,8 @@ font-style: inherit;">+</span><span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">1</span></span></code></pre></div></div>
 </div>
-<div id="d52110c2" class="cell" data-outputid="70ecaa72-b00c-4705-8b25-c266ec95b1ca" data-execution_count="34">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb85" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb85-1">f(<span class="dv" style="color: #AD0000;
+<div id="d52110c2" class="cell" data-outputid="70ecaa72-b00c-4705-8b25-c266ec95b1ca" data-execution_count="68">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb108" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb108-1">f(<span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">3</span>)</span></code></pre></div></div>
 <div class="cell-output cell-output-display">
@@ -1495,8 +1804,8 @@ font-style: inherit;">3</span>)</span></code></pre></div></div>
 </div>
 </div>
 <p><code>-</code> 방법2: <code>lambda</code>를 사용하는 방법</p>
-<div id="3488cefb" class="cell" data-execution_count="35">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb87" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb87-1">f <span class="op" style="color: #5E5E5E;
+<div id="3488cefb" class="cell" data-execution_count="69">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb110" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb110-1">f <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="kw" style="color: #003B4F;
 background-color: null;
@@ -1507,8 +1816,8 @@ font-style: inherit;">+</span><span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">1</span></span></code></pre></div></div>
 </div>
-<div id="a97ca0b7" class="cell" data-outputid="b913c675-d6f5-4157-bb76-5939e407d0d7" data-execution_count="36">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb88" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb88-1">f(<span class="dv" style="color: #AD0000;
+<div id="a97ca0b7" class="cell" data-outputid="b913c675-d6f5-4157-bb76-5939e407d0d7" data-execution_count="70">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb111" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb111-1">f(<span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">3</span>)</span></code></pre></div></div>
 <div class="cell-output cell-output-display">
@@ -1519,8 +1828,8 @@ font-style: inherit;">3</span>)</span></code></pre></div></div>
 <section id="b.-list와-np.array의-차이점" class="level2">
 <h2 class="anchored" data-anchor-id="b.-list와-np.array의-차이점">B. <code>list</code>와 <code>np.array</code>의 차이점</h2>
 <p><code>-</code> 리스트는 수학친화적이지 않다.</p>
-<div id="7375d4d4" class="cell" data-execution_count="37">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb90" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb90-1">lst1 <span class="op" style="color: #5E5E5E;
+<div id="7375d4d4" class="cell" data-execution_count="71">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb113" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb113-1">lst1 <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> [<span class="dv" style="color: #AD0000;
 background-color: null;
@@ -1529,7 +1838,7 @@ background-color: null;
 font-style: inherit;">2</span>,<span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">3</span>]</span>
-<span id="cb90-2">lst2 <span class="op" style="color: #5E5E5E;
+<span id="cb113-2">lst2 <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> [<span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -1545,8 +1854,8 @@ font-style: inherit;">-</span><span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">3</span>]</span></code></pre></div></div>
 </div>
-<div id="bd030000" class="cell" data-outputid="d96baa06-05f8-4687-939b-ecc17902500c" data-execution_count="38">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb91" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb91-1">lst1<span class="op" style="color: #5E5E5E;
+<div id="bd030000" class="cell" data-outputid="d96baa06-05f8-4687-939b-ecc17902500c" data-execution_count="72">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb114" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb114-1">lst1<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span>lst2</span></code></pre></div></div>
 <div class="cell-output cell-output-display">
@@ -1554,8 +1863,8 @@ font-style: inherit;">+</span>lst2</span></code></pre></div></div>
 </div>
 </div>
 <p><code>-</code> 넘파이는 수학친화적이다.</p>
-<div id="d107db3e" class="cell" data-execution_count="39">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb93" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb93-1">arr1 <span class="op" style="color: #5E5E5E;
+<div id="d107db3e" class="cell" data-execution_count="73">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb116" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb116-1">arr1 <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> np.array([<span class="dv" style="color: #AD0000;
 background-color: null;
@@ -1564,7 +1873,7 @@ background-color: null;
 font-style: inherit;">2</span>,<span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">3</span>])</span>
-<span id="cb93-2">arr2 <span class="op" style="color: #5E5E5E;
+<span id="cb116-2">arr2 <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> np.array([<span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -1580,8 +1889,8 @@ font-style: inherit;">-</span><span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">3</span>])</span></code></pre></div></div>
 </div>
-<div id="77994607" class="cell" data-outputid="e544ec19-a0f9-47af-beab-49a29a07cf25" data-execution_count="40">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb94" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb94-1">arr1<span class="op" style="color: #5E5E5E;
+<div id="77994607" class="cell" data-outputid="e544ec19-a0f9-47af-beab-49a29a07cf25" data-execution_count="74">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb117" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb117-1">arr1<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span>arr2</span></code></pre></div></div>
 <div class="cell-output cell-output-display">
@@ -1591,8 +1900,9 @@ font-style: inherit;">+</span>arr2</span></code></pre></div></div>
 </section>
 <section id="c.-인덱스로-벡터의-원소를-뽑는-방법" class="level2">
 <h2 class="anchored" data-anchor-id="c.-인덱스로-벡터의-원소를-뽑는-방법">C. 인덱스로 벡터의 원소를 뽑는 방법</h2>
-<div id="6d7c6bab" class="cell" data-execution_count="41">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb96" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb96-1">x <span class="op" style="color: #5E5E5E;
+<p>이 방법은 list일 때나 numpy(np.array)에서나 똑같이 동작함</p>
+<div id="6d7c6bab" class="cell" data-execution_count="75">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb119" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb119-1">x <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> [<span class="dv" style="color: #AD0000;
 background-color: null;
@@ -1615,8 +1925,8 @@ background-color: null;
 font-style: inherit;">44</span>]</span></code></pre></div></div>
 </div>
 <p><code>-</code> 첫번째 원소를 뽑고 싶다면?</p>
-<div id="7c715728" class="cell" data-outputid="8e6a778d-4720-4bd1-e753-dd41cf91634b" data-execution_count="42">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb97" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb97-1">x[<span class="dv" style="color: #AD0000;
+<div id="7c715728" class="cell" data-outputid="8e6a778d-4720-4bd1-e753-dd41cf91634b" data-execution_count="76">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb120" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb120-1">x[<span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">0</span>]</span></code></pre></div></div>
 <div class="cell-output cell-output-display">
@@ -1624,8 +1934,8 @@ font-style: inherit;">0</span>]</span></code></pre></div></div>
 </div>
 </div>
 <p><code>-</code> 두번째 원소를 뽑고 싶다면?</p>
-<div id="ca9ca78d" class="cell" data-outputid="6d580175-a900-4753-a68f-49466858069c" data-execution_count="43">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb99" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb99-1">x[<span class="dv" style="color: #AD0000;
+<div id="ca9ca78d" class="cell" data-outputid="6d580175-a900-4753-a68f-49466858069c" data-execution_count="77">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb122" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb122-1">x[<span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">1</span>]</span></code></pre></div></div>
 <div class="cell-output cell-output-display">
@@ -1633,16 +1943,16 @@ font-style: inherit;">1</span>]</span></code></pre></div></div>
 </div>
 </div>
 <p><code>-</code> 마지막 원소를 뽑고 싶다면?</p>
-<div id="9e873c4a" class="cell" data-outputid="2709bc45-06d7-48db-ba65-7077ad63f7bd" data-execution_count="44">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb101" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb101-1">x[<span class="dv" style="color: #AD0000;
+<div id="9e873c4a" class="cell" data-outputid="2709bc45-06d7-48db-ba65-7077ad63f7bd" data-execution_count="78">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb124" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb124-1">x[<span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">5</span>]</span></code></pre></div></div>
 <div class="cell-output cell-output-display">
 <pre><code>-44</code></pre>
 </div>
 </div>
-<div id="73074fe1" class="cell" data-outputid="57116570-db43-4752-e236-2a2351ef2635" data-execution_count="45">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb103" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb103-1">x[<span class="op" style="color: #5E5E5E;
+<div id="73074fe1" class="cell" data-outputid="57116570-db43-4752-e236-2a2351ef2635" data-execution_count="79">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb126" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb126-1">x[<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">-</span><span class="dv" style="color: #AD0000;
 background-color: null;
@@ -1652,16 +1962,16 @@ font-style: inherit;">1</span>]</span></code></pre></div></div>
 </div>
 </div>
 <p><code>-</code> 마지막에서 두번째 원소를 뽑고 싶다면?</p>
-<div id="bfde645c" class="cell" data-outputid="644a52b7-45fc-4ab8-b174-26977c8fbdc8" data-execution_count="46">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb105" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb105-1">x[<span class="dv" style="color: #AD0000;
+<div id="bfde645c" class="cell" data-outputid="644a52b7-45fc-4ab8-b174-26977c8fbdc8" data-execution_count="80">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb128" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb128-1">x[<span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">4</span>]</span></code></pre></div></div>
 <div class="cell-output cell-output-display">
 <pre><code>-33</code></pre>
 </div>
 </div>
-<div id="c0384bb8" class="cell" data-outputid="cb86eb6b-6702-419e-cd2a-6ca1367d44d9" data-execution_count="47">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb107" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb107-1">x[<span class="op" style="color: #5E5E5E;
+<div id="c0384bb8" class="cell" data-outputid="cb86eb6b-6702-419e-cd2a-6ca1367d44d9" data-execution_count="81">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb130" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb130-1">x[<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">-</span><span class="dv" style="color: #AD0000;
 background-color: null;
@@ -1671,8 +1981,8 @@ font-style: inherit;">2</span>]</span></code></pre></div></div>
 </div>
 </div>
 <p><code>-</code> index = 0,1,2 에 해당하는 원소만 추출</p>
-<div id="70001d78" class="cell" data-outputid="2fc5b76b-c9e8-48c8-8dd6-d0339370978b" data-execution_count="48">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb109" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb109-1">x[<span class="dv" style="color: #AD0000;
+<div id="70001d78" class="cell" data-outputid="2fc5b76b-c9e8-48c8-8dd6-d0339370978b" data-execution_count="82">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb132" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb132-1">x[<span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">0</span>:<span class="dv" style="color: #AD0000;
 background-color: null;
@@ -1684,8 +1994,8 @@ font-style: inherit;"># 마지막 인덱스 3은 포함되지 않음</span></spa
 </div>
 </div>
 <p><code>-</code> index = 2,3,4 에 해당하는 원소만 추출</p>
-<div id="24e816e8" class="cell" data-outputid="e23b06c4-b545-45ab-f9b4-b145a301e625" data-execution_count="49">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb111" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb111-1">x[<span class="dv" style="color: #AD0000;
+<div id="24e816e8" class="cell" data-outputid="e23b06c4-b545-45ab-f9b4-b145a301e625" data-execution_count="83">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb134" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb134-1">x[<span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">2</span>:<span class="dv" style="color: #AD0000;
 background-color: null;
@@ -1697,8 +2007,8 @@ font-style: inherit;"># 2,3,4에 해당하는 인덱스만 추출</span></span><
 </div>
 </div>
 <p><code>-</code> <code>x[0:3]</code>와 같이 처음 시작점이 0인 경우 생략가능</p>
-<div id="e8ccfcf0" class="cell" data-outputid="db028882-11ba-4480-c464-55e631bca822" data-execution_count="50">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb113" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb113-1">x[:<span class="dv" style="color: #AD0000;
+<div id="e8ccfcf0" class="cell" data-outputid="db028882-11ba-4480-c464-55e631bca822" data-execution_count="84">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb136" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb136-1">x[:<span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">3</span>]</span></code></pre></div></div>
 <div class="cell-output cell-output-display">
@@ -1706,8 +2016,8 @@ font-style: inherit;">3</span>]</span></code></pre></div></div>
 </div>
 </div>
 <p><code>-</code> <code>x[k:]</code>와 같은 코드는 index=k에서 끝까지 뽑는다는 의미이다.</p>
-<div id="4e6e0d3e" class="cell" data-outputid="210c010e-1825-4489-ef9c-f3fd534196cf" data-execution_count="51">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb115" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb115-1">x[<span class="dv" style="color: #AD0000;
+<div id="4e6e0d3e" class="cell" data-outputid="210c010e-1825-4489-ef9c-f3fd534196cf" data-execution_count="85">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb138" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb138-1">x[<span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">3</span>:<span class="dv" style="color: #AD0000;
 background-color: null;
@@ -1718,8 +2028,8 @@ font-style: inherit;">#3,4,5</span></span></code></pre></div></div>
 <pre><code>[-22, -33, -44]</code></pre>
 </div>
 </div>
-<div id="588aeb55" class="cell" data-outputid="1824c552-c5ea-414f-9be8-5340083421ce" data-execution_count="52">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb117" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb117-1">x[<span class="dv" style="color: #AD0000;
+<div id="588aeb55" class="cell" data-outputid="1824c552-c5ea-414f-9be8-5340083421ce" data-execution_count="86">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb140" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb140-1">x[<span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">3</span>:]</span></code></pre></div></div>
 <div class="cell-output cell-output-display">
@@ -1730,8 +2040,8 @@ font-style: inherit;">3</span>:]</span></code></pre></div></div>
 <section id="d.-np.cumsum-np.cumprod" class="level2">
 <h2 class="anchored" data-anchor-id="d.-np.cumsum-np.cumprod">D. <code>np.cumsum()</code>, <code>np.cumprod()</code></h2>
 <p><code>-</code> 누적합</p>
-<div id="62e755b2" class="cell" data-outputid="33e66a54-c341-49e9-a3bb-a6aa217dc31c" data-execution_count="53">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb119" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb119-1">arr <span class="op" style="color: #5E5E5E;
+<div id="62e755b2" class="cell" data-outputid="33e66a54-c341-49e9-a3bb-a6aa217dc31c" data-execution_count="87">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb142" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb142-1">arr <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> np.array([<span class="dv" style="color: #AD0000;
 background-color: null;
@@ -1752,20 +2062,20 @@ background-color: null;
 font-style: inherit;">-</span><span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">1</span>])</span>
-<span id="cb119-2">arr</span></code></pre></div></div>
+<span id="cb142-2">arr</span></code></pre></div></div>
 <div class="cell-output cell-output-display">
 <pre><code>array([ 1, -1,  1, -1,  1, -1])</code></pre>
 </div>
 </div>
-<div id="e6fe9f7e" class="cell" data-outputid="73078e56-4f61-450a-9395-bda58bd3f6b4" data-execution_count="54">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb121" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb121-1">np.cumsum(arr)</span></code></pre></div></div>
+<div id="e6fe9f7e" class="cell" data-outputid="73078e56-4f61-450a-9395-bda58bd3f6b4" data-execution_count="88">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb144" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb144-1">np.cumsum(arr)</span></code></pre></div></div>
 <div class="cell-output cell-output-display">
 <pre><code>array([1, 0, 1, 0, 1, 0])</code></pre>
 </div>
 </div>
 <p><code>-</code> 누적곱</p>
-<div id="7d1f15ee" class="cell" data-outputid="74f0b436-a3c5-4002-9535-f4059bf6aec3" data-execution_count="55">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb123" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb123-1">arr <span class="op" style="color: #5E5E5E;
+<div id="7d1f15ee" class="cell" data-outputid="74f0b436-a3c5-4002-9535-f4059bf6aec3" data-execution_count="89">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb146" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb146-1">arr <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> np.array([<span class="dv" style="color: #AD0000;
 background-color: null;
@@ -1776,13 +2086,13 @@ background-color: null;
 font-style: inherit;">3</span>,<span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">4</span>])</span>
-<span id="cb123-2">arr</span></code></pre></div></div>
+<span id="cb146-2">arr</span></code></pre></div></div>
 <div class="cell-output cell-output-display">
 <pre><code>array([1, 2, 3, 4])</code></pre>
 </div>
 </div>
-<div id="8b141044" class="cell" data-outputid="6a1a106f-7f6e-4ae3-c167-549f33ebed18" data-execution_count="56">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb125" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb125-1">np.cumprod(arr)</span></code></pre></div></div>
+<div id="8b141044" class="cell" data-outputid="6a1a106f-7f6e-4ae3-c167-549f33ebed18" data-execution_count="90">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb148" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb148-1">np.cumprod(arr)</span></code></pre></div></div>
 <div class="cell-output cell-output-display">
 <pre><code>array([ 1,  2,  6, 24])</code></pre>
 </div>
@@ -1791,8 +2101,8 @@ font-style: inherit;">4</span>])</span>
 <section id="e.-plt.plot" class="level2">
 <h2 class="anchored" data-anchor-id="e.-plt.plot">E. <code>plt.plot()</code></h2>
 <p><code>-</code> 예시1: <img src="https://latex.codecogs.com/png.latex?x">없이 그리기 (라인)</p>
-<div id="930142e2" class="cell" data-outputid="ef9a349e-3861-4dd5-d002-bc6bb0f1bb14" data-execution_count="57">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb127" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb127-1">y<span class="op" style="color: #5E5E5E;
+<div id="930142e2" class="cell" data-outputid="ef9a349e-3861-4dd5-d002-bc6bb0f1bb14" data-execution_count="91">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb150" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb150-1">y<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span>[<span class="dv" style="color: #AD0000;
 background-color: null;
@@ -1803,18 +2113,18 @@ background-color: null;
 font-style: inherit;">5</span>,<span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">2</span>]</span>
-<span id="cb127-2">plt.plot(y)</span></code></pre></div></div>
+<span id="cb150-2">plt.plot(y)</span></code></pre></div></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="https://your-website-url.example.com/posts/01wk_2_files/figure-html/cell-75-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="https://your-website-url.example.com/posts/01wk_2_files/figure-html/cell-90-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
 <p><code>-</code> 예시2: <img src="https://latex.codecogs.com/png.latex?x">없이 그리기 (점)</p>
-<div id="7b8d3862" class="cell" data-outputid="efc514d1-b125-4317-8b96-3f8c06a5a0e1" data-execution_count="58">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb128" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb128-1">y<span class="op" style="color: #5E5E5E;
+<div id="7b8d3862" class="cell" data-outputid="efc514d1-b125-4317-8b96-3f8c06a5a0e1" data-execution_count="92">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb151" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb151-1">y<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span>[<span class="dv" style="color: #AD0000;
 background-color: null;
@@ -1825,20 +2135,20 @@ background-color: null;
 font-style: inherit;">5</span>,<span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">2</span>]</span>
-<span id="cb128-2">plt.plot(y,<span class="st" style="color: #20794D;
+<span id="cb151-2">plt.plot(y,<span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">'o'</span>)</span></code></pre></div></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="https://your-website-url.example.com/posts/01wk_2_files/figure-html/cell-76-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="https://your-website-url.example.com/posts/01wk_2_files/figure-html/cell-91-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
 <p><code>-</code> 예시3: <img src="https://latex.codecogs.com/png.latex?(x,y)">를 전달하여 그리기(점)</p>
-<div id="2f2da1c5" class="cell" data-outputid="a3f934d7-411b-4ac9-fbaa-2b694bb6cf76" data-execution_count="59">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb129" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb129-1">x<span class="op" style="color: #5E5E5E;
+<div id="2f2da1c5" class="cell" data-outputid="a3f934d7-411b-4ac9-fbaa-2b694bb6cf76" data-execution_count="93">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb152" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb152-1">x<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span>[<span class="dv" style="color: #AD0000;
 background-color: null;
@@ -1849,7 +2159,7 @@ background-color: null;
 font-style: inherit;">22</span>,<span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">23</span>]</span>
-<span id="cb129-2">y<span class="op" style="color: #5E5E5E;
+<span id="cb152-2">y<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span>[<span class="dv" style="color: #AD0000;
 background-color: null;
@@ -1860,20 +2170,20 @@ background-color: null;
 font-style: inherit;">5</span>,<span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">2</span>]</span>
-<span id="cb129-3">plt.plot(x,y,<span class="st" style="color: #20794D;
+<span id="cb152-3">plt.plot(x,y,<span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">'o'</span>)</span></code></pre></div></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="https://your-website-url.example.com/posts/01wk_2_files/figure-html/cell-77-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="https://your-website-url.example.com/posts/01wk_2_files/figure-html/cell-92-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
 <p><code>-</code> 예시4: 겹쳐서 그리기</p>
-<div id="e2927de3" class="cell" data-outputid="76c52495-6814-4aaf-de08-416a56798abe" data-execution_count="60">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb130" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb130-1">x<span class="op" style="color: #5E5E5E;
+<div id="e2927de3" class="cell" data-outputid="76c52495-6814-4aaf-de08-416a56798abe" data-execution_count="94">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb153" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb153-1">x<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span>[<span class="dv" style="color: #AD0000;
 background-color: null;
@@ -1884,7 +2194,7 @@ background-color: null;
 font-style: inherit;">22</span>,<span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">23</span>]</span>
-<span id="cb130-2">y1<span class="op" style="color: #5E5E5E;
+<span id="cb153-2">y1<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span>[<span class="dv" style="color: #AD0000;
 background-color: null;
@@ -1897,7 +2207,7 @@ background-color: null;
 font-style: inherit;">-</span><span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">2</span>]</span>
-<span id="cb130-3">y2<span class="op" style="color: #5E5E5E;
+<span id="cb153-3">y2<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span>[<span class="fl" style="color: #AD0000;
 background-color: null;
@@ -1910,23 +2220,23 @@ background-color: null;
 font-style: inherit;">-</span><span class="fl" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">2.5</span>]</span>
-<span id="cb130-4">plt.plot(x,y1,<span class="st" style="color: #20794D;
+<span id="cb153-4">plt.plot(x,y1,<span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">'--o'</span>)</span>
-<span id="cb130-5">plt.plot(x,y2,<span class="st" style="color: #20794D;
+<span id="cb153-5">plt.plot(x,y2,<span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">'--o'</span>)</span></code></pre></div></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="https://your-website-url.example.com/posts/01wk_2_files/figure-html/cell-78-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="https://your-website-url.example.com/posts/01wk_2_files/figure-html/cell-93-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
 <p><code>-</code> 예시5: 겹쳐서 그리기 + 라벨</p>
-<div id="955b7bc4" class="cell" data-outputid="0c465a4e-29b1-4ea1-c97b-b63be0d6c6a6" data-execution_count="61">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb131" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb131-1">x<span class="op" style="color: #5E5E5E;
+<div id="955b7bc4" class="cell" data-outputid="0c465a4e-29b1-4ea1-c97b-b63be0d6c6a6" data-execution_count="95">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb154" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb154-1">x<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span>[<span class="dv" style="color: #AD0000;
 background-color: null;
@@ -1937,7 +2247,7 @@ background-color: null;
 font-style: inherit;">22</span>,<span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">23</span>]</span>
-<span id="cb131-2">y1<span class="op" style="color: #5E5E5E;
+<span id="cb154-2">y1<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span>[<span class="dv" style="color: #AD0000;
 background-color: null;
@@ -1950,7 +2260,7 @@ background-color: null;
 font-style: inherit;">-</span><span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">2</span>]</span>
-<span id="cb131-3">y2<span class="op" style="color: #5E5E5E;
+<span id="cb154-3">y2<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span>[<span class="fl" style="color: #AD0000;
 background-color: null;
@@ -1963,32 +2273,32 @@ background-color: null;
 font-style: inherit;">-</span><span class="fl" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">2.5</span>]</span>
-<span id="cb131-4">plt.plot(x,y1,<span class="st" style="color: #20794D;
+<span id="cb154-4">plt.plot(x,y1,<span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">'--o'</span>,label<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span><span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"y1"</span>)</span>
-<span id="cb131-5">plt.plot(x,y2,<span class="st" style="color: #20794D;
+<span id="cb154-5">plt.plot(x,y2,<span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">'--o'</span>,label<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span><span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"y2"</span>)</span>
-<span id="cb131-6">plt.legend()</span></code></pre></div></div>
+<span id="cb154-6">plt.legend()</span></code></pre></div></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="https://your-website-url.example.com/posts/01wk_2_files/figure-html/cell-79-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="https://your-website-url.example.com/posts/01wk_2_files/figure-html/cell-94-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
 <p><code>-</code> 예시5: 겹쳐서 그리기 + latex 라벨</p>
-<div id="8a05e991" class="cell" data-outputid="8d0d5259-317f-4f45-9f15-7d5586967768" data-execution_count="62">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb132" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb132-1">x<span class="op" style="color: #5E5E5E;
+<div id="8a05e991" class="cell" data-outputid="8d0d5259-317f-4f45-9f15-7d5586967768" data-execution_count="96">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb155" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb155-1">x<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span>[<span class="dv" style="color: #AD0000;
 background-color: null;
@@ -1999,7 +2309,7 @@ background-color: null;
 font-style: inherit;">22</span>,<span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">23</span>]</span>
-<span id="cb132-2">y1<span class="op" style="color: #5E5E5E;
+<span id="cb155-2">y1<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span>[<span class="dv" style="color: #AD0000;
 background-color: null;
@@ -2012,7 +2322,7 @@ background-color: null;
 font-style: inherit;">-</span><span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">2</span>]</span>
-<span id="cb132-3">y2<span class="op" style="color: #5E5E5E;
+<span id="cb155-3">y2<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span>[<span class="fl" style="color: #AD0000;
 background-color: null;
@@ -2025,7 +2335,7 @@ background-color: null;
 font-style: inherit;">-</span><span class="fl" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">2.5</span>]</span>
-<span id="cb132-4">plt.plot(x,y1,<span class="st" style="color: #20794D;
+<span id="cb155-4">plt.plot(x,y1,<span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">'--o'</span>,label<span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -2040,7 +2350,7 @@ background-color: null;
 font-style: inherit;">$</span><span class="vs" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"</span>)</span>
-<span id="cb132-5">plt.plot(x,y2,<span class="st" style="color: #20794D;
+<span id="cb155-5">plt.plot(x,y2,<span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">'--o'</span>,label<span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -2055,11 +2365,11 @@ background-color: null;
 font-style: inherit;">$</span><span class="vs" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"</span>)</span>
-<span id="cb132-6">plt.legend()</span></code></pre></div></div>
+<span id="cb155-6">plt.legend()</span></code></pre></div></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="https://your-website-url.example.com/posts/01wk_2_files/figure-html/cell-80-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="https://your-website-url.example.com/posts/01wk_2_files/figure-html/cell-95-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
@@ -2072,8 +2382,8 @@ font-style: inherit;">"</span>)</span>
 <section id="f.-np.argmax-np.argmin" class="level2">
 <h2 class="anchored" data-anchor-id="f.-np.argmax-np.argmin">F. <code>np.argmax</code>, <code>np.argmin</code></h2>
 <p><code>-</code> 예시1</p>
-<div id="864bfe32" class="cell" data-outputid="1adb7d18-c0be-46e6-f511-b82506307f18" data-execution_count="63">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb133" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb133-1">arr <span class="op" style="color: #5E5E5E;
+<div id="864bfe32" class="cell" data-outputid="1adb7d18-c0be-46e6-f511-b82506307f18" data-execution_count="97">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb156" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb156-1">arr <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> np.array([<span class="dv" style="color: #AD0000;
 background-color: null;
@@ -2088,13 +2398,13 @@ background-color: null;
 font-style: inherit;">1</span>,<span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">0</span>])</span>
-<span id="cb133-2">arr</span></code></pre></div></div>
+<span id="cb156-2">arr</span></code></pre></div></div>
 <div class="cell-output cell-output-display">
 <pre><code>array([1, 2, 3, 2, 1, 0])</code></pre>
 </div>
 </div>
-<div id="8ae075a0" class="cell" data-outputid="c7fd4fda-3073-45fb-d5d9-0c5fae10cb4e" data-execution_count="64">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb135" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb135-1">np.argmax(arr),np.argmin(arr)</span></code></pre></div></div>
+<div id="8ae075a0" class="cell" data-outputid="c7fd4fda-3073-45fb-d5d9-0c5fae10cb4e" data-execution_count="98">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb158" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb158-1">np.argmax(arr),np.argmin(arr)</span></code></pre></div></div>
 <div class="cell-output cell-output-display">
 <pre><code>(np.int64(2), np.int64(5))</code></pre>
 </div>
@@ -2106,20 +2416,17 @@ font-style: inherit;">0</span>])</span>
 <li><img src="https://latex.codecogs.com/png.latex?g(x)=-2x+5"></li>
 </ul>
 <p>의 교점의 좌표를 구하여라.</p>
-<p>(풀이)</p>
-<div id="acb2d5ee" class="cell" data-outputid="b41b379b-87dd-446c-eb0f-f6cbaffb1ccb" data-execution_count="65">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb137" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb137-1">x <span class="op" style="color: #5E5E5E;
+<div id="4dc90c06" class="cell" data-execution_count="99">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb160" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb160-1">x <span class="op" style="color: #5E5E5E;
 background-color: null;
-font-style: inherit;">=</span> np.linspace(<span class="op" style="color: #5E5E5E;
+font-style: inherit;">=</span> np.linspace(<span class="fl" style="color: #AD0000;
 background-color: null;
-font-style: inherit;">-</span><span class="dv" style="color: #AD0000;
+font-style: inherit;">1.8</span>,<span class="fl" style="color: #AD0000;
 background-color: null;
-font-style: inherit;">1</span>,<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">3</span>,<span class="dv" style="color: #AD0000;
+font-style: inherit;">2.2</span>,<span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">101</span>)</span>
-<span id="cb137-2">f <span class="op" style="color: #5E5E5E;
+<span id="cb160-2">f <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> (x<span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -2130,7 +2437,7 @@ background-color: null;
 font-style: inherit;">**</span><span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">2</span></span>
-<span id="cb137-3">g <span class="op" style="color: #5E5E5E;
+<span id="cb160-3">g <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -2143,7 +2450,58 @@ background-color: null;
 font-style: inherit;">+</span><span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">5</span></span>
-<span id="cb137-4">plt.plot(x,f,label<span class="op" style="color: #5E5E5E;
+<span id="cb160-4">plt.plot(x,f,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'.'</span>)</span>
+<span id="cb160-5">plt.plot(x,g,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'.'</span>)</span></code></pre></div></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="https://your-website-url.example.com/posts/01wk_2_files/figure-html/cell-98-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>(풀이)</p>
+<div id="acb2d5ee" class="cell" data-outputid="b41b379b-87dd-446c-eb0f-f6cbaffb1ccb" data-execution_count="100">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb161" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb161-1">x <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> np.linspace(<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">101</span>)</span>
+<span id="cb161-2">f <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> (x<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>)<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">**</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span></span>
+<span id="cb161-3">g <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span>x<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">5</span></span>
+<span id="cb161-4">plt.plot(x,f,label<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span><span class="vs" style="color: #20794D;
 background-color: null;
@@ -2178,7 +2536,7 @@ background-color: null;
 font-style: inherit;">$</span><span class="vs" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"</span>)</span>
-<span id="cb137-5">plt.plot(x,g,label<span class="op" style="color: #5E5E5E;
+<span id="cb161-5">plt.plot(x,g,label<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span><span class="vs" style="color: #20794D;
 background-color: null;
@@ -2205,17 +2563,17 @@ background-color: null;
 font-style: inherit;">$</span><span class="vs" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"</span>)</span>
-<span id="cb137-6">plt.legend()</span></code></pre></div></div>
+<span id="cb161-6">plt.legend()</span></code></pre></div></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="https://your-website-url.example.com/posts/01wk_2_files/figure-html/cell-83-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="https://your-website-url.example.com/posts/01wk_2_files/figure-html/cell-99-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
-<div id="b9fc0e41" class="cell" data-outputid="2732aff7-bbfb-4200-b1ca-00f228d9ab36" data-execution_count="66">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb138" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb138-1">x[np.argmin(<span class="bu" style="color: null;
+<div id="b9fc0e41" class="cell" data-outputid="2732aff7-bbfb-4200-b1ca-00f228d9ab36" data-execution_count="101">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb162" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb162-1">x[np.argmin(<span class="bu" style="color: null;
 background-color: null;
 font-style: inherit;">abs</span>(f<span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -2224,8 +2582,8 @@ font-style: inherit;">-</span>g))]</span></code></pre></div></div>
 <pre><code>np.float64(2.0)</code></pre>
 </div>
 </div>
-<div id="a6d18d6f" class="cell" data-outputid="02d195cc-c305-4c87-b39c-adcc49fd2804" data-execution_count="67">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb140" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb140-1"><span class="dv" style="color: #AD0000;
+<div id="a6d18d6f" class="cell" data-outputid="02d195cc-c305-4c87-b39c-adcc49fd2804" data-execution_count="102">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb164" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb164-1"><span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">2</span>,(<span class="dv" style="color: #AD0000;
 background-color: null;
@@ -2255,6 +2613,26 @@ font-style: inherit;">2</span></span></code></pre></div></div>
 <blockquote class="blockquote">
 <p><code>.ipynb</code>파일형태로 LMS에 제출할 것. (Quiz제출 연습용임. 제출방법이 익숙하지 않은 학생은 꼭 질문할것. 이 숙제는 제출하지 않아도 감점없음)</p>
 </blockquote>
+<div id="3968d838" class="cell" data-execution_count="106">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb166" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb166-1">x<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span></span>
+<span id="cb166-2">f <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> np.exp(x)<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span>np.exp(x))</span>
+<span id="cb166-3">f</span></code></pre></div></div>
+<div class="cell-output cell-output-display">
+<pre><code>np.float64(0.5)</code></pre>
+</div>
+</div>
 
 
 </section>
