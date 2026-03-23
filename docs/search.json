@@ -7,18 +7,25 @@
     "text": "About this blog"
   },
   {
+    "objectID": "posts/02wk_2.html",
+    "href": "posts/02wk_2.html",
+    "title": "02wk-2: 파이썬은 좋은 계산기다 (2)",
+    "section": "",
+    "text": "작업 중(수정 전)"
+  },
+  {
     "objectID": "posts/02wk_2.html#a.-int-float-bool",
     "href": "posts/02wk_2.html#a.-int-float-bool",
     "title": "02wk-2: 파이썬은 좋은 계산기다 (2)",
     "section": "A. int, float, bool",
-    "text": "A. int, float, bool\n- int형\n\na=100\n\n\ntype(a)\n\nint\n\n\n- float형\n\na=1.2*3\na\n\n3.5999999999999996\n\n\n\ntype(a)\n\nfloat\n\n\n\na?\n\n\nType:        float\nString form: 3.5999999999999996\nDocstring:   Convert a string or number to a floating point number, if possible.\n\n\n\n- bool형\n\na=True ## 숫자1으로 생각할 수 있음\nb=False ## 숫자0으로 생각할 수 있음\n\n\ntype(a)\n\nbool\n\n\n\ntype(b)\n\nbool\n\n\n\na?\n\n\nType:        bool\nString form: True\nDocstring:  \nbool(x) -&gt; bool\nReturns True when the argument x is true, False otherwise.\nThe builtins True and False are the only two instances of the class bool.\nThe class bool is a subclass of the class int, and cannot be subclassed.\n\n\n\n\nb?\n\n\nType:        bool\nString form: False\nDocstring:  \nbool(x) -&gt; bool\nReturns True when the argument x is true, False otherwise.\nThe builtins True and False are the only two instances of the class bool.\nThe class bool is a subclass of the class int, and cannot be subclassed.\n\n\n\n- bool형의 연산\n\na=True ## 1\nb=False ## 0\n\n\na+b\n\n1\n\n\n\na*b\n\n0\n\n\n- 형태변환: float \\(\\to\\) int\n(예시1)\n\na=3.0\ntype(a)\n\nfloat\n\n\n\na=int(a)\n\n\ntype(a)\n\nint\n\n\n(예시2) 이경우는 정보의 손실이 발생\n\na=3.14\nint(a)\n\n3\n\n\n- 형태변환: int \\(\\to\\) float\n\na=3\ntype(a)\n\nint\n\n\n\na=float(a)\ntype(a)\n\nfloat\n\n\n- 형태변환: bool \\(\\to\\) int/float, int/float \\(\\to\\) bool\n(예시1)\n\na=True\ntype(a)\n\nbool\n\n\n\nint(a)\n\n1\n\n\n\nfloat(a)\n\n1.0\n\n\n(예시2)\n\na=1\nbool(a)\n\nTrue\n\n\n\na=0\nbool(a)\n\nFalse\n\n\n(예시3)\n\na=1.0\nbool(a)\n\nTrue\n\n\n\na=0.0\nbool(a)\n\nFalse"
+    "text": "A. int, float, bool\n- int형\n\na=100\n\n\ntype(a)\n\nint\n\n\n- float형\n\na=1.2*3\na\n\n3.5999999999999996\n\n\n\ntype(a)\n\nfloat\n\n\n\na?\n\n- bool형\n\na=True ## 숫자1으로 생각할 수 있음\nb=False ## 숫자0으로 생각할 수 있음\n\n\ntype(a)\n\nbool\n\n\n\ntype(b)\n\nbool\n\n\n\na?\n\n\nb?\n\n- bool형의 연산\n\na=True ## 1\nb=False ## 0\n\n\na+b\n\n1\n\n\n\na*b\n\n0\n\n\n- 형태변환: float \\(\\to\\) int\n(예시1)\n\na=3.0\ntype(a)\n\nfloat\n\n\n\na=int(a)\n\n\ntype(a)\n\nint\n\n\n(예시2) 이경우는 정보의 손실이 발생\n\na=3.14\nint(a)\n\n3\n\n\n- 형태변환: int \\(\\to\\) float\n\na=3\ntype(a)\n\nint\n\n\n\na=float(a)\ntype(a)\n\nfloat\n\n\n- 형태변환: bool \\(\\to\\) int/float, int/float \\(\\to\\) bool\n(예시1)\n\na=True\ntype(a)\n\nbool\n\n\n\nint(a)\n\n1\n\n\n\nfloat(a)\n\n1.0\n\n\n(예시2)\n\na=1\nbool(a)\n\nTrue\n\n\n\na=0\nbool(a)\n\nFalse\n\n\n(예시3)\n\na=1.0\nbool(a)\n\nTrue\n\n\n\na=0.0\nbool(a)\n\nFalse"
   },
   {
     "objectID": "posts/02wk_2.html#b.-1차원-자료의-형태변환",
     "href": "posts/02wk_2.html#b.-1차원-자료의-형태변환",
     "title": "02wk-2: 파이썬은 좋은 계산기다 (2)",
     "section": "B. 1차원 자료의 형태변환",
-    "text": "B. 1차원 자료의 형태변환\n- list \\(\\to\\) np.array\n\n[1,2,3]\n\n[1, 2, 3]\n\n\n\nnp.array([1,2,3])\n\narray([1, 2, 3])\n\n\n- np.array \\(\\to\\) list\n\nnp.linspace(1,10,10)\n\narray([ 1.,  2.,  3.,  4.,  5.,  6.,  7.,  8.,  9., 10.])\n\n\n\nlist(np.linspace(1,10,10))\n\n[1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0]\n\n\n- range \\(\\to\\) list, np.array\n\nrange(10) # 이게 뭐야??\n\nrange(0, 10)\n\n\n\nlist(range(10)) # 리스트화\n\n[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]\n\n\n\nnp.array(range(10)) # 넘파이배열화\n\narray([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])\n\n\n보충학습: range의 다양한 활용을 익혀보자.\n\nlist(range(10))\n\n[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]\n\n\n\nlist(range(0,10))\n\n[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]\n\n\n\nlist(range(3,10))\n\n[3, 4, 5, 6, 7, 8, 9]\n\n\n\nlist(range(3,10,2))\n\n[3, 5, 7, 9]\n\n\n- map 결과물 \\(\\to\\) list\n\nf = lambda x: x**2\nlist(map(f,[1,2,3])) # [f(1),f(2),f(3)]\n\n[1, 4, 9]\n\n\n- map 결과물 \\(\\to\\) np.array로는 불가능\n\nf = lambda x: x**2\nnp.array(map(f,[1,2,3]))\n\narray(&lt;map object at 0x7f3a09e887f0&gt;, dtype=object)\n\n\n\n# 아래는 가능\nf = lambda x: x**2\nnp.array(list(map(f,[1,2,3])))\n\narray([1, 4, 9])"
+    "text": "B. 1차원 자료의 형태변환\n- list \\(\\to\\) np.array\n\n[1,2,3]\n\n[1, 2, 3]\n\n\n\nnp.array([1,2,3])\n\narray([1, 2, 3])\n\n\n- np.array \\(\\to\\) list\n\nnp.linspace(1,10,10)\n\narray([ 1.,  2.,  3.,  4.,  5.,  6.,  7.,  8.,  9., 10.])\n\n\n\nlist(np.linspace(1,10,10))\n\n[np.float64(1.0),\n np.float64(2.0),\n np.float64(3.0),\n np.float64(4.0),\n np.float64(5.0),\n np.float64(6.0),\n np.float64(7.0),\n np.float64(8.0),\n np.float64(9.0),\n np.float64(10.0)]\n\n\n- range \\(\\to\\) list, np.array\n\nrange(10) # 이게 뭐야??\n\nrange(0, 10)\n\n\n\nlist(range(10)) # 리스트화\n\n[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]\n\n\n\nnp.array(range(10)) # 넘파이배열화\n\narray([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])\n\n\n보충학습: range의 다양한 활용을 익혀보자.\n\nlist(range(10))\n\n[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]\n\n\n\nlist(range(0,10))\n\n[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]\n\n\n\nlist(range(3,10))\n\n[3, 4, 5, 6, 7, 8, 9]\n\n\n\nlist(range(3,10,2))\n\n[3, 5, 7, 9]\n\n\n- map 결과물 \\(\\to\\) list\n\nf = lambda x: x**2\nlist(map(f,[1,2,3])) # [f(1),f(2),f(3)]\n\n[1, 4, 9]\n\n\n- map 결과물 \\(\\to\\) np.array로는 불가능\n\nf = lambda x: x**2\nnp.array(map(f,[1,2,3]))\n\narray(&lt;map object at 0x7f6269194c40&gt;, dtype=object)\n\n\n\n# 아래는 가능\nf = lambda x: x**2\nnp.array(list(map(f,[1,2,3])))\n\narray([1, 4, 9])"
   },
   {
     "objectID": "posts/02wk_2.html#a.-np.random.rand",
@@ -102,6 +109,6 @@
     "href": "index.html",
     "title": "mini2",
     "section": "",
-    "text": "01wk-2: 파이썬은 좋은 계산기다 (1)\n\n\n\n\n\n\n\n\nFeb 14, 2026\n\n\n이민희\n\n\n\n\n\n\n\n\n\n\n\n\n02wk-2: 파이썬은 좋은 계산기다 (2)\n\n\n\n\n\n\n\n\nMar 15, 2024\n\n\n최규빈\n\n\n\n\n\nNo matching items"
+    "text": "02wk-2: 파이썬은 좋은 계산기다 (2)\n\n\n\n\n\n\n\n\nMar 23, 2026\n\n\n이민희\n\n\n\n\n\n\n\n\n\n\n\n\n01wk-2: 파이썬은 좋은 계산기다 (1)\n\n\n\n\n\n\n\n\nFeb 14, 2026\n\n\n이민희\n\n\n\n\n\nNo matching items"
   }
 ]
