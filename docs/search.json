@@ -7,6 +7,48 @@
     "text": "About this blog"
   },
   {
+    "objectID": "posts/02wk_2.html#a.-int-float-bool",
+    "href": "posts/02wk_2.html#a.-int-float-bool",
+    "title": "02wk-2: 파이썬은 좋은 계산기다 (2)",
+    "section": "A. int, float, bool",
+    "text": "A. int, float, bool\n- int형\n\na=100\n\n\ntype(a)\n\nint\n\n\n- float형\n\na=1.2*3\na\n\n3.5999999999999996\n\n\n\ntype(a)\n\nfloat\n\n\n\na?\n\n\nType:        float\nString form: 3.5999999999999996\nDocstring:   Convert a string or number to a floating point number, if possible.\n\n\n\n- bool형\n\na=True ## 숫자1으로 생각할 수 있음\nb=False ## 숫자0으로 생각할 수 있음\n\n\ntype(a)\n\nbool\n\n\n\ntype(b)\n\nbool\n\n\n\na?\n\n\nType:        bool\nString form: True\nDocstring:  \nbool(x) -&gt; bool\nReturns True when the argument x is true, False otherwise.\nThe builtins True and False are the only two instances of the class bool.\nThe class bool is a subclass of the class int, and cannot be subclassed.\n\n\n\n\nb?\n\n\nType:        bool\nString form: False\nDocstring:  \nbool(x) -&gt; bool\nReturns True when the argument x is true, False otherwise.\nThe builtins True and False are the only two instances of the class bool.\nThe class bool is a subclass of the class int, and cannot be subclassed.\n\n\n\n- bool형의 연산\n\na=True ## 1\nb=False ## 0\n\n\na+b\n\n1\n\n\n\na*b\n\n0\n\n\n- 형태변환: float \\(\\to\\) int\n(예시1)\n\na=3.0\ntype(a)\n\nfloat\n\n\n\na=int(a)\n\n\ntype(a)\n\nint\n\n\n(예시2) 이경우는 정보의 손실이 발생\n\na=3.14\nint(a)\n\n3\n\n\n- 형태변환: int \\(\\to\\) float\n\na=3\ntype(a)\n\nint\n\n\n\na=float(a)\ntype(a)\n\nfloat\n\n\n- 형태변환: bool \\(\\to\\) int/float, int/float \\(\\to\\) bool\n(예시1)\n\na=True\ntype(a)\n\nbool\n\n\n\nint(a)\n\n1\n\n\n\nfloat(a)\n\n1.0\n\n\n(예시2)\n\na=1\nbool(a)\n\nTrue\n\n\n\na=0\nbool(a)\n\nFalse\n\n\n(예시3)\n\na=1.0\nbool(a)\n\nTrue\n\n\n\na=0.0\nbool(a)\n\nFalse"
+  },
+  {
+    "objectID": "posts/02wk_2.html#b.-1차원-자료의-형태변환",
+    "href": "posts/02wk_2.html#b.-1차원-자료의-형태변환",
+    "title": "02wk-2: 파이썬은 좋은 계산기다 (2)",
+    "section": "B. 1차원 자료의 형태변환",
+    "text": "B. 1차원 자료의 형태변환\n- list \\(\\to\\) np.array\n\n[1,2,3]\n\n[1, 2, 3]\n\n\n\nnp.array([1,2,3])\n\narray([1, 2, 3])\n\n\n- np.array \\(\\to\\) list\n\nnp.linspace(1,10,10)\n\narray([ 1.,  2.,  3.,  4.,  5.,  6.,  7.,  8.,  9., 10.])\n\n\n\nlist(np.linspace(1,10,10))\n\n[1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0]\n\n\n- range \\(\\to\\) list, np.array\n\nrange(10) # 이게 뭐야??\n\nrange(0, 10)\n\n\n\nlist(range(10)) # 리스트화\n\n[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]\n\n\n\nnp.array(range(10)) # 넘파이배열화\n\narray([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])\n\n\n보충학습: range의 다양한 활용을 익혀보자.\n\nlist(range(10))\n\n[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]\n\n\n\nlist(range(0,10))\n\n[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]\n\n\n\nlist(range(3,10))\n\n[3, 4, 5, 6, 7, 8, 9]\n\n\n\nlist(range(3,10,2))\n\n[3, 5, 7, 9]\n\n\n- map 결과물 \\(\\to\\) list\n\nf = lambda x: x**2\nlist(map(f,[1,2,3])) # [f(1),f(2),f(3)]\n\n[1, 4, 9]\n\n\n- map 결과물 \\(\\to\\) np.array로는 불가능\n\nf = lambda x: x**2\nnp.array(map(f,[1,2,3]))\n\narray(&lt;map object at 0x7f3a09e887f0&gt;, dtype=object)\n\n\n\n# 아래는 가능\nf = lambda x: x**2\nnp.array(list(map(f,[1,2,3])))\n\narray([1, 4, 9])"
+  },
+  {
+    "objectID": "posts/02wk_2.html#a.-np.random.rand",
+    "href": "posts/02wk_2.html#a.-np.random.rand",
+    "title": "02wk-2: 파이썬은 좋은 계산기다 (2)",
+    "section": "A. np.random.rand()",
+    "text": "A. np.random.rand()\n- 0~1 사이에서 10개의 난수생성\n\nnp.random.rand(10)\n\narray([0.43345371, 0.48324862, 0.48046707, 0.41056049, 0.56188841,\n       0.58762904, 0.6645858 , 0.60568829, 0.83033841, 0.4660302 ])\n\n\n- 0~2 사이에서 10개의 난수생성\n\nnp.random.rand(10)*2\n\narray([0.44894259, 1.8416822 , 0.50164259, 1.01601855, 0.21073439,\n       1.8049244 , 0.86548008, 0.38544391, 0.13816874, 1.22858088])\n\n\n- 1~3 사이에서 10개의 난수생성\n\nnp.random.rand(10)*2 + 1\n\narray([1.58013021, 1.96358901, 2.62137695, 1.74617053, 2.38021729,\n       1.00043864, 1.42801985, 1.65666288, 2.80405753, 1.23691426])"
+  },
+  {
+    "objectID": "posts/02wk_2.html#b.-np.random.randn",
+    "href": "posts/02wk_2.html#b.-np.random.randn",
+    "title": "02wk-2: 파이썬은 좋은 계산기다 (2)",
+    "section": "B. np.random.randn()",
+    "text": "B. np.random.randn()\n- N(0,1)에서 10개의 난수생성\n\nnp.random.randn(10) # 표준정규분포에서 10개의 샘플 추출\n\narray([-0.88043002, -0.75000612, -0.46393189,  0.73721724, -0.66208613,\n        0.84740615, -0.31835775,  0.60157946,  0.62744116,  2.06223706])\n\n\n- N(1,1)에서 10개 난수생성\n\nnp.random.randn(10) + 1\n\narray([ 1.50801901,  0.06945884,  2.52305677,  0.25080242, -0.25058225,\n        1.81696343, -0.47341629,  0.51879014,  2.55038708,  0.58788704])\n\n\n- N(0,4) 에서 10개 난수생성\n\nnp.random.randn(10)*2\n\narray([-2.26593271, -1.62304968, -1.71372316,  2.93723947,  0.63497107,\n        2.96605112,  0.71536533,  2.64037886,  0.10782247, -2.97822434])\n\n\n- N(3,4) 에서 10개 난수생성\n\nnp.random.randn(10)*2+3\n\narray([ 3.71923104,  1.77496469,  4.04116354,  4.27443252,  2.59130929,\n        5.48551961, -1.09164073,  3.08090641,  0.88721243,  3.34579357])"
+  },
+  {
+    "objectID": "posts/02wk_2.html#c.-np.random.randint",
+    "href": "posts/02wk_2.html#c.-np.random.randint",
+    "title": "02wk-2: 파이썬은 좋은 계산기다 (2)",
+    "section": "C. np.random.randint()",
+    "text": "C. np.random.randint()\n- [0,7) 에서 10개의 정수생성\n\nnp.random.randint(0,7,size=10) # [0,7)의 범위에서 10개의 정수 생성\n\narray([0, 1, 5, 0, 2, 3, 1, 3, 0, 5])\n\n\n- [10,20) 에서 10개의 정수생성\n\nnp.random.randint(10,20,size=10) # [0,7)의 범위에서 10개의 정수 생성\n\narray([11, 10, 10, 19, 13, 11, 11, 11, 15, 19])"
+  },
+  {
+    "objectID": "posts/02wk_2.html#d.-np.random.choice",
+    "href": "posts/02wk_2.html#d.-np.random.choice",
+    "title": "02wk-2: 파이썬은 좋은 계산기다 (2)",
+    "section": "D. np.random.choice()",
+    "text": "D. np.random.choice()\n- [11,22,33] 에서 중복허용하여 20개 추출\n\nnp.random.choice([11,22,33],20)\n\narray([33, 33, 11, 33, 11, 11, 33, 22, 11, 33, 33, 33, 22, 33, 11, 11, 22,\n       22, 33, 22])\n\n\n- [11,22,33] 에서 중복허용하여 3개 추출\n\nnp.random.seed(4)\nnp.random.choice([11,22,33],3)\n\narray([33, 33, 22])\n\n\n\nnp.random.seed(5)\nnp.random.choice([11,22,33],3)\n\narray([33, 22, 33])\n\n\n- [11,22,33] 에서 중복허용하지 않고 3개 추출\n\nnp.random.choice([11,22,33],3,replace=False)\n\narray([22, 33, 11])"
+  },
+  {
     "objectID": "posts/01wk_2.html",
     "href": "posts/01wk_2.html",
     "title": "01wk-2: 파이썬은 좋은 계산기다 (1)",
@@ -60,6 +102,6 @@
     "href": "index.html",
     "title": "mini2",
     "section": "",
-    "text": "01wk-2: 파이썬은 좋은 계산기다 (1)\n\n\n\n\n\n\n\n\nFeb 14, 2026\n\n\n이민희\n\n\n\n\n\nNo matching items"
+    "text": "01wk-2: 파이썬은 좋은 계산기다 (1)\n\n\n\n\n\n\n\n\nFeb 14, 2026\n\n\n이민희\n\n\n\n\n\n\n\n\n\n\n\n\n02wk-2: 파이썬은 좋은 계산기다 (2)\n\n\n\n\n\n\n\n\nMar 15, 2024\n\n\n최규빈\n\n\n\n\n\nNo matching items"
   }
 ]
