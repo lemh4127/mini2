@@ -14,7 +14,7 @@
 <item>
   <title>260325_review</title>
   <dc:creator>이민희 </dc:creator>
-  <link>https://your-website-url.example.com/posts/260325_review.html</link>
+  <link>https://your-website-url.example.com/posts/0325_review.html</link>
   <description><![CDATA[ 
 
 
@@ -40,6 +40,7 @@
 <li><p>일단, 이 환경 자체에 익숙해질 필요가 있을 것 같음.</p>
 <p>아직 나는 너무 Zero base임. 알파벳을 모르고 문법을 공부하는 느낌.<br>
 게다가 나는 다른 사람들과 달리, 잘 다루는 프로그래밍 언어가 없다. 그러니, 시간을 더 투자할 수 밖에 없을 듯. (자신은 없지만, 일단 되는대로 해보는 수 밖에)</p></li>
+<li><p>공부는 ‘강의(따라하면서 천천히) → 퀴즈(최대한 고민해보며) → 복습(다시 정리해 보면서)’ 이 순서로 해봐야겠다.</p></li>
 </ul></li>
 </ol>
 <section id="imports" class="level1">
@@ -59,7 +60,7 @@ font-style: inherit;">as</span> plt</span></code></pre></div></div>
 <p>자기전에 2026년 수능 3문제만 풀어보기</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://your-website-url.example.com/posts/260325_review_files/figure-html/cell-5-1-image.png" class="img-fluid figure-img"></p>
+<p><img src="https://your-website-url.example.com/posts/0325_review_files/figure-html/cell-5-1-image.png" class="img-fluid figure-img"></p>
 <figcaption>image.png</figcaption>
 </figure>
 </div>
@@ -117,14 +118,14 @@ font-style: inherit;">100</span>)</span>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="https://your-website-url.example.com/posts/260325_review_files/figure-html/cell-3-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="https://your-website-url.example.com/posts/0325_review_files/figure-html/cell-3-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://your-website-url.example.com/posts/260325_review_files/figure-html/cell-7-1-image.png" class="img-fluid figure-img"></p>
+<p><img src="https://your-website-url.example.com/posts/0325_review_files/figure-html/cell-7-1-image.png" class="img-fluid figure-img"></p>
 <figcaption>image.png</figcaption>
 </figure>
 </div>
@@ -177,7 +178,7 @@ font-style: inherit;">/</span>h</span></code></pre></div></div>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://your-website-url.example.com/posts/260325_review_files/figure-html/cell-9-1-image.png" class="img-fluid figure-img"></p>
+<p><img src="https://your-website-url.example.com/posts/0325_review_files/figure-html/cell-9-1-image.png" class="img-fluid figure-img"></p>
 <figcaption>image.png</figcaption>
 </figure>
 </div>
@@ -288,7 +289,7 @@ font-style: inherit;">5</span></span></code></pre></div></div>
 </section>
 
  ]]></description>
-  <guid>https://your-website-url.example.com/posts/260325_review.html</guid>
+  <guid>https://your-website-url.example.com/posts/0325_review.html</guid>
   <pubDate>Tue, 24 Mar 2026 15:00:00 GMT</pubDate>
 </item>
 <item>
