@@ -10,7 +10,2997 @@
 <atom:link href="https://your-website-url.example.com/index.xml" rel="self" type="application/rss+xml"/>
 <description>A blog built with Quarto</description>
 <generator>quarto-1.8.27</generator>
-<lastBuildDate>Tue, 24 Mar 2026 15:00:00 GMT</lastBuildDate>
+<lastBuildDate>Sun, 29 Mar 2026 15:00:00 GMT</lastBuildDate>
+<item>
+  <title>03wk-2: 리스트는 쓰레기인가?</title>
+  <dc:creator>이민희 </dc:creator>
+  <link>https://your-website-url.example.com/posts/03wk_2.html</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<p><a href="https://colab.research.google.com/github/guebin/PP2024/blob/main/posts/03wk-2.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" style="text-align: left"></a></p>
+<section id="강의영상" class="level1">
+<h1>1. 강의영상</h1>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/playlist?list=PLQqh36zP38-wp0X7gOJ2iQQXWL8m2wuIE&amp;si=le4Ph18l9-kv7br3" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+</section>
+<section id="imports" class="level1">
+<h1>2. Imports</h1>
+<div id="c9057763-4fe0-485d-b00a-e74ded37f5a6" class="cell" data-execution_count="53">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> numpy <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">as</span> np</span>
+<span id="cb1-2"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> matplotlib.pyplot <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">as</span> plt</span></code></pre></div></div>
+</div>
+</section>
+<section id="리스트는-쓰레기인가" class="level1">
+<h1>3. 리스트는 쓰레기인가?</h1>
+<section id="a.-벡터화연산브로드캐스팅-불가능" class="level2">
+<h2 class="anchored" data-anchor-id="a.-벡터화연산브로드캐스팅-불가능">A. 벡터화연산(브로드캐스팅) 불가능</h2>
+<p><code>-</code> 벡터화연산 불가능 (최악의 단점)</p>
+<div id="b9306300-9ce4-4ada-a8fa-3c64fe60d52a" class="cell" data-outputid="139d8099-5441-4c90-9e06-ddb26a15f6dd" data-execution_count="54">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1">lst <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> [<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>]</span>
+<span id="cb2-2">lst <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span></span></code></pre></div></div>
+<div class="cell-output cell-output-error">
+<div class="ansi-escaped-output">
+<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+
+<span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
+
+Cell <span class="ansi-green-fg">In[54], line 2</span>
+
+<span class="ansi-green-fg ansi-bold">      1</span> lst <span style="color:rgb(98,98,98)">=</span> [<span style="color:rgb(98,98,98)">1</span>,<span style="color:rgb(98,98,98)">2</span>,<span style="color:rgb(98,98,98)">3</span>]
+
+<span class="ansi-green-fg">----&gt; 2</span> <span class="ansi-yellow-bg">lst</span><span class="ansi-yellow-bg"> </span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">+</span><span class="ansi-yellow-bg"> </span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">1</span>
+
+
+
+<span class="ansi-red-fg">TypeError</span>: can only concatenate list (not "int") to list</pre>
+</div>
+</div>
+</div>
+<div id="57266e27-d2f3-4da3-b282-548b8c39c756" class="cell" data-outputid="80a37ff2-f04d-4ffb-9674-ca27b02d8a1a">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1">arr <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> np.array([<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>])</span>
+<span id="cb3-2">arr <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span></span></code></pre></div></div>
+<div class="cell-output cell-output-display" data-execution_count="7">
+<pre><code>array([2, 3, 4])</code></pre>
+</div>
+</div>
+</section>
+<section id="b.-bool을-이용한-인덱싱이-불가능" class="level2">
+<h2 class="anchored" data-anchor-id="b.-bool을-이용한-인덱싱이-불가능">B. bool을 이용한 인덱싱이 불가능</h2>
+<p><code>-</code> True, False 가 포함된 array를 이용한 인덱싱이 불가능하다.</p>
+<p><code>-</code> 넘파이에서 bool을 이용한 인덱싱</p>
+<div id="ab5eee03-d8ad-4975-840b-34b90a98a9cb" class="cell" data-outputid="2461c54b-1915-43a9-8263-c16f5447c466">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1">arr <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> np.array([<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">4</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">5</span>])</span>
+<span id="cb5-2">arr[arr<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>]</span></code></pre></div></div>
+<div class="cell-output cell-output-display" data-execution_count="12">
+<pre><code>array([4, 5])</code></pre>
+</div>
+</div>
+<p><code>-</code> 리스트는 불가능</p>
+<div id="651c72aa-5652-43d8-93b5-bb17c1369f65" class="cell" data-outputid="b7077b96-b687-446d-ec40-356286387658">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1">lst <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> [<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">4</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">5</span>]</span>
+<span id="cb7-2">lst[lst<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>]</span></code></pre></div></div>
+<div class="cell-output cell-output-error">
+<div class="ansi-escaped-output">
+<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
+Cell <span class="ansi-green-fg">In[13], line 2</span>
+<span class="ansi-green-fg ansi-bold">      1</span> lst <span style="color:rgb(98,98,98)">=</span> [<span style="color:rgb(98,98,98)">1</span>,<span style="color:rgb(98,98,98)">2</span>,<span style="color:rgb(98,98,98)">3</span>,<span style="color:rgb(98,98,98)">4</span>,<span style="color:rgb(98,98,98)">5</span>]
+<span class="ansi-green-fg">----&gt; 2</span> lst[<span class="ansi-yellow-bg">lst</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">&gt;</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">3</span>]
+
+<span class="ansi-red-fg">TypeError</span>: '&gt;' not supported between instances of 'list' and 'int'</pre>
+</div>
+</div>
+</div>
+<div id="4b89aa6a-9f3d-4c3f-8cb1-927a6405d258" class="cell" data-outputid="3c1bef90-fae4-4ed0-acf3-9c7a6554feea">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1">lst<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>  <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#이 부분이 실행 안됨</span></span></code></pre></div></div>
+<div class="cell-output cell-output-error">
+<div class="ansi-escaped-output">
+<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
+Cell <span class="ansi-green-fg">In[14], line 1</span>
+<span class="ansi-green-fg">----&gt; 1</span> <span class="ansi-yellow-bg">lst</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">&gt;</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">3</span>
+
+<span class="ansi-red-fg">TypeError</span>: '&gt;' not supported between instances of 'list' and 'int'</pre>
+</div>
+</div>
+</div>
+</section>
+<section id="c.-넘파이-특화-메소드-사용불가능" class="level2">
+<h2 class="anchored" data-anchor-id="c.-넘파이-특화-메소드-사용불가능">C. 넘파이 특화 메소드 사용불가능</h2>
+<p><code>-</code> 넘파이 특화 메소드</p>
+<div id="b8e8cda7-e55b-4652-8cd1-2d33fdd1b655" class="cell" data-outputid="acc3d145-d568-42ea-c41b-b882bc700126">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1">arr <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> np.array([<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">5</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">4</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>])</span>
+<span id="cb9-2">arr</span></code></pre></div></div>
+<div class="cell-output cell-output-display" data-execution_count="15">
+<pre><code>array([5, 4, 3, 2, 1])</code></pre>
+</div>
+</div>
+<div id="566c0e1a-3e1d-4628-8704-3b43f36a6cbe" class="cell" data-outputid="a014b656-22c0-4e03-d121-25e3ba4808a4">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1">arr.<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">min</span>(), arr.<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">max</span>(), arr.mean(), arr.argmin(), arr.argmax()</span></code></pre></div></div>
+<div class="cell-output cell-output-display" data-execution_count="23">
+<pre><code>(1, 5, 3.0, 4, 0)</code></pre>
+</div>
+</div>
+<div id="debd202c-89ce-4891-9d63-564a4fd51858" class="cell" data-outputid="16c0bc2f-60f2-49a8-ddbd-b9294c56e792">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1">arr.sort()</span>
+<span id="cb13-2">arr</span></code></pre></div></div>
+<div class="cell-output cell-output-display" data-execution_count="25">
+<pre><code>array([1, 2, 3, 4, 5])</code></pre>
+</div>
+</div>
+<p><code>-</code> 리스트는?</p>
+<div id="e62094a7-43a7-4f8b-8271-586432a4a857" class="cell" data-outputid="92fd1829-3ada-4b6e-9405-a35823ae14e7">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1">lst <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> [<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">5</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">4</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>]</span>
+<span id="cb15-2">lst</span></code></pre></div></div>
+<div class="cell-output cell-output-display" data-execution_count="26">
+<pre><code>[5, 4, 3, 2, 1]</code></pre>
+</div>
+</div>
+<div id="ba60bcdc-7cbd-4b4e-becb-61f9e8e93a8a" class="cell" data-outputid="77157adc-2caf-45fe-85b0-b20ddc4df7ea">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1">lst.<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">min</span>(), lst.<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">max</span>(), lst.mean(), lst.argmin(), lst.argmax()  <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#모두 다 안됨</span></span></code></pre></div></div>
+<div class="cell-output cell-output-error">
+<div class="ansi-escaped-output">
+<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">AttributeError</span>                            Traceback (most recent call last)
+Cell <span class="ansi-green-fg">In[32], line 1</span>
+<span class="ansi-green-fg">----&gt; 1</span> <span class="ansi-yellow-bg">lst</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">min</span>(), lst<span style="color:rgb(98,98,98)">.</span>max(), lst<span style="color:rgb(98,98,98)">.</span>mean(), lst<span style="color:rgb(98,98,98)">.</span>argmin(), lst<span style="color:rgb(98,98,98)">.</span>argmax()
+
+<span class="ansi-red-fg">AttributeError</span>: 'list' object has no attribute 'min'</pre>
+</div>
+</div>
+</div>
+<div id="ffe529d4-fefc-484e-9f5f-72ddfcab4bc0" class="cell" data-outputid="fe2bd4c5-5351-43ea-8ac2-431b14cfccf3">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1">lst.sort()</span>
+<span id="cb18-2">lst</span></code></pre></div></div>
+<div class="cell-output cell-output-display" data-execution_count="33">
+<pre><code>[1, 2, 3, 4, 5]</code></pre>
+</div>
+</div>
+<p><code># 메소드란?</code> – 자료형에 종속된 특수기술</p>
+<div id="be9764bd-d550-4db2-9fcb-3082819c13d6" class="cell" data-outputid="c335746e-3bc3-4631-c2aa-c1b5826a0076">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># 넘파이 특수기술 / '.'찍고 tab 누르면 기술명(?)을 찾아주는 기능 있음(주피터 한정인가?)</span></span>
+<span id="cb20-2">arr <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> np.array([<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>])</span>
+<span id="cb20-3">arr.<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">max</span>() <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># max(arr)로 해석</span></span></code></pre></div></div>
+<div class="cell-output cell-output-display" data-execution_count="38">
+<pre><code>3</code></pre>
+</div>
+</div>
+<div id="8affecab-1d54-406b-8176-d2296b39e47d" class="cell" data-outputid="94342553-6011-47ca-d6d4-063f483622d4">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># ?.max() 이런건 넘파이 특수기술 이니까 ?자리에 리스트일 경우는 실행안됨 / sort 같은 건 우연히 특수기술이 겹치는 것</span></span>
+<span id="cb22-2">lst <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> [<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>]</span>
+<span id="cb22-3">lst.<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">max</span>()</span></code></pre></div></div>
+<div class="cell-output cell-output-error">
+<div class="ansi-escaped-output">
+<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">AttributeError</span>                            Traceback (most recent call last)
+Cell <span class="ansi-green-fg">In[40], line 3</span>
+<span class="ansi-green-fg ansi-bold">      1</span> <span style="font-style:italic;color:rgb(95,135,135)"># ?.max() 이런건 넘파이 특수기술 이니까 ?자리에 리스트일 경우는 실행안됨</span>
+<span class="ansi-green-fg ansi-bold">      2</span> lst <span style="color:rgb(98,98,98)">=</span> [<span style="color:rgb(98,98,98)">1</span>,<span style="color:rgb(98,98,98)">2</span>,<span style="color:rgb(98,98,98)">3</span>]
+<span class="ansi-green-fg">----&gt; 3</span> <span class="ansi-yellow-bg">lst</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">max</span>()
+
+<span class="ansi-red-fg">AttributeError</span>: 'list' object has no attribute 'max'</pre>
+</div>
+</div>
+</div>
+<div id="bd0e85a5-ec03-4bfd-a589-1b421ac1cee7" class="cell" data-outputid="67756c8b-666f-41de-e6e7-60aa94f480dd">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># 리스트의 특수기술</span></span>
+<span id="cb23-2">lst <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> [<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>]</span>
+<span id="cb23-3">lst.append(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">4</span>) <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># append(lst,4) 로 해석</span></span>
+<span id="cb23-4">lst</span></code></pre></div></div>
+<div class="cell-output cell-output-display" data-execution_count="50">
+<pre><code>[1, 2, 3, 4]</code></pre>
+</div>
+</div>
+<div id="61a114c1" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1">arr.append(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">4</span>) <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># append는 np에서는 사용 불가</span></span>
+<span id="cb25-2">arr</span></code></pre></div></div>
+<div class="cell-output cell-output-error">
+<div class="ansi-escaped-output">
+<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+
+Cell <span class="ansi-green-fg">In[5], line 1</span>
+
+<span class="ansi-green-fg">----&gt; 1</span> <span class="ansi-yellow-bg">arr</span><span style="color:rgb(98,98,98)">.</span>append(<span style="color:rgb(98,98,98)">4</span>)
+
+<span class="ansi-green-fg ansi-bold">      2</span> arr
+
+
+
+<span class="ansi-red-fg">NameError</span>: name 'arr' is not defined</pre>
+</div>
+</div>
+</div>
+<div id="4d94db36-8c67-43ee-9d1e-9694f5fe68d5" class="cell" data-outputid="d42d8800-b0e9-490c-a79e-c037d30ef177">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># 문자열 특수기술</span></span>
+<span id="cb26-2">s <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'asdf'</span>  <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#type(s)는 str</span></span>
+<span id="cb26-3">s.capitalize() <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># capitalize(s) 로 해석</span></span></code></pre></div></div>
+<div class="cell-output cell-output-display" data-execution_count="51">
+<pre><code>'Asdf'</code></pre>
+</div>
+</div>
+<p>예를들어, ????.func_name() 이거는 –&gt; func_name(????) 이런식으로 생각하면 됨</p>
+<p>????.func_name(x) 이거는 –&gt; func_name(????, x) 이렇게</p>
+<p>????.func_name(x,y) –&gt; func_name(????,x,y) 이런식으로 생각</p>
+<div id="6681cd25" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1">lst <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> [<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>]</span>
+<span id="cb28-2"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">type</span>(lst), <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">type</span>(lst[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>])  <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#lst의 타입은 list, lst의 첫번째 원소의 타입은 int</span></span></code></pre></div></div>
+<div class="cell-output cell-output-display">
+<pre><code>(list, int)</code></pre>
+</div>
+</div>
+<div id="c5dc6fc7-6f37-4638-9d2b-b9aa1a2dee60" class="cell" data-outputid="c5e7065d-0834-4c5f-96bd-5617d4c01b94">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># 문자열 특수기술</span></span>
+<span id="cb30-2">s <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'-'</span></span>
+<span id="cb30-3">lst <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> [<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'x'</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'y'</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'z'</span>]</span>
+<span id="cb30-4">s.join(lst) <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># join(s,lst) 로 해석</span></span></code></pre></div></div>
+<div class="cell-output cell-output-display" data-execution_count="62">
+<pre><code>'x-y-z'</code></pre>
+</div>
+</div>
+<ul>
+<li><code>join(s,lst)</code>의 뜻: lst의 각 원소를 모두 “이어서” 하나의 문자열로 만들어라. 단, 원소간의 구분은 <code>s</code>에 저장된 문자열로 하라.</li>
+</ul>
+<div id="d28ced3e-37d8-425e-b485-22ead4b081bf" class="cell" data-outputid="19995535-8134-4cb4-a138-6195ebbf7203">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># 문자열 특수기술 응용</span></span>
+<span id="cb32-2"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># s=''</span></span>
+<span id="cb32-3"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># lst = ['x', 'y', 'z']</span></span>
+<span id="cb32-4"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># s.join(lst) --&gt; join(s,lst)로 해석</span></span>
+<span id="cb32-5"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">''</span>.join([<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'x'</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'y'</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'z'</span>])</span></code></pre></div></div>
+<div class="cell-output cell-output-display">
+<pre><code>'xyz'</code></pre>
+</div>
+</div>
+<div id="10b41e4a" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1">join(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">''</span>,[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'x'</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'y'</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'z'</span>]) <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#실제로 join 이라는 함수가 있는 것은 아님. 이렇게 해석된다는 것일 뿐</span></span></code></pre></div></div>
+<div class="cell-output cell-output-error">
+<div class="ansi-escaped-output">
+<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+
+Cell <span class="ansi-green-fg">In[10], line 1</span>
+
+<span class="ansi-green-fg">----&gt; 1</span> <span class="ansi-yellow-bg">join</span>(<span style="color:rgb(175,0,0)">'</span><span style="color:rgb(175,0,0)">'</span>,[<span style="color:rgb(175,0,0)">'</span><span style="color:rgb(175,0,0)">x</span><span style="color:rgb(175,0,0)">'</span>,<span style="color:rgb(175,0,0)">'</span><span style="color:rgb(175,0,0)">y</span><span style="color:rgb(175,0,0)">'</span>,<span style="color:rgb(175,0,0)">'</span><span style="color:rgb(175,0,0)">z</span><span style="color:rgb(175,0,0)">'</span>])
+
+
+
+<span class="ansi-red-fg">NameError</span>: name 'join' is not defined</pre>
+</div>
+</div>
+</div>
+<div id="c395fe77-3efe-4599-9a6a-4e6c1a8f1c8e" class="cell" data-outputid="f0aafea1-ba76-44d9-8f2e-d4919689b871">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># 문자열 특수기능</span></span>
+<span id="cb35-2">s <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"제 이름은 </span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{}</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;"> 입니다."</span> <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#파이썬에서 ''로 묶으나, ""로 묶으나 동일</span></span>
+<span id="cb35-3">name <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"최규빈"</span></span>
+<span id="cb35-4">s.<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">format</span>(name) <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># format(s,name)</span></span></code></pre></div></div>
+<div class="cell-output cell-output-display">
+<pre><code>'제 이름은 최규빈 입니다.'</code></pre>
+</div>
+</div>
+<ul>
+<li><code>format(s,name)</code>의 뜻: s라는 문자열의 포맷에 <code>{}</code> 자리에 name을 끼워넣어라.</li>
+</ul>
+</section>
+<section id="d.-파이썬에서-쓰레기-같은-자료형은-없다." class="level2">
+<h2 class="anchored" data-anchor-id="d.-파이썬에서-쓰레기-같은-자료형은-없다.">D. 파이썬에서 쓰레기 같은 자료형은 없다.</h2>
+<p><code>-</code> 파이썬에는 각 자료형마다 사용할 수 있는 고유기술(=메소드)이나 문법이 있음.</p>
+<p><code>-</code> 내가 생각할 때 리스트는 필요없는 자료형이야 = 난 리스트만 가지고 있는 어떠한 고유특징을 활용하지 못해.</p>
+<p><code>-</code> 파이썬을 잘 하려면 자료형에 따른 고유 특징을 이해하고 활용할 줄 알아야 한다.</p>
+<ul>
+<li>기본자료형: str, list, tuple, dict, set – 이러한 자료형을 이해하고 기능을 활용해야함(int, float도 있지만)</li>
+<li>모듈: 넘파이배열, 판다스</li>
+</ul>
+</section>
+</section>
+<section id="년-수능-확통-23" class="level1">
+<h1>4. 2024년 수능 – 확통 23</h1>
+<section id="a.-문제파악" class="level2">
+<h2 class="anchored" data-anchor-id="a.-문제파악">A. 문제파악</h2>
+<p><img src="https://github.com/guebin/PP2024/blob/main/imgs/2024-수능-확통-23.png?raw=true" class="img-fluid"></p>
+<p><code>-</code> 기존의 문제들과 다르게 numpy를 이용하여 풀기는 어려울 것 같다. 뭔가 기존문제들과 결이 다름</p>
+<p><code>-</code> 그런데 코딩으로 해결가능할 것 같긴 함</p>
+</section>
+<section id="b.-슈도알고리즘" class="level2">
+<h2 class="anchored" data-anchor-id="b.-슈도알고리즘">B. 슈도알고리즘</h2>
+<p><code>1.</code> 편의상 <img src="https://latex.codecogs.com/png.latex?%5Bx,x,y,y,z%5D">를 <img src="https://latex.codecogs.com/png.latex?%5Bx_1,x_2,y_1,y_2,z%5D">와 같이 생각하고 나열한다. (5! = 120 개만큼 경우가 나열되겠지)</p>
+<p><code>2.</code> 중복을 제거한다. 즉 아래는 모두 같은 경우로 생각한다.</p>
+<ul>
+<li><img src="https://latex.codecogs.com/png.latex?%5Bx_1,x_2,y_1,y_2,z%5D"></li>
+<li><img src="https://latex.codecogs.com/png.latex?%5Bx_1,x_2,y_2,y_1,z%5D"></li>
+<li><img src="https://latex.codecogs.com/png.latex?%5Bx_2,x_1,y_1,y_2,z%5D"></li>
+<li><img src="https://latex.codecogs.com/png.latex?%5Bx_2,x_1,y_2,y_1,z%5D"></li>
+</ul>
+</section>
+<section id="c.-예비학습" class="level2">
+<h2 class="anchored" data-anchor-id="c.-예비학습">C. 예비학습</h2>
+<p><code># 개념1</code> – 집합이라는 자료형이 있음.</p>
+<div id="432033f4-0afd-40cc-8023-3e5863963871" class="cell" data-outputid="7a1cc5f1-10c9-4eb8-e6d8-58cf057c5d87">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1">a <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> {<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>}</span>
+<span id="cb37-2"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">type</span>(a)</span></code></pre></div></div>
+<div class="cell-output cell-output-display" data-execution_count="11">
+<pre><code>set</code></pre>
+</div>
+</div>
+<p>그런데 집합은 중복된 원소를 포함하지 않았음 (중학교때 배운듯)</p>
+<div id="1542e21c-d687-4c48-9589-dc457ae44d3f" class="cell" data-outputid="4bd9f511-a2bf-4497-fbbf-63ff3a48164b">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1">a <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> {<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>}</span>
+<span id="cb39-2">a</span></code></pre></div></div>
+<div class="cell-output cell-output-display" data-execution_count="13">
+<pre><code>{1, 2, 3}</code></pre>
+</div>
+</div>
+<p><code>#</code></p>
+<p><code># 개념2</code> – 자료형변환을 이용하여 중복된 원소를 제거</p>
+<p>아래와 같은 자료형이 있다고 하자.</p>
+<div id="e369db23-87be-4644-8159-40ae41dcb678" class="cell" data-outputid="6dea9c16-456d-41d6-ae7e-c0543448f49f">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1">lst <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> [<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>]</span>
+<span id="cb41-2">lst</span></code></pre></div></div>
+<div class="cell-output cell-output-display" data-execution_count="14">
+<pre><code>[1, 2, 3, 3, 3]</code></pre>
+</div>
+</div>
+<p>중복된 것을 제외하고 싶다면?</p>
+<div id="7f19ec5a-9ec6-4051-83f0-c774cd7c57cb" class="cell" data-outputid="363aa2d8-fc22-4dc1-9cc9-f01d18de1339">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#set(lst) --&gt; lst의 자료형을 set으로 변환</span></span>
+<span id="cb43-2"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">list</span>(<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">set</span>(lst)) <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># 자료형변환</span></span></code></pre></div></div>
+<div class="cell-output cell-output-display" data-execution_count="17">
+<pre><code>[1, 2, 3]</code></pre>
+</div>
+</div>
+<p><code>#</code></p>
+<p><code># 개념3</code> – 고유의 원소 숫자 세기</p>
+<div id="9e5243d9-df46-42db-8ce9-70d7b05c5435" class="cell" data-outputid="3208c078-8a19-4f6a-d0b8-41ab84442523">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb45" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1">lst <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> [<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">4</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">4</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">5</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">5</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">6</span>]</span>
+<span id="cb45-2">lst</span></code></pre></div></div>
+<div class="cell-output cell-output-display">
+<pre><code>[1, 2, 3, 3, 3, 4, 4, 5, 5, 6]</code></pre>
+</div>
+</div>
+<div id="f5e27bc1" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb47" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">len</span>(lst)</span></code></pre></div></div>
+<div class="cell-output cell-output-display">
+<pre><code>10</code></pre>
+</div>
+</div>
+<div id="468b766c-29a0-4b4a-a599-96a976050afa" class="cell" data-outputid="192ad053-3bd7-45d7-d998-9a000e1114c0">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb49" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">len</span>(<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">set</span>(lst))</span></code></pre></div></div>
+<div class="cell-output cell-output-display">
+<pre><code>6</code></pre>
+</div>
+</div>
+<p><code>#</code></p>
+<p><code># 개념4</code> – for문</p>
+<p>아래를 출력하고 싶다고 하자.</p>
+<pre><code>이효리는 핑클의 멤버이다.
+옥주현은 핑클의 멤버이다.
+성유리는 핑클의 멤버이다.
+이진은 핑클의 멤버이다.</code></pre>
+<p>(풀이1) – 단순한 풀이</p>
+<div id="3eaadf19-ba36-4104-b657-3cf477036d1f" class="cell" data-outputid="d7a8af23-c3ac-45af-cb5d-e44ac2dddb01">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb52" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb52-1"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"이효리는 핑클의 멤버이다."</span>)</span>
+<span id="cb52-2"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"옥주현은 핑클의 멤버이다."</span>)</span>
+<span id="cb52-3"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"성유리는 핑클의 멤버이다."</span>)</span>
+<span id="cb52-4"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"이진은 핑클의 멤버이다."</span>)</span></code></pre></div></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>이효리는 핑클의 멤버이다.
+옥주현은 핑클의 멤버이다.
+성유리는 핑클의 멤버이다.
+이진은 핑클의 멤버이다.</code></pre>
+</div>
+</div>
+<p>(풀이2) – 문자열 특수기능을 이용해볼까?</p>
+<p>“{} 핑클의 멤버이다.” 이 공통포맷이므로, 아래와 같이 수행할 수 있겠다.</p>
+<div id="698e86bb" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb54" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb54-1"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{}</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;"> 핑클의 멤버이다."</span>.<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">format</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"이효리는"</span>))</span>
+<span id="cb54-2"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{}</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;"> 핑클의 멤버이다."</span>.<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">format</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"옥주현은"</span>))</span>
+<span id="cb54-3"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{}</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;"> 핑클의 멤버이다."</span>.<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">format</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"성유리는"</span>))</span>
+<span id="cb54-4"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{}</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;"> 핑클의 멤버이다."</span>.<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">format</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"이진은"</span>))</span></code></pre></div></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>이효리는 핑클의 멤버이다.
+옥주현은 핑클의 멤버이다.
+성유리는 핑클의 멤버이다.
+이진은 핑클의 멤버이다.</code></pre>
+</div>
+</div>
+<div id="4b1955f3" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb56" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb56-1">lst <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> [<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"이효리는"</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"옥주현은"</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"성유리는"</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"이진은"</span>]</span>
+<span id="cb56-2"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{}</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;"> 핑클의 멤버이다."</span>.<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">format</span>(lst[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>]))</span>
+<span id="cb56-3"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{}</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;"> 핑클의 멤버이다."</span>.<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">format</span>(lst[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>]))</span>
+<span id="cb56-4"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{}</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;"> 핑클의 멤버이다."</span>.<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">format</span>(lst[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>]))</span>
+<span id="cb56-5"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{}</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;"> 핑클의 멤버이다."</span>.<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">format</span>(lst[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>]))</span></code></pre></div></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>이효리는 핑클의 멤버이다.
+옥주현은 핑클의 멤버이다.
+성유리는 핑클의 멤버이다.
+이진은 핑클의 멤버이다.</code></pre>
+</div>
+</div>
+<div id="73851a24-7f46-4882-8c4d-fe1d3f782f96" class="cell" data-outputid="a6c87ddb-7fd2-4532-e3c4-0695d7210962">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb58" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb58-1">lst <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> [<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"이효리는"</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"옥주현은"</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"성유리는"</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"이진은"</span>]</span>
+<span id="cb58-2">i <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span></span>
+<span id="cb58-3"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{}</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;"> 핑클의 멤버이다."</span>.<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">format</span>(lst[i]))</span>
+<span id="cb58-4">i <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span></span>
+<span id="cb58-5"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{}</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;"> 핑클의 멤버이다."</span>.<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">format</span>(lst[i]))</span>
+<span id="cb58-6">i <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span></span>
+<span id="cb58-7"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{}</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;"> 핑클의 멤버이다."</span>.<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">format</span>(lst[i]))</span>
+<span id="cb58-8">i <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span></span>
+<span id="cb58-9"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{}</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;"> 핑클의 멤버이다."</span>.<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">format</span>(lst[i]))</span></code></pre></div></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>이효리는 핑클의 멤버이다.
+옥주현은 핑클의 멤버이다.
+성유리는 핑클의 멤버이다.
+이진은 핑클의 멤버이다.</code></pre>
+</div>
+</div>
+<p>(풀이3) - for와 문자열 특수기능을 이용해볼까?</p>
+<div id="22e0229b-a0e0-4518-bef8-e6fb8aa73d49" class="cell" data-outputid="13726114-2f25-4595-f679-ac3b31f9ad8c">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb60" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb60-1">lst <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> [<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"이효리는"</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"옥주현은"</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"성유리는"</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"이진은"</span>]</span>
+<span id="cb60-2"><span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> i <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> [<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>]:   <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># ':' 붙이기 기억!</span></span>
+<span id="cb60-3">    <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{}</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;"> 핑클의 멤버이다."</span>.<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">format</span>(lst[i]))  <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># 들여쓰기 기억!!(정석 4칸/tab 1회)</span></span></code></pre></div></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>이효리는 핑클의 멤버이다.
+옥주현은 핑클의 멤버이다.
+성유리는 핑클의 멤버이다.
+이진은 핑클의 멤버이다.</code></pre>
+</div>
+</div>
+<p>(풀이4) - for와 문자열 특수기능을 이용해볼까? (2)</p>
+<p><code>[0,1,2,3]</code>은 대충 <code>range(4)</code>와 비슷한 것이므로 아래와 같이 수행할 수도 있겠음.</p>
+<div id="9bf99f97-4b5c-47a7-9f2d-51400ca38935" class="cell" data-outputid="c547af0b-cd33-4749-e710-75697efc5644">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb62" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb62-1">lst <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> [<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"이효리는"</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"옥주현은"</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"성유리는"</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"이진은"</span>]</span>
+<span id="cb62-2"><span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> i <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">range</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">4</span>):</span>
+<span id="cb62-3">    <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{}</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;"> 핑클의 멤버이다."</span>.<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">format</span>(lst[i]))</span></code></pre></div></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>이효리는 핑클의 멤버이다.
+옥주현은 핑클의 멤버이다.
+성유리는 핑클의 멤버이다.
+이진은 핑클의 멤버이다.</code></pre>
+</div>
+</div>
+<p>(풀이5) - for와 문자열 특수기능을 이용해볼까? (3)</p>
+<p>“```Python”하고 입력하면, python 코드를 실행없이 마크다운에서 텍스트로 입력 가능</p>
+<p>아래의 코드는 <img src="https://latex.codecogs.com/png.latex?i"> 자리에 <code>[0,1,2,3]</code>의 원소가 번갈아 대입되며 <code>??????</code>가 수행되었음.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb64" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb64-1">lst <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> [<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"이효리는"</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"옥주현은"</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"성유리는"</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"이진은"</span>]</span>
+<span id="cb64-2"><span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> i <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> [<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>]:</span>
+<span id="cb64-3">    ??????</span></code></pre></div></div>
+<p>아래의 코드도 <img src="https://latex.codecogs.com/png.latex?i"> 자리에 <code>range(4)</code>의 원소가 번갈아 대입되며 <code>??????</code>가 수행되었다고 해석가능.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb65" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb65-1">lst <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> [<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"이효리는"</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"옥주현은"</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"성유리는"</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"이진은"</span>]</span>
+<span id="cb65-2"><span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> i <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">range</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">4</span>):</span>
+<span id="cb65-3">    ??????</span></code></pre></div></div>
+<p>아래의 코드는 어떻게 실행될까??</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb66" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb66-1">lst <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> [<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"이효리는"</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"옥주현은"</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"성유리는"</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"이진은"</span>]</span>
+<span id="cb66-2"><span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> i <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> lst:</span>
+<span id="cb66-3">    ??????</span></code></pre></div></div>
+<div id="a387a652-9f1e-462f-81cf-ff299dc8488b" class="cell" data-outputid="f2fb9c9b-3820-4d6b-9d7a-463dfae773a0">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb67" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb67-1"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># R과 다른 방식으로 동작하는 for문</span></span>
+<span id="cb67-2">lst <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> [<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"이효리는"</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"옥주현은"</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"성유리는"</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"이진은"</span>]</span>
+<span id="cb67-3"><span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> l <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> lst:   <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#i를 쓰기도 하지만, list의 한 원소라는 의미로 'l'이라고 쓰겠음</span></span>
+<span id="cb67-4">    <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{}</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;"> 핑클의 멤버이다."</span>.<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">format</span>(l))</span></code></pre></div></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>이효리는 핑클의 멤버이다.
+옥주현은 핑클의 멤버이다.
+성유리는 핑클의 멤버이다.
+이진은 핑클의 멤버이다.</code></pre>
+</div>
+</div>
+<p><code>#</code></p>
+<p><code># 개념5</code> – for문을 이용하여 리스트의 원소 추가하기</p>
+<div id="6a19356b" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb69" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb69-1">lst2 <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> [] <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># lst2 = list() 와 같은결과임 &lt;-- 비어있는 리스트 만듦</span></span>
+<span id="cb69-2">lst <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> [<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"이효리는"</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"옥주현은"</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"성유리는"</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"이진은"</span>]</span>
+<span id="cb69-3"><span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> l <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> lst:</span>
+<span id="cb69-4">    lst2.append(l)</span>
+<span id="cb69-5">lst2</span></code></pre></div></div>
+<div class="cell-output cell-output-display">
+<pre><code>['이효리는', '옥주현은', '성유리는', '이진은']</code></pre>
+</div>
+</div>
+<div id="8bc1d2d1-04d4-430d-a56d-0f143a444d5b" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb71" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb71-1">lst2 <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> [] <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># lst2 = list() 와 같은결과임</span></span>
+<span id="cb71-2">lst <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> [<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"이효리는"</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"옥주현은"</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"성유리는"</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"이진은"</span>]</span>
+<span id="cb71-3"><span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> l <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> lst:</span>
+<span id="cb71-4">    lst2.append(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{}</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;"> 핑클의 멤버이다."</span>.<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">format</span>(l))</span></code></pre></div></div>
+</div>
+<div id="b00f9616-8943-4cf0-829d-3d2eb800642c" class="cell" data-outputid="baa19531-3f18-4f03-bc81-f4b44d78c046">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb72" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb72-1">lst2</span></code></pre></div></div>
+<div class="cell-output cell-output-display">
+<pre><code>['이효리는 핑클의 멤버이다.', '옥주현은 핑클의 멤버이다.', '성유리는 핑클의 멤버이다.', '이진은 핑클의 멤버이다.']</code></pre>
+</div>
+</div>
+<p>그런데 이걸 아래와 같이 해결할 수도 있다.</p>
+<div id="b8117153-ac96-4311-982b-c1a9473da9b6" class="cell" data-outputid="c1e22d5d-64f2-413b-86e6-df9297db41b0">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb74" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb74-1">lst <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> [<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"이효리는"</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"옥주현은"</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"성유리는"</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"이진은"</span>]</span>
+<span id="cb74-2">[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{}</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;"> 핑클의 멤버이다."</span>.<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">format</span>(l) <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> l <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> lst] <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># 리스트컴프리헨션 &lt;-- 잘 알아야할 개념</span></span></code></pre></div></div>
+<div class="cell-output cell-output-display">
+<pre><code>['이효리는 핑클의 멤버이다.', '옥주현은 핑클의 멤버이다.', '성유리는 핑클의 멤버이다.', '이진은 핑클의 멤버이다.']</code></pre>
+</div>
+</div>
+<p><code>#</code></p>
+<p><code># 개념6</code> – 리스트컴프리헨션</p>
+<p>집합을 표현하는 방법에는 원소나열법과 조건제시법이 있다.</p>
+<ul>
+<li>원소나열법: <img src="https://latex.codecogs.com/png.latex?%5C%7B2%5E0,2%5E1,2%5E2,2%5E3%5C%7D"></li>
+<li>조건제시법: <img src="https://latex.codecogs.com/png.latex?%5C%7B2%5Ei:%20%5Ctext%7B%20for%20%7D%20i=0,1,2,3%5C%7D"></li>
+</ul>
+<p>이중에서 조건제시법은 아래와 같이 표현할 수 있음.</p>
+<ul>
+<li><img src="https://latex.codecogs.com/png.latex?%5C%7B2%5Ei:%20%5Ctext%7B%20for%20%7D%20i%20%5Cin%20%5C%7B0,1,2,3%5C%7D%5C%7D"></li>
+</ul>
+<p>여기에서 <img src="https://latex.codecogs.com/png.latex?%5Cin"> 은 <code>in</code> 으로 읽으므로, 위의 표기법을 연상하여 파이썬 코드로 바꿔보면</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb76" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb76-1">[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">^</span>i: <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> i <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> [<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>]]</span></code></pre></div></div>
+<p>와 같은 방식으로 리스트의 원소를 표현할 수 있을 것 같다. 위의 코드는 실행되지 않지만 아래의 코드는 실행가능하다.</p>
+<div id="cf078aee-0b4d-4f11-997c-0a40c2134885" class="cell" data-outputid="34d1e292-920f-4384-9151-d53c1392ff55">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb77" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb77-1">[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">**</span>i <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> i <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> [<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>]] <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#조건제시법을 떠올리며 기억 --&gt; 원소를 정의하는</span></span></code></pre></div></div>
+<div class="cell-output cell-output-display">
+<pre><code>[1, 2, 4, 8]</code></pre>
+</div>
+</div>
+<div id="5c459a7c-bd80-41c0-ab65-0cef3a6be910" class="cell" data-outputid="4331ff35-ce0e-4fab-9c97-26a681a27ff5">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb79" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb79-1">[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">**</span>i <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> i <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">range</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">4</span>)] </span></code></pre></div></div>
+<div class="cell-output cell-output-display">
+<pre><code>[1, 2, 4, 8]</code></pre>
+</div>
+</div>
+<p>이를 응용하면</p>
+<div id="925c5090-873f-490d-b458-4e4c3ac449f6" class="cell" data-outputid="44d85bd8-e421-491b-a2a4-38fc714b0c0d">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb81" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb81-1">[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"asdf</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{}</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"</span>.<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">format</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">**</span>i) <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> i <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">range</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">4</span>)]</span></code></pre></div></div>
+<div class="cell-output cell-output-display" data-execution_count="73">
+<pre><code>['asdf1', 'asdf2', 'asdf4', 'asdf8']</code></pre>
+</div>
+</div>
+<p>이것을 다시 응용하면</p>
+<div id="ed2d30c9-cf36-4a1b-b196-86c8dc69176c" class="cell" data-outputid="60581c04-1a6e-41b3-b215-0e240a33d28a">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb83" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb83-1">lst <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> [<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"이효리는"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"성유리는"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"옥주현은"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"이진은"</span>]</span>
+<span id="cb83-2">[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{}</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;"> 핑클의 멤버이다."</span>.<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">format</span>(l) <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> l <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> lst] <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># 이 개념은 방법을 단순히 알고있는 수준을 넘어, 자동으로 빠르게 나오는 수준으로 숙달되어야함</span></span></code></pre></div></div>
+<div class="cell-output cell-output-display">
+<pre><code>['이효리는 핑클의 멤버이다.', '성유리는 핑클의 멤버이다.', '옥주현은 핑클의 멤버이다.', '이진은 핑클의 멤버이다.']</code></pre>
+</div>
+</div>
+<p><code>#</code></p>
+<p><code># 개념7</code> – 스트링의 인덱싱 (파이썬에서는 스트링을 array로 취급)</p>
+<div id="987db9e8-1c6b-4271-b7ec-bbf9379cdc50" class="cell" data-outputid="33ebb8b8-f0b2-44bc-8704-e2d56cdb5ba2">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb85" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb85-1">s <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'asdf'</span>  <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#""여도 상관없음(''와 동일)</span></span>
+<span id="cb85-2">s</span></code></pre></div></div>
+<div class="cell-output cell-output-display">
+<pre><code>'asdf'</code></pre>
+</div>
+</div>
+<div id="647a16ec" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb87" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb87-1"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">len</span>(s) <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># 하나의 값을 갖는 scala(?)는 len을 구할 수 없음. ex) s=True or s=33.22 이런 것은, len(s)를 구할 수 없음</span></span></code></pre></div></div>
+<div class="cell-output cell-output-display">
+<pre><code>4</code></pre>
+</div>
+</div>
+<div id="54a3806e-ea28-41c4-a52b-0290ba330ec6" class="cell" data-outputid="5bfc3d18-b3d1-40e1-c07c-cd04ade97459">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb89" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb89-1">s[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>]</span></code></pre></div></div>
+<div class="cell-output cell-output-display" data-execution_count="89">
+<pre><code>'a'</code></pre>
+</div>
+</div>
+<div id="5fd32263-b5bd-4b04-baf6-5b7f0e1f2986" class="cell" data-outputid="124fb1b8-b995-4da7-a781-5d94b1263645">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb91" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb91-1">s[<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>]</span></code></pre></div></div>
+<div class="cell-output cell-output-display" data-execution_count="90">
+<pre><code>'f'</code></pre>
+</div>
+</div>
+<div id="9cfbed91-2ffd-4a16-bb01-06f488ef6ec6" class="cell" data-outputid="6e324b66-538e-4c01-d635-7908a5d2bc21">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb93" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb93-1">s[:<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>]</span></code></pre></div></div>
+<div class="cell-output cell-output-display" data-execution_count="92">
+<pre><code>'as'</code></pre>
+</div>
+</div>
+<p><code>#</code></p>
+<p><code># 개념8</code> – 스트링과 리스트의 변환</p>
+<div id="a19d3f72-648a-409a-9ad5-1318a038dbdf" class="cell" data-outputid="cf651606-9c8e-4ac4-9eb9-44a01c01fb40">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb95" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb95-1">s <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'asdf'</span></span>
+<span id="cb95-2">s</span></code></pre></div></div>
+<div class="cell-output cell-output-display">
+<pre><code>'asdf'</code></pre>
+</div>
+</div>
+<div id="862aeabd-c5d4-4b45-8eb5-c4d527b931e9" class="cell" data-outputid="f1617473-e80a-45f7-81d6-f790fdebc73d">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb97" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb97-1">lst <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">list</span>(s)</span>
+<span id="cb97-2">lst</span></code></pre></div></div>
+<div class="cell-output cell-output-display">
+<pre><code>['a', 's', 'd', 'f']</code></pre>
+</div>
+</div>
+<div id="8d0cd378" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb99" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb99-1"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">str</span>(lst)[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>]</span></code></pre></div></div>
+<div class="cell-output cell-output-display">
+<pre><code>'['</code></pre>
+</div>
+</div>
+<div id="d04e39bc-48a3-4eda-a621-ff71fce276bc" class="cell" data-outputid="a98ffbef-20b7-4de1-ffdb-ac2f26046489">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb101" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb101-1"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">''</span>.join(lst)</span></code></pre></div></div>
+<div class="cell-output cell-output-display">
+<pre><code>'asdf'</code></pre>
+</div>
+</div>
+<p><code># 개념9</code> – 튜플자료형</p>
+<div id="39f85ed4-5630-4cd9-be87-ad514803d3aa" class="cell" data-outputid="d580b1ea-fc5b-4a19-ec18-5805009331ec">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb103" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb103-1">lst <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> [<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>]</span>
+<span id="cb103-2">lst</span></code></pre></div></div>
+<div class="cell-output cell-output-display" data-execution_count="106">
+<pre><code>[1, 2, 3]</code></pre>
+</div>
+</div>
+<div id="cf47fab9-3d7f-4e52-88cb-10ff034352fa" class="cell" data-outputid="86f34a40-21ef-4fbe-e53b-dcdbf3673459" data-execution_count="55">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb105" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb105-1">tpl <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> (<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>)  <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#소괄호로 선언</span></span>
+<span id="cb105-2">tpl</span></code></pre></div></div>
+<div class="cell-output cell-output-display">
+<pre><code>(1, 2, 3)</code></pre>
+</div>
+</div>
+<p>튜플은 (의미가 명확할때) 괄호를 생략할 수 있음</p>
+<div id="9f4015c0-446b-466f-bb2e-896305a819a1" class="cell" data-outputid="e41a3502-8341-4f57-9e17-d394d0cd0290">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb107" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb107-1">tpl <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span></span>
+<span id="cb107-2">tpl</span></code></pre></div></div>
+<div class="cell-output cell-output-display" data-execution_count="119">
+<pre><code>(1, 2, 3)</code></pre>
+</div>
+</div>
+<div id="02254c0c" class="cell" data-execution_count="56">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb109" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb109-1"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">type</span>(tpl)</span></code></pre></div></div>
+<div class="cell-output cell-output-display">
+<pre><code>tuple</code></pre>
+</div>
+</div>
+<p>튜플은 리스트와 매우 비슷함.</p>
+<div id="d649e7d9-e7e9-4073-9a89-1943a3c403d5" class="cell" data-outputid="4e693a2b-c812-42a7-dd3d-87c2d875e1b8">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb111" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb111-1">[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>] <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> [<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">4</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">5</span>]</span></code></pre></div></div>
+<div class="cell-output cell-output-display" data-execution_count="120">
+<pre><code>[1, 2, 3, 4, 5]</code></pre>
+</div>
+</div>
+<div id="c412094b-0364-42cf-b254-a04243401c51" class="cell" data-outputid="0ab5af06-8919-4e52-99df-f14290d74a42">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb113" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb113-1">(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>) <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> (<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">4</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">5</span>)</span></code></pre></div></div>
+<div class="cell-output cell-output-display" data-execution_count="121">
+<pre><code>(1, 2, 3, 4, 5)</code></pre>
+</div>
+</div>
+<p>아래도 가능</p>
+<div id="7ba7f8d6-e684-4ad7-bdd4-f41daf73580b" class="cell" data-outputid="7490ad8c-95a6-4d75-e6d8-44976028850a">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb115" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb115-1"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">''</span>.join([<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'a'</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'b'</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'c'</span>])</span></code></pre></div></div>
+<div class="cell-output cell-output-display" data-execution_count="123">
+<pre><code>'abc'</code></pre>
+</div>
+</div>
+<div id="4905dce6-18e2-4562-b820-d928b91c0f87" class="cell" data-outputid="7e9580b5-c96e-4e98-a193-823146f7b4cb">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb117" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb117-1"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">''</span>.join((<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'a'</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'b'</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'c'</span>))</span></code></pre></div></div>
+<div class="cell-output cell-output-display" data-execution_count="124">
+<pre><code>'abc'</code></pre>
+</div>
+</div>
+<p><code>#</code></p>
+<p><code># 개념10</code> – for를 수행하는 다양한 테크닉</p>
+<p><strong>우리가 알고 있는 <code>for</code></strong>: 리스트 비슷한 것을 만든 뒤, <strong>그 리스트의 원소를 하나씩 뽑아가면서</strong> 어떠한 반복구문 “??????” 수행하는 것.</p>
+<div id="cd3ce647-d7e5-4ffa-b2b5-bb25a4cc7af6" class="cell" data-execution_count="57">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb119" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb119-1"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> itertools  <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#모듈을 불러오기</span></span></code></pre></div></div>
+</div>
+<div id="97820f95" class="cell" data-execution_count="58">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb120" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb120-1"><span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> i <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> [<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'a'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'b'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'c'</span>]:</span>
+<span id="cb120-2">    <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(i)</span></code></pre></div></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>a
+b
+c</code></pre>
+</div>
+</div>
+<div id="04743e92-835c-4853-a388-970b08640a17" class="cell" data-outputid="678c41f5-4855-4f0e-f53e-4da60e91f54d">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb122" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb122-1"><span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> i <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> itertools.permutations([<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'a'</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'b'</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'c'</span>]):</span>
+<span id="cb122-2">    <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(i)</span></code></pre></div></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>('a', 'b', 'c')
+('a', 'c', 'b')
+('b', 'a', 'c')
+('b', 'c', 'a')
+('c', 'a', 'b')
+('c', 'b', 'a')</code></pre>
+</div>
+</div>
+<div id="11d0ab34-dbac-41ab-8408-6a236308fb7b" class="cell" data-outputid="0566265b-93ab-4ea8-93df-4d43b4b11abd">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb124" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb124-1"><span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> i <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> itertools.product([<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'x'</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'y'</span>],[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'a'</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'b'</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'c'</span>]):</span>
+<span id="cb124-2">    <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(i)</span></code></pre></div></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>('x', 'a')
+('x', 'b')
+('x', 'c')
+('y', 'a')
+('y', 'b')
+('y', 'c')</code></pre>
+</div>
+</div>
+<p><code>#</code></p>
+</section>
+<section id="d.-풀이" class="level2">
+<h2 class="anchored" data-anchor-id="d.-풀이">D. 풀이</h2>
+<p>아래의 문제를 풀어보자..</p>
+<p><img src="https://github.com/guebin/PP2024/blob/main/imgs/2024-수능-확통-23.png?raw=true" class="img-fluid"></p>
+<p>(풀이)</p>
+<div id="936d6026" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb126" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb126-1">[i <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> i <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> itertools.permutations([<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'x'</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'x'</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'y'</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'y'</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'z'</span>])] <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#전체 경우의 수 나열</span></span></code></pre></div></div>
+<div class="cell-output cell-output-display">
+<pre><code>[('x', 'x', 'y', 'y', 'z'),
+ ('x', 'x', 'y', 'z', 'y'),
+ ('x', 'x', 'y', 'y', 'z'),
+ ('x', 'x', 'y', 'z', 'y'),
+ ('x', 'x', 'z', 'y', 'y'),
+ ('x', 'x', 'z', 'y', 'y'),
+ ('x', 'y', 'x', 'y', 'z'),
+ ('x', 'y', 'x', 'z', 'y'),
+ ('x', 'y', 'y', 'x', 'z'),
+ ('x', 'y', 'y', 'z', 'x'),
+ ('x', 'y', 'z', 'x', 'y'),
+ ('x', 'y', 'z', 'y', 'x'),
+ ('x', 'y', 'x', 'y', 'z'),
+ ('x', 'y', 'x', 'z', 'y'),
+ ('x', 'y', 'y', 'x', 'z'),
+ ('x', 'y', 'y', 'z', 'x'),
+ ('x', 'y', 'z', 'x', 'y'),
+ ('x', 'y', 'z', 'y', 'x'),
+ ('x', 'z', 'x', 'y', 'y'),
+ ('x', 'z', 'x', 'y', 'y'),
+ ('x', 'z', 'y', 'x', 'y'),
+ ('x', 'z', 'y', 'y', 'x'),
+ ('x', 'z', 'y', 'x', 'y'),
+ ('x', 'z', 'y', 'y', 'x'),
+ ('x', 'x', 'y', 'y', 'z'),
+ ('x', 'x', 'y', 'z', 'y'),
+ ('x', 'x', 'y', 'y', 'z'),
+ ('x', 'x', 'y', 'z', 'y'),
+ ('x', 'x', 'z', 'y', 'y'),
+ ('x', 'x', 'z', 'y', 'y'),
+ ('x', 'y', 'x', 'y', 'z'),
+ ('x', 'y', 'x', 'z', 'y'),
+ ('x', 'y', 'y', 'x', 'z'),
+ ('x', 'y', 'y', 'z', 'x'),
+ ('x', 'y', 'z', 'x', 'y'),
+ ('x', 'y', 'z', 'y', 'x'),
+ ('x', 'y', 'x', 'y', 'z'),
+ ('x', 'y', 'x', 'z', 'y'),
+ ('x', 'y', 'y', 'x', 'z'),
+ ('x', 'y', 'y', 'z', 'x'),
+ ('x', 'y', 'z', 'x', 'y'),
+ ('x', 'y', 'z', 'y', 'x'),
+ ('x', 'z', 'x', 'y', 'y'),
+ ('x', 'z', 'x', 'y', 'y'),
+ ('x', 'z', 'y', 'x', 'y'),
+ ('x', 'z', 'y', 'y', 'x'),
+ ('x', 'z', 'y', 'x', 'y'),
+ ('x', 'z', 'y', 'y', 'x'),
+ ('y', 'x', 'x', 'y', 'z'),
+ ('y', 'x', 'x', 'z', 'y'),
+ ('y', 'x', 'y', 'x', 'z'),
+ ('y', 'x', 'y', 'z', 'x'),
+ ('y', 'x', 'z', 'x', 'y'),
+ ('y', 'x', 'z', 'y', 'x'),
+ ('y', 'x', 'x', 'y', 'z'),
+ ('y', 'x', 'x', 'z', 'y'),
+ ('y', 'x', 'y', 'x', 'z'),
+ ('y', 'x', 'y', 'z', 'x'),
+ ('y', 'x', 'z', 'x', 'y'),
+ ('y', 'x', 'z', 'y', 'x'),
+ ('y', 'y', 'x', 'x', 'z'),
+ ('y', 'y', 'x', 'z', 'x'),
+ ('y', 'y', 'x', 'x', 'z'),
+ ('y', 'y', 'x', 'z', 'x'),
+ ('y', 'y', 'z', 'x', 'x'),
+ ('y', 'y', 'z', 'x', 'x'),
+ ('y', 'z', 'x', 'x', 'y'),
+ ('y', 'z', 'x', 'y', 'x'),
+ ('y', 'z', 'x', 'x', 'y'),
+ ('y', 'z', 'x', 'y', 'x'),
+ ('y', 'z', 'y', 'x', 'x'),
+ ('y', 'z', 'y', 'x', 'x'),
+ ('y', 'x', 'x', 'y', 'z'),
+ ('y', 'x', 'x', 'z', 'y'),
+ ('y', 'x', 'y', 'x', 'z'),
+ ('y', 'x', 'y', 'z', 'x'),
+ ('y', 'x', 'z', 'x', 'y'),
+ ('y', 'x', 'z', 'y', 'x'),
+ ('y', 'x', 'x', 'y', 'z'),
+ ('y', 'x', 'x', 'z', 'y'),
+ ('y', 'x', 'y', 'x', 'z'),
+ ('y', 'x', 'y', 'z', 'x'),
+ ('y', 'x', 'z', 'x', 'y'),
+ ('y', 'x', 'z', 'y', 'x'),
+ ('y', 'y', 'x', 'x', 'z'),
+ ('y', 'y', 'x', 'z', 'x'),
+ ('y', 'y', 'x', 'x', 'z'),
+ ('y', 'y', 'x', 'z', 'x'),
+ ('y', 'y', 'z', 'x', 'x'),
+ ('y', 'y', 'z', 'x', 'x'),
+ ('y', 'z', 'x', 'x', 'y'),
+ ('y', 'z', 'x', 'y', 'x'),
+ ('y', 'z', 'x', 'x', 'y'),
+ ('y', 'z', 'x', 'y', 'x'),
+ ('y', 'z', 'y', 'x', 'x'),
+ ('y', 'z', 'y', 'x', 'x'),
+ ('z', 'x', 'x', 'y', 'y'),
+ ('z', 'x', 'x', 'y', 'y'),
+ ('z', 'x', 'y', 'x', 'y'),
+ ('z', 'x', 'y', 'y', 'x'),
+ ('z', 'x', 'y', 'x', 'y'),
+ ('z', 'x', 'y', 'y', 'x'),
+ ('z', 'x', 'x', 'y', 'y'),
+ ('z', 'x', 'x', 'y', 'y'),
+ ('z', 'x', 'y', 'x', 'y'),
+ ('z', 'x', 'y', 'y', 'x'),
+ ('z', 'x', 'y', 'x', 'y'),
+ ('z', 'x', 'y', 'y', 'x'),
+ ('z', 'y', 'x', 'x', 'y'),
+ ('z', 'y', 'x', 'y', 'x'),
+ ('z', 'y', 'x', 'x', 'y'),
+ ('z', 'y', 'x', 'y', 'x'),
+ ('z', 'y', 'y', 'x', 'x'),
+ ('z', 'y', 'y', 'x', 'x'),
+ ('z', 'y', 'x', 'x', 'y'),
+ ('z', 'y', 'x', 'y', 'x'),
+ ('z', 'y', 'x', 'x', 'y'),
+ ('z', 'y', 'x', 'y', 'x'),
+ ('z', 'y', 'y', 'x', 'x'),
+ ('z', 'y', 'y', 'x', 'x')]</code></pre>
+</div>
+</div>
+<div id="719ac885" class="cell" data-execution_count="63">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb128" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb128-1">lst <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> [i <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> i <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> itertools.permutations([<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'x'</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'x'</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'y'</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'y'</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'z'</span>])] </span>
+<span id="cb128-2">lst[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>] <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#첫번째 원소는 결과와 같은 튜플이 됨. </span></span></code></pre></div></div>
+<div class="cell-output cell-output-display">
+<pre><code>('x', 'x', 'y', 'y', 'z')</code></pre>
+</div>
+</div>
+<div id="024fddf0" class="cell" data-execution_count="65">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb130" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb130-1">[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">''</span>.join(i) <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> i <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> itertools.permutations([<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'x'</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'x'</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'y'</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'y'</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'z'</span>])]</span></code></pre></div></div>
+<div class="cell-output cell-output-display">
+<pre><code>['xxyyz',
+ 'xxyzy',
+ 'xxyyz',
+ 'xxyzy',
+ 'xxzyy',
+ 'xxzyy',
+ 'xyxyz',
+ 'xyxzy',
+ 'xyyxz',
+ 'xyyzx',
+ 'xyzxy',
+ 'xyzyx',
+ 'xyxyz',
+ 'xyxzy',
+ 'xyyxz',
+ 'xyyzx',
+ 'xyzxy',
+ 'xyzyx',
+ 'xzxyy',
+ 'xzxyy',
+ 'xzyxy',
+ 'xzyyx',
+ 'xzyxy',
+ 'xzyyx',
+ 'xxyyz',
+ 'xxyzy',
+ 'xxyyz',
+ 'xxyzy',
+ 'xxzyy',
+ 'xxzyy',
+ 'xyxyz',
+ 'xyxzy',
+ 'xyyxz',
+ 'xyyzx',
+ 'xyzxy',
+ 'xyzyx',
+ 'xyxyz',
+ 'xyxzy',
+ 'xyyxz',
+ 'xyyzx',
+ 'xyzxy',
+ 'xyzyx',
+ 'xzxyy',
+ 'xzxyy',
+ 'xzyxy',
+ 'xzyyx',
+ 'xzyxy',
+ 'xzyyx',
+ 'yxxyz',
+ 'yxxzy',
+ 'yxyxz',
+ 'yxyzx',
+ 'yxzxy',
+ 'yxzyx',
+ 'yxxyz',
+ 'yxxzy',
+ 'yxyxz',
+ 'yxyzx',
+ 'yxzxy',
+ 'yxzyx',
+ 'yyxxz',
+ 'yyxzx',
+ 'yyxxz',
+ 'yyxzx',
+ 'yyzxx',
+ 'yyzxx',
+ 'yzxxy',
+ 'yzxyx',
+ 'yzxxy',
+ 'yzxyx',
+ 'yzyxx',
+ 'yzyxx',
+ 'yxxyz',
+ 'yxxzy',
+ 'yxyxz',
+ 'yxyzx',
+ 'yxzxy',
+ 'yxzyx',
+ 'yxxyz',
+ 'yxxzy',
+ 'yxyxz',
+ 'yxyzx',
+ 'yxzxy',
+ 'yxzyx',
+ 'yyxxz',
+ 'yyxzx',
+ 'yyxxz',
+ 'yyxzx',
+ 'yyzxx',
+ 'yyzxx',
+ 'yzxxy',
+ 'yzxyx',
+ 'yzxxy',
+ 'yzxyx',
+ 'yzyxx',
+ 'yzyxx',
+ 'zxxyy',
+ 'zxxyy',
+ 'zxyxy',
+ 'zxyyx',
+ 'zxyxy',
+ 'zxyyx',
+ 'zxxyy',
+ 'zxxyy',
+ 'zxyxy',
+ 'zxyyx',
+ 'zxyxy',
+ 'zxyyx',
+ 'zyxxy',
+ 'zyxyx',
+ 'zyxxy',
+ 'zyxyx',
+ 'zyyxx',
+ 'zyyxx',
+ 'zyxxy',
+ 'zyxyx',
+ 'zyxxy',
+ 'zyxyx',
+ 'zyyxx',
+ 'zyyxx']</code></pre>
+</div>
+</div>
+<div id="4d98ae0b" class="cell" data-execution_count="67">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb132" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb132-1"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">set</span>([<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">''</span>.join(i) <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> i <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> itertools.permutations([<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'x'</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'x'</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'y'</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'y'</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'z'</span>])])</span></code></pre></div></div>
+<div class="cell-output cell-output-display">
+<pre><code>{'xxyyz',
+ 'xxyzy',
+ 'xxzyy',
+ 'xyxyz',
+ 'xyxzy',
+ 'xyyxz',
+ 'xyyzx',
+ 'xyzxy',
+ 'xyzyx',
+ 'xzxyy',
+ 'xzyxy',
+ 'xzyyx',
+ 'yxxyz',
+ 'yxxzy',
+ 'yxyxz',
+ 'yxyzx',
+ 'yxzxy',
+ 'yxzyx',
+ 'yyxxz',
+ 'yyxzx',
+ 'yyzxx',
+ 'yzxxy',
+ 'yzxyx',
+ 'yzyxx',
+ 'zxxyy',
+ 'zxyxy',
+ 'zxyyx',
+ 'zyxxy',
+ 'zyxyx',
+ 'zyyxx'}</code></pre>
+</div>
+</div>
+<div id="c586a390-182c-494a-bf72-7a1171694f06" class="cell" data-outputid="d0465d6b-dee9-4fb6-9860-f4fc233903a4">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb134" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb134-1"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">len</span>(<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">set</span>([<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">''</span>.join(i) <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> i <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> itertools.permutations([<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'x'</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'x'</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'y'</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'y'</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'z'</span>])]))</span></code></pre></div></div>
+<div class="cell-output cell-output-display" data-execution_count="144">
+<pre><code>30</code></pre>
+</div>
+</div>
+<p>—– 3/30/26 우선 여기까지.</p>
+</section>
+</section>
+<section id="년-수능-확통29" class="level1">
+<h1>5. 2024년 수능 – 확통29</h1>
+<section id="a.-문제이해" class="level2">
+<h2 class="anchored" data-anchor-id="a.-문제이해">A. 문제이해</h2>
+<p><img src="https://github.com/guebin/PP2024/blob/main/imgs/2024-수능-확통-29.png?raw=true" class="img-fluid"></p>
+</section>
+<section id="b.-슈도알고리즘-1" class="level2">
+<h2 class="anchored" data-anchor-id="b.-슈도알고리즘-1">B. 슈도알고리즘</h2>
+<p><code>1</code>. 아래의 경우를 모두 나열한다.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb136" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb136-1">a,b,c,d <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span></span>
+<span id="cb136-2">a,b,c,d <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span></span>
+<span id="cb136-3">....</span>
+<span id="cb136-4">a,b,c,d <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">6</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">6</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">6</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">6</span></span></code></pre></div></div>
+<p><code>2</code>. 조건 <img src="https://latex.codecogs.com/png.latex?a%20%5Cleq%20c%20%5Cleq%20d"> 와 <img src="https://latex.codecogs.com/png.latex?b%20%5Cleq%20c%20%5Cleq%20d"> 를 동시에 만족하는 경우를 센다.</p>
+</section>
+<section id="c.-예비학습-1" class="level2">
+<h2 class="anchored" data-anchor-id="c.-예비학습-1">C. 예비학습</h2>
+<p><code># 개념1</code> – for문과 튜플</p>
+<div id="4fbef83c-0ca7-4a7e-861e-6041259bc0e3" class="cell" data-outputid="7c2106fa-9bd0-4e99-d6c6-7cb7f22b4c82">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb137" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb137-1">lst <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> [[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'최규빈'</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">43052</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'M'</span>],[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'아이유'</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">54321</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'F'</span>],[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'하니'</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">11223</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'F'</span>]]</span>
+<span id="cb137-2">lst[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>]</span></code></pre></div></div>
+<div class="cell-output cell-output-display" data-execution_count="176">
+<pre><code>['최규빈', 43052, 'M']</code></pre>
+</div>
+</div>
+<p>아래의 코드가 가능하다.</p>
+<div id="4e406ae1-9f0d-4137-bbae-3496df517513" class="cell" data-outputid="8c23599b-e443-43d0-8350-feef516e261c">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb139" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb139-1"><span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> [name,student_id,sex] <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> lst:</span>
+<span id="cb139-2">    <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>([name,student_id,sex])</span>
+<span id="cb139-3"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># [name,student_id,sex] = ['최규빈', 43052, 'M']</span></span>
+<span id="cb139-4"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># print([name,student_id,sex])</span></span>
+<span id="cb139-5"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># [name,student_id,sex] = ['아이유', 54321, 'F']</span></span>
+<span id="cb139-6"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># print([name,student_id,sex])</span></span>
+<span id="cb139-7"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># [name,student_id,sex] = ['하니', 11223, 'F']</span></span>
+<span id="cb139-8"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># print([name,student_id,sex])</span></span></code></pre></div></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>['최규빈', 43052, 'M']
+['아이유', 54321, 'F']
+['하니', 11223, 'F']</code></pre>
+</div>
+</div>
+<p>리스트를 튜플로 바꾼다면?</p>
+<div id="553bd70e-307f-4efe-af13-a6ac3cc0d647" class="cell" data-outputid="056c6e59-cec1-4c62-a4a6-6232acfd00d4">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb141" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb141-1"><span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> (name,student_id,sex) <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> lst:</span>
+<span id="cb141-2">    <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>((name,student_id,sex))</span>
+<span id="cb141-3"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># (name,student_id,sex) = ['최규빈', 43052, 'M']</span></span>
+<span id="cb141-4"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># print((name,student_id,sex))</span></span>
+<span id="cb141-5"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># (name,student_id,sex) = ['아이유', 54321, 'F']</span></span>
+<span id="cb141-6"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># print((name,student_id,sex))</span></span>
+<span id="cb141-7"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># (name,student_id,sex) = ['하니', 11223, 'F']</span></span>
+<span id="cb141-8"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># print((name,student_id,sex))</span></span></code></pre></div></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>('최규빈', 43052, 'M')
+('아이유', 54321, 'F')
+('하니', 11223, 'F')</code></pre>
+</div>
+</div>
+<p><code>for (name,student_id,sex) in lst:</code> 대신에 <code>for name,student_id,sex in lst:</code> 도 가능</p>
+<div id="6bd0f367-9345-49f9-838e-2fe307dfb850" class="cell" data-outputid="73f7c618-8271-4653-a6f4-0a00136bb83f">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb143" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb143-1"><span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> name,student_id,sex <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> lst:</span>
+<span id="cb143-2">    <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>((name,student_id,sex))</span>
+<span id="cb143-3"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># name,student_id,sex = ['최규빈', 43052, 'M']</span></span>
+<span id="cb143-4"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># print((name,student_id,sex))</span></span>
+<span id="cb143-5"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># name,student_id,sex = ['아이유', 54321, 'F']</span></span>
+<span id="cb143-6"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># print((name,student_id,sex))</span></span>
+<span id="cb143-7"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># name,student_id,sex = ['하니', 11223, 'F']</span></span>
+<span id="cb143-8"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># print((name,student_id,sex))</span></span></code></pre></div></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>('최규빈', 43052, 'M')
+('아이유', 54321, 'F')
+('하니', 11223, 'F')</code></pre>
+</div>
+</div>
+<p>아래와 같이 컴프리헨션으로 만들 수도 있음.</p>
+<div id="183813e2-0c1c-4445-9d79-182bbe77aec9" class="cell" data-outputid="a1aaf0b4-d275-4260-9e2c-a751f85fb426">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb145" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb145-1">[[name,student_id,sex] <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> name,student_id,sex <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> lst]</span></code></pre></div></div>
+<div class="cell-output cell-output-display" data-execution_count="209">
+<pre><code>[['최규빈', 43052, 'M'], ['아이유', 54321, 'F'], ['하니', 11223, 'F']]</code></pre>
+</div>
+</div>
+<div id="f9a0bbb9-9a98-4b18-863e-5370bbf8a5f9" class="cell" data-outputid="b10d3bf2-7b75-45cc-d9ca-7cdda162e875">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb147" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb147-1">[(name,student_id,sex) <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> name,student_id,sex <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> lst]</span></code></pre></div></div>
+<div class="cell-output cell-output-display" data-execution_count="210">
+<pre><code>[('최규빈', 43052, 'M'), ('아이유', 54321, 'F'), ('하니', 11223, 'F')]</code></pre>
+</div>
+</div>
+<p>아래는 불가능</p>
+<div id="b43ffd33-0c6a-4f7b-a970-9c9b24e9b3f0" class="cell" data-outputid="49f35e0c-4891-45f3-fcd4-6aaf4611a5b3">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb149" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb149-1">[name,student_id,sex <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> name,student_id,sex <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> lst]</span></code></pre></div></div>
+<div class="cell-output cell-output-error">
+<div class="ansi-escaped-output">
+<pre><span class="ansi-cyan-fg">  Cell </span><span class="ansi-green-fg">In[213], line 1</span>
+<span class="ansi-red-fg">    [name,student_id,sex for name,student_id,sex in lst]</span>
+     ^
+<span class="ansi-red-fg">SyntaxError</span><span class="ansi-red-fg">:</span> did you forget parentheses around the comprehension target?
+</pre>
+</div>
+</div>
+</div>
+<p>하지만 괄호를 명확하게 쓰기만 하면 만들어짐</p>
+<div id="e2dbc01f-39ce-45ee-9302-eed31cfe2fae" class="cell" data-outputid="7f3e04ae-de09-4ae2-b6cc-e12768d1d24d">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb150" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb150-1">[(name,sex) <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> name,student_id,sex <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> lst]</span></code></pre></div></div>
+<div class="cell-output cell-output-display" data-execution_count="215">
+<pre><code>[('최규빈', 'M'), ('아이유', 'F'), ('하니', 'F')]</code></pre>
+</div>
+</div>
+<div id="e2b8d702-b025-498a-8ae9-194c6f21b7c5" class="cell" data-outputid="f5b0d947-0c9f-4705-d375-3c1702107837">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb152" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb152-1">[(sex,name) <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> name,student_id,sex <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> lst]</span></code></pre></div></div>
+<div class="cell-output cell-output-display" data-execution_count="216">
+<pre><code>[('M', '최규빈'), ('F', '아이유'), ('F', '하니')]</code></pre>
+</div>
+</div>
+<div id="02456bba-5704-41f2-a05b-631abb8059dc" class="cell" data-outputid="bbe410b4-c4e2-45dc-8109-416768875709">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb154" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb154-1">[name <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> name,student_id,sex <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> lst]</span></code></pre></div></div>
+<div class="cell-output cell-output-display" data-execution_count="218">
+<pre><code>['최규빈', '아이유', '하니']</code></pre>
+</div>
+</div>
+<p>언더스코어(<code>_</code>)를 사용할 수도 있음.</p>
+<div id="38e07469-96d3-4e99-902f-63f8654dd79b" class="cell" data-outputid="40dfe1b8-5c7e-4b35-8284-023b7790ef42">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb156" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb156-1">[name <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> name,_,_ <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> lst]</span></code></pre></div></div>
+<div class="cell-output cell-output-display" data-execution_count="220">
+<pre><code>['최규빈', '아이유', '하니']</code></pre>
+</div>
+</div>
+<p>언더스코어(<code>_</code>)를 사용시 <code>lst[0]</code>, <code>lst[1]</code> 등의 원소숫자와 일치하도록 사용해야함</p>
+<div id="ab53d343-4e5c-4fb3-aeff-88a7f918ac0d" class="cell" data-outputid="ed269539-32fc-45fa-a794-c630b46412a6">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb158" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb158-1">[name <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> name,_ <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> lst] <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># 이건 또 실행불가능..</span></span></code></pre></div></div>
+<div class="cell-output cell-output-error">
+<div class="ansi-escaped-output">
+<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">ValueError</span>                                Traceback (most recent call last)
+Cell <span class="ansi-green-fg">In[226], line 1</span>
+<span class="ansi-green-fg">----&gt; 1</span> [name <span style="font-weight:bold;color:rgb(0,135,0)">for</span> name,_ <span style="font-weight:bold;color:rgb(175,0,255)">in</span> lst] <span style="font-style:italic;color:rgb(95,135,135)"># 이건 또 실행불가능..</span>
+
+<span class="ansi-red-fg">ValueError</span>: too many values to unpack (expected 2)</pre>
+</div>
+</div>
+</div>
+<div id="1bd92fae-066a-4730-80ea-b499e9d112e5" class="cell" data-outputid="ac6557df-45a2-4855-8333-8cef0a289966">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb159" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb159-1">[name <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> name, <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span>args <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> lst] <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># 이건 실행가능</span></span></code></pre></div></div>
+<div class="cell-output cell-output-display" data-execution_count="232">
+<pre><code>['최규빈', '아이유', '하니']</code></pre>
+</div>
+</div>
+<p><code># 개념2</code> – 조건문</p>
+<p>아래의 리스트 원소 <img src="https://latex.codecogs.com/png.latex?l"> 중에서 조건 <img src="https://latex.codecogs.com/png.latex?1%20%3C%20l%20%5Cleq%205">를 만족하는 원소는 모두 몇개인가?</p>
+<div id="836ac4fb-d722-4538-9d23-d5319cdc7e74" class="cell" data-outputid="ec800d47-b64b-407f-c122-4792d0f69664">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb161" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb161-1">lst <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> [<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">4</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">5</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">6</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">7</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">8</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">9</span>]</span>
+<span id="cb161-2">lst</span></code></pre></div></div>
+<div class="cell-output cell-output-display" data-execution_count="234">
+<pre><code>[1, 2, 3, 4, 5, 6, 7, 8, 9]</code></pre>
+</div>
+</div>
+<p>(풀이)</p>
+<div id="3b2e19d5-d77a-4e95-860c-a19d5635c998" class="cell" data-outputid="0f2e6ea4-6cab-471a-c36d-4930fb077754">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb163" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb163-1"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">sum</span>([<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;</span>l <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">and</span> l<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">5</span> <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> l <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> lst])</span></code></pre></div></div>
+<div class="cell-output cell-output-display" data-execution_count="242">
+<pre><code>4</code></pre>
+</div>
+</div>
+<div id="fa5c6bce-c4bf-48e2-8fbe-cb29505cd4fd" class="cell" data-outputid="18f16701-4026-4f62-ca49-9258852c0af3">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb165" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb165-1"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">sum</span>([<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;</span>l<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">5</span> <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> l <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> lst])</span></code></pre></div></div>
+<div class="cell-output cell-output-display" data-execution_count="245">
+<pre><code>4</code></pre>
+</div>
+</div>
+</section>
+<section id="d.-풀이-1" class="level2">
+<h2 class="anchored" data-anchor-id="d.-풀이-1">D. 풀이</h2>
+<p><img src="https://github.com/guebin/PP2024/blob/main/imgs/2024-수능-확통-29.png?raw=true" class="img-fluid"></p>
+<p>(풀이)</p>
+<div id="01543a45-24a6-4145-b0e3-e19d1cbd9281" class="cell" data-outputid="b6eee83a-8d04-4861-cdf1-c71e608fb7f9">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb167" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb167-1">lst <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> [<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">4</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">5</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">6</span>]</span>
+<span id="cb167-2"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">sum</span>([a<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;=</span>c<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;=</span>d <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">and</span> b<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;=</span>c<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;=</span>d <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> a,b,c,d <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> itertools.product(lst,lst,lst,lst)])</span></code></pre></div></div>
+<div class="cell-output cell-output-display" data-execution_count="259">
+<pre><code>196</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="년-수능-19-다시풀기" class="level1">
+<h1>6. 2024년 수능 – 19 (다시풀기)</h1>
+<section id="a.-문제파악-1" class="level2">
+<h2 class="anchored" data-anchor-id="a.-문제파악-1">A. 문제파악</h2>
+<p><img src="https://github.com/guebin/PP2024/blob/main/imgs/2024-수능-19.png?raw=true" class="img-fluid"></p>
+</section>
+<section id="b.-예비학습" class="level2">
+<h2 class="anchored" data-anchor-id="b.-예비학습">B. 예비학습</h2>
+<p><code>-</code> 예제: 제곱수중에서 12로 나누어서 떨어지는 수만 원소르 가지는 리스트를 만들고 싶다.</p>
+<ul>
+<li>제곱수: 1,4,9,16,25,36,…</li>
+<li>12로 나누어서 떨어지는 수: 36</li>
+</ul>
+<p>(복습1)</p>
+<div id="905863aa-1c83-4b01-83b3-77de6819d47a" class="cell" data-outputid="fd17b66a-9dbe-4e3c-9b2b-449e4977525f">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb169" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb169-1"><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">12</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">%</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">4</span> <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># % 는 나머지를 계산하는 연산자, 12를 4로 나누었더니 나머지가 0</span></span></code></pre></div></div>
+<div class="cell-output cell-output-display" data-execution_count="261">
+<pre><code>0</code></pre>
+</div>
+</div>
+<div id="7ec0de71-b903-497f-9ae3-2c2a94ce274d" class="cell" data-outputid="6ddb888d-c414-49e1-8c2a-929faea21bae">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb171" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb171-1"><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">12</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">%</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">5</span> <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># 12 = 5*2 +2</span></span></code></pre></div></div>
+<div class="cell-output cell-output-display" data-execution_count="263">
+<pre><code>2</code></pre>
+</div>
+</div>
+<p>(복습2)</p>
+<div id="7c5418da-e9f9-4582-bcb8-3b60352e46f3" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb173" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb173-1">a <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span> <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># a에 2를 대입하라...</span></span></code></pre></div></div>
+</div>
+<div id="9c6538f8-54fb-4e67-8e35-25a116669d56" class="cell" data-outputid="8e61356d-9033-4977-8c45-fd2e86a94cd3">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb174" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb174-1">a <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">==</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span> <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># a에 들어있는 값이 2이인지 테스트하라..</span></span></code></pre></div></div>
+<div class="cell-output cell-output-display" data-execution_count="267">
+<pre><code>False</code></pre>
+</div>
+</div>
+<div id="d36ef681-bf15-4815-9a24-3f0a3b84e440" class="cell" data-outputid="3c7bda85-198b-45be-a3ae-35c96e818f4f">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb176" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb176-1">a <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">==</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span></span></code></pre></div></div>
+<div class="cell-output cell-output-display" data-execution_count="268">
+<pre><code>True</code></pre>
+</div>
+</div>
+<p>(풀이1) – 비어있는 리스트를 만들고, for + if 를 사용</p>
+<div id="108b9936-5c08-459a-a045-2d71bb17a7f3" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb178" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb178-1">lst <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> []</span>
+<span id="cb178-2"><span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> i <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">range</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">101</span>):</span>
+<span id="cb178-3">    <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">if</span> i<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">**</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">%</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">12</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">==</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>: <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># i^2을 12로 나누어서 나누어 떨어진다면</span></span>
+<span id="cb178-4">        lst.append(i<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">**</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>)</span></code></pre></div></div>
+</div>
+<div id="7215718a-670b-47da-b11f-27efed55a349" class="cell" data-outputid="d2e32374-d625-45b1-f7c8-235fc5f8e886">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb179" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb179-1">lst</span></code></pre></div></div>
+<div class="cell-output cell-output-display" data-execution_count="272">
+<pre><code>[36,
+ 144,
+ 324,
+ 576,
+ 900,
+ 1296,
+ 1764,
+ 2304,
+ 2916,
+ 3600,
+ 4356,
+ 5184,
+ 6084,
+ 7056,
+ 8100,
+ 9216]</code></pre>
+</div>
+</div>
+<p>(풀이2) - if문이 포함된 리스트 컴프리헨션</p>
+<div id="653e4ca2-9b0f-4d4c-9565-dd5fb88fb6f0" class="cell" data-outputid="aa8cb678-65c9-4618-873f-42b5bd379866">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb181" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb181-1">[i<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">**</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span> <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> i <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">range</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">101</span>) <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">if</span> i<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">**</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">%</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">12</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">==</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>]</span></code></pre></div></div>
+<div class="cell-output cell-output-display" data-execution_count="274">
+<pre><code>[36,
+ 144,
+ 324,
+ 576,
+ 900,
+ 1296,
+ 1764,
+ 2304,
+ 2916,
+ 3600,
+ 4356,
+ 5184,
+ 6084,
+ 7056,
+ 8100,
+ 9216]</code></pre>
+</div>
+</div>
+</section>
+<section id="c.-풀이" class="level2">
+<h2 class="anchored" data-anchor-id="c.-풀이">C. 풀이</h2>
+<p><img src="https://github.com/guebin/PP2024/blob/main/imgs/2024-수능-19.png?raw=true" class="img-fluid"></p>
+<p>(풀이)</p>
+<div id="12871706-8095-4a1f-9290-73b7786fa146" class="cell" data-outputid="cf7fed38-7011-4bd1-ae5a-f56b8eda92c4">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb183" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb183-1">x <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">list</span>(<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">range</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">16</span>))</span>
+<span id="cb183-2">f <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">lambda</span> x: np.sin(np.pi<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">4</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span>x)</span>
+<span id="cb183-3"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">sum</span>([xi <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> xi <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> x <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">if</span> f(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span>xi)<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span>f(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span>xi)<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">4</span>])</span></code></pre></div></div>
+<div class="cell-output cell-output-display" data-execution_count="293">
+<pre><code>32</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="컴프리헨션-연습" class="level1">
+<h1>7. 컴프리헨션 연습</h1>
+<p>지금까지 해결했던 다양한 문제를 넘파이의 벡터연산을 봉인하고 해결해보자.</p>
+<p><code># 예제1</code> – 아래를 리스트컴프리헨션을 이용하여 구현하라.</p>
+<div id="87161388-d471-44db-84eb-f85f011e7ddc" class="cell" data-outputid="3a6f28d6-5f48-448f-8c70-ce0785e05df3">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb185" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb185-1">arr <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> np.array([<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>])</span>
+<span id="cb185-2">arr <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span></span></code></pre></div></div>
+<div class="cell-output cell-output-display" data-execution_count="294">
+<pre><code>array([2, 3, 4])</code></pre>
+</div>
+</div>
+<div id="597671f5-788d-4961-904f-4c0496d6c726" class="cell" data-outputid="aea41cc6-2bf5-4ec4-b147-24b5076c3346">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb187" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb187-1">arr <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span></span></code></pre></div></div>
+<div class="cell-output cell-output-display" data-execution_count="295">
+<pre><code>array([2, 4, 6])</code></pre>
+</div>
+</div>
+<p>(풀이)</p>
+<div id="960191ff-17ff-4ffe-88d6-2c44d23b3fcd" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb189" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb189-1">lst <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> [<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>]</span></code></pre></div></div>
+</div>
+<div id="b3618a49-3f20-419a-822f-d0c5a09af57d" class="cell" data-outputid="1740c3c0-a7d1-40f3-c017-2f9a79318a61">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb190" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb190-1">[l<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span> <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> l <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> lst]</span></code></pre></div></div>
+<div class="cell-output cell-output-display" data-execution_count="298">
+<pre><code>[2, 3, 4]</code></pre>
+</div>
+</div>
+<div id="c70e550a-28d8-4257-92bf-164acb64d6fd" class="cell" data-outputid="d910bd4f-31a1-426a-d4eb-9835a12c01fc">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb192" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb192-1">[l<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span> <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> l <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> lst]</span></code></pre></div></div>
+<div class="cell-output cell-output-display" data-execution_count="300">
+<pre><code>[2, 4, 6]</code></pre>
+</div>
+</div>
+<p><code>#</code></p>
+<p><code># 예제2</code> – 아래를 리스트 컴프리헨션을 이용하여 구현하자.</p>
+<div id="ffb6401f-db54-4944-b498-ef91c772298d" class="cell" data-outputid="5ef270db-724a-46c7-84fc-bb79e76c30bc">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb194" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb194-1">n <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> np.arange(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">11</span>)</span>
+<span id="cb194-2">an <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span>n <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span></span>
+<span id="cb194-3">an</span></code></pre></div></div>
+<div class="cell-output cell-output-display" data-execution_count="302">
+<pre><code>array([ 1,  4,  7, 10, 13, 16, 19, 22, 25, 28])</code></pre>
+</div>
+</div>
+<p>(풀이)</p>
+<div id="be4e7b40-02bf-4b2a-950a-db1f6ebd6b1a" class="cell" data-outputid="b9e0a2ef-7c38-4676-b643-72a3679898c9">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb196" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb196-1">[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span>n<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span> <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> n <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">range</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">11</span>)]</span></code></pre></div></div>
+<div class="cell-output cell-output-display" data-execution_count="307">
+<pre><code>[1, 4, 7, 10, 13, 16, 19, 22, 25, 28]</code></pre>
+</div>
+</div>
+<p><code>#</code></p>
+<p><code># 예제3</code> – 아래의 코드에서 <code>list(map(f,x))</code> 대신에 리스트 컴프리헨션을 이용하라.</p>
+<div id="09c94195-1eba-4e25-bdb0-cb7b83bb6221" class="cell" data-outputid="b5a0b4df-19c0-44ed-8d07-ef11f115e172">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb198" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb198-1">x <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> np.arange(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">11</span>)</span>
+<span id="cb198-2">f <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">lambda</span> x: x<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span></span>
+<span id="cb198-3"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">list</span>(<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">map</span>(f,x))</span></code></pre></div></div>
+<div class="cell-output cell-output-display" data-execution_count="310">
+<pre><code>[3, 4, 5, 6, 7, 8, 9, 10, 11, 12]</code></pre>
+</div>
+</div>
+<p>(풀이)</p>
+<div id="0b590c7c-0cc1-4b23-837c-015b87e8344b" class="cell" data-outputid="8483ab2e-6298-48cb-a324-9ce9a95a8f70">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb200" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb200-1">f <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">lambda</span> x: x<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span></span>
+<span id="cb200-2">[f(x) <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> x <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">range</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">11</span>)]</span></code></pre></div></div>
+<div class="cell-output cell-output-display" data-execution_count="313">
+<pre><code>[3, 4, 5, 6, 7, 8, 9, 10, 11, 12]</code></pre>
+</div>
+</div>
+<p><code>#</code></p>
+<p><strong>팁: 반복계산을 해야할 경우</strong></p>
+<ol type="1">
+<li>벡터화연산이 지원된다면 그것을 사용한다. (numpy, pandas)</li>
+<li>불가능할 경우 <code>map(f,x)</code>를 쓰거나 리스트컴프리헨션을 사용한다.</li>
+<li>그래도 안되는 경우 <code>for</code>를 사용한다.</li>
+</ol>
+
+
+</section>
+
+ ]]></description>
+  <guid>https://your-website-url.example.com/posts/03wk_2.html</guid>
+  <pubDate>Sun, 29 Mar 2026 15:00:00 GMT</pubDate>
+</item>
 <item>
   <title>260325_review</title>
   <dc:creator>이민희 </dc:creator>

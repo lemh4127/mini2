@@ -14,6 +14,48 @@
     "text": "✔ 첫 퀴즈를 보고난 후, 공부 방향 등 정리 목적 포스팅\n\n학습량\n\n1~2주차 강의 수강(천천히 따라해가며 1회독만)\n퀴즈 풀이(코랩에서 풀이해 봄)\n\n퀴즈를 풀면서 든 생각\n\n너무 1차원적으로 공부한 것 같음(응용이 잘 안됨)\n예를들면, 함수 f에 어떤 값을 입력하는 함수를 공부했다면, 어떤 값이 아닌 ’함수’를 입력하는 함수? → 이런게 잘 와닿지 않았음\n수학적 사고가 아쉬움(수학머리 근손실 느낌이랄까?)\n예를들어, 미분/적분 대충 어떻게 푸는지 어렴풋하게 기억은 나는데. 뭐랄까, 기계적으로 손으로 이러이렇게 풀었던 것 같은데? 하는 정도만 생각나고, 그 이상으로 생각이 나아가질 않음. 추가로, 마크다운으로 써서 식을 정리해볼까? 이런 생각으로 바로 안나아감. 수식을 쓰는 것도 아직 숙달이 안되어있어서 더 그런 것 같음. 손으로 끄적여보기라도 할 걸 그랬음. -&gt; 원을 나타내는 수식 자체는 떠올랐는데, 거기서 뭘 어떻게 해봐야지. 라는 생각으로 나아가지 못했음.\n\n앞으로는\n\n일단, 이 환경 자체에 익숙해질 필요가 있을 것 같음.\n아직 나는 너무 Zero base임. 알파벳을 모르고 문법을 공부하는 느낌.\n게다가 나는 다른 사람들과 달리, 잘 다루는 프로그래밍 언어가 없다. 그러니, 시간을 더 투자할 수 밖에 없을 듯. (자신은 없지만, 일단 되는대로 해보는 수 밖에)\n공부는 ‘강의(따라하면서 천천히) → 퀴즈(최대한 고민해보며) → 복습(다시 정리해 보면서)’ 이 순서로 해봐야겠다.\n\n\n\nImports\n\nimport numpy as np\nimport matplotlib.pyplot as plt\n\n자기전에 2026년 수능 3문제만 풀어보기\n\n\n\nimage.png\n\n\n\na = 3  #a를 바꿔가며 확인해보기...(아쉽긴 함, 그리고 답이 바로 암산이 되서 그렇기도)\nf = lambda x: 3*x-2\ng = lambda x: x**2-3*x+a\nx = np.linspace(0,2,100)\nplt.plot(x,f(x))\nplt.plot(x,g(x))\n\n\n\n\n\n\n\n\n\n\n\nimage.png\n\n\n\nf = lambda x: (x+2)*(2*x**2-x-2)\nh = 0.000001\n(f(1+h)-f(1))/h\n\n8.000008999697883\n\n\n\n\n\nimage.png\n\n\n\n#x가 0에서 2일때, a곡선 적분값-b곡선 적분값\nf = lambda x: x**2+3\ng = lambda x: -(1/5)*x**2+3\nx = np.linspace(0,2,1000)\nnp.mean(f(x))*2 - np.mean(g(x))*2\n\nnp.float64(3.2016016016016025)\n\n\n\n18/5, 7/2, 17/5, 33/10, 16/5\n\n(3.6, 3.5, 3.4, 3.3, 3.2)"
   },
   {
+    "objectID": "posts/02wk_2.html#a.-int-float-bool",
+    "href": "posts/02wk_2.html#a.-int-float-bool",
+    "title": "02wk-2: 파이썬은 좋은 계산기다 (2)",
+    "section": "A. int, float, bool",
+    "text": "A. int, float, bool\n- int형\n\na=100\n\n\ntype(a)\n\nint\n\n\n- float형\n\na=1.2*3\na\n\n3.5999999999999996\n\n\n\ntype(a)\n\nfloat\n\n\n\na?\n\n- bool형\n\na=True ## 숫자1으로 생각할 수 있음\nb=False ## 숫자0으로 생각할 수 있음\n\n\ntype(a)\n\nbool\n\n\n\ntype(b)\n\nbool\n\n\n\na?\n\n\nb?\n\n- bool형의 연산\n\na=True ## 1\nb=False ## 0\n\n\na+b\n\n1\n\n\n\na*b\n\n0\n\n\n- 형태변환: float \\(\\to\\) int\n(예시1)\n\na=3.0\ntype(a)\n\nfloat\n\n\n\na=int(a)\n\n\ntype(a)\n\nint\n\n\n(예시2) 이경우는 정보의 손실이 발생\n\na=3.14\nint(a)\n\n3\n\n\n- 형태변환: int \\(\\to\\) float\n\na=3\ntype(a)\n\nint\n\n\n\na=float(a)\ntype(a)\n\nfloat\n\n\n- 형태변환: bool \\(\\to\\) int/float, int/float \\(\\to\\) bool\n(예시1)\n\na=True\ntype(a)\n\nbool\n\n\n\nint(a)\n\n1\n\n\n\nfloat(a)\n\n1.0\n\n\n(예시2)\n\na=1\nbool(a)\n\nTrue\n\n\n\na=0\nbool(a)\n\nFalse\n\n\n(예시3)\n\na=1.0\nbool(a)\n\nTrue\n\n\n\na=0.0\nbool(a)\n\nFalse"
+  },
+  {
+    "objectID": "posts/02wk_2.html#b.-1차원-자료의-형태변환",
+    "href": "posts/02wk_2.html#b.-1차원-자료의-형태변환",
+    "title": "02wk-2: 파이썬은 좋은 계산기다 (2)",
+    "section": "B. 1차원 자료의 형태변환",
+    "text": "B. 1차원 자료의 형태변환\n- list \\(\\to\\) np.array\n\n[1,2,3]\n\n[1, 2, 3]\n\n\n\nnp.array([1,2,3])\n\narray([1, 2, 3])\n\n\n- np.array \\(\\to\\) list\n\nnp.linspace(1,10,10)\n\narray([ 1.,  2.,  3.,  4.,  5.,  6.,  7.,  8.,  9., 10.])\n\n\n\nlist(np.linspace(1,10,10))\n\n[np.float64(1.0),\n np.float64(2.0),\n np.float64(3.0),\n np.float64(4.0),\n np.float64(5.0),\n np.float64(6.0),\n np.float64(7.0),\n np.float64(8.0),\n np.float64(9.0),\n np.float64(10.0)]\n\n\n- range \\(\\to\\) list, np.array\n\nrange(10) # 이게 뭐야??\n\nrange(0, 10)\n\n\n\nlist(range(10)) # 리스트화\n\n[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]\n\n\n\nnp.array(range(10)) # 넘파이배열화\n\narray([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])\n\n\n보충학습: range의 다양한 활용을 익혀보자.\n\nlist(range(10))\n\n[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]\n\n\n\nlist(range(0,10))\n\n[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]\n\n\n\nlist(range(3,10))\n\n[3, 4, 5, 6, 7, 8, 9]\n\n\n\nlist(range(3,10,2))\n\n[3, 5, 7, 9]\n\n\n- map 결과물 \\(\\to\\) list\n\nf = lambda x: x**2\nlist(map(f,[1,2,3])) # [f(1),f(2),f(3)]\n\n[1, 4, 9]\n\n\n- map 결과물 \\(\\to\\) np.array로는 불가능\n\nf = lambda x: x**2\nnp.array(map(f,[1,2,3]))\n\narray(&lt;map object at 0x7fd5c3b82ef0&gt;, dtype=object)\n\n\n\n# 아래는 가능\nf = lambda x: x**2\nnp.array(list(map(f,[1,2,3])))\n\narray([1, 4, 9])"
+  },
+  {
+    "objectID": "posts/02wk_2.html#a.-np.random.rand",
+    "href": "posts/02wk_2.html#a.-np.random.rand",
+    "title": "02wk-2: 파이썬은 좋은 계산기다 (2)",
+    "section": "A. np.random.rand()",
+    "text": "A. np.random.rand()\n- 0~1 사이에서 10개의 난수생성\n\nnp.random.rand(10)\n\narray([0.43345371, 0.48324862, 0.48046707, 0.41056049, 0.56188841,\n       0.58762904, 0.6645858 , 0.60568829, 0.83033841, 0.4660302 ])\n\n\n- 0~2 사이에서 10개의 난수생성\n\nnp.random.rand(10)*2\n\narray([0.44894259, 1.8416822 , 0.50164259, 1.01601855, 0.21073439,\n       1.8049244 , 0.86548008, 0.38544391, 0.13816874, 1.22858088])\n\n\n- 1~3 사이에서 10개의 난수생성\n\nnp.random.rand(10)*2 + 1\n\narray([1.58013021, 1.96358901, 2.62137695, 1.74617053, 2.38021729,\n       1.00043864, 1.42801985, 1.65666288, 2.80405753, 1.23691426])"
+  },
+  {
+    "objectID": "posts/02wk_2.html#b.-np.random.randn",
+    "href": "posts/02wk_2.html#b.-np.random.randn",
+    "title": "02wk-2: 파이썬은 좋은 계산기다 (2)",
+    "section": "B. np.random.randn()",
+    "text": "B. np.random.randn()\n- N(0,1)에서 10개의 난수생성\n\nnp.random.randn(10) # 표준정규분포에서 10개의 샘플 추출\n\narray([-0.88043002, -0.75000612, -0.46393189,  0.73721724, -0.66208613,\n        0.84740615, -0.31835775,  0.60157946,  0.62744116,  2.06223706])\n\n\n- N(1,1)에서 10개 난수생성\n\nnp.random.randn(10) + 1\n\narray([ 1.50801901,  0.06945884,  2.52305677,  0.25080242, -0.25058225,\n        1.81696343, -0.47341629,  0.51879014,  2.55038708,  0.58788704])\n\n\n- N(0,4) 에서 10개 난수생성\n\nnp.random.randn(10)*2\n\narray([-2.26593271, -1.62304968, -1.71372316,  2.93723947,  0.63497107,\n        2.96605112,  0.71536533,  2.64037886,  0.10782247, -2.97822434])\n\n\n- N(3,4) 에서 10개 난수생성\n\nnp.random.randn(10)*2+3\n\narray([ 3.71923104,  1.77496469,  4.04116354,  4.27443252,  2.59130929,\n        5.48551961, -1.09164073,  3.08090641,  0.88721243,  3.34579357])"
+  },
+  {
+    "objectID": "posts/02wk_2.html#c.-np.random.randint",
+    "href": "posts/02wk_2.html#c.-np.random.randint",
+    "title": "02wk-2: 파이썬은 좋은 계산기다 (2)",
+    "section": "C. np.random.randint()",
+    "text": "C. np.random.randint()\n- [0,7) 에서 10개의 정수생성\n\nnp.random.randint(0,7,size=10) # [0,7)의 범위에서 10개의 정수 생성\n\narray([0, 1, 5, 0, 2, 3, 1, 3, 0, 5])\n\n\n- [10,20) 에서 10개의 정수생성\n\nnp.random.randint(10,20,size=10) # [0,7)의 범위에서 10개의 정수 생성\n\narray([11, 10, 10, 19, 13, 11, 11, 11, 15, 19])"
+  },
+  {
+    "objectID": "posts/02wk_2.html#d.-np.random.choice",
+    "href": "posts/02wk_2.html#d.-np.random.choice",
+    "title": "02wk-2: 파이썬은 좋은 계산기다 (2)",
+    "section": "D. np.random.choice()",
+    "text": "D. np.random.choice()\n- [11,22,33] 에서 중복허용하여 20개 추출\n\nnp.random.choice([11,22,33],20)\n\narray([33, 33, 11, 33, 11, 11, 33, 22, 11, 33, 33, 33, 22, 33, 11, 11, 22,\n       22, 33, 22])\n\n\n- [11,22,33] 에서 중복허용하여 3개 추출\n\nnp.random.seed(4)\nnp.random.choice([11,22,33],3)\n\narray([33, 33, 22])\n\n\n\nnp.random.seed(5)\nnp.random.choice([11,22,33],3)\n\narray([33, 22, 33])\n\n\n- [11,22,33] 에서 중복허용하지 않고 3개 추출\n\nnp.random.choice([11,22,33],3,replace=False)\n\narray([22, 33, 11])"
+  },
+  {
     "objectID": "posts/01wk_2.html",
     "href": "posts/01wk_2.html",
     "title": "01wk-2: 파이썬은 좋은 계산기다 (1)",
@@ -63,52 +105,115 @@
     "text": "F. np.argmax, np.argmin\n- 예시1\n\narr = np.array([1,2,3,2,1,0])\narr\n\narray([1, 2, 3, 2, 1, 0])\n\n\n\nnp.argmax(arr),np.argmin(arr)\n\n(np.int64(2), np.int64(5))\n\n\n# 예제 – 두 함수의 교점\n\\(-1 \\leq x \\leq 3\\) 에서\n\n\\(f(x)=(x-1)^2\\) 와\n\\(g(x)=-2x+5\\)\n\n의 교점의 좌표를 구하여라.\n\nx = np.linspace(1.8,2.2,101)\nf = (x-1)**2\ng = -2*x+5\nplt.plot(x,f,'.')\nplt.plot(x,g,'.')\n\n\n\n\n\n\n\n\n(풀이)\n\nx = np.linspace(-1,3,101)\nf = (x-1)**2\ng = -2*x+5\nplt.plot(x,f,label=r\"$f(x)=(x-1)^2$\")\nplt.plot(x,g,label=r\"$g(x)=-2x+5$\")\nplt.legend()\n\n\n\n\n\n\n\n\n\nx[np.argmin(abs(f-g))]\n\nnp.float64(2.0)\n\n\n\n2,(2-1)**2\n\n(2, 1)\n\n\n\n이것이 교점의 좌표"
   },
   {
-    "objectID": "posts/02wk_2.html#a.-int-float-bool",
-    "href": "posts/02wk_2.html#a.-int-float-bool",
-    "title": "02wk-2: 파이썬은 좋은 계산기다 (2)",
-    "section": "A. int, float, bool",
-    "text": "A. int, float, bool\n- int형\n\na=100\n\n\ntype(a)\n\nint\n\n\n- float형\n\na=1.2*3\na\n\n3.5999999999999996\n\n\n\ntype(a)\n\nfloat\n\n\n\na?\n\n- bool형\n\na=True ## 숫자1으로 생각할 수 있음\nb=False ## 숫자0으로 생각할 수 있음\n\n\ntype(a)\n\nbool\n\n\n\ntype(b)\n\nbool\n\n\n\na?\n\n\nb?\n\n- bool형의 연산\n\na=True ## 1\nb=False ## 0\n\n\na+b\n\n1\n\n\n\na*b\n\n0\n\n\n- 형태변환: float \\(\\to\\) int\n(예시1)\n\na=3.0\ntype(a)\n\nfloat\n\n\n\na=int(a)\n\n\ntype(a)\n\nint\n\n\n(예시2) 이경우는 정보의 손실이 발생\n\na=3.14\nint(a)\n\n3\n\n\n- 형태변환: int \\(\\to\\) float\n\na=3\ntype(a)\n\nint\n\n\n\na=float(a)\ntype(a)\n\nfloat\n\n\n- 형태변환: bool \\(\\to\\) int/float, int/float \\(\\to\\) bool\n(예시1)\n\na=True\ntype(a)\n\nbool\n\n\n\nint(a)\n\n1\n\n\n\nfloat(a)\n\n1.0\n\n\n(예시2)\n\na=1\nbool(a)\n\nTrue\n\n\n\na=0\nbool(a)\n\nFalse\n\n\n(예시3)\n\na=1.0\nbool(a)\n\nTrue\n\n\n\na=0.0\nbool(a)\n\nFalse"
+    "objectID": "posts/03wk_2.html#a.-벡터화연산브로드캐스팅-불가능",
+    "href": "posts/03wk_2.html#a.-벡터화연산브로드캐스팅-불가능",
+    "title": "03wk-2: 리스트는 쓰레기인가?",
+    "section": "A. 벡터화연산(브로드캐스팅) 불가능",
+    "text": "A. 벡터화연산(브로드캐스팅) 불가능\n- 벡터화연산 불가능 (최악의 단점)\n\nlst = [1,2,3]\nlst + 1\n\n\n---------------------------------------------------------------------------\n\nTypeError                                 Traceback (most recent call last)\n\nCell In[54], line 2\n\n      1 lst = [1,2,3]\n\n----&gt; 2 lst + 1\n\n\n\nTypeError: can only concatenate list (not \"int\") to list\n\n\n\n\narr = np.array([1,2,3])\narr + 1\n\narray([2, 3, 4])"
   },
   {
-    "objectID": "posts/02wk_2.html#b.-1차원-자료의-형태변환",
-    "href": "posts/02wk_2.html#b.-1차원-자료의-형태변환",
-    "title": "02wk-2: 파이썬은 좋은 계산기다 (2)",
-    "section": "B. 1차원 자료의 형태변환",
-    "text": "B. 1차원 자료의 형태변환\n- list \\(\\to\\) np.array\n\n[1,2,3]\n\n[1, 2, 3]\n\n\n\nnp.array([1,2,3])\n\narray([1, 2, 3])\n\n\n- np.array \\(\\to\\) list\n\nnp.linspace(1,10,10)\n\narray([ 1.,  2.,  3.,  4.,  5.,  6.,  7.,  8.,  9., 10.])\n\n\n\nlist(np.linspace(1,10,10))\n\n[np.float64(1.0),\n np.float64(2.0),\n np.float64(3.0),\n np.float64(4.0),\n np.float64(5.0),\n np.float64(6.0),\n np.float64(7.0),\n np.float64(8.0),\n np.float64(9.0),\n np.float64(10.0)]\n\n\n- range \\(\\to\\) list, np.array\n\nrange(10) # 이게 뭐야??\n\nrange(0, 10)\n\n\n\nlist(range(10)) # 리스트화\n\n[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]\n\n\n\nnp.array(range(10)) # 넘파이배열화\n\narray([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])\n\n\n보충학습: range의 다양한 활용을 익혀보자.\n\nlist(range(10))\n\n[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]\n\n\n\nlist(range(0,10))\n\n[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]\n\n\n\nlist(range(3,10))\n\n[3, 4, 5, 6, 7, 8, 9]\n\n\n\nlist(range(3,10,2))\n\n[3, 5, 7, 9]\n\n\n- map 결과물 \\(\\to\\) list\n\nf = lambda x: x**2\nlist(map(f,[1,2,3])) # [f(1),f(2),f(3)]\n\n[1, 4, 9]\n\n\n- map 결과물 \\(\\to\\) np.array로는 불가능\n\nf = lambda x: x**2\nnp.array(map(f,[1,2,3]))\n\narray(&lt;map object at 0x7fd5c3b82ef0&gt;, dtype=object)\n\n\n\n# 아래는 가능\nf = lambda x: x**2\nnp.array(list(map(f,[1,2,3])))\n\narray([1, 4, 9])"
+    "objectID": "posts/03wk_2.html#b.-bool을-이용한-인덱싱이-불가능",
+    "href": "posts/03wk_2.html#b.-bool을-이용한-인덱싱이-불가능",
+    "title": "03wk-2: 리스트는 쓰레기인가?",
+    "section": "B. bool을 이용한 인덱싱이 불가능",
+    "text": "B. bool을 이용한 인덱싱이 불가능\n- True, False 가 포함된 array를 이용한 인덱싱이 불가능하다.\n- 넘파이에서 bool을 이용한 인덱싱\n\narr = np.array([1,2,3,4,5])\narr[arr&gt;3]\n\narray([4, 5])\n\n\n- 리스트는 불가능\n\nlst = [1,2,3,4,5]\nlst[lst&gt;3]\n\n\n---------------------------------------------------------------------------\nTypeError                                 Traceback (most recent call last)\nCell In[13], line 2\n      1 lst = [1,2,3,4,5]\n----&gt; 2 lst[lst&gt;3]\n\nTypeError: '&gt;' not supported between instances of 'list' and 'int'\n\n\n\n\nlst&gt;3  #이 부분이 실행 안됨\n\n\n---------------------------------------------------------------------------\nTypeError                                 Traceback (most recent call last)\nCell In[14], line 1\n----&gt; 1 lst&gt;3\n\nTypeError: '&gt;' not supported between instances of 'list' and 'int'"
   },
   {
-    "objectID": "posts/02wk_2.html#a.-np.random.rand",
-    "href": "posts/02wk_2.html#a.-np.random.rand",
-    "title": "02wk-2: 파이썬은 좋은 계산기다 (2)",
-    "section": "A. np.random.rand()",
-    "text": "A. np.random.rand()\n- 0~1 사이에서 10개의 난수생성\n\nnp.random.rand(10)\n\narray([0.43345371, 0.48324862, 0.48046707, 0.41056049, 0.56188841,\n       0.58762904, 0.6645858 , 0.60568829, 0.83033841, 0.4660302 ])\n\n\n- 0~2 사이에서 10개의 난수생성\n\nnp.random.rand(10)*2\n\narray([0.44894259, 1.8416822 , 0.50164259, 1.01601855, 0.21073439,\n       1.8049244 , 0.86548008, 0.38544391, 0.13816874, 1.22858088])\n\n\n- 1~3 사이에서 10개의 난수생성\n\nnp.random.rand(10)*2 + 1\n\narray([1.58013021, 1.96358901, 2.62137695, 1.74617053, 2.38021729,\n       1.00043864, 1.42801985, 1.65666288, 2.80405753, 1.23691426])"
+    "objectID": "posts/03wk_2.html#c.-넘파이-특화-메소드-사용불가능",
+    "href": "posts/03wk_2.html#c.-넘파이-특화-메소드-사용불가능",
+    "title": "03wk-2: 리스트는 쓰레기인가?",
+    "section": "C. 넘파이 특화 메소드 사용불가능",
+    "text": "C. 넘파이 특화 메소드 사용불가능\n- 넘파이 특화 메소드\n\narr = np.array([5,4,3,2,1])\narr\n\narray([5, 4, 3, 2, 1])\n\n\n\narr.min(), arr.max(), arr.mean(), arr.argmin(), arr.argmax()\n\n(1, 5, 3.0, 4, 0)\n\n\n\narr.sort()\narr\n\narray([1, 2, 3, 4, 5])\n\n\n- 리스트는?\n\nlst = [5,4,3,2,1]\nlst\n\n[5, 4, 3, 2, 1]\n\n\n\nlst.min(), lst.max(), lst.mean(), lst.argmin(), lst.argmax()  #모두 다 안됨\n\n\n---------------------------------------------------------------------------\nAttributeError                            Traceback (most recent call last)\nCell In[32], line 1\n----&gt; 1 lst.min(), lst.max(), lst.mean(), lst.argmin(), lst.argmax()\n\nAttributeError: 'list' object has no attribute 'min'\n\n\n\n\nlst.sort()\nlst\n\n[1, 2, 3, 4, 5]\n\n\n# 메소드란? – 자료형에 종속된 특수기술\n\n# 넘파이 특수기술 / '.'찍고 tab 누르면 기술명(?)을 찾아주는 기능 있음(주피터 한정인가?)\narr = np.array([1,2,3])\narr.max() # max(arr)로 해석\n\n3\n\n\n\n# ?.max() 이런건 넘파이 특수기술 이니까 ?자리에 리스트일 경우는 실행안됨 / sort 같은 건 우연히 특수기술이 겹치는 것\nlst = [1,2,3]\nlst.max()\n\n\n---------------------------------------------------------------------------\nAttributeError                            Traceback (most recent call last)\nCell In[40], line 3\n      1 # ?.max() 이런건 넘파이 특수기술 이니까 ?자리에 리스트일 경우는 실행안됨\n      2 lst = [1,2,3]\n----&gt; 3 lst.max()\n\nAttributeError: 'list' object has no attribute 'max'\n\n\n\n\n# 리스트의 특수기술\nlst = [1,2,3]\nlst.append(4) # append(lst,4) 로 해석\nlst\n\n[1, 2, 3, 4]\n\n\n\narr.append(4) # append는 np에서는 사용 불가\narr\n\n\n---------------------------------------------------------------------------\n\nNameError                                 Traceback (most recent call last)\n\nCell In[5], line 1\n\n----&gt; 1 arr.append(4)\n\n      2 arr\n\n\n\nNameError: name 'arr' is not defined\n\n\n\n\n# 문자열 특수기술\ns = 'asdf'  #type(s)는 str\ns.capitalize() # capitalize(s) 로 해석\n\n'Asdf'\n\n\n예를들어, ????.func_name() 이거는 –&gt; func_name(????) 이런식으로 생각하면 됨\n????.func_name(x) 이거는 –&gt; func_name(????, x) 이렇게\n????.func_name(x,y) –&gt; func_name(????,x,y) 이런식으로 생각\n\nlst = [0,1,2,3]\ntype(lst), type(lst[0])  #lst의 타입은 list, lst의 첫번째 원소의 타입은 int\n\n(list, int)\n\n\n\n# 문자열 특수기술\ns = '-'\nlst = ['x','y','z']\ns.join(lst) # join(s,lst) 로 해석\n\n'x-y-z'\n\n\n\njoin(s,lst)의 뜻: lst의 각 원소를 모두 “이어서” 하나의 문자열로 만들어라. 단, 원소간의 구분은 s에 저장된 문자열로 하라.\n\n\n# 문자열 특수기술 응용\n# s=''\n# lst = ['x', 'y', 'z']\n# s.join(lst) --&gt; join(s,lst)로 해석\n''.join(['x','y','z'])\n\n'xyz'\n\n\n\njoin('',['x','y','z']) #실제로 join 이라는 함수가 있는 것은 아님. 이렇게 해석된다는 것일 뿐\n\n\n---------------------------------------------------------------------------\n\nNameError                                 Traceback (most recent call last)\n\nCell In[10], line 1\n\n----&gt; 1 join('',['x','y','z'])\n\n\n\nNameError: name 'join' is not defined\n\n\n\n\n# 문자열 특수기능\ns = \"제 이름은 {} 입니다.\" #파이썬에서 ''로 묶으나, \"\"로 묶으나 동일\nname = \"최규빈\"\ns.format(name) # format(s,name)\n\n'제 이름은 최규빈 입니다.'\n\n\n\nformat(s,name)의 뜻: s라는 문자열의 포맷에 {} 자리에 name을 끼워넣어라."
   },
   {
-    "objectID": "posts/02wk_2.html#b.-np.random.randn",
-    "href": "posts/02wk_2.html#b.-np.random.randn",
-    "title": "02wk-2: 파이썬은 좋은 계산기다 (2)",
-    "section": "B. np.random.randn()",
-    "text": "B. np.random.randn()\n- N(0,1)에서 10개의 난수생성\n\nnp.random.randn(10) # 표준정규분포에서 10개의 샘플 추출\n\narray([-0.88043002, -0.75000612, -0.46393189,  0.73721724, -0.66208613,\n        0.84740615, -0.31835775,  0.60157946,  0.62744116,  2.06223706])\n\n\n- N(1,1)에서 10개 난수생성\n\nnp.random.randn(10) + 1\n\narray([ 1.50801901,  0.06945884,  2.52305677,  0.25080242, -0.25058225,\n        1.81696343, -0.47341629,  0.51879014,  2.55038708,  0.58788704])\n\n\n- N(0,4) 에서 10개 난수생성\n\nnp.random.randn(10)*2\n\narray([-2.26593271, -1.62304968, -1.71372316,  2.93723947,  0.63497107,\n        2.96605112,  0.71536533,  2.64037886,  0.10782247, -2.97822434])\n\n\n- N(3,4) 에서 10개 난수생성\n\nnp.random.randn(10)*2+3\n\narray([ 3.71923104,  1.77496469,  4.04116354,  4.27443252,  2.59130929,\n        5.48551961, -1.09164073,  3.08090641,  0.88721243,  3.34579357])"
+    "objectID": "posts/03wk_2.html#d.-파이썬에서-쓰레기-같은-자료형은-없다.",
+    "href": "posts/03wk_2.html#d.-파이썬에서-쓰레기-같은-자료형은-없다.",
+    "title": "03wk-2: 리스트는 쓰레기인가?",
+    "section": "D. 파이썬에서 쓰레기 같은 자료형은 없다.",
+    "text": "D. 파이썬에서 쓰레기 같은 자료형은 없다.\n- 파이썬에는 각 자료형마다 사용할 수 있는 고유기술(=메소드)이나 문법이 있음.\n- 내가 생각할 때 리스트는 필요없는 자료형이야 = 난 리스트만 가지고 있는 어떠한 고유특징을 활용하지 못해.\n- 파이썬을 잘 하려면 자료형에 따른 고유 특징을 이해하고 활용할 줄 알아야 한다.\n\n기본자료형: str, list, tuple, dict, set – 이러한 자료형을 이해하고 기능을 활용해야함(int, float도 있지만)\n모듈: 넘파이배열, 판다스"
   },
   {
-    "objectID": "posts/02wk_2.html#c.-np.random.randint",
-    "href": "posts/02wk_2.html#c.-np.random.randint",
-    "title": "02wk-2: 파이썬은 좋은 계산기다 (2)",
-    "section": "C. np.random.randint()",
-    "text": "C. np.random.randint()\n- [0,7) 에서 10개의 정수생성\n\nnp.random.randint(0,7,size=10) # [0,7)의 범위에서 10개의 정수 생성\n\narray([0, 1, 5, 0, 2, 3, 1, 3, 0, 5])\n\n\n- [10,20) 에서 10개의 정수생성\n\nnp.random.randint(10,20,size=10) # [0,7)의 범위에서 10개의 정수 생성\n\narray([11, 10, 10, 19, 13, 11, 11, 11, 15, 19])"
+    "objectID": "posts/03wk_2.html#a.-문제파악",
+    "href": "posts/03wk_2.html#a.-문제파악",
+    "title": "03wk-2: 리스트는 쓰레기인가?",
+    "section": "A. 문제파악",
+    "text": "A. 문제파악\n\n- 기존의 문제들과 다르게 numpy를 이용하여 풀기는 어려울 것 같다. 뭔가 기존문제들과 결이 다름\n- 그런데 코딩으로 해결가능할 것 같긴 함"
   },
   {
-    "objectID": "posts/02wk_2.html#d.-np.random.choice",
-    "href": "posts/02wk_2.html#d.-np.random.choice",
-    "title": "02wk-2: 파이썬은 좋은 계산기다 (2)",
-    "section": "D. np.random.choice()",
-    "text": "D. np.random.choice()\n- [11,22,33] 에서 중복허용하여 20개 추출\n\nnp.random.choice([11,22,33],20)\n\narray([33, 33, 11, 33, 11, 11, 33, 22, 11, 33, 33, 33, 22, 33, 11, 11, 22,\n       22, 33, 22])\n\n\n- [11,22,33] 에서 중복허용하여 3개 추출\n\nnp.random.seed(4)\nnp.random.choice([11,22,33],3)\n\narray([33, 33, 22])\n\n\n\nnp.random.seed(5)\nnp.random.choice([11,22,33],3)\n\narray([33, 22, 33])\n\n\n- [11,22,33] 에서 중복허용하지 않고 3개 추출\n\nnp.random.choice([11,22,33],3,replace=False)\n\narray([22, 33, 11])"
+    "objectID": "posts/03wk_2.html#b.-슈도알고리즘",
+    "href": "posts/03wk_2.html#b.-슈도알고리즘",
+    "title": "03wk-2: 리스트는 쓰레기인가?",
+    "section": "B. 슈도알고리즘",
+    "text": "B. 슈도알고리즘\n1. 편의상 \\([x,x,y,y,z]\\)를 \\([x_1,x_2,y_1,y_2,z]\\)와 같이 생각하고 나열한다. (5! = 120 개만큼 경우가 나열되겠지)\n2. 중복을 제거한다. 즉 아래는 모두 같은 경우로 생각한다.\n\n\\([x_1,x_2,y_1,y_2,z]\\)\n\\([x_1,x_2,y_2,y_1,z]\\)\n\\([x_2,x_1,y_1,y_2,z]\\)\n\\([x_2,x_1,y_2,y_1,z]\\)"
+  },
+  {
+    "objectID": "posts/03wk_2.html#c.-예비학습",
+    "href": "posts/03wk_2.html#c.-예비학습",
+    "title": "03wk-2: 리스트는 쓰레기인가?",
+    "section": "C. 예비학습",
+    "text": "C. 예비학습\n# 개념1 – 집합이라는 자료형이 있음.\n\na = {1,2,3}\ntype(a)\n\nset\n\n\n그런데 집합은 중복된 원소를 포함하지 않았음 (중학교때 배운듯)\n\na = {1,2,3,3,3}\na\n\n{1, 2, 3}\n\n\n#\n# 개념2 – 자료형변환을 이용하여 중복된 원소를 제거\n아래와 같은 자료형이 있다고 하자.\n\nlst = [1,2,3,3,3]\nlst\n\n[1, 2, 3, 3, 3]\n\n\n중복된 것을 제외하고 싶다면?\n\n#set(lst) --&gt; lst의 자료형을 set으로 변환\nlist(set(lst)) # 자료형변환\n\n[1, 2, 3]\n\n\n#\n# 개념3 – 고유의 원소 숫자 세기\n\nlst = [1,2,3,3,3,4,4,5,5,6]\nlst\n\n[1, 2, 3, 3, 3, 4, 4, 5, 5, 6]\n\n\n\nlen(lst)\n\n10\n\n\n\nlen(set(lst))\n\n6\n\n\n#\n# 개념4 – for문\n아래를 출력하고 싶다고 하자.\n이효리는 핑클의 멤버이다.\n옥주현은 핑클의 멤버이다.\n성유리는 핑클의 멤버이다.\n이진은 핑클의 멤버이다.\n(풀이1) – 단순한 풀이\n\nprint(\"이효리는 핑클의 멤버이다.\")\nprint(\"옥주현은 핑클의 멤버이다.\")\nprint(\"성유리는 핑클의 멤버이다.\")\nprint(\"이진은 핑클의 멤버이다.\")\n\n이효리는 핑클의 멤버이다.\n옥주현은 핑클의 멤버이다.\n성유리는 핑클의 멤버이다.\n이진은 핑클의 멤버이다.\n\n\n(풀이2) – 문자열 특수기능을 이용해볼까?\n“{} 핑클의 멤버이다.” 이 공통포맷이므로, 아래와 같이 수행할 수 있겠다.\n\nprint(\"{} 핑클의 멤버이다.\".format(\"이효리는\"))\nprint(\"{} 핑클의 멤버이다.\".format(\"옥주현은\"))\nprint(\"{} 핑클의 멤버이다.\".format(\"성유리는\"))\nprint(\"{} 핑클의 멤버이다.\".format(\"이진은\"))\n\n이효리는 핑클의 멤버이다.\n옥주현은 핑클의 멤버이다.\n성유리는 핑클의 멤버이다.\n이진은 핑클의 멤버이다.\n\n\n\nlst = [\"이효리는\",\"옥주현은\",\"성유리는\",\"이진은\"]\nprint(\"{} 핑클의 멤버이다.\".format(lst[0]))\nprint(\"{} 핑클의 멤버이다.\".format(lst[1]))\nprint(\"{} 핑클의 멤버이다.\".format(lst[2]))\nprint(\"{} 핑클의 멤버이다.\".format(lst[3]))\n\n이효리는 핑클의 멤버이다.\n옥주현은 핑클의 멤버이다.\n성유리는 핑클의 멤버이다.\n이진은 핑클의 멤버이다.\n\n\n\nlst = [\"이효리는\",\"옥주현은\",\"성유리는\",\"이진은\"]\ni = 0\nprint(\"{} 핑클의 멤버이다.\".format(lst[i]))\ni = 1\nprint(\"{} 핑클의 멤버이다.\".format(lst[i]))\ni = 2\nprint(\"{} 핑클의 멤버이다.\".format(lst[i]))\ni = 3\nprint(\"{} 핑클의 멤버이다.\".format(lst[i]))\n\n이효리는 핑클의 멤버이다.\n옥주현은 핑클의 멤버이다.\n성유리는 핑클의 멤버이다.\n이진은 핑클의 멤버이다.\n\n\n(풀이3) - for와 문자열 특수기능을 이용해볼까?\n\nlst = [\"이효리는\",\"옥주현은\",\"성유리는\",\"이진은\"]\nfor i in [0,1,2,3]:   # ':' 붙이기 기억!\n    print(\"{} 핑클의 멤버이다.\".format(lst[i]))  # 들여쓰기 기억!!(정석 4칸/tab 1회)\n\n이효리는 핑클의 멤버이다.\n옥주현은 핑클의 멤버이다.\n성유리는 핑클의 멤버이다.\n이진은 핑클의 멤버이다.\n\n\n(풀이4) - for와 문자열 특수기능을 이용해볼까? (2)\n[0,1,2,3]은 대충 range(4)와 비슷한 것이므로 아래와 같이 수행할 수도 있겠음.\n\nlst = [\"이효리는\",\"옥주현은\",\"성유리는\",\"이진은\"]\nfor i in range(4):\n    print(\"{} 핑클의 멤버이다.\".format(lst[i]))\n\n이효리는 핑클의 멤버이다.\n옥주현은 핑클의 멤버이다.\n성유리는 핑클의 멤버이다.\n이진은 핑클의 멤버이다.\n\n\n(풀이5) - for와 문자열 특수기능을 이용해볼까? (3)\n“```Python”하고 입력하면, python 코드를 실행없이 마크다운에서 텍스트로 입력 가능\n아래의 코드는 \\(i\\) 자리에 [0,1,2,3]의 원소가 번갈아 대입되며 ??????가 수행되었음.\nlst = [\"이효리는\",\"옥주현은\",\"성유리는\",\"이진은\"]\nfor i in [0,1,2,3]:\n    ??????\n아래의 코드도 \\(i\\) 자리에 range(4)의 원소가 번갈아 대입되며 ??????가 수행되었다고 해석가능.\nlst = [\"이효리는\",\"옥주현은\",\"성유리는\",\"이진은\"]\nfor i in range(4):\n    ??????\n아래의 코드는 어떻게 실행될까??\nlst = [\"이효리는\",\"옥주현은\",\"성유리는\",\"이진은\"]\nfor i in lst:\n    ??????\n\n# R과 다른 방식으로 동작하는 for문\nlst = [\"이효리는\",\"옥주현은\",\"성유리는\",\"이진은\"]\nfor l in lst:   #i를 쓰기도 하지만, list의 한 원소라는 의미로 'l'이라고 쓰겠음\n    print(\"{} 핑클의 멤버이다.\".format(l))\n\n이효리는 핑클의 멤버이다.\n옥주현은 핑클의 멤버이다.\n성유리는 핑클의 멤버이다.\n이진은 핑클의 멤버이다.\n\n\n#\n# 개념5 – for문을 이용하여 리스트의 원소 추가하기\n\nlst2 = [] # lst2 = list() 와 같은결과임 &lt;-- 비어있는 리스트 만듦\nlst = [\"이효리는\",\"옥주현은\",\"성유리는\",\"이진은\"]\nfor l in lst:\n    lst2.append(l)\nlst2\n\n['이효리는', '옥주현은', '성유리는', '이진은']\n\n\n\nlst2 = [] # lst2 = list() 와 같은결과임\nlst = [\"이효리는\",\"옥주현은\",\"성유리는\",\"이진은\"]\nfor l in lst:\n    lst2.append(\"{} 핑클의 멤버이다.\".format(l))\n\n\nlst2\n\n['이효리는 핑클의 멤버이다.', '옥주현은 핑클의 멤버이다.', '성유리는 핑클의 멤버이다.', '이진은 핑클의 멤버이다.']\n\n\n그런데 이걸 아래와 같이 해결할 수도 있다.\n\nlst = [\"이효리는\",\"옥주현은\",\"성유리는\",\"이진은\"]\n[\"{} 핑클의 멤버이다.\".format(l) for l in lst] # 리스트컴프리헨션 &lt;-- 잘 알아야할 개념\n\n['이효리는 핑클의 멤버이다.', '옥주현은 핑클의 멤버이다.', '성유리는 핑클의 멤버이다.', '이진은 핑클의 멤버이다.']\n\n\n#\n# 개념6 – 리스트컴프리헨션\n집합을 표현하는 방법에는 원소나열법과 조건제시법이 있다.\n\n원소나열법: \\(\\{2^0,2^1,2^2,2^3\\}\\)\n조건제시법: \\(\\{2^i: \\text{ for } i=0,1,2,3\\}\\)\n\n이중에서 조건제시법은 아래와 같이 표현할 수 있음.\n\n\\(\\{2^i: \\text{ for } i \\in \\{0,1,2,3\\}\\}\\)\n\n여기에서 \\(\\in\\) 은 in 으로 읽으므로, 위의 표기법을 연상하여 파이썬 코드로 바꿔보면\n[2^i: for i in [0,1,2,3]]\n와 같은 방식으로 리스트의 원소를 표현할 수 있을 것 같다. 위의 코드는 실행되지 않지만 아래의 코드는 실행가능하다.\n\n[2**i for i in [0,1,2,3]] #조건제시법을 떠올리며 기억 --&gt; 원소를 정의하는\n\n[1, 2, 4, 8]\n\n\n\n[2**i for i in range(4)] \n\n[1, 2, 4, 8]\n\n\n이를 응용하면\n\n[\"asdf{}\".format(2**i) for i in range(4)]\n\n['asdf1', 'asdf2', 'asdf4', 'asdf8']\n\n\n이것을 다시 응용하면\n\nlst = [\"이효리는\", \"성유리는\", \"옥주현은\", \"이진은\"]\n[\"{} 핑클의 멤버이다.\".format(l) for l in lst] # 이 개념은 방법을 단순히 알고있는 수준을 넘어, 자동으로 빠르게 나오는 수준으로 숙달되어야함\n\n['이효리는 핑클의 멤버이다.', '성유리는 핑클의 멤버이다.', '옥주현은 핑클의 멤버이다.', '이진은 핑클의 멤버이다.']\n\n\n#\n# 개념7 – 스트링의 인덱싱 (파이썬에서는 스트링을 array로 취급)\n\ns = 'asdf'  #\"\"여도 상관없음(''와 동일)\ns\n\n'asdf'\n\n\n\nlen(s) # 하나의 값을 갖는 scala(?)는 len을 구할 수 없음. ex) s=True or s=33.22 이런 것은, len(s)를 구할 수 없음\n\n4\n\n\n\ns[0]\n\n'a'\n\n\n\ns[-1]\n\n'f'\n\n\n\ns[:2]\n\n'as'\n\n\n#\n# 개념8 – 스트링과 리스트의 변환\n\ns = 'asdf'\ns\n\n'asdf'\n\n\n\nlst = list(s)\nlst\n\n['a', 's', 'd', 'f']\n\n\n\nstr(lst)[0]\n\n'['\n\n\n\n''.join(lst)\n\n'asdf'\n\n\n# 개념9 – 튜플자료형\n\nlst = [1,2,3]\nlst\n\n[1, 2, 3]\n\n\n\ntpl = (1,2,3)  #소괄호로 선언\ntpl\n\n(1, 2, 3)\n\n\n튜플은 (의미가 명확할때) 괄호를 생략할 수 있음\n\ntpl = 1,2,3\ntpl\n\n(1, 2, 3)\n\n\n\ntype(tpl)\n\ntuple\n\n\n튜플은 리스트와 매우 비슷함.\n\n[1,2,3] + [4,5]\n\n[1, 2, 3, 4, 5]\n\n\n\n(1,2,3) + (4,5)\n\n(1, 2, 3, 4, 5)\n\n\n아래도 가능\n\n''.join(['a','b','c'])\n\n'abc'\n\n\n\n''.join(('a','b','c'))\n\n'abc'\n\n\n#\n# 개념10 – for를 수행하는 다양한 테크닉\n우리가 알고 있는 for: 리스트 비슷한 것을 만든 뒤, 그 리스트의 원소를 하나씩 뽑아가면서 어떠한 반복구문 “??????” 수행하는 것.\n\nimport itertools  #모듈을 불러오기\n\n\nfor i in ['a', 'b', 'c']:\n    print(i)\n\na\nb\nc\n\n\n\nfor i in itertools.permutations(['a','b','c']):\n    print(i)\n\n('a', 'b', 'c')\n('a', 'c', 'b')\n('b', 'a', 'c')\n('b', 'c', 'a')\n('c', 'a', 'b')\n('c', 'b', 'a')\n\n\n\nfor i in itertools.product(['x','y'],['a','b','c']):\n    print(i)\n\n('x', 'a')\n('x', 'b')\n('x', 'c')\n('y', 'a')\n('y', 'b')\n('y', 'c')\n\n\n#"
+  },
+  {
+    "objectID": "posts/03wk_2.html#d.-풀이",
+    "href": "posts/03wk_2.html#d.-풀이",
+    "title": "03wk-2: 리스트는 쓰레기인가?",
+    "section": "D. 풀이",
+    "text": "D. 풀이\n아래의 문제를 풀어보자..\n\n(풀이)\n\n[i for i in itertools.permutations(['x','x','y','y','z'])] #전체 경우의 수 나열\n\n[('x', 'x', 'y', 'y', 'z'),\n ('x', 'x', 'y', 'z', 'y'),\n ('x', 'x', 'y', 'y', 'z'),\n ('x', 'x', 'y', 'z', 'y'),\n ('x', 'x', 'z', 'y', 'y'),\n ('x', 'x', 'z', 'y', 'y'),\n ('x', 'y', 'x', 'y', 'z'),\n ('x', 'y', 'x', 'z', 'y'),\n ('x', 'y', 'y', 'x', 'z'),\n ('x', 'y', 'y', 'z', 'x'),\n ('x', 'y', 'z', 'x', 'y'),\n ('x', 'y', 'z', 'y', 'x'),\n ('x', 'y', 'x', 'y', 'z'),\n ('x', 'y', 'x', 'z', 'y'),\n ('x', 'y', 'y', 'x', 'z'),\n ('x', 'y', 'y', 'z', 'x'),\n ('x', 'y', 'z', 'x', 'y'),\n ('x', 'y', 'z', 'y', 'x'),\n ('x', 'z', 'x', 'y', 'y'),\n ('x', 'z', 'x', 'y', 'y'),\n ('x', 'z', 'y', 'x', 'y'),\n ('x', 'z', 'y', 'y', 'x'),\n ('x', 'z', 'y', 'x', 'y'),\n ('x', 'z', 'y', 'y', 'x'),\n ('x', 'x', 'y', 'y', 'z'),\n ('x', 'x', 'y', 'z', 'y'),\n ('x', 'x', 'y', 'y', 'z'),\n ('x', 'x', 'y', 'z', 'y'),\n ('x', 'x', 'z', 'y', 'y'),\n ('x', 'x', 'z', 'y', 'y'),\n ('x', 'y', 'x', 'y', 'z'),\n ('x', 'y', 'x', 'z', 'y'),\n ('x', 'y', 'y', 'x', 'z'),\n ('x', 'y', 'y', 'z', 'x'),\n ('x', 'y', 'z', 'x', 'y'),\n ('x', 'y', 'z', 'y', 'x'),\n ('x', 'y', 'x', 'y', 'z'),\n ('x', 'y', 'x', 'z', 'y'),\n ('x', 'y', 'y', 'x', 'z'),\n ('x', 'y', 'y', 'z', 'x'),\n ('x', 'y', 'z', 'x', 'y'),\n ('x', 'y', 'z', 'y', 'x'),\n ('x', 'z', 'x', 'y', 'y'),\n ('x', 'z', 'x', 'y', 'y'),\n ('x', 'z', 'y', 'x', 'y'),\n ('x', 'z', 'y', 'y', 'x'),\n ('x', 'z', 'y', 'x', 'y'),\n ('x', 'z', 'y', 'y', 'x'),\n ('y', 'x', 'x', 'y', 'z'),\n ('y', 'x', 'x', 'z', 'y'),\n ('y', 'x', 'y', 'x', 'z'),\n ('y', 'x', 'y', 'z', 'x'),\n ('y', 'x', 'z', 'x', 'y'),\n ('y', 'x', 'z', 'y', 'x'),\n ('y', 'x', 'x', 'y', 'z'),\n ('y', 'x', 'x', 'z', 'y'),\n ('y', 'x', 'y', 'x', 'z'),\n ('y', 'x', 'y', 'z', 'x'),\n ('y', 'x', 'z', 'x', 'y'),\n ('y', 'x', 'z', 'y', 'x'),\n ('y', 'y', 'x', 'x', 'z'),\n ('y', 'y', 'x', 'z', 'x'),\n ('y', 'y', 'x', 'x', 'z'),\n ('y', 'y', 'x', 'z', 'x'),\n ('y', 'y', 'z', 'x', 'x'),\n ('y', 'y', 'z', 'x', 'x'),\n ('y', 'z', 'x', 'x', 'y'),\n ('y', 'z', 'x', 'y', 'x'),\n ('y', 'z', 'x', 'x', 'y'),\n ('y', 'z', 'x', 'y', 'x'),\n ('y', 'z', 'y', 'x', 'x'),\n ('y', 'z', 'y', 'x', 'x'),\n ('y', 'x', 'x', 'y', 'z'),\n ('y', 'x', 'x', 'z', 'y'),\n ('y', 'x', 'y', 'x', 'z'),\n ('y', 'x', 'y', 'z', 'x'),\n ('y', 'x', 'z', 'x', 'y'),\n ('y', 'x', 'z', 'y', 'x'),\n ('y', 'x', 'x', 'y', 'z'),\n ('y', 'x', 'x', 'z', 'y'),\n ('y', 'x', 'y', 'x', 'z'),\n ('y', 'x', 'y', 'z', 'x'),\n ('y', 'x', 'z', 'x', 'y'),\n ('y', 'x', 'z', 'y', 'x'),\n ('y', 'y', 'x', 'x', 'z'),\n ('y', 'y', 'x', 'z', 'x'),\n ('y', 'y', 'x', 'x', 'z'),\n ('y', 'y', 'x', 'z', 'x'),\n ('y', 'y', 'z', 'x', 'x'),\n ('y', 'y', 'z', 'x', 'x'),\n ('y', 'z', 'x', 'x', 'y'),\n ('y', 'z', 'x', 'y', 'x'),\n ('y', 'z', 'x', 'x', 'y'),\n ('y', 'z', 'x', 'y', 'x'),\n ('y', 'z', 'y', 'x', 'x'),\n ('y', 'z', 'y', 'x', 'x'),\n ('z', 'x', 'x', 'y', 'y'),\n ('z', 'x', 'x', 'y', 'y'),\n ('z', 'x', 'y', 'x', 'y'),\n ('z', 'x', 'y', 'y', 'x'),\n ('z', 'x', 'y', 'x', 'y'),\n ('z', 'x', 'y', 'y', 'x'),\n ('z', 'x', 'x', 'y', 'y'),\n ('z', 'x', 'x', 'y', 'y'),\n ('z', 'x', 'y', 'x', 'y'),\n ('z', 'x', 'y', 'y', 'x'),\n ('z', 'x', 'y', 'x', 'y'),\n ('z', 'x', 'y', 'y', 'x'),\n ('z', 'y', 'x', 'x', 'y'),\n ('z', 'y', 'x', 'y', 'x'),\n ('z', 'y', 'x', 'x', 'y'),\n ('z', 'y', 'x', 'y', 'x'),\n ('z', 'y', 'y', 'x', 'x'),\n ('z', 'y', 'y', 'x', 'x'),\n ('z', 'y', 'x', 'x', 'y'),\n ('z', 'y', 'x', 'y', 'x'),\n ('z', 'y', 'x', 'x', 'y'),\n ('z', 'y', 'x', 'y', 'x'),\n ('z', 'y', 'y', 'x', 'x'),\n ('z', 'y', 'y', 'x', 'x')]\n\n\n\nlst = [i for i in itertools.permutations(['x','x','y','y','z'])] \nlst[0] #첫번째 원소는 결과와 같은 튜플이 됨. \n\n('x', 'x', 'y', 'y', 'z')\n\n\n\n[''.join(i) for i in itertools.permutations(['x','x','y','y','z'])]\n\n['xxyyz',\n 'xxyzy',\n 'xxyyz',\n 'xxyzy',\n 'xxzyy',\n 'xxzyy',\n 'xyxyz',\n 'xyxzy',\n 'xyyxz',\n 'xyyzx',\n 'xyzxy',\n 'xyzyx',\n 'xyxyz',\n 'xyxzy',\n 'xyyxz',\n 'xyyzx',\n 'xyzxy',\n 'xyzyx',\n 'xzxyy',\n 'xzxyy',\n 'xzyxy',\n 'xzyyx',\n 'xzyxy',\n 'xzyyx',\n 'xxyyz',\n 'xxyzy',\n 'xxyyz',\n 'xxyzy',\n 'xxzyy',\n 'xxzyy',\n 'xyxyz',\n 'xyxzy',\n 'xyyxz',\n 'xyyzx',\n 'xyzxy',\n 'xyzyx',\n 'xyxyz',\n 'xyxzy',\n 'xyyxz',\n 'xyyzx',\n 'xyzxy',\n 'xyzyx',\n 'xzxyy',\n 'xzxyy',\n 'xzyxy',\n 'xzyyx',\n 'xzyxy',\n 'xzyyx',\n 'yxxyz',\n 'yxxzy',\n 'yxyxz',\n 'yxyzx',\n 'yxzxy',\n 'yxzyx',\n 'yxxyz',\n 'yxxzy',\n 'yxyxz',\n 'yxyzx',\n 'yxzxy',\n 'yxzyx',\n 'yyxxz',\n 'yyxzx',\n 'yyxxz',\n 'yyxzx',\n 'yyzxx',\n 'yyzxx',\n 'yzxxy',\n 'yzxyx',\n 'yzxxy',\n 'yzxyx',\n 'yzyxx',\n 'yzyxx',\n 'yxxyz',\n 'yxxzy',\n 'yxyxz',\n 'yxyzx',\n 'yxzxy',\n 'yxzyx',\n 'yxxyz',\n 'yxxzy',\n 'yxyxz',\n 'yxyzx',\n 'yxzxy',\n 'yxzyx',\n 'yyxxz',\n 'yyxzx',\n 'yyxxz',\n 'yyxzx',\n 'yyzxx',\n 'yyzxx',\n 'yzxxy',\n 'yzxyx',\n 'yzxxy',\n 'yzxyx',\n 'yzyxx',\n 'yzyxx',\n 'zxxyy',\n 'zxxyy',\n 'zxyxy',\n 'zxyyx',\n 'zxyxy',\n 'zxyyx',\n 'zxxyy',\n 'zxxyy',\n 'zxyxy',\n 'zxyyx',\n 'zxyxy',\n 'zxyyx',\n 'zyxxy',\n 'zyxyx',\n 'zyxxy',\n 'zyxyx',\n 'zyyxx',\n 'zyyxx',\n 'zyxxy',\n 'zyxyx',\n 'zyxxy',\n 'zyxyx',\n 'zyyxx',\n 'zyyxx']\n\n\n\nset([''.join(i) for i in itertools.permutations(['x','x','y','y','z'])])\n\n{'xxyyz',\n 'xxyzy',\n 'xxzyy',\n 'xyxyz',\n 'xyxzy',\n 'xyyxz',\n 'xyyzx',\n 'xyzxy',\n 'xyzyx',\n 'xzxyy',\n 'xzyxy',\n 'xzyyx',\n 'yxxyz',\n 'yxxzy',\n 'yxyxz',\n 'yxyzx',\n 'yxzxy',\n 'yxzyx',\n 'yyxxz',\n 'yyxzx',\n 'yyzxx',\n 'yzxxy',\n 'yzxyx',\n 'yzyxx',\n 'zxxyy',\n 'zxyxy',\n 'zxyyx',\n 'zyxxy',\n 'zyxyx',\n 'zyyxx'}\n\n\n\nlen(set([''.join(i) for i in itertools.permutations(['x','x','y','y','z'])]))\n\n30\n\n\n—– 3/30/26 우선 여기까지."
+  },
+  {
+    "objectID": "posts/03wk_2.html#a.-문제이해",
+    "href": "posts/03wk_2.html#a.-문제이해",
+    "title": "03wk-2: 리스트는 쓰레기인가?",
+    "section": "A. 문제이해",
+    "text": "A. 문제이해"
+  },
+  {
+    "objectID": "posts/03wk_2.html#b.-슈도알고리즘-1",
+    "href": "posts/03wk_2.html#b.-슈도알고리즘-1",
+    "title": "03wk-2: 리스트는 쓰레기인가?",
+    "section": "B. 슈도알고리즘",
+    "text": "B. 슈도알고리즘\n1. 아래의 경우를 모두 나열한다.\na,b,c,d = 1,1,1,1\na,b,c,d = 1,1,1,2\n....\na,b,c,d = 6,6,6,6\n2. 조건 \\(a \\leq c \\leq d\\) 와 \\(b \\leq c \\leq d\\) 를 동시에 만족하는 경우를 센다."
+  },
+  {
+    "objectID": "posts/03wk_2.html#c.-예비학습-1",
+    "href": "posts/03wk_2.html#c.-예비학습-1",
+    "title": "03wk-2: 리스트는 쓰레기인가?",
+    "section": "C. 예비학습",
+    "text": "C. 예비학습\n# 개념1 – for문과 튜플\n\nlst = [['최규빈',43052,'M'],['아이유',54321,'F'],['하니',11223,'F']]\nlst[0]\n\n['최규빈', 43052, 'M']\n\n\n아래의 코드가 가능하다.\n\nfor [name,student_id,sex] in lst:\n    print([name,student_id,sex])\n# [name,student_id,sex] = ['최규빈', 43052, 'M']\n# print([name,student_id,sex])\n# [name,student_id,sex] = ['아이유', 54321, 'F']\n# print([name,student_id,sex])\n# [name,student_id,sex] = ['하니', 11223, 'F']\n# print([name,student_id,sex])\n\n['최규빈', 43052, 'M']\n['아이유', 54321, 'F']\n['하니', 11223, 'F']\n\n\n리스트를 튜플로 바꾼다면?\n\nfor (name,student_id,sex) in lst:\n    print((name,student_id,sex))\n# (name,student_id,sex) = ['최규빈', 43052, 'M']\n# print((name,student_id,sex))\n# (name,student_id,sex) = ['아이유', 54321, 'F']\n# print((name,student_id,sex))\n# (name,student_id,sex) = ['하니', 11223, 'F']\n# print((name,student_id,sex))\n\n('최규빈', 43052, 'M')\n('아이유', 54321, 'F')\n('하니', 11223, 'F')\n\n\nfor (name,student_id,sex) in lst: 대신에 for name,student_id,sex in lst: 도 가능\n\nfor name,student_id,sex in lst:\n    print((name,student_id,sex))\n# name,student_id,sex = ['최규빈', 43052, 'M']\n# print((name,student_id,sex))\n# name,student_id,sex = ['아이유', 54321, 'F']\n# print((name,student_id,sex))\n# name,student_id,sex = ['하니', 11223, 'F']\n# print((name,student_id,sex))\n\n('최규빈', 43052, 'M')\n('아이유', 54321, 'F')\n('하니', 11223, 'F')\n\n\n아래와 같이 컴프리헨션으로 만들 수도 있음.\n\n[[name,student_id,sex] for name,student_id,sex in lst]\n\n[['최규빈', 43052, 'M'], ['아이유', 54321, 'F'], ['하니', 11223, 'F']]\n\n\n\n[(name,student_id,sex) for name,student_id,sex in lst]\n\n[('최규빈', 43052, 'M'), ('아이유', 54321, 'F'), ('하니', 11223, 'F')]\n\n\n아래는 불가능\n\n[name,student_id,sex for name,student_id,sex in lst]\n\n\n  Cell In[213], line 1\n    [name,student_id,sex for name,student_id,sex in lst]\n     ^\nSyntaxError: did you forget parentheses around the comprehension target?\n\n\n\n\n하지만 괄호를 명확하게 쓰기만 하면 만들어짐\n\n[(name,sex) for name,student_id,sex in lst]\n\n[('최규빈', 'M'), ('아이유', 'F'), ('하니', 'F')]\n\n\n\n[(sex,name) for name,student_id,sex in lst]\n\n[('M', '최규빈'), ('F', '아이유'), ('F', '하니')]\n\n\n\n[name for name,student_id,sex in lst]\n\n['최규빈', '아이유', '하니']\n\n\n언더스코어(_)를 사용할 수도 있음.\n\n[name for name,_,_ in lst]\n\n['최규빈', '아이유', '하니']\n\n\n언더스코어(_)를 사용시 lst[0], lst[1] 등의 원소숫자와 일치하도록 사용해야함\n\n[name for name,_ in lst] # 이건 또 실행불가능..\n\n\n---------------------------------------------------------------------------\nValueError                                Traceback (most recent call last)\nCell In[226], line 1\n----&gt; 1 [name for name,_ in lst] # 이건 또 실행불가능..\n\nValueError: too many values to unpack (expected 2)\n\n\n\n\n[name for name, *args in lst] # 이건 실행가능\n\n['최규빈', '아이유', '하니']\n\n\n# 개념2 – 조건문\n아래의 리스트 원소 \\(l\\) 중에서 조건 \\(1 &lt; l \\leq 5\\)를 만족하는 원소는 모두 몇개인가?\n\nlst = [1,2,3,4,5,6,7,8,9]\nlst\n\n[1, 2, 3, 4, 5, 6, 7, 8, 9]\n\n\n(풀이)\n\nsum([1&lt;l and l&lt;=5 for l in lst])\n\n4\n\n\n\nsum([1&lt;l&lt;=5 for l in lst])\n\n4"
+  },
+  {
+    "objectID": "posts/03wk_2.html#d.-풀이-1",
+    "href": "posts/03wk_2.html#d.-풀이-1",
+    "title": "03wk-2: 리스트는 쓰레기인가?",
+    "section": "D. 풀이",
+    "text": "D. 풀이\n\n(풀이)\n\nlst = [1,2,3,4,5,6]\nsum([a&lt;=c&lt;=d and b&lt;=c&lt;=d for a,b,c,d in itertools.product(lst,lst,lst,lst)])\n\n196"
+  },
+  {
+    "objectID": "posts/03wk_2.html#a.-문제파악-1",
+    "href": "posts/03wk_2.html#a.-문제파악-1",
+    "title": "03wk-2: 리스트는 쓰레기인가?",
+    "section": "A. 문제파악",
+    "text": "A. 문제파악"
+  },
+  {
+    "objectID": "posts/03wk_2.html#b.-예비학습",
+    "href": "posts/03wk_2.html#b.-예비학습",
+    "title": "03wk-2: 리스트는 쓰레기인가?",
+    "section": "B. 예비학습",
+    "text": "B. 예비학습\n- 예제: 제곱수중에서 12로 나누어서 떨어지는 수만 원소르 가지는 리스트를 만들고 싶다.\n\n제곱수: 1,4,9,16,25,36,…\n12로 나누어서 떨어지는 수: 36\n\n(복습1)\n\n12 % 4 # % 는 나머지를 계산하는 연산자, 12를 4로 나누었더니 나머지가 0\n\n0\n\n\n\n12 % 5 # 12 = 5*2 +2\n\n2\n\n\n(복습2)\n\na = 3 # a에 2를 대입하라...\n\n\na == 2 # a에 들어있는 값이 2이인지 테스트하라..\n\nFalse\n\n\n\na == 3\n\nTrue\n\n\n(풀이1) – 비어있는 리스트를 만들고, for + if 를 사용\n\nlst = []\nfor i in range(1,101):\n    if i**2 % 12 == 0: # i^2을 12로 나누어서 나누어 떨어진다면\n        lst.append(i**2)\n\n\nlst\n\n[36,\n 144,\n 324,\n 576,\n 900,\n 1296,\n 1764,\n 2304,\n 2916,\n 3600,\n 4356,\n 5184,\n 6084,\n 7056,\n 8100,\n 9216]\n\n\n(풀이2) - if문이 포함된 리스트 컴프리헨션\n\n[i**2 for i in range(1,101) if i**2 % 12 ==0]\n\n[36,\n 144,\n 324,\n 576,\n 900,\n 1296,\n 1764,\n 2304,\n 2916,\n 3600,\n 4356,\n 5184,\n 6084,\n 7056,\n 8100,\n 9216]"
+  },
+  {
+    "objectID": "posts/03wk_2.html#c.-풀이",
+    "href": "posts/03wk_2.html#c.-풀이",
+    "title": "03wk-2: 리스트는 쓰레기인가?",
+    "section": "C. 풀이",
+    "text": "C. 풀이\n\n(풀이)\n\nx = list(range(1,16))\nf = lambda x: np.sin(np.pi/4*x)\nsum([xi for xi in x if f(2+xi)*f(2-xi)&lt;1/4])\n\n32"
   },
   {
     "objectID": "index.html",
     "href": "index.html",
     "title": "mini2",
     "section": "",
-    "text": "260325_review\n\n\n\n\n\n\n\n\nMar 25, 2026\n\n\n이민희\n\n\n\n\n\n\n\n\n\n\n\n\n02wk-2: 파이썬은 좋은 계산기다 (2)\n\n\n\n\n\n\n\n\nMar 23, 2026\n\n\n이민희\n\n\n\n\n\n\n\n\n\n\n\n\n01wk-2: 파이썬은 좋은 계산기다 (1)\n\n\n\n\n\n\n\n\nFeb 14, 2026\n\n\n이민희\n\n\n\n\n\nNo matching items"
+    "text": "03wk-2: 리스트는 쓰레기인가?\n\n\n\n\n\n\n\n\nMar 30, 2026\n\n\n이민희\n\n\n\n\n\n\n\n\n\n\n\n\n260325_review\n\n\n\n\n\n\n\n\nMar 25, 2026\n\n\n이민희\n\n\n\n\n\n\n\n\n\n\n\n\n02wk-2: 파이썬은 좋은 계산기다 (2)\n\n\n\n\n\n\n\n\nMar 23, 2026\n\n\n이민희\n\n\n\n\n\n\n\n\n\n\n\n\n01wk-2: 파이썬은 좋은 계산기다 (1)\n\n\n\n\n\n\n\n\nFeb 14, 2026\n\n\n이민희\n\n\n\n\n\nNo matching items"
   }
 ]
