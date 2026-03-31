@@ -28,7 +28,7 @@
 </section>
 <section id="imports" class="level1">
 <h1>2. Imports</h1>
-<div id="c9057763-4fe0-485d-b00a-e74ded37f5a6" class="cell" data-execution_count="53">
+<div id="c9057763-4fe0-485d-b00a-e74ded37f5a6" class="cell" data-execution_count="71">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="im" style="color: #00769E;
 background-color: null;
 font-style: inherit;">import</span> numpy <span class="im" style="color: #00769E;
@@ -46,7 +46,7 @@ font-style: inherit;">as</span> plt</span></code></pre></div></div>
 <section id="a.-벡터화연산브로드캐스팅-불가능" class="level2">
 <h2 class="anchored" data-anchor-id="a.-벡터화연산브로드캐스팅-불가능">A. 벡터화연산(브로드캐스팅) 불가능</h2>
 <p><code>-</code> 벡터화연산 불가능 (최악의 단점)</p>
-<div id="b9306300-9ce4-4ada-a8fa-3c64fe60d52a" class="cell" data-outputid="139d8099-5441-4c90-9e06-ddb26a15f6dd" data-execution_count="54">
+<div id="b9306300-9ce4-4ada-a8fa-3c64fe60d52a" class="cell" data-outputid="139d8099-5441-4c90-9e06-ddb26a15f6dd" data-execution_count="70">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1">lst <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> [<span class="dv" style="color: #AD0000;
@@ -67,7 +67,7 @@ font-style: inherit;">1</span></span></code></pre></div></div>
 
 <span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
 
-Cell <span class="ansi-green-fg">In[54], line 2</span>
+Cell <span class="ansi-green-fg">In[70], line 2</span>
 
 <span class="ansi-green-fg ansi-bold">      1</span> lst <span style="color:rgb(98,98,98)">=</span> [<span style="color:rgb(98,98,98)">1</span>,<span style="color:rgb(98,98,98)">2</span>,<span style="color:rgb(98,98,98)">3</span>]
 
@@ -79,7 +79,7 @@ Cell <span class="ansi-green-fg">In[54], line 2</span>
 </div>
 </div>
 </div>
-<div id="57266e27-d2f3-4da3-b282-548b8c39c756" class="cell" data-outputid="80a37ff2-f04d-4ffb-9674-ca27b02d8a1a">
+<div id="57266e27-d2f3-4da3-b282-548b8c39c756" class="cell" data-outputid="80a37ff2-f04d-4ffb-9674-ca27b02d8a1a" data-execution_count="72">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1">arr <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> np.array([<span class="dv" style="color: #AD0000;
@@ -94,7 +94,7 @@ background-color: null;
 font-style: inherit;">+</span> <span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">1</span></span></code></pre></div></div>
-<div class="cell-output cell-output-display" data-execution_count="7">
+<div class="cell-output cell-output-display">
 <pre><code>array([2, 3, 4])</code></pre>
 </div>
 </div>
@@ -122,7 +122,7 @@ background-color: null;
 font-style: inherit;">&gt;</span><span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">3</span>]</span></code></pre></div></div>
-<div class="cell-output cell-output-display" data-execution_count="12">
+<div class="cell-output cell-output-display">
 <pre><code>array([4, 5])</code></pre>
 </div>
 </div>
@@ -213,7 +213,7 @@ font-style: inherit;">max</span>(), arr.mean(), arr.argmin(), arr.argmax()</span
 <div id="debd202c-89ce-4891-9d63-564a4fd51858" class="cell" data-outputid="16c0bc2f-60f2-49a8-ddbd-b9294c56e792">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1">arr.sort()</span>
 <span id="cb13-2">arr</span></code></pre></div></div>
-<div class="cell-output cell-output-display" data-execution_count="25">
+<div class="cell-output cell-output-display">
 <pre><code>array([1, 2, 3, 4, 5])</code></pre>
 </div>
 </div>
@@ -233,7 +233,7 @@ font-style: inherit;">2</span>,<span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">1</span>]</span>
 <span id="cb15-2">lst</span></code></pre></div></div>
-<div class="cell-output cell-output-display" data-execution_count="26">
+<div class="cell-output cell-output-display">
 <pre><code>[5, 4, 3, 2, 1]</code></pre>
 </div>
 </div>
@@ -248,9 +248,14 @@ font-style: inherit;">#모두 다 안됨</span></span></code></pre></div></div>
 <div class="cell-output cell-output-error">
 <div class="ansi-escaped-output">
 <pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+
 <span class="ansi-red-fg">AttributeError</span>                            Traceback (most recent call last)
-Cell <span class="ansi-green-fg">In[32], line 1</span>
-<span class="ansi-green-fg">----&gt; 1</span> <span class="ansi-yellow-bg">lst</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">min</span>(), lst<span style="color:rgb(98,98,98)">.</span>max(), lst<span style="color:rgb(98,98,98)">.</span>mean(), lst<span style="color:rgb(98,98,98)">.</span>argmin(), lst<span style="color:rgb(98,98,98)">.</span>argmax()
+
+Cell <span class="ansi-green-fg">In[24], line 1</span>
+
+<span class="ansi-green-fg">----&gt; 1</span> <span class="ansi-yellow-bg">lst</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">min</span>(), lst<span style="color:rgb(98,98,98)">.</span>max(), lst<span style="color:rgb(98,98,98)">.</span>mean(), lst<span style="color:rgb(98,98,98)">.</span>argmin(), lst<span style="color:rgb(98,98,98)">.</span>argmax()  <span style="font-style:italic;color:rgb(95,135,135)">#모두 다 안됨</span>
+
+
 
 <span class="ansi-red-fg">AttributeError</span>: 'list' object has no attribute 'min'</pre>
 </div>
@@ -259,7 +264,7 @@ Cell <span class="ansi-green-fg">In[32], line 1</span>
 <div id="ffe529d4-fefc-484e-9f5f-72ddfcab4bc0" class="cell" data-outputid="fe2bd4c5-5351-43ea-8ac2-431b14cfccf3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1">lst.sort()</span>
 <span id="cb18-2">lst</span></code></pre></div></div>
-<div class="cell-output cell-output-display" data-execution_count="33">
+<div class="cell-output cell-output-display">
 <pre><code>[1, 2, 3, 4, 5]</code></pre>
 </div>
 </div>
@@ -282,8 +287,8 @@ background-color: null;
 font-style: inherit;">max</span>() <span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># max(arr)로 해석</span></span></code></pre></div></div>
-<div class="cell-output cell-output-display" data-execution_count="38">
-<pre><code>3</code></pre>
+<div class="cell-output cell-output-display">
+<pre><code>np.int64(3)</code></pre>
 </div>
 </div>
 <div id="8affecab-1d54-406b-8176-d2296b39e47d" class="cell" data-outputid="94342553-6011-47ca-d6d4-063f483622d4">
@@ -334,7 +339,7 @@ font-style: inherit;">4</span>) <span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># append(lst,4) 로 해석</span></span>
 <span id="cb23-4">lst</span></code></pre></div></div>
-<div class="cell-output cell-output-display" data-execution_count="50">
+<div class="cell-output cell-output-display">
 <pre><code>[1, 2, 3, 4]</code></pre>
 </div>
 </div>
@@ -377,7 +382,7 @@ font-style: inherit;">#type(s)는 str</span></span>
 <span id="cb26-3">s.capitalize() <span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># capitalize(s) 로 해석</span></span></code></pre></div></div>
-<div class="cell-output cell-output-display" data-execution_count="51">
+<div class="cell-output cell-output-display">
 <pre><code>'Asdf'</code></pre>
 </div>
 </div>
@@ -481,9 +486,9 @@ font-style: inherit;">#실제로 join 이라는 함수가 있는 것은 아님. 
 
 <span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
 
-Cell <span class="ansi-green-fg">In[10], line 1</span>
+Cell <span class="ansi-green-fg">In[29], line 1</span>
 
-<span class="ansi-green-fg">----&gt; 1</span> <span class="ansi-yellow-bg">join</span>(<span style="color:rgb(175,0,0)">'</span><span style="color:rgb(175,0,0)">'</span>,[<span style="color:rgb(175,0,0)">'</span><span style="color:rgb(175,0,0)">x</span><span style="color:rgb(175,0,0)">'</span>,<span style="color:rgb(175,0,0)">'</span><span style="color:rgb(175,0,0)">y</span><span style="color:rgb(175,0,0)">'</span>,<span style="color:rgb(175,0,0)">'</span><span style="color:rgb(175,0,0)">z</span><span style="color:rgb(175,0,0)">'</span>])
+<span class="ansi-green-fg">----&gt; 1</span> <span class="ansi-yellow-bg">join</span>(<span style="color:rgb(175,0,0)">'</span><span style="color:rgb(175,0,0)">'</span>,[<span style="color:rgb(175,0,0)">'</span><span style="color:rgb(175,0,0)">x</span><span style="color:rgb(175,0,0)">'</span>,<span style="color:rgb(175,0,0)">'</span><span style="color:rgb(175,0,0)">y</span><span style="color:rgb(175,0,0)">'</span>,<span style="color:rgb(175,0,0)">'</span><span style="color:rgb(175,0,0)">z</span><span style="color:rgb(175,0,0)">'</span>]) <span style="font-style:italic;color:rgb(95,135,135)">#실제로 join 이라는 함수가 있는 것은 아님. 이렇게 해석된다는 것일 뿐</span>
 
 
 
@@ -1498,7 +1503,7 @@ font-style: inherit;">3</span>]</span>
 <pre><code>[1, 2, 3]</code></pre>
 </div>
 </div>
-<div id="cf47fab9-3d7f-4e52-88cb-10ff034352fa" class="cell" data-outputid="86f34a40-21ef-4fbe-e53b-dcdbf3673459" data-execution_count="55">
+<div id="cf47fab9-3d7f-4e52-88cb-10ff034352fa" class="cell" data-outputid="86f34a40-21ef-4fbe-e53b-dcdbf3673459">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb105" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb105-1">tpl <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> (<span class="dv" style="color: #AD0000;
@@ -1531,7 +1536,7 @@ font-style: inherit;">3</span></span>
 <pre><code>(1, 2, 3)</code></pre>
 </div>
 </div>
-<div id="02254c0c" class="cell" data-execution_count="56">
+<div id="02254c0c" class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb109" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb109-1"><span class="bu" style="color: null;
 background-color: null;
 font-style: inherit;">type</span>(tpl)</span></code></pre></div></div>
@@ -1608,14 +1613,14 @@ font-style: inherit;">'c'</span>))</span></code></pre></div></div>
 <p><code>#</code></p>
 <p><code># 개념10</code> – for를 수행하는 다양한 테크닉</p>
 <p><strong>우리가 알고 있는 <code>for</code></strong>: 리스트 비슷한 것을 만든 뒤, <strong>그 리스트의 원소를 하나씩 뽑아가면서</strong> 어떠한 반복구문 “??????” 수행하는 것.</p>
-<div id="cd3ce647-d7e5-4ffa-b2b5-bb25a4cc7af6" class="cell" data-execution_count="57">
+<div id="cd3ce647-d7e5-4ffa-b2b5-bb25a4cc7af6" class="cell" data-execution_count="77">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb119" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb119-1"><span class="im" style="color: #00769E;
 background-color: null;
 font-style: inherit;">import</span> itertools  <span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">#모듈을 불러오기</span></span></code></pre></div></div>
 </div>
-<div id="97820f95" class="cell" data-execution_count="58">
+<div id="97820f95" class="cell" data-execution_count="78">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb120" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb120-1"><span class="cf" style="color: #003B4F;
 background-color: null;
 font-weight: bold;
@@ -1844,7 +1849,7 @@ font-style: inherit;">#전체 경우의 수 나열</span></span></code></pre></d
  ('z', 'y', 'y', 'x', 'x')]</code></pre>
 </div>
 </div>
-<div id="719ac885" class="cell" data-execution_count="63">
+<div id="719ac885" class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb128" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb128-1">lst <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> [i <span class="cf" style="color: #003B4F;
@@ -1873,7 +1878,7 @@ font-style: inherit;">#첫번째 원소는 결과와 같은 튜플이 됨. </spa
 <pre><code>('x', 'x', 'y', 'y', 'z')</code></pre>
 </div>
 </div>
-<div id="024fddf0" class="cell" data-execution_count="65">
+<div id="024fddf0" class="cell" data-execution_count="131">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb130" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb130-1">[<span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">''</span>.join(i) <span class="cf" style="color: #003B4F;
@@ -1892,7 +1897,7 @@ font-style: inherit;">'y'</span>,<span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">'y'</span>,<span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">'z'</span>])]</span></code></pre></div></div>
+font-style: inherit;">'z'</span>])] </span></code></pre></div></div>
 <div class="cell-output cell-output-display">
 <pre><code>['xxyyz',
  'xxyzy',
@@ -2016,7 +2021,7 @@ font-style: inherit;">'z'</span>])]</span></code></pre></div></div>
  'zyyxx']</code></pre>
 </div>
 </div>
-<div id="4d98ae0b" class="cell" data-execution_count="67">
+<div id="4d98ae0b" class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb132" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb132-1"><span class="bu" style="color: null;
 background-color: null;
 font-style: inherit;">set</span>([<span class="st" style="color: #20794D;
@@ -2071,7 +2076,7 @@ font-style: inherit;">'z'</span>])])</span></code></pre></div></div>
  'zyyxx'}</code></pre>
 </div>
 </div>
-<div id="c586a390-182c-494a-bf72-7a1171694f06" class="cell" data-outputid="d0465d6b-dee9-4fb6-9860-f4fc233903a4">
+<div id="c586a390-182c-494a-bf72-7a1171694f06" class="cell" data-outputid="d0465d6b-dee9-4fb6-9860-f4fc233903a4" data-execution_count="79">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb134" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb134-1"><span class="bu" style="color: null;
 background-color: null;
 font-style: inherit;">len</span>(<span class="bu" style="color: null;
@@ -2095,11 +2100,10 @@ background-color: null;
 font-style: inherit;">'y'</span>,<span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">'z'</span>])]))</span></code></pre></div></div>
-<div class="cell-output cell-output-display" data-execution_count="144">
+<div class="cell-output cell-output-display">
 <pre><code>30</code></pre>
 </div>
 </div>
-<p>—– 3/30/26 우선 여기까지.</p>
 </section>
 </section>
 <section id="년-수능-확통29" class="level1">
@@ -2175,7 +2179,7 @@ font-style: inherit;">'F'</span>]]</span>
 <span id="cb137-2">lst[<span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">0</span>]</span></code></pre></div></div>
-<div class="cell-output cell-output-display" data-execution_count="176">
+<div class="cell-output cell-output-display">
 <pre><code>['최규빈', 43052, 'M']</code></pre>
 </div>
 </div>
@@ -2251,7 +2255,7 @@ font-style: inherit;"># print((name,student_id,sex))</span></span></code></pre><
 ('하니', 11223, 'F')</code></pre>
 </div>
 </div>
-<p><code>for (name,student_id,sex) in lst:</code> 대신에 <code>for name,student_id,sex in lst:</code> 도 가능</p>
+<p><code>for (name,student_id,sex) in lst:</code> 대신에 <code>for name,student_id,sex in lst:</code> 도 가능 -&gt; 튜플은 괄호를 생략할 수 있으므로</p>
 <div id="6bd0f367-9345-49f9-838e-2fe307dfb850" class="cell" data-outputid="73f7c618-8271-4653-a6f4-0a00136bb83f">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb143" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb143-1"><span class="cf" style="color: #003B4F;
 background-color: null;
@@ -2259,7 +2263,7 @@ font-weight: bold;
 font-style: inherit;">for</span> name,student_id,sex <span class="kw" style="color: #003B4F;
 background-color: null;
 font-weight: bold;
-font-style: inherit;">in</span> lst:</span>
+font-style: inherit;">in</span> lst: </span>
 <span id="cb143-2">    <span class="bu" style="color: null;
 background-color: null;
 font-style: inherit;">print</span>((name,student_id,sex))</span>
@@ -2296,7 +2300,7 @@ font-style: inherit;">for</span> name,student_id,sex <span class="kw" style="col
 background-color: null;
 font-weight: bold;
 font-style: inherit;">in</span> lst]</span></code></pre></div></div>
-<div class="cell-output cell-output-display" data-execution_count="209">
+<div class="cell-output cell-output-display">
 <pre><code>[['최규빈', 43052, 'M'], ['아이유', 54321, 'F'], ['하니', 11223, 'F']]</code></pre>
 </div>
 </div>
@@ -2308,11 +2312,11 @@ font-style: inherit;">for</span> name,student_id,sex <span class="kw" style="col
 background-color: null;
 font-weight: bold;
 font-style: inherit;">in</span> lst]</span></code></pre></div></div>
-<div class="cell-output cell-output-display" data-execution_count="210">
+<div class="cell-output cell-output-display">
 <pre><code>[('최규빈', 43052, 'M'), ('아이유', 54321, 'F'), ('하니', 11223, 'F')]</code></pre>
 </div>
 </div>
-<p>아래는 불가능</p>
+<p>아래는 불가능(불명확함)</p>
 <div id="b43ffd33-0c6a-4f7b-a970-9c9b24e9b3f0" class="cell" data-outputid="49f35e0c-4891-45f3-fcd4-6aaf4611a5b3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb149" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb149-1">[name,student_id,sex <span class="cf" style="color: #003B4F;
 background-color: null;
@@ -2323,9 +2327,12 @@ font-weight: bold;
 font-style: inherit;">in</span> lst]</span></code></pre></div></div>
 <div class="cell-output cell-output-error">
 <div class="ansi-escaped-output">
-<pre><span class="ansi-cyan-fg">  Cell </span><span class="ansi-green-fg">In[213], line 1</span>
+<pre><span class="ansi-cyan-fg">  Cell </span><span class="ansi-green-fg">In[40], line 1</span>
+
 <span class="ansi-red-fg">    [name,student_id,sex for name,student_id,sex in lst]</span>
+
      ^
+
 <span class="ansi-red-fg">SyntaxError</span><span class="ansi-red-fg">:</span> did you forget parentheses around the comprehension target?
 </pre>
 </div>
@@ -2340,7 +2347,7 @@ font-style: inherit;">for</span> name,student_id,sex <span class="kw" style="col
 background-color: null;
 font-weight: bold;
 font-style: inherit;">in</span> lst]</span></code></pre></div></div>
-<div class="cell-output cell-output-display" data-execution_count="215">
+<div class="cell-output cell-output-display">
 <pre><code>[('최규빈', 'M'), ('아이유', 'F'), ('하니', 'F')]</code></pre>
 </div>
 </div>
@@ -2352,7 +2359,7 @@ font-style: inherit;">for</span> name,student_id,sex <span class="kw" style="col
 background-color: null;
 font-weight: bold;
 font-style: inherit;">in</span> lst]</span></code></pre></div></div>
-<div class="cell-output cell-output-display" data-execution_count="216">
+<div class="cell-output cell-output-display">
 <pre><code>[('M', '최규빈'), ('F', '아이유'), ('F', '하니')]</code></pre>
 </div>
 </div>
@@ -2364,7 +2371,7 @@ font-style: inherit;">for</span> name,student_id,sex <span class="kw" style="col
 background-color: null;
 font-weight: bold;
 font-style: inherit;">in</span> lst]</span></code></pre></div></div>
-<div class="cell-output cell-output-display" data-execution_count="218">
+<div class="cell-output cell-output-display">
 <pre><code>['최규빈', '아이유', '하니']</code></pre>
 </div>
 </div>
@@ -2377,7 +2384,7 @@ font-style: inherit;">for</span> name,_,_ <span class="kw" style="color: #003B4F
 background-color: null;
 font-weight: bold;
 font-style: inherit;">in</span> lst]</span></code></pre></div></div>
-<div class="cell-output cell-output-display" data-execution_count="220">
+<div class="cell-output cell-output-display">
 <pre><code>['최규빈', '아이유', '하니']</code></pre>
 </div>
 </div>
@@ -2395,9 +2402,14 @@ font-style: inherit;"># 이건 또 실행불가능..</span></span></code></pre><
 <div class="cell-output cell-output-error">
 <div class="ansi-escaped-output">
 <pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+
 <span class="ansi-red-fg">ValueError</span>                                Traceback (most recent call last)
-Cell <span class="ansi-green-fg">In[226], line 1</span>
+
+Cell <span class="ansi-green-fg">In[45], line 1</span>
+
 <span class="ansi-green-fg">----&gt; 1</span> [name <span style="font-weight:bold;color:rgb(0,135,0)">for</span> name,_ <span style="font-weight:bold;color:rgb(175,0,255)">in</span> lst] <span style="font-style:italic;color:rgb(95,135,135)"># 이건 또 실행불가능..</span>
+
+
 
 <span class="ansi-red-fg">ValueError</span>: too many values to unpack (expected 2)</pre>
 </div>
@@ -2414,8 +2426,8 @@ background-color: null;
 font-weight: bold;
 font-style: inherit;">in</span> lst] <span class="co" style="color: #5E5E5E;
 background-color: null;
-font-style: inherit;"># 이건 실행가능</span></span></code></pre></div></div>
-<div class="cell-output cell-output-display" data-execution_count="232">
+font-style: inherit;"># 이건 실행가능(여기서는 알아만 둘 것 -&gt; 다음에 학습)</span></span></code></pre></div></div>
+<div class="cell-output cell-output-display">
 <pre><code>['최규빈', '아이유', '하니']</code></pre>
 </div>
 </div>
@@ -2444,13 +2456,48 @@ font-style: inherit;">8</span>,<span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">9</span>]</span>
 <span id="cb161-2">lst</span></code></pre></div></div>
-<div class="cell-output cell-output-display" data-execution_count="234">
+<div class="cell-output cell-output-display">
+<pre><code>[1, 2, 3, 4, 5, 6, 7, 8, 9]</code></pre>
+</div>
+</div>
+<div id="67e515ec" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb163" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb163-1">[l <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> l <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> lst]</span></code></pre></div></div>
+<div class="cell-output cell-output-display">
 <pre><code>[1, 2, 3, 4, 5, 6, 7, 8, 9]</code></pre>
 </div>
 </div>
 <p>(풀이)</p>
 <div id="3b2e19d5-d77a-4e95-860c-a19d5635c998" class="cell" data-outputid="0f2e6ea4-6cab-471a-c36d-4930fb077754">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb163" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb163-1"><span class="bu" style="color: null;
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb165" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb165-1">([<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;</span>l <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">and</span> l<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">5</span> <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> l <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> lst])</span></code></pre></div></div>
+<div class="cell-output cell-output-display">
+<pre><code>[False, True, True, True, True, False, False, False, False]</code></pre>
+</div>
+</div>
+<div id="6adafcda" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb167" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb167-1"><span class="bu" style="color: null;
 background-color: null;
 font-style: inherit;">sum</span>([<span class="dv" style="color: #AD0000;
 background-color: null;
@@ -2470,12 +2517,12 @@ font-style: inherit;">for</span> l <span class="kw" style="color: #003B4F;
 background-color: null;
 font-weight: bold;
 font-style: inherit;">in</span> lst])</span></code></pre></div></div>
-<div class="cell-output cell-output-display" data-execution_count="242">
+<div class="cell-output cell-output-display">
 <pre><code>4</code></pre>
 </div>
 </div>
 <div id="fa5c6bce-c4bf-48e2-8fbe-cb29505cd4fd" class="cell" data-outputid="18f16701-4026-4f62-ca49-9258852c0af3">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb165" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb165-1"><span class="bu" style="color: null;
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb169" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb169-1"><span class="bu" style="color: null;
 background-color: null;
 font-style: inherit;">sum</span>([<span class="dv" style="color: #AD0000;
 background-color: null;
@@ -2491,8 +2538,10 @@ font-weight: bold;
 font-style: inherit;">for</span> l <span class="kw" style="color: #003B4F;
 background-color: null;
 font-weight: bold;
-font-style: inherit;">in</span> lst])</span></code></pre></div></div>
-<div class="cell-output cell-output-display" data-execution_count="245">
+font-style: inherit;">in</span> lst]) <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#그냥 이렇게도 가능</span></span></code></pre></div></div>
+<div class="cell-output cell-output-display">
 <pre><code>4</code></pre>
 </div>
 </div>
@@ -2501,8 +2550,8 @@ font-style: inherit;">in</span> lst])</span></code></pre></div></div>
 <h2 class="anchored" data-anchor-id="d.-풀이-1">D. 풀이</h2>
 <p><img src="https://github.com/guebin/PP2024/blob/main/imgs/2024-수능-확통-29.png?raw=true" class="img-fluid"></p>
 <p>(풀이)</p>
-<div id="01543a45-24a6-4145-b0e3-e19d1cbd9281" class="cell" data-outputid="b6eee83a-8d04-4861-cdf1-c71e608fb7f9">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb167" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb167-1">lst <span class="op" style="color: #5E5E5E;
+<div id="fd7c7bc3" class="cell" data-execution_count="82">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb171" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb171-1">lst <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> [<span class="dv" style="color: #AD0000;
 background-color: null;
@@ -2517,7 +2566,3684 @@ background-color: null;
 font-style: inherit;">5</span>,<span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">6</span>]</span>
-<span id="cb167-2"><span class="bu" style="color: null;
+<span id="cb171-2"><span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> i <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> itertools.product(lst, lst, lst, lst):</span>
+<span id="cb171-3">    <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(i)</span></code></pre></div></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>(1, 1, 1, 1)
+(1, 1, 1, 2)
+(1, 1, 1, 3)
+(1, 1, 1, 4)
+(1, 1, 1, 5)
+(1, 1, 1, 6)
+(1, 1, 2, 1)
+(1, 1, 2, 2)
+(1, 1, 2, 3)
+(1, 1, 2, 4)
+(1, 1, 2, 5)
+(1, 1, 2, 6)
+(1, 1, 3, 1)
+(1, 1, 3, 2)
+(1, 1, 3, 3)
+(1, 1, 3, 4)
+(1, 1, 3, 5)
+(1, 1, 3, 6)
+(1, 1, 4, 1)
+(1, 1, 4, 2)
+(1, 1, 4, 3)
+(1, 1, 4, 4)
+(1, 1, 4, 5)
+(1, 1, 4, 6)
+(1, 1, 5, 1)
+(1, 1, 5, 2)
+(1, 1, 5, 3)
+(1, 1, 5, 4)
+(1, 1, 5, 5)
+(1, 1, 5, 6)
+(1, 1, 6, 1)
+(1, 1, 6, 2)
+(1, 1, 6, 3)
+(1, 1, 6, 4)
+(1, 1, 6, 5)
+(1, 1, 6, 6)
+(1, 2, 1, 1)
+(1, 2, 1, 2)
+(1, 2, 1, 3)
+(1, 2, 1, 4)
+(1, 2, 1, 5)
+(1, 2, 1, 6)
+(1, 2, 2, 1)
+(1, 2, 2, 2)
+(1, 2, 2, 3)
+(1, 2, 2, 4)
+(1, 2, 2, 5)
+(1, 2, 2, 6)
+(1, 2, 3, 1)
+(1, 2, 3, 2)
+(1, 2, 3, 3)
+(1, 2, 3, 4)
+(1, 2, 3, 5)
+(1, 2, 3, 6)
+(1, 2, 4, 1)
+(1, 2, 4, 2)
+(1, 2, 4, 3)
+(1, 2, 4, 4)
+(1, 2, 4, 5)
+(1, 2, 4, 6)
+(1, 2, 5, 1)
+(1, 2, 5, 2)
+(1, 2, 5, 3)
+(1, 2, 5, 4)
+(1, 2, 5, 5)
+(1, 2, 5, 6)
+(1, 2, 6, 1)
+(1, 2, 6, 2)
+(1, 2, 6, 3)
+(1, 2, 6, 4)
+(1, 2, 6, 5)
+(1, 2, 6, 6)
+(1, 3, 1, 1)
+(1, 3, 1, 2)
+(1, 3, 1, 3)
+(1, 3, 1, 4)
+(1, 3, 1, 5)
+(1, 3, 1, 6)
+(1, 3, 2, 1)
+(1, 3, 2, 2)
+(1, 3, 2, 3)
+(1, 3, 2, 4)
+(1, 3, 2, 5)
+(1, 3, 2, 6)
+(1, 3, 3, 1)
+(1, 3, 3, 2)
+(1, 3, 3, 3)
+(1, 3, 3, 4)
+(1, 3, 3, 5)
+(1, 3, 3, 6)
+(1, 3, 4, 1)
+(1, 3, 4, 2)
+(1, 3, 4, 3)
+(1, 3, 4, 4)
+(1, 3, 4, 5)
+(1, 3, 4, 6)
+(1, 3, 5, 1)
+(1, 3, 5, 2)
+(1, 3, 5, 3)
+(1, 3, 5, 4)
+(1, 3, 5, 5)
+(1, 3, 5, 6)
+(1, 3, 6, 1)
+(1, 3, 6, 2)
+(1, 3, 6, 3)
+(1, 3, 6, 4)
+(1, 3, 6, 5)
+(1, 3, 6, 6)
+(1, 4, 1, 1)
+(1, 4, 1, 2)
+(1, 4, 1, 3)
+(1, 4, 1, 4)
+(1, 4, 1, 5)
+(1, 4, 1, 6)
+(1, 4, 2, 1)
+(1, 4, 2, 2)
+(1, 4, 2, 3)
+(1, 4, 2, 4)
+(1, 4, 2, 5)
+(1, 4, 2, 6)
+(1, 4, 3, 1)
+(1, 4, 3, 2)
+(1, 4, 3, 3)
+(1, 4, 3, 4)
+(1, 4, 3, 5)
+(1, 4, 3, 6)
+(1, 4, 4, 1)
+(1, 4, 4, 2)
+(1, 4, 4, 3)
+(1, 4, 4, 4)
+(1, 4, 4, 5)
+(1, 4, 4, 6)
+(1, 4, 5, 1)
+(1, 4, 5, 2)
+(1, 4, 5, 3)
+(1, 4, 5, 4)
+(1, 4, 5, 5)
+(1, 4, 5, 6)
+(1, 4, 6, 1)
+(1, 4, 6, 2)
+(1, 4, 6, 3)
+(1, 4, 6, 4)
+(1, 4, 6, 5)
+(1, 4, 6, 6)
+(1, 5, 1, 1)
+(1, 5, 1, 2)
+(1, 5, 1, 3)
+(1, 5, 1, 4)
+(1, 5, 1, 5)
+(1, 5, 1, 6)
+(1, 5, 2, 1)
+(1, 5, 2, 2)
+(1, 5, 2, 3)
+(1, 5, 2, 4)
+(1, 5, 2, 5)
+(1, 5, 2, 6)
+(1, 5, 3, 1)
+(1, 5, 3, 2)
+(1, 5, 3, 3)
+(1, 5, 3, 4)
+(1, 5, 3, 5)
+(1, 5, 3, 6)
+(1, 5, 4, 1)
+(1, 5, 4, 2)
+(1, 5, 4, 3)
+(1, 5, 4, 4)
+(1, 5, 4, 5)
+(1, 5, 4, 6)
+(1, 5, 5, 1)
+(1, 5, 5, 2)
+(1, 5, 5, 3)
+(1, 5, 5, 4)
+(1, 5, 5, 5)
+(1, 5, 5, 6)
+(1, 5, 6, 1)
+(1, 5, 6, 2)
+(1, 5, 6, 3)
+(1, 5, 6, 4)
+(1, 5, 6, 5)
+(1, 5, 6, 6)
+(1, 6, 1, 1)
+(1, 6, 1, 2)
+(1, 6, 1, 3)
+(1, 6, 1, 4)
+(1, 6, 1, 5)
+(1, 6, 1, 6)
+(1, 6, 2, 1)
+(1, 6, 2, 2)
+(1, 6, 2, 3)
+(1, 6, 2, 4)
+(1, 6, 2, 5)
+(1, 6, 2, 6)
+(1, 6, 3, 1)
+(1, 6, 3, 2)
+(1, 6, 3, 3)
+(1, 6, 3, 4)
+(1, 6, 3, 5)
+(1, 6, 3, 6)
+(1, 6, 4, 1)
+(1, 6, 4, 2)
+(1, 6, 4, 3)
+(1, 6, 4, 4)
+(1, 6, 4, 5)
+(1, 6, 4, 6)
+(1, 6, 5, 1)
+(1, 6, 5, 2)
+(1, 6, 5, 3)
+(1, 6, 5, 4)
+(1, 6, 5, 5)
+(1, 6, 5, 6)
+(1, 6, 6, 1)
+(1, 6, 6, 2)
+(1, 6, 6, 3)
+(1, 6, 6, 4)
+(1, 6, 6, 5)
+(1, 6, 6, 6)
+(2, 1, 1, 1)
+(2, 1, 1, 2)
+(2, 1, 1, 3)
+(2, 1, 1, 4)
+(2, 1, 1, 5)
+(2, 1, 1, 6)
+(2, 1, 2, 1)
+(2, 1, 2, 2)
+(2, 1, 2, 3)
+(2, 1, 2, 4)
+(2, 1, 2, 5)
+(2, 1, 2, 6)
+(2, 1, 3, 1)
+(2, 1, 3, 2)
+(2, 1, 3, 3)
+(2, 1, 3, 4)
+(2, 1, 3, 5)
+(2, 1, 3, 6)
+(2, 1, 4, 1)
+(2, 1, 4, 2)
+(2, 1, 4, 3)
+(2, 1, 4, 4)
+(2, 1, 4, 5)
+(2, 1, 4, 6)
+(2, 1, 5, 1)
+(2, 1, 5, 2)
+(2, 1, 5, 3)
+(2, 1, 5, 4)
+(2, 1, 5, 5)
+(2, 1, 5, 6)
+(2, 1, 6, 1)
+(2, 1, 6, 2)
+(2, 1, 6, 3)
+(2, 1, 6, 4)
+(2, 1, 6, 5)
+(2, 1, 6, 6)
+(2, 2, 1, 1)
+(2, 2, 1, 2)
+(2, 2, 1, 3)
+(2, 2, 1, 4)
+(2, 2, 1, 5)
+(2, 2, 1, 6)
+(2, 2, 2, 1)
+(2, 2, 2, 2)
+(2, 2, 2, 3)
+(2, 2, 2, 4)
+(2, 2, 2, 5)
+(2, 2, 2, 6)
+(2, 2, 3, 1)
+(2, 2, 3, 2)
+(2, 2, 3, 3)
+(2, 2, 3, 4)
+(2, 2, 3, 5)
+(2, 2, 3, 6)
+(2, 2, 4, 1)
+(2, 2, 4, 2)
+(2, 2, 4, 3)
+(2, 2, 4, 4)
+(2, 2, 4, 5)
+(2, 2, 4, 6)
+(2, 2, 5, 1)
+(2, 2, 5, 2)
+(2, 2, 5, 3)
+(2, 2, 5, 4)
+(2, 2, 5, 5)
+(2, 2, 5, 6)
+(2, 2, 6, 1)
+(2, 2, 6, 2)
+(2, 2, 6, 3)
+(2, 2, 6, 4)
+(2, 2, 6, 5)
+(2, 2, 6, 6)
+(2, 3, 1, 1)
+(2, 3, 1, 2)
+(2, 3, 1, 3)
+(2, 3, 1, 4)
+(2, 3, 1, 5)
+(2, 3, 1, 6)
+(2, 3, 2, 1)
+(2, 3, 2, 2)
+(2, 3, 2, 3)
+(2, 3, 2, 4)
+(2, 3, 2, 5)
+(2, 3, 2, 6)
+(2, 3, 3, 1)
+(2, 3, 3, 2)
+(2, 3, 3, 3)
+(2, 3, 3, 4)
+(2, 3, 3, 5)
+(2, 3, 3, 6)
+(2, 3, 4, 1)
+(2, 3, 4, 2)
+(2, 3, 4, 3)
+(2, 3, 4, 4)
+(2, 3, 4, 5)
+(2, 3, 4, 6)
+(2, 3, 5, 1)
+(2, 3, 5, 2)
+(2, 3, 5, 3)
+(2, 3, 5, 4)
+(2, 3, 5, 5)
+(2, 3, 5, 6)
+(2, 3, 6, 1)
+(2, 3, 6, 2)
+(2, 3, 6, 3)
+(2, 3, 6, 4)
+(2, 3, 6, 5)
+(2, 3, 6, 6)
+(2, 4, 1, 1)
+(2, 4, 1, 2)
+(2, 4, 1, 3)
+(2, 4, 1, 4)
+(2, 4, 1, 5)
+(2, 4, 1, 6)
+(2, 4, 2, 1)
+(2, 4, 2, 2)
+(2, 4, 2, 3)
+(2, 4, 2, 4)
+(2, 4, 2, 5)
+(2, 4, 2, 6)
+(2, 4, 3, 1)
+(2, 4, 3, 2)
+(2, 4, 3, 3)
+(2, 4, 3, 4)
+(2, 4, 3, 5)
+(2, 4, 3, 6)
+(2, 4, 4, 1)
+(2, 4, 4, 2)
+(2, 4, 4, 3)
+(2, 4, 4, 4)
+(2, 4, 4, 5)
+(2, 4, 4, 6)
+(2, 4, 5, 1)
+(2, 4, 5, 2)
+(2, 4, 5, 3)
+(2, 4, 5, 4)
+(2, 4, 5, 5)
+(2, 4, 5, 6)
+(2, 4, 6, 1)
+(2, 4, 6, 2)
+(2, 4, 6, 3)
+(2, 4, 6, 4)
+(2, 4, 6, 5)
+(2, 4, 6, 6)
+(2, 5, 1, 1)
+(2, 5, 1, 2)
+(2, 5, 1, 3)
+(2, 5, 1, 4)
+(2, 5, 1, 5)
+(2, 5, 1, 6)
+(2, 5, 2, 1)
+(2, 5, 2, 2)
+(2, 5, 2, 3)
+(2, 5, 2, 4)
+(2, 5, 2, 5)
+(2, 5, 2, 6)
+(2, 5, 3, 1)
+(2, 5, 3, 2)
+(2, 5, 3, 3)
+(2, 5, 3, 4)
+(2, 5, 3, 5)
+(2, 5, 3, 6)
+(2, 5, 4, 1)
+(2, 5, 4, 2)
+(2, 5, 4, 3)
+(2, 5, 4, 4)
+(2, 5, 4, 5)
+(2, 5, 4, 6)
+(2, 5, 5, 1)
+(2, 5, 5, 2)
+(2, 5, 5, 3)
+(2, 5, 5, 4)
+(2, 5, 5, 5)
+(2, 5, 5, 6)
+(2, 5, 6, 1)
+(2, 5, 6, 2)
+(2, 5, 6, 3)
+(2, 5, 6, 4)
+(2, 5, 6, 5)
+(2, 5, 6, 6)
+(2, 6, 1, 1)
+(2, 6, 1, 2)
+(2, 6, 1, 3)
+(2, 6, 1, 4)
+(2, 6, 1, 5)
+(2, 6, 1, 6)
+(2, 6, 2, 1)
+(2, 6, 2, 2)
+(2, 6, 2, 3)
+(2, 6, 2, 4)
+(2, 6, 2, 5)
+(2, 6, 2, 6)
+(2, 6, 3, 1)
+(2, 6, 3, 2)
+(2, 6, 3, 3)
+(2, 6, 3, 4)
+(2, 6, 3, 5)
+(2, 6, 3, 6)
+(2, 6, 4, 1)
+(2, 6, 4, 2)
+(2, 6, 4, 3)
+(2, 6, 4, 4)
+(2, 6, 4, 5)
+(2, 6, 4, 6)
+(2, 6, 5, 1)
+(2, 6, 5, 2)
+(2, 6, 5, 3)
+(2, 6, 5, 4)
+(2, 6, 5, 5)
+(2, 6, 5, 6)
+(2, 6, 6, 1)
+(2, 6, 6, 2)
+(2, 6, 6, 3)
+(2, 6, 6, 4)
+(2, 6, 6, 5)
+(2, 6, 6, 6)
+(3, 1, 1, 1)
+(3, 1, 1, 2)
+(3, 1, 1, 3)
+(3, 1, 1, 4)
+(3, 1, 1, 5)
+(3, 1, 1, 6)
+(3, 1, 2, 1)
+(3, 1, 2, 2)
+(3, 1, 2, 3)
+(3, 1, 2, 4)
+(3, 1, 2, 5)
+(3, 1, 2, 6)
+(3, 1, 3, 1)
+(3, 1, 3, 2)
+(3, 1, 3, 3)
+(3, 1, 3, 4)
+(3, 1, 3, 5)
+(3, 1, 3, 6)
+(3, 1, 4, 1)
+(3, 1, 4, 2)
+(3, 1, 4, 3)
+(3, 1, 4, 4)
+(3, 1, 4, 5)
+(3, 1, 4, 6)
+(3, 1, 5, 1)
+(3, 1, 5, 2)
+(3, 1, 5, 3)
+(3, 1, 5, 4)
+(3, 1, 5, 5)
+(3, 1, 5, 6)
+(3, 1, 6, 1)
+(3, 1, 6, 2)
+(3, 1, 6, 3)
+(3, 1, 6, 4)
+(3, 1, 6, 5)
+(3, 1, 6, 6)
+(3, 2, 1, 1)
+(3, 2, 1, 2)
+(3, 2, 1, 3)
+(3, 2, 1, 4)
+(3, 2, 1, 5)
+(3, 2, 1, 6)
+(3, 2, 2, 1)
+(3, 2, 2, 2)
+(3, 2, 2, 3)
+(3, 2, 2, 4)
+(3, 2, 2, 5)
+(3, 2, 2, 6)
+(3, 2, 3, 1)
+(3, 2, 3, 2)
+(3, 2, 3, 3)
+(3, 2, 3, 4)
+(3, 2, 3, 5)
+(3, 2, 3, 6)
+(3, 2, 4, 1)
+(3, 2, 4, 2)
+(3, 2, 4, 3)
+(3, 2, 4, 4)
+(3, 2, 4, 5)
+(3, 2, 4, 6)
+(3, 2, 5, 1)
+(3, 2, 5, 2)
+(3, 2, 5, 3)
+(3, 2, 5, 4)
+(3, 2, 5, 5)
+(3, 2, 5, 6)
+(3, 2, 6, 1)
+(3, 2, 6, 2)
+(3, 2, 6, 3)
+(3, 2, 6, 4)
+(3, 2, 6, 5)
+(3, 2, 6, 6)
+(3, 3, 1, 1)
+(3, 3, 1, 2)
+(3, 3, 1, 3)
+(3, 3, 1, 4)
+(3, 3, 1, 5)
+(3, 3, 1, 6)
+(3, 3, 2, 1)
+(3, 3, 2, 2)
+(3, 3, 2, 3)
+(3, 3, 2, 4)
+(3, 3, 2, 5)
+(3, 3, 2, 6)
+(3, 3, 3, 1)
+(3, 3, 3, 2)
+(3, 3, 3, 3)
+(3, 3, 3, 4)
+(3, 3, 3, 5)
+(3, 3, 3, 6)
+(3, 3, 4, 1)
+(3, 3, 4, 2)
+(3, 3, 4, 3)
+(3, 3, 4, 4)
+(3, 3, 4, 5)
+(3, 3, 4, 6)
+(3, 3, 5, 1)
+(3, 3, 5, 2)
+(3, 3, 5, 3)
+(3, 3, 5, 4)
+(3, 3, 5, 5)
+(3, 3, 5, 6)
+(3, 3, 6, 1)
+(3, 3, 6, 2)
+(3, 3, 6, 3)
+(3, 3, 6, 4)
+(3, 3, 6, 5)
+(3, 3, 6, 6)
+(3, 4, 1, 1)
+(3, 4, 1, 2)
+(3, 4, 1, 3)
+(3, 4, 1, 4)
+(3, 4, 1, 5)
+(3, 4, 1, 6)
+(3, 4, 2, 1)
+(3, 4, 2, 2)
+(3, 4, 2, 3)
+(3, 4, 2, 4)
+(3, 4, 2, 5)
+(3, 4, 2, 6)
+(3, 4, 3, 1)
+(3, 4, 3, 2)
+(3, 4, 3, 3)
+(3, 4, 3, 4)
+(3, 4, 3, 5)
+(3, 4, 3, 6)
+(3, 4, 4, 1)
+(3, 4, 4, 2)
+(3, 4, 4, 3)
+(3, 4, 4, 4)
+(3, 4, 4, 5)
+(3, 4, 4, 6)
+(3, 4, 5, 1)
+(3, 4, 5, 2)
+(3, 4, 5, 3)
+(3, 4, 5, 4)
+(3, 4, 5, 5)
+(3, 4, 5, 6)
+(3, 4, 6, 1)
+(3, 4, 6, 2)
+(3, 4, 6, 3)
+(3, 4, 6, 4)
+(3, 4, 6, 5)
+(3, 4, 6, 6)
+(3, 5, 1, 1)
+(3, 5, 1, 2)
+(3, 5, 1, 3)
+(3, 5, 1, 4)
+(3, 5, 1, 5)
+(3, 5, 1, 6)
+(3, 5, 2, 1)
+(3, 5, 2, 2)
+(3, 5, 2, 3)
+(3, 5, 2, 4)
+(3, 5, 2, 5)
+(3, 5, 2, 6)
+(3, 5, 3, 1)
+(3, 5, 3, 2)
+(3, 5, 3, 3)
+(3, 5, 3, 4)
+(3, 5, 3, 5)
+(3, 5, 3, 6)
+(3, 5, 4, 1)
+(3, 5, 4, 2)
+(3, 5, 4, 3)
+(3, 5, 4, 4)
+(3, 5, 4, 5)
+(3, 5, 4, 6)
+(3, 5, 5, 1)
+(3, 5, 5, 2)
+(3, 5, 5, 3)
+(3, 5, 5, 4)
+(3, 5, 5, 5)
+(3, 5, 5, 6)
+(3, 5, 6, 1)
+(3, 5, 6, 2)
+(3, 5, 6, 3)
+(3, 5, 6, 4)
+(3, 5, 6, 5)
+(3, 5, 6, 6)
+(3, 6, 1, 1)
+(3, 6, 1, 2)
+(3, 6, 1, 3)
+(3, 6, 1, 4)
+(3, 6, 1, 5)
+(3, 6, 1, 6)
+(3, 6, 2, 1)
+(3, 6, 2, 2)
+(3, 6, 2, 3)
+(3, 6, 2, 4)
+(3, 6, 2, 5)
+(3, 6, 2, 6)
+(3, 6, 3, 1)
+(3, 6, 3, 2)
+(3, 6, 3, 3)
+(3, 6, 3, 4)
+(3, 6, 3, 5)
+(3, 6, 3, 6)
+(3, 6, 4, 1)
+(3, 6, 4, 2)
+(3, 6, 4, 3)
+(3, 6, 4, 4)
+(3, 6, 4, 5)
+(3, 6, 4, 6)
+(3, 6, 5, 1)
+(3, 6, 5, 2)
+(3, 6, 5, 3)
+(3, 6, 5, 4)
+(3, 6, 5, 5)
+(3, 6, 5, 6)
+(3, 6, 6, 1)
+(3, 6, 6, 2)
+(3, 6, 6, 3)
+(3, 6, 6, 4)
+(3, 6, 6, 5)
+(3, 6, 6, 6)
+(4, 1, 1, 1)
+(4, 1, 1, 2)
+(4, 1, 1, 3)
+(4, 1, 1, 4)
+(4, 1, 1, 5)
+(4, 1, 1, 6)
+(4, 1, 2, 1)
+(4, 1, 2, 2)
+(4, 1, 2, 3)
+(4, 1, 2, 4)
+(4, 1, 2, 5)
+(4, 1, 2, 6)
+(4, 1, 3, 1)
+(4, 1, 3, 2)
+(4, 1, 3, 3)
+(4, 1, 3, 4)
+(4, 1, 3, 5)
+(4, 1, 3, 6)
+(4, 1, 4, 1)
+(4, 1, 4, 2)
+(4, 1, 4, 3)
+(4, 1, 4, 4)
+(4, 1, 4, 5)
+(4, 1, 4, 6)
+(4, 1, 5, 1)
+(4, 1, 5, 2)
+(4, 1, 5, 3)
+(4, 1, 5, 4)
+(4, 1, 5, 5)
+(4, 1, 5, 6)
+(4, 1, 6, 1)
+(4, 1, 6, 2)
+(4, 1, 6, 3)
+(4, 1, 6, 4)
+(4, 1, 6, 5)
+(4, 1, 6, 6)
+(4, 2, 1, 1)
+(4, 2, 1, 2)
+(4, 2, 1, 3)
+(4, 2, 1, 4)
+(4, 2, 1, 5)
+(4, 2, 1, 6)
+(4, 2, 2, 1)
+(4, 2, 2, 2)
+(4, 2, 2, 3)
+(4, 2, 2, 4)
+(4, 2, 2, 5)
+(4, 2, 2, 6)
+(4, 2, 3, 1)
+(4, 2, 3, 2)
+(4, 2, 3, 3)
+(4, 2, 3, 4)
+(4, 2, 3, 5)
+(4, 2, 3, 6)
+(4, 2, 4, 1)
+(4, 2, 4, 2)
+(4, 2, 4, 3)
+(4, 2, 4, 4)
+(4, 2, 4, 5)
+(4, 2, 4, 6)
+(4, 2, 5, 1)
+(4, 2, 5, 2)
+(4, 2, 5, 3)
+(4, 2, 5, 4)
+(4, 2, 5, 5)
+(4, 2, 5, 6)
+(4, 2, 6, 1)
+(4, 2, 6, 2)
+(4, 2, 6, 3)
+(4, 2, 6, 4)
+(4, 2, 6, 5)
+(4, 2, 6, 6)
+(4, 3, 1, 1)
+(4, 3, 1, 2)
+(4, 3, 1, 3)
+(4, 3, 1, 4)
+(4, 3, 1, 5)
+(4, 3, 1, 6)
+(4, 3, 2, 1)
+(4, 3, 2, 2)
+(4, 3, 2, 3)
+(4, 3, 2, 4)
+(4, 3, 2, 5)
+(4, 3, 2, 6)
+(4, 3, 3, 1)
+(4, 3, 3, 2)
+(4, 3, 3, 3)
+(4, 3, 3, 4)
+(4, 3, 3, 5)
+(4, 3, 3, 6)
+(4, 3, 4, 1)
+(4, 3, 4, 2)
+(4, 3, 4, 3)
+(4, 3, 4, 4)
+(4, 3, 4, 5)
+(4, 3, 4, 6)
+(4, 3, 5, 1)
+(4, 3, 5, 2)
+(4, 3, 5, 3)
+(4, 3, 5, 4)
+(4, 3, 5, 5)
+(4, 3, 5, 6)
+(4, 3, 6, 1)
+(4, 3, 6, 2)
+(4, 3, 6, 3)
+(4, 3, 6, 4)
+(4, 3, 6, 5)
+(4, 3, 6, 6)
+(4, 4, 1, 1)
+(4, 4, 1, 2)
+(4, 4, 1, 3)
+(4, 4, 1, 4)
+(4, 4, 1, 5)
+(4, 4, 1, 6)
+(4, 4, 2, 1)
+(4, 4, 2, 2)
+(4, 4, 2, 3)
+(4, 4, 2, 4)
+(4, 4, 2, 5)
+(4, 4, 2, 6)
+(4, 4, 3, 1)
+(4, 4, 3, 2)
+(4, 4, 3, 3)
+(4, 4, 3, 4)
+(4, 4, 3, 5)
+(4, 4, 3, 6)
+(4, 4, 4, 1)
+(4, 4, 4, 2)
+(4, 4, 4, 3)
+(4, 4, 4, 4)
+(4, 4, 4, 5)
+(4, 4, 4, 6)
+(4, 4, 5, 1)
+(4, 4, 5, 2)
+(4, 4, 5, 3)
+(4, 4, 5, 4)
+(4, 4, 5, 5)
+(4, 4, 5, 6)
+(4, 4, 6, 1)
+(4, 4, 6, 2)
+(4, 4, 6, 3)
+(4, 4, 6, 4)
+(4, 4, 6, 5)
+(4, 4, 6, 6)
+(4, 5, 1, 1)
+(4, 5, 1, 2)
+(4, 5, 1, 3)
+(4, 5, 1, 4)
+(4, 5, 1, 5)
+(4, 5, 1, 6)
+(4, 5, 2, 1)
+(4, 5, 2, 2)
+(4, 5, 2, 3)
+(4, 5, 2, 4)
+(4, 5, 2, 5)
+(4, 5, 2, 6)
+(4, 5, 3, 1)
+(4, 5, 3, 2)
+(4, 5, 3, 3)
+(4, 5, 3, 4)
+(4, 5, 3, 5)
+(4, 5, 3, 6)
+(4, 5, 4, 1)
+(4, 5, 4, 2)
+(4, 5, 4, 3)
+(4, 5, 4, 4)
+(4, 5, 4, 5)
+(4, 5, 4, 6)
+(4, 5, 5, 1)
+(4, 5, 5, 2)
+(4, 5, 5, 3)
+(4, 5, 5, 4)
+(4, 5, 5, 5)
+(4, 5, 5, 6)
+(4, 5, 6, 1)
+(4, 5, 6, 2)
+(4, 5, 6, 3)
+(4, 5, 6, 4)
+(4, 5, 6, 5)
+(4, 5, 6, 6)
+(4, 6, 1, 1)
+(4, 6, 1, 2)
+(4, 6, 1, 3)
+(4, 6, 1, 4)
+(4, 6, 1, 5)
+(4, 6, 1, 6)
+(4, 6, 2, 1)
+(4, 6, 2, 2)
+(4, 6, 2, 3)
+(4, 6, 2, 4)
+(4, 6, 2, 5)
+(4, 6, 2, 6)
+(4, 6, 3, 1)
+(4, 6, 3, 2)
+(4, 6, 3, 3)
+(4, 6, 3, 4)
+(4, 6, 3, 5)
+(4, 6, 3, 6)
+(4, 6, 4, 1)
+(4, 6, 4, 2)
+(4, 6, 4, 3)
+(4, 6, 4, 4)
+(4, 6, 4, 5)
+(4, 6, 4, 6)
+(4, 6, 5, 1)
+(4, 6, 5, 2)
+(4, 6, 5, 3)
+(4, 6, 5, 4)
+(4, 6, 5, 5)
+(4, 6, 5, 6)
+(4, 6, 6, 1)
+(4, 6, 6, 2)
+(4, 6, 6, 3)
+(4, 6, 6, 4)
+(4, 6, 6, 5)
+(4, 6, 6, 6)
+(5, 1, 1, 1)
+(5, 1, 1, 2)
+(5, 1, 1, 3)
+(5, 1, 1, 4)
+(5, 1, 1, 5)
+(5, 1, 1, 6)
+(5, 1, 2, 1)
+(5, 1, 2, 2)
+(5, 1, 2, 3)
+(5, 1, 2, 4)
+(5, 1, 2, 5)
+(5, 1, 2, 6)
+(5, 1, 3, 1)
+(5, 1, 3, 2)
+(5, 1, 3, 3)
+(5, 1, 3, 4)
+(5, 1, 3, 5)
+(5, 1, 3, 6)
+(5, 1, 4, 1)
+(5, 1, 4, 2)
+(5, 1, 4, 3)
+(5, 1, 4, 4)
+(5, 1, 4, 5)
+(5, 1, 4, 6)
+(5, 1, 5, 1)
+(5, 1, 5, 2)
+(5, 1, 5, 3)
+(5, 1, 5, 4)
+(5, 1, 5, 5)
+(5, 1, 5, 6)
+(5, 1, 6, 1)
+(5, 1, 6, 2)
+(5, 1, 6, 3)
+(5, 1, 6, 4)
+(5, 1, 6, 5)
+(5, 1, 6, 6)
+(5, 2, 1, 1)
+(5, 2, 1, 2)
+(5, 2, 1, 3)
+(5, 2, 1, 4)
+(5, 2, 1, 5)
+(5, 2, 1, 6)
+(5, 2, 2, 1)
+(5, 2, 2, 2)
+(5, 2, 2, 3)
+(5, 2, 2, 4)
+(5, 2, 2, 5)
+(5, 2, 2, 6)
+(5, 2, 3, 1)
+(5, 2, 3, 2)
+(5, 2, 3, 3)
+(5, 2, 3, 4)
+(5, 2, 3, 5)
+(5, 2, 3, 6)
+(5, 2, 4, 1)
+(5, 2, 4, 2)
+(5, 2, 4, 3)
+(5, 2, 4, 4)
+(5, 2, 4, 5)
+(5, 2, 4, 6)
+(5, 2, 5, 1)
+(5, 2, 5, 2)
+(5, 2, 5, 3)
+(5, 2, 5, 4)
+(5, 2, 5, 5)
+(5, 2, 5, 6)
+(5, 2, 6, 1)
+(5, 2, 6, 2)
+(5, 2, 6, 3)
+(5, 2, 6, 4)
+(5, 2, 6, 5)
+(5, 2, 6, 6)
+(5, 3, 1, 1)
+(5, 3, 1, 2)
+(5, 3, 1, 3)
+(5, 3, 1, 4)
+(5, 3, 1, 5)
+(5, 3, 1, 6)
+(5, 3, 2, 1)
+(5, 3, 2, 2)
+(5, 3, 2, 3)
+(5, 3, 2, 4)
+(5, 3, 2, 5)
+(5, 3, 2, 6)
+(5, 3, 3, 1)
+(5, 3, 3, 2)
+(5, 3, 3, 3)
+(5, 3, 3, 4)
+(5, 3, 3, 5)
+(5, 3, 3, 6)
+(5, 3, 4, 1)
+(5, 3, 4, 2)
+(5, 3, 4, 3)
+(5, 3, 4, 4)
+(5, 3, 4, 5)
+(5, 3, 4, 6)
+(5, 3, 5, 1)
+(5, 3, 5, 2)
+(5, 3, 5, 3)
+(5, 3, 5, 4)
+(5, 3, 5, 5)
+(5, 3, 5, 6)
+(5, 3, 6, 1)
+(5, 3, 6, 2)
+(5, 3, 6, 3)
+(5, 3, 6, 4)
+(5, 3, 6, 5)
+(5, 3, 6, 6)
+(5, 4, 1, 1)
+(5, 4, 1, 2)
+(5, 4, 1, 3)
+(5, 4, 1, 4)
+(5, 4, 1, 5)
+(5, 4, 1, 6)
+(5, 4, 2, 1)
+(5, 4, 2, 2)
+(5, 4, 2, 3)
+(5, 4, 2, 4)
+(5, 4, 2, 5)
+(5, 4, 2, 6)
+(5, 4, 3, 1)
+(5, 4, 3, 2)
+(5, 4, 3, 3)
+(5, 4, 3, 4)
+(5, 4, 3, 5)
+(5, 4, 3, 6)
+(5, 4, 4, 1)
+(5, 4, 4, 2)
+(5, 4, 4, 3)
+(5, 4, 4, 4)
+(5, 4, 4, 5)
+(5, 4, 4, 6)
+(5, 4, 5, 1)
+(5, 4, 5, 2)
+(5, 4, 5, 3)
+(5, 4, 5, 4)
+(5, 4, 5, 5)
+(5, 4, 5, 6)
+(5, 4, 6, 1)
+(5, 4, 6, 2)
+(5, 4, 6, 3)
+(5, 4, 6, 4)
+(5, 4, 6, 5)
+(5, 4, 6, 6)
+(5, 5, 1, 1)
+(5, 5, 1, 2)
+(5, 5, 1, 3)
+(5, 5, 1, 4)
+(5, 5, 1, 5)
+(5, 5, 1, 6)
+(5, 5, 2, 1)
+(5, 5, 2, 2)
+(5, 5, 2, 3)
+(5, 5, 2, 4)
+(5, 5, 2, 5)
+(5, 5, 2, 6)
+(5, 5, 3, 1)
+(5, 5, 3, 2)
+(5, 5, 3, 3)
+(5, 5, 3, 4)
+(5, 5, 3, 5)
+(5, 5, 3, 6)
+(5, 5, 4, 1)
+(5, 5, 4, 2)
+(5, 5, 4, 3)
+(5, 5, 4, 4)
+(5, 5, 4, 5)
+(5, 5, 4, 6)
+(5, 5, 5, 1)
+(5, 5, 5, 2)
+(5, 5, 5, 3)
+(5, 5, 5, 4)
+(5, 5, 5, 5)
+(5, 5, 5, 6)
+(5, 5, 6, 1)
+(5, 5, 6, 2)
+(5, 5, 6, 3)
+(5, 5, 6, 4)
+(5, 5, 6, 5)
+(5, 5, 6, 6)
+(5, 6, 1, 1)
+(5, 6, 1, 2)
+(5, 6, 1, 3)
+(5, 6, 1, 4)
+(5, 6, 1, 5)
+(5, 6, 1, 6)
+(5, 6, 2, 1)
+(5, 6, 2, 2)
+(5, 6, 2, 3)
+(5, 6, 2, 4)
+(5, 6, 2, 5)
+(5, 6, 2, 6)
+(5, 6, 3, 1)
+(5, 6, 3, 2)
+(5, 6, 3, 3)
+(5, 6, 3, 4)
+(5, 6, 3, 5)
+(5, 6, 3, 6)
+(5, 6, 4, 1)
+(5, 6, 4, 2)
+(5, 6, 4, 3)
+(5, 6, 4, 4)
+(5, 6, 4, 5)
+(5, 6, 4, 6)
+(5, 6, 5, 1)
+(5, 6, 5, 2)
+(5, 6, 5, 3)
+(5, 6, 5, 4)
+(5, 6, 5, 5)
+(5, 6, 5, 6)
+(5, 6, 6, 1)
+(5, 6, 6, 2)
+(5, 6, 6, 3)
+(5, 6, 6, 4)
+(5, 6, 6, 5)
+(5, 6, 6, 6)
+(6, 1, 1, 1)
+(6, 1, 1, 2)
+(6, 1, 1, 3)
+(6, 1, 1, 4)
+(6, 1, 1, 5)
+(6, 1, 1, 6)
+(6, 1, 2, 1)
+(6, 1, 2, 2)
+(6, 1, 2, 3)
+(6, 1, 2, 4)
+(6, 1, 2, 5)
+(6, 1, 2, 6)
+(6, 1, 3, 1)
+(6, 1, 3, 2)
+(6, 1, 3, 3)
+(6, 1, 3, 4)
+(6, 1, 3, 5)
+(6, 1, 3, 6)
+(6, 1, 4, 1)
+(6, 1, 4, 2)
+(6, 1, 4, 3)
+(6, 1, 4, 4)
+(6, 1, 4, 5)
+(6, 1, 4, 6)
+(6, 1, 5, 1)
+(6, 1, 5, 2)
+(6, 1, 5, 3)
+(6, 1, 5, 4)
+(6, 1, 5, 5)
+(6, 1, 5, 6)
+(6, 1, 6, 1)
+(6, 1, 6, 2)
+(6, 1, 6, 3)
+(6, 1, 6, 4)
+(6, 1, 6, 5)
+(6, 1, 6, 6)
+(6, 2, 1, 1)
+(6, 2, 1, 2)
+(6, 2, 1, 3)
+(6, 2, 1, 4)
+(6, 2, 1, 5)
+(6, 2, 1, 6)
+(6, 2, 2, 1)
+(6, 2, 2, 2)
+(6, 2, 2, 3)
+(6, 2, 2, 4)
+(6, 2, 2, 5)
+(6, 2, 2, 6)
+(6, 2, 3, 1)
+(6, 2, 3, 2)
+(6, 2, 3, 3)
+(6, 2, 3, 4)
+(6, 2, 3, 5)
+(6, 2, 3, 6)
+(6, 2, 4, 1)
+(6, 2, 4, 2)
+(6, 2, 4, 3)
+(6, 2, 4, 4)
+(6, 2, 4, 5)
+(6, 2, 4, 6)
+(6, 2, 5, 1)
+(6, 2, 5, 2)
+(6, 2, 5, 3)
+(6, 2, 5, 4)
+(6, 2, 5, 5)
+(6, 2, 5, 6)
+(6, 2, 6, 1)
+(6, 2, 6, 2)
+(6, 2, 6, 3)
+(6, 2, 6, 4)
+(6, 2, 6, 5)
+(6, 2, 6, 6)
+(6, 3, 1, 1)
+(6, 3, 1, 2)
+(6, 3, 1, 3)
+(6, 3, 1, 4)
+(6, 3, 1, 5)
+(6, 3, 1, 6)
+(6, 3, 2, 1)
+(6, 3, 2, 2)
+(6, 3, 2, 3)
+(6, 3, 2, 4)
+(6, 3, 2, 5)
+(6, 3, 2, 6)
+(6, 3, 3, 1)
+(6, 3, 3, 2)
+(6, 3, 3, 3)
+(6, 3, 3, 4)
+(6, 3, 3, 5)
+(6, 3, 3, 6)
+(6, 3, 4, 1)
+(6, 3, 4, 2)
+(6, 3, 4, 3)
+(6, 3, 4, 4)
+(6, 3, 4, 5)
+(6, 3, 4, 6)
+(6, 3, 5, 1)
+(6, 3, 5, 2)
+(6, 3, 5, 3)
+(6, 3, 5, 4)
+(6, 3, 5, 5)
+(6, 3, 5, 6)
+(6, 3, 6, 1)
+(6, 3, 6, 2)
+(6, 3, 6, 3)
+(6, 3, 6, 4)
+(6, 3, 6, 5)
+(6, 3, 6, 6)
+(6, 4, 1, 1)
+(6, 4, 1, 2)
+(6, 4, 1, 3)
+(6, 4, 1, 4)
+(6, 4, 1, 5)
+(6, 4, 1, 6)
+(6, 4, 2, 1)
+(6, 4, 2, 2)
+(6, 4, 2, 3)
+(6, 4, 2, 4)
+(6, 4, 2, 5)
+(6, 4, 2, 6)
+(6, 4, 3, 1)
+(6, 4, 3, 2)
+(6, 4, 3, 3)
+(6, 4, 3, 4)
+(6, 4, 3, 5)
+(6, 4, 3, 6)
+(6, 4, 4, 1)
+(6, 4, 4, 2)
+(6, 4, 4, 3)
+(6, 4, 4, 4)
+(6, 4, 4, 5)
+(6, 4, 4, 6)
+(6, 4, 5, 1)
+(6, 4, 5, 2)
+(6, 4, 5, 3)
+(6, 4, 5, 4)
+(6, 4, 5, 5)
+(6, 4, 5, 6)
+(6, 4, 6, 1)
+(6, 4, 6, 2)
+(6, 4, 6, 3)
+(6, 4, 6, 4)
+(6, 4, 6, 5)
+(6, 4, 6, 6)
+(6, 5, 1, 1)
+(6, 5, 1, 2)
+(6, 5, 1, 3)
+(6, 5, 1, 4)
+(6, 5, 1, 5)
+(6, 5, 1, 6)
+(6, 5, 2, 1)
+(6, 5, 2, 2)
+(6, 5, 2, 3)
+(6, 5, 2, 4)
+(6, 5, 2, 5)
+(6, 5, 2, 6)
+(6, 5, 3, 1)
+(6, 5, 3, 2)
+(6, 5, 3, 3)
+(6, 5, 3, 4)
+(6, 5, 3, 5)
+(6, 5, 3, 6)
+(6, 5, 4, 1)
+(6, 5, 4, 2)
+(6, 5, 4, 3)
+(6, 5, 4, 4)
+(6, 5, 4, 5)
+(6, 5, 4, 6)
+(6, 5, 5, 1)
+(6, 5, 5, 2)
+(6, 5, 5, 3)
+(6, 5, 5, 4)
+(6, 5, 5, 5)
+(6, 5, 5, 6)
+(6, 5, 6, 1)
+(6, 5, 6, 2)
+(6, 5, 6, 3)
+(6, 5, 6, 4)
+(6, 5, 6, 5)
+(6, 5, 6, 6)
+(6, 6, 1, 1)
+(6, 6, 1, 2)
+(6, 6, 1, 3)
+(6, 6, 1, 4)
+(6, 6, 1, 5)
+(6, 6, 1, 6)
+(6, 6, 2, 1)
+(6, 6, 2, 2)
+(6, 6, 2, 3)
+(6, 6, 2, 4)
+(6, 6, 2, 5)
+(6, 6, 2, 6)
+(6, 6, 3, 1)
+(6, 6, 3, 2)
+(6, 6, 3, 3)
+(6, 6, 3, 4)
+(6, 6, 3, 5)
+(6, 6, 3, 6)
+(6, 6, 4, 1)
+(6, 6, 4, 2)
+(6, 6, 4, 3)
+(6, 6, 4, 4)
+(6, 6, 4, 5)
+(6, 6, 4, 6)
+(6, 6, 5, 1)
+(6, 6, 5, 2)
+(6, 6, 5, 3)
+(6, 6, 5, 4)
+(6, 6, 5, 5)
+(6, 6, 5, 6)
+(6, 6, 6, 1)
+(6, 6, 6, 2)
+(6, 6, 6, 3)
+(6, 6, 6, 4)
+(6, 6, 6, 5)
+(6, 6, 6, 6)</code></pre>
+</div>
+</div>
+<div id="93ffcf93" class="cell" data-execution_count="83">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb173" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb173-1">lst <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> [<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">4</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">5</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">6</span>]</span>
+<span id="cb173-2"><span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> a, b, c, d <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> itertools.product(lst, lst, lst, lst):</span>
+<span id="cb173-3">    <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>((a, b, c, d))</span></code></pre></div></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>(1, 1, 1, 1)
+(1, 1, 1, 2)
+(1, 1, 1, 3)
+(1, 1, 1, 4)
+(1, 1, 1, 5)
+(1, 1, 1, 6)
+(1, 1, 2, 1)
+(1, 1, 2, 2)
+(1, 1, 2, 3)
+(1, 1, 2, 4)
+(1, 1, 2, 5)
+(1, 1, 2, 6)
+(1, 1, 3, 1)
+(1, 1, 3, 2)
+(1, 1, 3, 3)
+(1, 1, 3, 4)
+(1, 1, 3, 5)
+(1, 1, 3, 6)
+(1, 1, 4, 1)
+(1, 1, 4, 2)
+(1, 1, 4, 3)
+(1, 1, 4, 4)
+(1, 1, 4, 5)
+(1, 1, 4, 6)
+(1, 1, 5, 1)
+(1, 1, 5, 2)
+(1, 1, 5, 3)
+(1, 1, 5, 4)
+(1, 1, 5, 5)
+(1, 1, 5, 6)
+(1, 1, 6, 1)
+(1, 1, 6, 2)
+(1, 1, 6, 3)
+(1, 1, 6, 4)
+(1, 1, 6, 5)
+(1, 1, 6, 6)
+(1, 2, 1, 1)
+(1, 2, 1, 2)
+(1, 2, 1, 3)
+(1, 2, 1, 4)
+(1, 2, 1, 5)
+(1, 2, 1, 6)
+(1, 2, 2, 1)
+(1, 2, 2, 2)
+(1, 2, 2, 3)
+(1, 2, 2, 4)
+(1, 2, 2, 5)
+(1, 2, 2, 6)
+(1, 2, 3, 1)
+(1, 2, 3, 2)
+(1, 2, 3, 3)
+(1, 2, 3, 4)
+(1, 2, 3, 5)
+(1, 2, 3, 6)
+(1, 2, 4, 1)
+(1, 2, 4, 2)
+(1, 2, 4, 3)
+(1, 2, 4, 4)
+(1, 2, 4, 5)
+(1, 2, 4, 6)
+(1, 2, 5, 1)
+(1, 2, 5, 2)
+(1, 2, 5, 3)
+(1, 2, 5, 4)
+(1, 2, 5, 5)
+(1, 2, 5, 6)
+(1, 2, 6, 1)
+(1, 2, 6, 2)
+(1, 2, 6, 3)
+(1, 2, 6, 4)
+(1, 2, 6, 5)
+(1, 2, 6, 6)
+(1, 3, 1, 1)
+(1, 3, 1, 2)
+(1, 3, 1, 3)
+(1, 3, 1, 4)
+(1, 3, 1, 5)
+(1, 3, 1, 6)
+(1, 3, 2, 1)
+(1, 3, 2, 2)
+(1, 3, 2, 3)
+(1, 3, 2, 4)
+(1, 3, 2, 5)
+(1, 3, 2, 6)
+(1, 3, 3, 1)
+(1, 3, 3, 2)
+(1, 3, 3, 3)
+(1, 3, 3, 4)
+(1, 3, 3, 5)
+(1, 3, 3, 6)
+(1, 3, 4, 1)
+(1, 3, 4, 2)
+(1, 3, 4, 3)
+(1, 3, 4, 4)
+(1, 3, 4, 5)
+(1, 3, 4, 6)
+(1, 3, 5, 1)
+(1, 3, 5, 2)
+(1, 3, 5, 3)
+(1, 3, 5, 4)
+(1, 3, 5, 5)
+(1, 3, 5, 6)
+(1, 3, 6, 1)
+(1, 3, 6, 2)
+(1, 3, 6, 3)
+(1, 3, 6, 4)
+(1, 3, 6, 5)
+(1, 3, 6, 6)
+(1, 4, 1, 1)
+(1, 4, 1, 2)
+(1, 4, 1, 3)
+(1, 4, 1, 4)
+(1, 4, 1, 5)
+(1, 4, 1, 6)
+(1, 4, 2, 1)
+(1, 4, 2, 2)
+(1, 4, 2, 3)
+(1, 4, 2, 4)
+(1, 4, 2, 5)
+(1, 4, 2, 6)
+(1, 4, 3, 1)
+(1, 4, 3, 2)
+(1, 4, 3, 3)
+(1, 4, 3, 4)
+(1, 4, 3, 5)
+(1, 4, 3, 6)
+(1, 4, 4, 1)
+(1, 4, 4, 2)
+(1, 4, 4, 3)
+(1, 4, 4, 4)
+(1, 4, 4, 5)
+(1, 4, 4, 6)
+(1, 4, 5, 1)
+(1, 4, 5, 2)
+(1, 4, 5, 3)
+(1, 4, 5, 4)
+(1, 4, 5, 5)
+(1, 4, 5, 6)
+(1, 4, 6, 1)
+(1, 4, 6, 2)
+(1, 4, 6, 3)
+(1, 4, 6, 4)
+(1, 4, 6, 5)
+(1, 4, 6, 6)
+(1, 5, 1, 1)
+(1, 5, 1, 2)
+(1, 5, 1, 3)
+(1, 5, 1, 4)
+(1, 5, 1, 5)
+(1, 5, 1, 6)
+(1, 5, 2, 1)
+(1, 5, 2, 2)
+(1, 5, 2, 3)
+(1, 5, 2, 4)
+(1, 5, 2, 5)
+(1, 5, 2, 6)
+(1, 5, 3, 1)
+(1, 5, 3, 2)
+(1, 5, 3, 3)
+(1, 5, 3, 4)
+(1, 5, 3, 5)
+(1, 5, 3, 6)
+(1, 5, 4, 1)
+(1, 5, 4, 2)
+(1, 5, 4, 3)
+(1, 5, 4, 4)
+(1, 5, 4, 5)
+(1, 5, 4, 6)
+(1, 5, 5, 1)
+(1, 5, 5, 2)
+(1, 5, 5, 3)
+(1, 5, 5, 4)
+(1, 5, 5, 5)
+(1, 5, 5, 6)
+(1, 5, 6, 1)
+(1, 5, 6, 2)
+(1, 5, 6, 3)
+(1, 5, 6, 4)
+(1, 5, 6, 5)
+(1, 5, 6, 6)
+(1, 6, 1, 1)
+(1, 6, 1, 2)
+(1, 6, 1, 3)
+(1, 6, 1, 4)
+(1, 6, 1, 5)
+(1, 6, 1, 6)
+(1, 6, 2, 1)
+(1, 6, 2, 2)
+(1, 6, 2, 3)
+(1, 6, 2, 4)
+(1, 6, 2, 5)
+(1, 6, 2, 6)
+(1, 6, 3, 1)
+(1, 6, 3, 2)
+(1, 6, 3, 3)
+(1, 6, 3, 4)
+(1, 6, 3, 5)
+(1, 6, 3, 6)
+(1, 6, 4, 1)
+(1, 6, 4, 2)
+(1, 6, 4, 3)
+(1, 6, 4, 4)
+(1, 6, 4, 5)
+(1, 6, 4, 6)
+(1, 6, 5, 1)
+(1, 6, 5, 2)
+(1, 6, 5, 3)
+(1, 6, 5, 4)
+(1, 6, 5, 5)
+(1, 6, 5, 6)
+(1, 6, 6, 1)
+(1, 6, 6, 2)
+(1, 6, 6, 3)
+(1, 6, 6, 4)
+(1, 6, 6, 5)
+(1, 6, 6, 6)
+(2, 1, 1, 1)
+(2, 1, 1, 2)
+(2, 1, 1, 3)
+(2, 1, 1, 4)
+(2, 1, 1, 5)
+(2, 1, 1, 6)
+(2, 1, 2, 1)
+(2, 1, 2, 2)
+(2, 1, 2, 3)
+(2, 1, 2, 4)
+(2, 1, 2, 5)
+(2, 1, 2, 6)
+(2, 1, 3, 1)
+(2, 1, 3, 2)
+(2, 1, 3, 3)
+(2, 1, 3, 4)
+(2, 1, 3, 5)
+(2, 1, 3, 6)
+(2, 1, 4, 1)
+(2, 1, 4, 2)
+(2, 1, 4, 3)
+(2, 1, 4, 4)
+(2, 1, 4, 5)
+(2, 1, 4, 6)
+(2, 1, 5, 1)
+(2, 1, 5, 2)
+(2, 1, 5, 3)
+(2, 1, 5, 4)
+(2, 1, 5, 5)
+(2, 1, 5, 6)
+(2, 1, 6, 1)
+(2, 1, 6, 2)
+(2, 1, 6, 3)
+(2, 1, 6, 4)
+(2, 1, 6, 5)
+(2, 1, 6, 6)
+(2, 2, 1, 1)
+(2, 2, 1, 2)
+(2, 2, 1, 3)
+(2, 2, 1, 4)
+(2, 2, 1, 5)
+(2, 2, 1, 6)
+(2, 2, 2, 1)
+(2, 2, 2, 2)
+(2, 2, 2, 3)
+(2, 2, 2, 4)
+(2, 2, 2, 5)
+(2, 2, 2, 6)
+(2, 2, 3, 1)
+(2, 2, 3, 2)
+(2, 2, 3, 3)
+(2, 2, 3, 4)
+(2, 2, 3, 5)
+(2, 2, 3, 6)
+(2, 2, 4, 1)
+(2, 2, 4, 2)
+(2, 2, 4, 3)
+(2, 2, 4, 4)
+(2, 2, 4, 5)
+(2, 2, 4, 6)
+(2, 2, 5, 1)
+(2, 2, 5, 2)
+(2, 2, 5, 3)
+(2, 2, 5, 4)
+(2, 2, 5, 5)
+(2, 2, 5, 6)
+(2, 2, 6, 1)
+(2, 2, 6, 2)
+(2, 2, 6, 3)
+(2, 2, 6, 4)
+(2, 2, 6, 5)
+(2, 2, 6, 6)
+(2, 3, 1, 1)
+(2, 3, 1, 2)
+(2, 3, 1, 3)
+(2, 3, 1, 4)
+(2, 3, 1, 5)
+(2, 3, 1, 6)
+(2, 3, 2, 1)
+(2, 3, 2, 2)
+(2, 3, 2, 3)
+(2, 3, 2, 4)
+(2, 3, 2, 5)
+(2, 3, 2, 6)
+(2, 3, 3, 1)
+(2, 3, 3, 2)
+(2, 3, 3, 3)
+(2, 3, 3, 4)
+(2, 3, 3, 5)
+(2, 3, 3, 6)
+(2, 3, 4, 1)
+(2, 3, 4, 2)
+(2, 3, 4, 3)
+(2, 3, 4, 4)
+(2, 3, 4, 5)
+(2, 3, 4, 6)
+(2, 3, 5, 1)
+(2, 3, 5, 2)
+(2, 3, 5, 3)
+(2, 3, 5, 4)
+(2, 3, 5, 5)
+(2, 3, 5, 6)
+(2, 3, 6, 1)
+(2, 3, 6, 2)
+(2, 3, 6, 3)
+(2, 3, 6, 4)
+(2, 3, 6, 5)
+(2, 3, 6, 6)
+(2, 4, 1, 1)
+(2, 4, 1, 2)
+(2, 4, 1, 3)
+(2, 4, 1, 4)
+(2, 4, 1, 5)
+(2, 4, 1, 6)
+(2, 4, 2, 1)
+(2, 4, 2, 2)
+(2, 4, 2, 3)
+(2, 4, 2, 4)
+(2, 4, 2, 5)
+(2, 4, 2, 6)
+(2, 4, 3, 1)
+(2, 4, 3, 2)
+(2, 4, 3, 3)
+(2, 4, 3, 4)
+(2, 4, 3, 5)
+(2, 4, 3, 6)
+(2, 4, 4, 1)
+(2, 4, 4, 2)
+(2, 4, 4, 3)
+(2, 4, 4, 4)
+(2, 4, 4, 5)
+(2, 4, 4, 6)
+(2, 4, 5, 1)
+(2, 4, 5, 2)
+(2, 4, 5, 3)
+(2, 4, 5, 4)
+(2, 4, 5, 5)
+(2, 4, 5, 6)
+(2, 4, 6, 1)
+(2, 4, 6, 2)
+(2, 4, 6, 3)
+(2, 4, 6, 4)
+(2, 4, 6, 5)
+(2, 4, 6, 6)
+(2, 5, 1, 1)
+(2, 5, 1, 2)
+(2, 5, 1, 3)
+(2, 5, 1, 4)
+(2, 5, 1, 5)
+(2, 5, 1, 6)
+(2, 5, 2, 1)
+(2, 5, 2, 2)
+(2, 5, 2, 3)
+(2, 5, 2, 4)
+(2, 5, 2, 5)
+(2, 5, 2, 6)
+(2, 5, 3, 1)
+(2, 5, 3, 2)
+(2, 5, 3, 3)
+(2, 5, 3, 4)
+(2, 5, 3, 5)
+(2, 5, 3, 6)
+(2, 5, 4, 1)
+(2, 5, 4, 2)
+(2, 5, 4, 3)
+(2, 5, 4, 4)
+(2, 5, 4, 5)
+(2, 5, 4, 6)
+(2, 5, 5, 1)
+(2, 5, 5, 2)
+(2, 5, 5, 3)
+(2, 5, 5, 4)
+(2, 5, 5, 5)
+(2, 5, 5, 6)
+(2, 5, 6, 1)
+(2, 5, 6, 2)
+(2, 5, 6, 3)
+(2, 5, 6, 4)
+(2, 5, 6, 5)
+(2, 5, 6, 6)
+(2, 6, 1, 1)
+(2, 6, 1, 2)
+(2, 6, 1, 3)
+(2, 6, 1, 4)
+(2, 6, 1, 5)
+(2, 6, 1, 6)
+(2, 6, 2, 1)
+(2, 6, 2, 2)
+(2, 6, 2, 3)
+(2, 6, 2, 4)
+(2, 6, 2, 5)
+(2, 6, 2, 6)
+(2, 6, 3, 1)
+(2, 6, 3, 2)
+(2, 6, 3, 3)
+(2, 6, 3, 4)
+(2, 6, 3, 5)
+(2, 6, 3, 6)
+(2, 6, 4, 1)
+(2, 6, 4, 2)
+(2, 6, 4, 3)
+(2, 6, 4, 4)
+(2, 6, 4, 5)
+(2, 6, 4, 6)
+(2, 6, 5, 1)
+(2, 6, 5, 2)
+(2, 6, 5, 3)
+(2, 6, 5, 4)
+(2, 6, 5, 5)
+(2, 6, 5, 6)
+(2, 6, 6, 1)
+(2, 6, 6, 2)
+(2, 6, 6, 3)
+(2, 6, 6, 4)
+(2, 6, 6, 5)
+(2, 6, 6, 6)
+(3, 1, 1, 1)
+(3, 1, 1, 2)
+(3, 1, 1, 3)
+(3, 1, 1, 4)
+(3, 1, 1, 5)
+(3, 1, 1, 6)
+(3, 1, 2, 1)
+(3, 1, 2, 2)
+(3, 1, 2, 3)
+(3, 1, 2, 4)
+(3, 1, 2, 5)
+(3, 1, 2, 6)
+(3, 1, 3, 1)
+(3, 1, 3, 2)
+(3, 1, 3, 3)
+(3, 1, 3, 4)
+(3, 1, 3, 5)
+(3, 1, 3, 6)
+(3, 1, 4, 1)
+(3, 1, 4, 2)
+(3, 1, 4, 3)
+(3, 1, 4, 4)
+(3, 1, 4, 5)
+(3, 1, 4, 6)
+(3, 1, 5, 1)
+(3, 1, 5, 2)
+(3, 1, 5, 3)
+(3, 1, 5, 4)
+(3, 1, 5, 5)
+(3, 1, 5, 6)
+(3, 1, 6, 1)
+(3, 1, 6, 2)
+(3, 1, 6, 3)
+(3, 1, 6, 4)
+(3, 1, 6, 5)
+(3, 1, 6, 6)
+(3, 2, 1, 1)
+(3, 2, 1, 2)
+(3, 2, 1, 3)
+(3, 2, 1, 4)
+(3, 2, 1, 5)
+(3, 2, 1, 6)
+(3, 2, 2, 1)
+(3, 2, 2, 2)
+(3, 2, 2, 3)
+(3, 2, 2, 4)
+(3, 2, 2, 5)
+(3, 2, 2, 6)
+(3, 2, 3, 1)
+(3, 2, 3, 2)
+(3, 2, 3, 3)
+(3, 2, 3, 4)
+(3, 2, 3, 5)
+(3, 2, 3, 6)
+(3, 2, 4, 1)
+(3, 2, 4, 2)
+(3, 2, 4, 3)
+(3, 2, 4, 4)
+(3, 2, 4, 5)
+(3, 2, 4, 6)
+(3, 2, 5, 1)
+(3, 2, 5, 2)
+(3, 2, 5, 3)
+(3, 2, 5, 4)
+(3, 2, 5, 5)
+(3, 2, 5, 6)
+(3, 2, 6, 1)
+(3, 2, 6, 2)
+(3, 2, 6, 3)
+(3, 2, 6, 4)
+(3, 2, 6, 5)
+(3, 2, 6, 6)
+(3, 3, 1, 1)
+(3, 3, 1, 2)
+(3, 3, 1, 3)
+(3, 3, 1, 4)
+(3, 3, 1, 5)
+(3, 3, 1, 6)
+(3, 3, 2, 1)
+(3, 3, 2, 2)
+(3, 3, 2, 3)
+(3, 3, 2, 4)
+(3, 3, 2, 5)
+(3, 3, 2, 6)
+(3, 3, 3, 1)
+(3, 3, 3, 2)
+(3, 3, 3, 3)
+(3, 3, 3, 4)
+(3, 3, 3, 5)
+(3, 3, 3, 6)
+(3, 3, 4, 1)
+(3, 3, 4, 2)
+(3, 3, 4, 3)
+(3, 3, 4, 4)
+(3, 3, 4, 5)
+(3, 3, 4, 6)
+(3, 3, 5, 1)
+(3, 3, 5, 2)
+(3, 3, 5, 3)
+(3, 3, 5, 4)
+(3, 3, 5, 5)
+(3, 3, 5, 6)
+(3, 3, 6, 1)
+(3, 3, 6, 2)
+(3, 3, 6, 3)
+(3, 3, 6, 4)
+(3, 3, 6, 5)
+(3, 3, 6, 6)
+(3, 4, 1, 1)
+(3, 4, 1, 2)
+(3, 4, 1, 3)
+(3, 4, 1, 4)
+(3, 4, 1, 5)
+(3, 4, 1, 6)
+(3, 4, 2, 1)
+(3, 4, 2, 2)
+(3, 4, 2, 3)
+(3, 4, 2, 4)
+(3, 4, 2, 5)
+(3, 4, 2, 6)
+(3, 4, 3, 1)
+(3, 4, 3, 2)
+(3, 4, 3, 3)
+(3, 4, 3, 4)
+(3, 4, 3, 5)
+(3, 4, 3, 6)
+(3, 4, 4, 1)
+(3, 4, 4, 2)
+(3, 4, 4, 3)
+(3, 4, 4, 4)
+(3, 4, 4, 5)
+(3, 4, 4, 6)
+(3, 4, 5, 1)
+(3, 4, 5, 2)
+(3, 4, 5, 3)
+(3, 4, 5, 4)
+(3, 4, 5, 5)
+(3, 4, 5, 6)
+(3, 4, 6, 1)
+(3, 4, 6, 2)
+(3, 4, 6, 3)
+(3, 4, 6, 4)
+(3, 4, 6, 5)
+(3, 4, 6, 6)
+(3, 5, 1, 1)
+(3, 5, 1, 2)
+(3, 5, 1, 3)
+(3, 5, 1, 4)
+(3, 5, 1, 5)
+(3, 5, 1, 6)
+(3, 5, 2, 1)
+(3, 5, 2, 2)
+(3, 5, 2, 3)
+(3, 5, 2, 4)
+(3, 5, 2, 5)
+(3, 5, 2, 6)
+(3, 5, 3, 1)
+(3, 5, 3, 2)
+(3, 5, 3, 3)
+(3, 5, 3, 4)
+(3, 5, 3, 5)
+(3, 5, 3, 6)
+(3, 5, 4, 1)
+(3, 5, 4, 2)
+(3, 5, 4, 3)
+(3, 5, 4, 4)
+(3, 5, 4, 5)
+(3, 5, 4, 6)
+(3, 5, 5, 1)
+(3, 5, 5, 2)
+(3, 5, 5, 3)
+(3, 5, 5, 4)
+(3, 5, 5, 5)
+(3, 5, 5, 6)
+(3, 5, 6, 1)
+(3, 5, 6, 2)
+(3, 5, 6, 3)
+(3, 5, 6, 4)
+(3, 5, 6, 5)
+(3, 5, 6, 6)
+(3, 6, 1, 1)
+(3, 6, 1, 2)
+(3, 6, 1, 3)
+(3, 6, 1, 4)
+(3, 6, 1, 5)
+(3, 6, 1, 6)
+(3, 6, 2, 1)
+(3, 6, 2, 2)
+(3, 6, 2, 3)
+(3, 6, 2, 4)
+(3, 6, 2, 5)
+(3, 6, 2, 6)
+(3, 6, 3, 1)
+(3, 6, 3, 2)
+(3, 6, 3, 3)
+(3, 6, 3, 4)
+(3, 6, 3, 5)
+(3, 6, 3, 6)
+(3, 6, 4, 1)
+(3, 6, 4, 2)
+(3, 6, 4, 3)
+(3, 6, 4, 4)
+(3, 6, 4, 5)
+(3, 6, 4, 6)
+(3, 6, 5, 1)
+(3, 6, 5, 2)
+(3, 6, 5, 3)
+(3, 6, 5, 4)
+(3, 6, 5, 5)
+(3, 6, 5, 6)
+(3, 6, 6, 1)
+(3, 6, 6, 2)
+(3, 6, 6, 3)
+(3, 6, 6, 4)
+(3, 6, 6, 5)
+(3, 6, 6, 6)
+(4, 1, 1, 1)
+(4, 1, 1, 2)
+(4, 1, 1, 3)
+(4, 1, 1, 4)
+(4, 1, 1, 5)
+(4, 1, 1, 6)
+(4, 1, 2, 1)
+(4, 1, 2, 2)
+(4, 1, 2, 3)
+(4, 1, 2, 4)
+(4, 1, 2, 5)
+(4, 1, 2, 6)
+(4, 1, 3, 1)
+(4, 1, 3, 2)
+(4, 1, 3, 3)
+(4, 1, 3, 4)
+(4, 1, 3, 5)
+(4, 1, 3, 6)
+(4, 1, 4, 1)
+(4, 1, 4, 2)
+(4, 1, 4, 3)
+(4, 1, 4, 4)
+(4, 1, 4, 5)
+(4, 1, 4, 6)
+(4, 1, 5, 1)
+(4, 1, 5, 2)
+(4, 1, 5, 3)
+(4, 1, 5, 4)
+(4, 1, 5, 5)
+(4, 1, 5, 6)
+(4, 1, 6, 1)
+(4, 1, 6, 2)
+(4, 1, 6, 3)
+(4, 1, 6, 4)
+(4, 1, 6, 5)
+(4, 1, 6, 6)
+(4, 2, 1, 1)
+(4, 2, 1, 2)
+(4, 2, 1, 3)
+(4, 2, 1, 4)
+(4, 2, 1, 5)
+(4, 2, 1, 6)
+(4, 2, 2, 1)
+(4, 2, 2, 2)
+(4, 2, 2, 3)
+(4, 2, 2, 4)
+(4, 2, 2, 5)
+(4, 2, 2, 6)
+(4, 2, 3, 1)
+(4, 2, 3, 2)
+(4, 2, 3, 3)
+(4, 2, 3, 4)
+(4, 2, 3, 5)
+(4, 2, 3, 6)
+(4, 2, 4, 1)
+(4, 2, 4, 2)
+(4, 2, 4, 3)
+(4, 2, 4, 4)
+(4, 2, 4, 5)
+(4, 2, 4, 6)
+(4, 2, 5, 1)
+(4, 2, 5, 2)
+(4, 2, 5, 3)
+(4, 2, 5, 4)
+(4, 2, 5, 5)
+(4, 2, 5, 6)
+(4, 2, 6, 1)
+(4, 2, 6, 2)
+(4, 2, 6, 3)
+(4, 2, 6, 4)
+(4, 2, 6, 5)
+(4, 2, 6, 6)
+(4, 3, 1, 1)
+(4, 3, 1, 2)
+(4, 3, 1, 3)
+(4, 3, 1, 4)
+(4, 3, 1, 5)
+(4, 3, 1, 6)
+(4, 3, 2, 1)
+(4, 3, 2, 2)
+(4, 3, 2, 3)
+(4, 3, 2, 4)
+(4, 3, 2, 5)
+(4, 3, 2, 6)
+(4, 3, 3, 1)
+(4, 3, 3, 2)
+(4, 3, 3, 3)
+(4, 3, 3, 4)
+(4, 3, 3, 5)
+(4, 3, 3, 6)
+(4, 3, 4, 1)
+(4, 3, 4, 2)
+(4, 3, 4, 3)
+(4, 3, 4, 4)
+(4, 3, 4, 5)
+(4, 3, 4, 6)
+(4, 3, 5, 1)
+(4, 3, 5, 2)
+(4, 3, 5, 3)
+(4, 3, 5, 4)
+(4, 3, 5, 5)
+(4, 3, 5, 6)
+(4, 3, 6, 1)
+(4, 3, 6, 2)
+(4, 3, 6, 3)
+(4, 3, 6, 4)
+(4, 3, 6, 5)
+(4, 3, 6, 6)
+(4, 4, 1, 1)
+(4, 4, 1, 2)
+(4, 4, 1, 3)
+(4, 4, 1, 4)
+(4, 4, 1, 5)
+(4, 4, 1, 6)
+(4, 4, 2, 1)
+(4, 4, 2, 2)
+(4, 4, 2, 3)
+(4, 4, 2, 4)
+(4, 4, 2, 5)
+(4, 4, 2, 6)
+(4, 4, 3, 1)
+(4, 4, 3, 2)
+(4, 4, 3, 3)
+(4, 4, 3, 4)
+(4, 4, 3, 5)
+(4, 4, 3, 6)
+(4, 4, 4, 1)
+(4, 4, 4, 2)
+(4, 4, 4, 3)
+(4, 4, 4, 4)
+(4, 4, 4, 5)
+(4, 4, 4, 6)
+(4, 4, 5, 1)
+(4, 4, 5, 2)
+(4, 4, 5, 3)
+(4, 4, 5, 4)
+(4, 4, 5, 5)
+(4, 4, 5, 6)
+(4, 4, 6, 1)
+(4, 4, 6, 2)
+(4, 4, 6, 3)
+(4, 4, 6, 4)
+(4, 4, 6, 5)
+(4, 4, 6, 6)
+(4, 5, 1, 1)
+(4, 5, 1, 2)
+(4, 5, 1, 3)
+(4, 5, 1, 4)
+(4, 5, 1, 5)
+(4, 5, 1, 6)
+(4, 5, 2, 1)
+(4, 5, 2, 2)
+(4, 5, 2, 3)
+(4, 5, 2, 4)
+(4, 5, 2, 5)
+(4, 5, 2, 6)
+(4, 5, 3, 1)
+(4, 5, 3, 2)
+(4, 5, 3, 3)
+(4, 5, 3, 4)
+(4, 5, 3, 5)
+(4, 5, 3, 6)
+(4, 5, 4, 1)
+(4, 5, 4, 2)
+(4, 5, 4, 3)
+(4, 5, 4, 4)
+(4, 5, 4, 5)
+(4, 5, 4, 6)
+(4, 5, 5, 1)
+(4, 5, 5, 2)
+(4, 5, 5, 3)
+(4, 5, 5, 4)
+(4, 5, 5, 5)
+(4, 5, 5, 6)
+(4, 5, 6, 1)
+(4, 5, 6, 2)
+(4, 5, 6, 3)
+(4, 5, 6, 4)
+(4, 5, 6, 5)
+(4, 5, 6, 6)
+(4, 6, 1, 1)
+(4, 6, 1, 2)
+(4, 6, 1, 3)
+(4, 6, 1, 4)
+(4, 6, 1, 5)
+(4, 6, 1, 6)
+(4, 6, 2, 1)
+(4, 6, 2, 2)
+(4, 6, 2, 3)
+(4, 6, 2, 4)
+(4, 6, 2, 5)
+(4, 6, 2, 6)
+(4, 6, 3, 1)
+(4, 6, 3, 2)
+(4, 6, 3, 3)
+(4, 6, 3, 4)
+(4, 6, 3, 5)
+(4, 6, 3, 6)
+(4, 6, 4, 1)
+(4, 6, 4, 2)
+(4, 6, 4, 3)
+(4, 6, 4, 4)
+(4, 6, 4, 5)
+(4, 6, 4, 6)
+(4, 6, 5, 1)
+(4, 6, 5, 2)
+(4, 6, 5, 3)
+(4, 6, 5, 4)
+(4, 6, 5, 5)
+(4, 6, 5, 6)
+(4, 6, 6, 1)
+(4, 6, 6, 2)
+(4, 6, 6, 3)
+(4, 6, 6, 4)
+(4, 6, 6, 5)
+(4, 6, 6, 6)
+(5, 1, 1, 1)
+(5, 1, 1, 2)
+(5, 1, 1, 3)
+(5, 1, 1, 4)
+(5, 1, 1, 5)
+(5, 1, 1, 6)
+(5, 1, 2, 1)
+(5, 1, 2, 2)
+(5, 1, 2, 3)
+(5, 1, 2, 4)
+(5, 1, 2, 5)
+(5, 1, 2, 6)
+(5, 1, 3, 1)
+(5, 1, 3, 2)
+(5, 1, 3, 3)
+(5, 1, 3, 4)
+(5, 1, 3, 5)
+(5, 1, 3, 6)
+(5, 1, 4, 1)
+(5, 1, 4, 2)
+(5, 1, 4, 3)
+(5, 1, 4, 4)
+(5, 1, 4, 5)
+(5, 1, 4, 6)
+(5, 1, 5, 1)
+(5, 1, 5, 2)
+(5, 1, 5, 3)
+(5, 1, 5, 4)
+(5, 1, 5, 5)
+(5, 1, 5, 6)
+(5, 1, 6, 1)
+(5, 1, 6, 2)
+(5, 1, 6, 3)
+(5, 1, 6, 4)
+(5, 1, 6, 5)
+(5, 1, 6, 6)
+(5, 2, 1, 1)
+(5, 2, 1, 2)
+(5, 2, 1, 3)
+(5, 2, 1, 4)
+(5, 2, 1, 5)
+(5, 2, 1, 6)
+(5, 2, 2, 1)
+(5, 2, 2, 2)
+(5, 2, 2, 3)
+(5, 2, 2, 4)
+(5, 2, 2, 5)
+(5, 2, 2, 6)
+(5, 2, 3, 1)
+(5, 2, 3, 2)
+(5, 2, 3, 3)
+(5, 2, 3, 4)
+(5, 2, 3, 5)
+(5, 2, 3, 6)
+(5, 2, 4, 1)
+(5, 2, 4, 2)
+(5, 2, 4, 3)
+(5, 2, 4, 4)
+(5, 2, 4, 5)
+(5, 2, 4, 6)
+(5, 2, 5, 1)
+(5, 2, 5, 2)
+(5, 2, 5, 3)
+(5, 2, 5, 4)
+(5, 2, 5, 5)
+(5, 2, 5, 6)
+(5, 2, 6, 1)
+(5, 2, 6, 2)
+(5, 2, 6, 3)
+(5, 2, 6, 4)
+(5, 2, 6, 5)
+(5, 2, 6, 6)
+(5, 3, 1, 1)
+(5, 3, 1, 2)
+(5, 3, 1, 3)
+(5, 3, 1, 4)
+(5, 3, 1, 5)
+(5, 3, 1, 6)
+(5, 3, 2, 1)
+(5, 3, 2, 2)
+(5, 3, 2, 3)
+(5, 3, 2, 4)
+(5, 3, 2, 5)
+(5, 3, 2, 6)
+(5, 3, 3, 1)
+(5, 3, 3, 2)
+(5, 3, 3, 3)
+(5, 3, 3, 4)
+(5, 3, 3, 5)
+(5, 3, 3, 6)
+(5, 3, 4, 1)
+(5, 3, 4, 2)
+(5, 3, 4, 3)
+(5, 3, 4, 4)
+(5, 3, 4, 5)
+(5, 3, 4, 6)
+(5, 3, 5, 1)
+(5, 3, 5, 2)
+(5, 3, 5, 3)
+(5, 3, 5, 4)
+(5, 3, 5, 5)
+(5, 3, 5, 6)
+(5, 3, 6, 1)
+(5, 3, 6, 2)
+(5, 3, 6, 3)
+(5, 3, 6, 4)
+(5, 3, 6, 5)
+(5, 3, 6, 6)
+(5, 4, 1, 1)
+(5, 4, 1, 2)
+(5, 4, 1, 3)
+(5, 4, 1, 4)
+(5, 4, 1, 5)
+(5, 4, 1, 6)
+(5, 4, 2, 1)
+(5, 4, 2, 2)
+(5, 4, 2, 3)
+(5, 4, 2, 4)
+(5, 4, 2, 5)
+(5, 4, 2, 6)
+(5, 4, 3, 1)
+(5, 4, 3, 2)
+(5, 4, 3, 3)
+(5, 4, 3, 4)
+(5, 4, 3, 5)
+(5, 4, 3, 6)
+(5, 4, 4, 1)
+(5, 4, 4, 2)
+(5, 4, 4, 3)
+(5, 4, 4, 4)
+(5, 4, 4, 5)
+(5, 4, 4, 6)
+(5, 4, 5, 1)
+(5, 4, 5, 2)
+(5, 4, 5, 3)
+(5, 4, 5, 4)
+(5, 4, 5, 5)
+(5, 4, 5, 6)
+(5, 4, 6, 1)
+(5, 4, 6, 2)
+(5, 4, 6, 3)
+(5, 4, 6, 4)
+(5, 4, 6, 5)
+(5, 4, 6, 6)
+(5, 5, 1, 1)
+(5, 5, 1, 2)
+(5, 5, 1, 3)
+(5, 5, 1, 4)
+(5, 5, 1, 5)
+(5, 5, 1, 6)
+(5, 5, 2, 1)
+(5, 5, 2, 2)
+(5, 5, 2, 3)
+(5, 5, 2, 4)
+(5, 5, 2, 5)
+(5, 5, 2, 6)
+(5, 5, 3, 1)
+(5, 5, 3, 2)
+(5, 5, 3, 3)
+(5, 5, 3, 4)
+(5, 5, 3, 5)
+(5, 5, 3, 6)
+(5, 5, 4, 1)
+(5, 5, 4, 2)
+(5, 5, 4, 3)
+(5, 5, 4, 4)
+(5, 5, 4, 5)
+(5, 5, 4, 6)
+(5, 5, 5, 1)
+(5, 5, 5, 2)
+(5, 5, 5, 3)
+(5, 5, 5, 4)
+(5, 5, 5, 5)
+(5, 5, 5, 6)
+(5, 5, 6, 1)
+(5, 5, 6, 2)
+(5, 5, 6, 3)
+(5, 5, 6, 4)
+(5, 5, 6, 5)
+(5, 5, 6, 6)
+(5, 6, 1, 1)
+(5, 6, 1, 2)
+(5, 6, 1, 3)
+(5, 6, 1, 4)
+(5, 6, 1, 5)
+(5, 6, 1, 6)
+(5, 6, 2, 1)
+(5, 6, 2, 2)
+(5, 6, 2, 3)
+(5, 6, 2, 4)
+(5, 6, 2, 5)
+(5, 6, 2, 6)
+(5, 6, 3, 1)
+(5, 6, 3, 2)
+(5, 6, 3, 3)
+(5, 6, 3, 4)
+(5, 6, 3, 5)
+(5, 6, 3, 6)
+(5, 6, 4, 1)
+(5, 6, 4, 2)
+(5, 6, 4, 3)
+(5, 6, 4, 4)
+(5, 6, 4, 5)
+(5, 6, 4, 6)
+(5, 6, 5, 1)
+(5, 6, 5, 2)
+(5, 6, 5, 3)
+(5, 6, 5, 4)
+(5, 6, 5, 5)
+(5, 6, 5, 6)
+(5, 6, 6, 1)
+(5, 6, 6, 2)
+(5, 6, 6, 3)
+(5, 6, 6, 4)
+(5, 6, 6, 5)
+(5, 6, 6, 6)
+(6, 1, 1, 1)
+(6, 1, 1, 2)
+(6, 1, 1, 3)
+(6, 1, 1, 4)
+(6, 1, 1, 5)
+(6, 1, 1, 6)
+(6, 1, 2, 1)
+(6, 1, 2, 2)
+(6, 1, 2, 3)
+(6, 1, 2, 4)
+(6, 1, 2, 5)
+(6, 1, 2, 6)
+(6, 1, 3, 1)
+(6, 1, 3, 2)
+(6, 1, 3, 3)
+(6, 1, 3, 4)
+(6, 1, 3, 5)
+(6, 1, 3, 6)
+(6, 1, 4, 1)
+(6, 1, 4, 2)
+(6, 1, 4, 3)
+(6, 1, 4, 4)
+(6, 1, 4, 5)
+(6, 1, 4, 6)
+(6, 1, 5, 1)
+(6, 1, 5, 2)
+(6, 1, 5, 3)
+(6, 1, 5, 4)
+(6, 1, 5, 5)
+(6, 1, 5, 6)
+(6, 1, 6, 1)
+(6, 1, 6, 2)
+(6, 1, 6, 3)
+(6, 1, 6, 4)
+(6, 1, 6, 5)
+(6, 1, 6, 6)
+(6, 2, 1, 1)
+(6, 2, 1, 2)
+(6, 2, 1, 3)
+(6, 2, 1, 4)
+(6, 2, 1, 5)
+(6, 2, 1, 6)
+(6, 2, 2, 1)
+(6, 2, 2, 2)
+(6, 2, 2, 3)
+(6, 2, 2, 4)
+(6, 2, 2, 5)
+(6, 2, 2, 6)
+(6, 2, 3, 1)
+(6, 2, 3, 2)
+(6, 2, 3, 3)
+(6, 2, 3, 4)
+(6, 2, 3, 5)
+(6, 2, 3, 6)
+(6, 2, 4, 1)
+(6, 2, 4, 2)
+(6, 2, 4, 3)
+(6, 2, 4, 4)
+(6, 2, 4, 5)
+(6, 2, 4, 6)
+(6, 2, 5, 1)
+(6, 2, 5, 2)
+(6, 2, 5, 3)
+(6, 2, 5, 4)
+(6, 2, 5, 5)
+(6, 2, 5, 6)
+(6, 2, 6, 1)
+(6, 2, 6, 2)
+(6, 2, 6, 3)
+(6, 2, 6, 4)
+(6, 2, 6, 5)
+(6, 2, 6, 6)
+(6, 3, 1, 1)
+(6, 3, 1, 2)
+(6, 3, 1, 3)
+(6, 3, 1, 4)
+(6, 3, 1, 5)
+(6, 3, 1, 6)
+(6, 3, 2, 1)
+(6, 3, 2, 2)
+(6, 3, 2, 3)
+(6, 3, 2, 4)
+(6, 3, 2, 5)
+(6, 3, 2, 6)
+(6, 3, 3, 1)
+(6, 3, 3, 2)
+(6, 3, 3, 3)
+(6, 3, 3, 4)
+(6, 3, 3, 5)
+(6, 3, 3, 6)
+(6, 3, 4, 1)
+(6, 3, 4, 2)
+(6, 3, 4, 3)
+(6, 3, 4, 4)
+(6, 3, 4, 5)
+(6, 3, 4, 6)
+(6, 3, 5, 1)
+(6, 3, 5, 2)
+(6, 3, 5, 3)
+(6, 3, 5, 4)
+(6, 3, 5, 5)
+(6, 3, 5, 6)
+(6, 3, 6, 1)
+(6, 3, 6, 2)
+(6, 3, 6, 3)
+(6, 3, 6, 4)
+(6, 3, 6, 5)
+(6, 3, 6, 6)
+(6, 4, 1, 1)
+(6, 4, 1, 2)
+(6, 4, 1, 3)
+(6, 4, 1, 4)
+(6, 4, 1, 5)
+(6, 4, 1, 6)
+(6, 4, 2, 1)
+(6, 4, 2, 2)
+(6, 4, 2, 3)
+(6, 4, 2, 4)
+(6, 4, 2, 5)
+(6, 4, 2, 6)
+(6, 4, 3, 1)
+(6, 4, 3, 2)
+(6, 4, 3, 3)
+(6, 4, 3, 4)
+(6, 4, 3, 5)
+(6, 4, 3, 6)
+(6, 4, 4, 1)
+(6, 4, 4, 2)
+(6, 4, 4, 3)
+(6, 4, 4, 4)
+(6, 4, 4, 5)
+(6, 4, 4, 6)
+(6, 4, 5, 1)
+(6, 4, 5, 2)
+(6, 4, 5, 3)
+(6, 4, 5, 4)
+(6, 4, 5, 5)
+(6, 4, 5, 6)
+(6, 4, 6, 1)
+(6, 4, 6, 2)
+(6, 4, 6, 3)
+(6, 4, 6, 4)
+(6, 4, 6, 5)
+(6, 4, 6, 6)
+(6, 5, 1, 1)
+(6, 5, 1, 2)
+(6, 5, 1, 3)
+(6, 5, 1, 4)
+(6, 5, 1, 5)
+(6, 5, 1, 6)
+(6, 5, 2, 1)
+(6, 5, 2, 2)
+(6, 5, 2, 3)
+(6, 5, 2, 4)
+(6, 5, 2, 5)
+(6, 5, 2, 6)
+(6, 5, 3, 1)
+(6, 5, 3, 2)
+(6, 5, 3, 3)
+(6, 5, 3, 4)
+(6, 5, 3, 5)
+(6, 5, 3, 6)
+(6, 5, 4, 1)
+(6, 5, 4, 2)
+(6, 5, 4, 3)
+(6, 5, 4, 4)
+(6, 5, 4, 5)
+(6, 5, 4, 6)
+(6, 5, 5, 1)
+(6, 5, 5, 2)
+(6, 5, 5, 3)
+(6, 5, 5, 4)
+(6, 5, 5, 5)
+(6, 5, 5, 6)
+(6, 5, 6, 1)
+(6, 5, 6, 2)
+(6, 5, 6, 3)
+(6, 5, 6, 4)
+(6, 5, 6, 5)
+(6, 5, 6, 6)
+(6, 6, 1, 1)
+(6, 6, 1, 2)
+(6, 6, 1, 3)
+(6, 6, 1, 4)
+(6, 6, 1, 5)
+(6, 6, 1, 6)
+(6, 6, 2, 1)
+(6, 6, 2, 2)
+(6, 6, 2, 3)
+(6, 6, 2, 4)
+(6, 6, 2, 5)
+(6, 6, 2, 6)
+(6, 6, 3, 1)
+(6, 6, 3, 2)
+(6, 6, 3, 3)
+(6, 6, 3, 4)
+(6, 6, 3, 5)
+(6, 6, 3, 6)
+(6, 6, 4, 1)
+(6, 6, 4, 2)
+(6, 6, 4, 3)
+(6, 6, 4, 4)
+(6, 6, 4, 5)
+(6, 6, 4, 6)
+(6, 6, 5, 1)
+(6, 6, 5, 2)
+(6, 6, 5, 3)
+(6, 6, 5, 4)
+(6, 6, 5, 5)
+(6, 6, 5, 6)
+(6, 6, 6, 1)
+(6, 6, 6, 2)
+(6, 6, 6, 3)
+(6, 6, 6, 4)
+(6, 6, 6, 5)
+(6, 6, 6, 6)</code></pre>
+</div>
+</div>
+<div id="d3518e85" class="cell" data-execution_count="84">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb175" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb175-1">lst <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> [<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">4</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">5</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">6</span>]</span>
+<span id="cb175-2">[(a, b, c, d) <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> a, b, c, d <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> itertools.product(lst, lst, lst, lst)]</span></code></pre></div></div>
+<div class="cell-output cell-output-display">
+<pre><code>[(1, 1, 1, 1),
+ (1, 1, 1, 2),
+ (1, 1, 1, 3),
+ (1, 1, 1, 4),
+ (1, 1, 1, 5),
+ (1, 1, 1, 6),
+ (1, 1, 2, 1),
+ (1, 1, 2, 2),
+ (1, 1, 2, 3),
+ (1, 1, 2, 4),
+ (1, 1, 2, 5),
+ (1, 1, 2, 6),
+ (1, 1, 3, 1),
+ (1, 1, 3, 2),
+ (1, 1, 3, 3),
+ (1, 1, 3, 4),
+ (1, 1, 3, 5),
+ (1, 1, 3, 6),
+ (1, 1, 4, 1),
+ (1, 1, 4, 2),
+ (1, 1, 4, 3),
+ (1, 1, 4, 4),
+ (1, 1, 4, 5),
+ (1, 1, 4, 6),
+ (1, 1, 5, 1),
+ (1, 1, 5, 2),
+ (1, 1, 5, 3),
+ (1, 1, 5, 4),
+ (1, 1, 5, 5),
+ (1, 1, 5, 6),
+ (1, 1, 6, 1),
+ (1, 1, 6, 2),
+ (1, 1, 6, 3),
+ (1, 1, 6, 4),
+ (1, 1, 6, 5),
+ (1, 1, 6, 6),
+ (1, 2, 1, 1),
+ (1, 2, 1, 2),
+ (1, 2, 1, 3),
+ (1, 2, 1, 4),
+ (1, 2, 1, 5),
+ (1, 2, 1, 6),
+ (1, 2, 2, 1),
+ (1, 2, 2, 2),
+ (1, 2, 2, 3),
+ (1, 2, 2, 4),
+ (1, 2, 2, 5),
+ (1, 2, 2, 6),
+ (1, 2, 3, 1),
+ (1, 2, 3, 2),
+ (1, 2, 3, 3),
+ (1, 2, 3, 4),
+ (1, 2, 3, 5),
+ (1, 2, 3, 6),
+ (1, 2, 4, 1),
+ (1, 2, 4, 2),
+ (1, 2, 4, 3),
+ (1, 2, 4, 4),
+ (1, 2, 4, 5),
+ (1, 2, 4, 6),
+ (1, 2, 5, 1),
+ (1, 2, 5, 2),
+ (1, 2, 5, 3),
+ (1, 2, 5, 4),
+ (1, 2, 5, 5),
+ (1, 2, 5, 6),
+ (1, 2, 6, 1),
+ (1, 2, 6, 2),
+ (1, 2, 6, 3),
+ (1, 2, 6, 4),
+ (1, 2, 6, 5),
+ (1, 2, 6, 6),
+ (1, 3, 1, 1),
+ (1, 3, 1, 2),
+ (1, 3, 1, 3),
+ (1, 3, 1, 4),
+ (1, 3, 1, 5),
+ (1, 3, 1, 6),
+ (1, 3, 2, 1),
+ (1, 3, 2, 2),
+ (1, 3, 2, 3),
+ (1, 3, 2, 4),
+ (1, 3, 2, 5),
+ (1, 3, 2, 6),
+ (1, 3, 3, 1),
+ (1, 3, 3, 2),
+ (1, 3, 3, 3),
+ (1, 3, 3, 4),
+ (1, 3, 3, 5),
+ (1, 3, 3, 6),
+ (1, 3, 4, 1),
+ (1, 3, 4, 2),
+ (1, 3, 4, 3),
+ (1, 3, 4, 4),
+ (1, 3, 4, 5),
+ (1, 3, 4, 6),
+ (1, 3, 5, 1),
+ (1, 3, 5, 2),
+ (1, 3, 5, 3),
+ (1, 3, 5, 4),
+ (1, 3, 5, 5),
+ (1, 3, 5, 6),
+ (1, 3, 6, 1),
+ (1, 3, 6, 2),
+ (1, 3, 6, 3),
+ (1, 3, 6, 4),
+ (1, 3, 6, 5),
+ (1, 3, 6, 6),
+ (1, 4, 1, 1),
+ (1, 4, 1, 2),
+ (1, 4, 1, 3),
+ (1, 4, 1, 4),
+ (1, 4, 1, 5),
+ (1, 4, 1, 6),
+ (1, 4, 2, 1),
+ (1, 4, 2, 2),
+ (1, 4, 2, 3),
+ (1, 4, 2, 4),
+ (1, 4, 2, 5),
+ (1, 4, 2, 6),
+ (1, 4, 3, 1),
+ (1, 4, 3, 2),
+ (1, 4, 3, 3),
+ (1, 4, 3, 4),
+ (1, 4, 3, 5),
+ (1, 4, 3, 6),
+ (1, 4, 4, 1),
+ (1, 4, 4, 2),
+ (1, 4, 4, 3),
+ (1, 4, 4, 4),
+ (1, 4, 4, 5),
+ (1, 4, 4, 6),
+ (1, 4, 5, 1),
+ (1, 4, 5, 2),
+ (1, 4, 5, 3),
+ (1, 4, 5, 4),
+ (1, 4, 5, 5),
+ (1, 4, 5, 6),
+ (1, 4, 6, 1),
+ (1, 4, 6, 2),
+ (1, 4, 6, 3),
+ (1, 4, 6, 4),
+ (1, 4, 6, 5),
+ (1, 4, 6, 6),
+ (1, 5, 1, 1),
+ (1, 5, 1, 2),
+ (1, 5, 1, 3),
+ (1, 5, 1, 4),
+ (1, 5, 1, 5),
+ (1, 5, 1, 6),
+ (1, 5, 2, 1),
+ (1, 5, 2, 2),
+ (1, 5, 2, 3),
+ (1, 5, 2, 4),
+ (1, 5, 2, 5),
+ (1, 5, 2, 6),
+ (1, 5, 3, 1),
+ (1, 5, 3, 2),
+ (1, 5, 3, 3),
+ (1, 5, 3, 4),
+ (1, 5, 3, 5),
+ (1, 5, 3, 6),
+ (1, 5, 4, 1),
+ (1, 5, 4, 2),
+ (1, 5, 4, 3),
+ (1, 5, 4, 4),
+ (1, 5, 4, 5),
+ (1, 5, 4, 6),
+ (1, 5, 5, 1),
+ (1, 5, 5, 2),
+ (1, 5, 5, 3),
+ (1, 5, 5, 4),
+ (1, 5, 5, 5),
+ (1, 5, 5, 6),
+ (1, 5, 6, 1),
+ (1, 5, 6, 2),
+ (1, 5, 6, 3),
+ (1, 5, 6, 4),
+ (1, 5, 6, 5),
+ (1, 5, 6, 6),
+ (1, 6, 1, 1),
+ (1, 6, 1, 2),
+ (1, 6, 1, 3),
+ (1, 6, 1, 4),
+ (1, 6, 1, 5),
+ (1, 6, 1, 6),
+ (1, 6, 2, 1),
+ (1, 6, 2, 2),
+ (1, 6, 2, 3),
+ (1, 6, 2, 4),
+ (1, 6, 2, 5),
+ (1, 6, 2, 6),
+ (1, 6, 3, 1),
+ (1, 6, 3, 2),
+ (1, 6, 3, 3),
+ (1, 6, 3, 4),
+ (1, 6, 3, 5),
+ (1, 6, 3, 6),
+ (1, 6, 4, 1),
+ (1, 6, 4, 2),
+ (1, 6, 4, 3),
+ (1, 6, 4, 4),
+ (1, 6, 4, 5),
+ (1, 6, 4, 6),
+ (1, 6, 5, 1),
+ (1, 6, 5, 2),
+ (1, 6, 5, 3),
+ (1, 6, 5, 4),
+ (1, 6, 5, 5),
+ (1, 6, 5, 6),
+ (1, 6, 6, 1),
+ (1, 6, 6, 2),
+ (1, 6, 6, 3),
+ (1, 6, 6, 4),
+ (1, 6, 6, 5),
+ (1, 6, 6, 6),
+ (2, 1, 1, 1),
+ (2, 1, 1, 2),
+ (2, 1, 1, 3),
+ (2, 1, 1, 4),
+ (2, 1, 1, 5),
+ (2, 1, 1, 6),
+ (2, 1, 2, 1),
+ (2, 1, 2, 2),
+ (2, 1, 2, 3),
+ (2, 1, 2, 4),
+ (2, 1, 2, 5),
+ (2, 1, 2, 6),
+ (2, 1, 3, 1),
+ (2, 1, 3, 2),
+ (2, 1, 3, 3),
+ (2, 1, 3, 4),
+ (2, 1, 3, 5),
+ (2, 1, 3, 6),
+ (2, 1, 4, 1),
+ (2, 1, 4, 2),
+ (2, 1, 4, 3),
+ (2, 1, 4, 4),
+ (2, 1, 4, 5),
+ (2, 1, 4, 6),
+ (2, 1, 5, 1),
+ (2, 1, 5, 2),
+ (2, 1, 5, 3),
+ (2, 1, 5, 4),
+ (2, 1, 5, 5),
+ (2, 1, 5, 6),
+ (2, 1, 6, 1),
+ (2, 1, 6, 2),
+ (2, 1, 6, 3),
+ (2, 1, 6, 4),
+ (2, 1, 6, 5),
+ (2, 1, 6, 6),
+ (2, 2, 1, 1),
+ (2, 2, 1, 2),
+ (2, 2, 1, 3),
+ (2, 2, 1, 4),
+ (2, 2, 1, 5),
+ (2, 2, 1, 6),
+ (2, 2, 2, 1),
+ (2, 2, 2, 2),
+ (2, 2, 2, 3),
+ (2, 2, 2, 4),
+ (2, 2, 2, 5),
+ (2, 2, 2, 6),
+ (2, 2, 3, 1),
+ (2, 2, 3, 2),
+ (2, 2, 3, 3),
+ (2, 2, 3, 4),
+ (2, 2, 3, 5),
+ (2, 2, 3, 6),
+ (2, 2, 4, 1),
+ (2, 2, 4, 2),
+ (2, 2, 4, 3),
+ (2, 2, 4, 4),
+ (2, 2, 4, 5),
+ (2, 2, 4, 6),
+ (2, 2, 5, 1),
+ (2, 2, 5, 2),
+ (2, 2, 5, 3),
+ (2, 2, 5, 4),
+ (2, 2, 5, 5),
+ (2, 2, 5, 6),
+ (2, 2, 6, 1),
+ (2, 2, 6, 2),
+ (2, 2, 6, 3),
+ (2, 2, 6, 4),
+ (2, 2, 6, 5),
+ (2, 2, 6, 6),
+ (2, 3, 1, 1),
+ (2, 3, 1, 2),
+ (2, 3, 1, 3),
+ (2, 3, 1, 4),
+ (2, 3, 1, 5),
+ (2, 3, 1, 6),
+ (2, 3, 2, 1),
+ (2, 3, 2, 2),
+ (2, 3, 2, 3),
+ (2, 3, 2, 4),
+ (2, 3, 2, 5),
+ (2, 3, 2, 6),
+ (2, 3, 3, 1),
+ (2, 3, 3, 2),
+ (2, 3, 3, 3),
+ (2, 3, 3, 4),
+ (2, 3, 3, 5),
+ (2, 3, 3, 6),
+ (2, 3, 4, 1),
+ (2, 3, 4, 2),
+ (2, 3, 4, 3),
+ (2, 3, 4, 4),
+ (2, 3, 4, 5),
+ (2, 3, 4, 6),
+ (2, 3, 5, 1),
+ (2, 3, 5, 2),
+ (2, 3, 5, 3),
+ (2, 3, 5, 4),
+ (2, 3, 5, 5),
+ (2, 3, 5, 6),
+ (2, 3, 6, 1),
+ (2, 3, 6, 2),
+ (2, 3, 6, 3),
+ (2, 3, 6, 4),
+ (2, 3, 6, 5),
+ (2, 3, 6, 6),
+ (2, 4, 1, 1),
+ (2, 4, 1, 2),
+ (2, 4, 1, 3),
+ (2, 4, 1, 4),
+ (2, 4, 1, 5),
+ (2, 4, 1, 6),
+ (2, 4, 2, 1),
+ (2, 4, 2, 2),
+ (2, 4, 2, 3),
+ (2, 4, 2, 4),
+ (2, 4, 2, 5),
+ (2, 4, 2, 6),
+ (2, 4, 3, 1),
+ (2, 4, 3, 2),
+ (2, 4, 3, 3),
+ (2, 4, 3, 4),
+ (2, 4, 3, 5),
+ (2, 4, 3, 6),
+ (2, 4, 4, 1),
+ (2, 4, 4, 2),
+ (2, 4, 4, 3),
+ (2, 4, 4, 4),
+ (2, 4, 4, 5),
+ (2, 4, 4, 6),
+ (2, 4, 5, 1),
+ (2, 4, 5, 2),
+ (2, 4, 5, 3),
+ (2, 4, 5, 4),
+ (2, 4, 5, 5),
+ (2, 4, 5, 6),
+ (2, 4, 6, 1),
+ (2, 4, 6, 2),
+ (2, 4, 6, 3),
+ (2, 4, 6, 4),
+ (2, 4, 6, 5),
+ (2, 4, 6, 6),
+ (2, 5, 1, 1),
+ (2, 5, 1, 2),
+ (2, 5, 1, 3),
+ (2, 5, 1, 4),
+ (2, 5, 1, 5),
+ (2, 5, 1, 6),
+ (2, 5, 2, 1),
+ (2, 5, 2, 2),
+ (2, 5, 2, 3),
+ (2, 5, 2, 4),
+ (2, 5, 2, 5),
+ (2, 5, 2, 6),
+ (2, 5, 3, 1),
+ (2, 5, 3, 2),
+ (2, 5, 3, 3),
+ (2, 5, 3, 4),
+ (2, 5, 3, 5),
+ (2, 5, 3, 6),
+ (2, 5, 4, 1),
+ (2, 5, 4, 2),
+ (2, 5, 4, 3),
+ (2, 5, 4, 4),
+ (2, 5, 4, 5),
+ (2, 5, 4, 6),
+ (2, 5, 5, 1),
+ (2, 5, 5, 2),
+ (2, 5, 5, 3),
+ (2, 5, 5, 4),
+ (2, 5, 5, 5),
+ (2, 5, 5, 6),
+ (2, 5, 6, 1),
+ (2, 5, 6, 2),
+ (2, 5, 6, 3),
+ (2, 5, 6, 4),
+ (2, 5, 6, 5),
+ (2, 5, 6, 6),
+ (2, 6, 1, 1),
+ (2, 6, 1, 2),
+ (2, 6, 1, 3),
+ (2, 6, 1, 4),
+ (2, 6, 1, 5),
+ (2, 6, 1, 6),
+ (2, 6, 2, 1),
+ (2, 6, 2, 2),
+ (2, 6, 2, 3),
+ (2, 6, 2, 4),
+ (2, 6, 2, 5),
+ (2, 6, 2, 6),
+ (2, 6, 3, 1),
+ (2, 6, 3, 2),
+ (2, 6, 3, 3),
+ (2, 6, 3, 4),
+ (2, 6, 3, 5),
+ (2, 6, 3, 6),
+ (2, 6, 4, 1),
+ (2, 6, 4, 2),
+ (2, 6, 4, 3),
+ (2, 6, 4, 4),
+ (2, 6, 4, 5),
+ (2, 6, 4, 6),
+ (2, 6, 5, 1),
+ (2, 6, 5, 2),
+ (2, 6, 5, 3),
+ (2, 6, 5, 4),
+ (2, 6, 5, 5),
+ (2, 6, 5, 6),
+ (2, 6, 6, 1),
+ (2, 6, 6, 2),
+ (2, 6, 6, 3),
+ (2, 6, 6, 4),
+ (2, 6, 6, 5),
+ (2, 6, 6, 6),
+ (3, 1, 1, 1),
+ (3, 1, 1, 2),
+ (3, 1, 1, 3),
+ (3, 1, 1, 4),
+ (3, 1, 1, 5),
+ (3, 1, 1, 6),
+ (3, 1, 2, 1),
+ (3, 1, 2, 2),
+ (3, 1, 2, 3),
+ (3, 1, 2, 4),
+ (3, 1, 2, 5),
+ (3, 1, 2, 6),
+ (3, 1, 3, 1),
+ (3, 1, 3, 2),
+ (3, 1, 3, 3),
+ (3, 1, 3, 4),
+ (3, 1, 3, 5),
+ (3, 1, 3, 6),
+ (3, 1, 4, 1),
+ (3, 1, 4, 2),
+ (3, 1, 4, 3),
+ (3, 1, 4, 4),
+ (3, 1, 4, 5),
+ (3, 1, 4, 6),
+ (3, 1, 5, 1),
+ (3, 1, 5, 2),
+ (3, 1, 5, 3),
+ (3, 1, 5, 4),
+ (3, 1, 5, 5),
+ (3, 1, 5, 6),
+ (3, 1, 6, 1),
+ (3, 1, 6, 2),
+ (3, 1, 6, 3),
+ (3, 1, 6, 4),
+ (3, 1, 6, 5),
+ (3, 1, 6, 6),
+ (3, 2, 1, 1),
+ (3, 2, 1, 2),
+ (3, 2, 1, 3),
+ (3, 2, 1, 4),
+ (3, 2, 1, 5),
+ (3, 2, 1, 6),
+ (3, 2, 2, 1),
+ (3, 2, 2, 2),
+ (3, 2, 2, 3),
+ (3, 2, 2, 4),
+ (3, 2, 2, 5),
+ (3, 2, 2, 6),
+ (3, 2, 3, 1),
+ (3, 2, 3, 2),
+ (3, 2, 3, 3),
+ (3, 2, 3, 4),
+ (3, 2, 3, 5),
+ (3, 2, 3, 6),
+ (3, 2, 4, 1),
+ (3, 2, 4, 2),
+ (3, 2, 4, 3),
+ (3, 2, 4, 4),
+ (3, 2, 4, 5),
+ (3, 2, 4, 6),
+ (3, 2, 5, 1),
+ (3, 2, 5, 2),
+ (3, 2, 5, 3),
+ (3, 2, 5, 4),
+ (3, 2, 5, 5),
+ (3, 2, 5, 6),
+ (3, 2, 6, 1),
+ (3, 2, 6, 2),
+ (3, 2, 6, 3),
+ (3, 2, 6, 4),
+ (3, 2, 6, 5),
+ (3, 2, 6, 6),
+ (3, 3, 1, 1),
+ (3, 3, 1, 2),
+ (3, 3, 1, 3),
+ (3, 3, 1, 4),
+ (3, 3, 1, 5),
+ (3, 3, 1, 6),
+ (3, 3, 2, 1),
+ (3, 3, 2, 2),
+ (3, 3, 2, 3),
+ (3, 3, 2, 4),
+ (3, 3, 2, 5),
+ (3, 3, 2, 6),
+ (3, 3, 3, 1),
+ (3, 3, 3, 2),
+ (3, 3, 3, 3),
+ (3, 3, 3, 4),
+ (3, 3, 3, 5),
+ (3, 3, 3, 6),
+ (3, 3, 4, 1),
+ (3, 3, 4, 2),
+ (3, 3, 4, 3),
+ (3, 3, 4, 4),
+ (3, 3, 4, 5),
+ (3, 3, 4, 6),
+ (3, 3, 5, 1),
+ (3, 3, 5, 2),
+ (3, 3, 5, 3),
+ (3, 3, 5, 4),
+ (3, 3, 5, 5),
+ (3, 3, 5, 6),
+ (3, 3, 6, 1),
+ (3, 3, 6, 2),
+ (3, 3, 6, 3),
+ (3, 3, 6, 4),
+ (3, 3, 6, 5),
+ (3, 3, 6, 6),
+ (3, 4, 1, 1),
+ (3, 4, 1, 2),
+ (3, 4, 1, 3),
+ (3, 4, 1, 4),
+ (3, 4, 1, 5),
+ (3, 4, 1, 6),
+ (3, 4, 2, 1),
+ (3, 4, 2, 2),
+ (3, 4, 2, 3),
+ (3, 4, 2, 4),
+ (3, 4, 2, 5),
+ (3, 4, 2, 6),
+ (3, 4, 3, 1),
+ (3, 4, 3, 2),
+ (3, 4, 3, 3),
+ (3, 4, 3, 4),
+ (3, 4, 3, 5),
+ (3, 4, 3, 6),
+ (3, 4, 4, 1),
+ (3, 4, 4, 2),
+ (3, 4, 4, 3),
+ (3, 4, 4, 4),
+ (3, 4, 4, 5),
+ (3, 4, 4, 6),
+ (3, 4, 5, 1),
+ (3, 4, 5, 2),
+ (3, 4, 5, 3),
+ (3, 4, 5, 4),
+ (3, 4, 5, 5),
+ (3, 4, 5, 6),
+ (3, 4, 6, 1),
+ (3, 4, 6, 2),
+ (3, 4, 6, 3),
+ (3, 4, 6, 4),
+ (3, 4, 6, 5),
+ (3, 4, 6, 6),
+ (3, 5, 1, 1),
+ (3, 5, 1, 2),
+ (3, 5, 1, 3),
+ (3, 5, 1, 4),
+ (3, 5, 1, 5),
+ (3, 5, 1, 6),
+ (3, 5, 2, 1),
+ (3, 5, 2, 2),
+ (3, 5, 2, 3),
+ (3, 5, 2, 4),
+ (3, 5, 2, 5),
+ (3, 5, 2, 6),
+ (3, 5, 3, 1),
+ (3, 5, 3, 2),
+ (3, 5, 3, 3),
+ (3, 5, 3, 4),
+ (3, 5, 3, 5),
+ (3, 5, 3, 6),
+ (3, 5, 4, 1),
+ (3, 5, 4, 2),
+ (3, 5, 4, 3),
+ (3, 5, 4, 4),
+ (3, 5, 4, 5),
+ (3, 5, 4, 6),
+ (3, 5, 5, 1),
+ (3, 5, 5, 2),
+ (3, 5, 5, 3),
+ (3, 5, 5, 4),
+ (3, 5, 5, 5),
+ (3, 5, 5, 6),
+ (3, 5, 6, 1),
+ (3, 5, 6, 2),
+ (3, 5, 6, 3),
+ (3, 5, 6, 4),
+ (3, 5, 6, 5),
+ (3, 5, 6, 6),
+ (3, 6, 1, 1),
+ (3, 6, 1, 2),
+ (3, 6, 1, 3),
+ (3, 6, 1, 4),
+ (3, 6, 1, 5),
+ (3, 6, 1, 6),
+ (3, 6, 2, 1),
+ (3, 6, 2, 2),
+ (3, 6, 2, 3),
+ (3, 6, 2, 4),
+ (3, 6, 2, 5),
+ (3, 6, 2, 6),
+ (3, 6, 3, 1),
+ (3, 6, 3, 2),
+ (3, 6, 3, 3),
+ (3, 6, 3, 4),
+ (3, 6, 3, 5),
+ (3, 6, 3, 6),
+ (3, 6, 4, 1),
+ (3, 6, 4, 2),
+ (3, 6, 4, 3),
+ (3, 6, 4, 4),
+ (3, 6, 4, 5),
+ (3, 6, 4, 6),
+ (3, 6, 5, 1),
+ (3, 6, 5, 2),
+ (3, 6, 5, 3),
+ (3, 6, 5, 4),
+ (3, 6, 5, 5),
+ (3, 6, 5, 6),
+ (3, 6, 6, 1),
+ (3, 6, 6, 2),
+ (3, 6, 6, 3),
+ (3, 6, 6, 4),
+ (3, 6, 6, 5),
+ (3, 6, 6, 6),
+ (4, 1, 1, 1),
+ (4, 1, 1, 2),
+ (4, 1, 1, 3),
+ (4, 1, 1, 4),
+ (4, 1, 1, 5),
+ (4, 1, 1, 6),
+ (4, 1, 2, 1),
+ (4, 1, 2, 2),
+ (4, 1, 2, 3),
+ (4, 1, 2, 4),
+ (4, 1, 2, 5),
+ (4, 1, 2, 6),
+ (4, 1, 3, 1),
+ (4, 1, 3, 2),
+ (4, 1, 3, 3),
+ (4, 1, 3, 4),
+ (4, 1, 3, 5),
+ (4, 1, 3, 6),
+ (4, 1, 4, 1),
+ (4, 1, 4, 2),
+ (4, 1, 4, 3),
+ (4, 1, 4, 4),
+ (4, 1, 4, 5),
+ (4, 1, 4, 6),
+ (4, 1, 5, 1),
+ (4, 1, 5, 2),
+ (4, 1, 5, 3),
+ (4, 1, 5, 4),
+ (4, 1, 5, 5),
+ (4, 1, 5, 6),
+ (4, 1, 6, 1),
+ (4, 1, 6, 2),
+ (4, 1, 6, 3),
+ (4, 1, 6, 4),
+ (4, 1, 6, 5),
+ (4, 1, 6, 6),
+ (4, 2, 1, 1),
+ (4, 2, 1, 2),
+ (4, 2, 1, 3),
+ (4, 2, 1, 4),
+ (4, 2, 1, 5),
+ (4, 2, 1, 6),
+ (4, 2, 2, 1),
+ (4, 2, 2, 2),
+ (4, 2, 2, 3),
+ (4, 2, 2, 4),
+ (4, 2, 2, 5),
+ (4, 2, 2, 6),
+ (4, 2, 3, 1),
+ (4, 2, 3, 2),
+ (4, 2, 3, 3),
+ (4, 2, 3, 4),
+ (4, 2, 3, 5),
+ (4, 2, 3, 6),
+ (4, 2, 4, 1),
+ (4, 2, 4, 2),
+ (4, 2, 4, 3),
+ (4, 2, 4, 4),
+ (4, 2, 4, 5),
+ (4, 2, 4, 6),
+ (4, 2, 5, 1),
+ (4, 2, 5, 2),
+ (4, 2, 5, 3),
+ (4, 2, 5, 4),
+ (4, 2, 5, 5),
+ (4, 2, 5, 6),
+ (4, 2, 6, 1),
+ (4, 2, 6, 2),
+ (4, 2, 6, 3),
+ (4, 2, 6, 4),
+ (4, 2, 6, 5),
+ (4, 2, 6, 6),
+ (4, 3, 1, 1),
+ (4, 3, 1, 2),
+ (4, 3, 1, 3),
+ (4, 3, 1, 4),
+ (4, 3, 1, 5),
+ (4, 3, 1, 6),
+ (4, 3, 2, 1),
+ (4, 3, 2, 2),
+ (4, 3, 2, 3),
+ (4, 3, 2, 4),
+ (4, 3, 2, 5),
+ (4, 3, 2, 6),
+ (4, 3, 3, 1),
+ (4, 3, 3, 2),
+ (4, 3, 3, 3),
+ (4, 3, 3, 4),
+ (4, 3, 3, 5),
+ (4, 3, 3, 6),
+ (4, 3, 4, 1),
+ (4, 3, 4, 2),
+ (4, 3, 4, 3),
+ (4, 3, 4, 4),
+ (4, 3, 4, 5),
+ (4, 3, 4, 6),
+ (4, 3, 5, 1),
+ (4, 3, 5, 2),
+ (4, 3, 5, 3),
+ (4, 3, 5, 4),
+ (4, 3, 5, 5),
+ (4, 3, 5, 6),
+ (4, 3, 6, 1),
+ (4, 3, 6, 2),
+ (4, 3, 6, 3),
+ (4, 3, 6, 4),
+ (4, 3, 6, 5),
+ (4, 3, 6, 6),
+ (4, 4, 1, 1),
+ (4, 4, 1, 2),
+ (4, 4, 1, 3),
+ (4, 4, 1, 4),
+ (4, 4, 1, 5),
+ (4, 4, 1, 6),
+ (4, 4, 2, 1),
+ (4, 4, 2, 2),
+ (4, 4, 2, 3),
+ (4, 4, 2, 4),
+ (4, 4, 2, 5),
+ (4, 4, 2, 6),
+ (4, 4, 3, 1),
+ (4, 4, 3, 2),
+ (4, 4, 3, 3),
+ (4, 4, 3, 4),
+ (4, 4, 3, 5),
+ (4, 4, 3, 6),
+ (4, 4, 4, 1),
+ (4, 4, 4, 2),
+ (4, 4, 4, 3),
+ (4, 4, 4, 4),
+ (4, 4, 4, 5),
+ (4, 4, 4, 6),
+ (4, 4, 5, 1),
+ (4, 4, 5, 2),
+ (4, 4, 5, 3),
+ (4, 4, 5, 4),
+ (4, 4, 5, 5),
+ (4, 4, 5, 6),
+ (4, 4, 6, 1),
+ (4, 4, 6, 2),
+ (4, 4, 6, 3),
+ (4, 4, 6, 4),
+ (4, 4, 6, 5),
+ (4, 4, 6, 6),
+ (4, 5, 1, 1),
+ (4, 5, 1, 2),
+ (4, 5, 1, 3),
+ (4, 5, 1, 4),
+ (4, 5, 1, 5),
+ (4, 5, 1, 6),
+ (4, 5, 2, 1),
+ (4, 5, 2, 2),
+ (4, 5, 2, 3),
+ (4, 5, 2, 4),
+ (4, 5, 2, 5),
+ (4, 5, 2, 6),
+ (4, 5, 3, 1),
+ (4, 5, 3, 2),
+ (4, 5, 3, 3),
+ (4, 5, 3, 4),
+ (4, 5, 3, 5),
+ (4, 5, 3, 6),
+ (4, 5, 4, 1),
+ (4, 5, 4, 2),
+ (4, 5, 4, 3),
+ (4, 5, 4, 4),
+ (4, 5, 4, 5),
+ (4, 5, 4, 6),
+ (4, 5, 5, 1),
+ (4, 5, 5, 2),
+ (4, 5, 5, 3),
+ (4, 5, 5, 4),
+ (4, 5, 5, 5),
+ (4, 5, 5, 6),
+ (4, 5, 6, 1),
+ (4, 5, 6, 2),
+ (4, 5, 6, 3),
+ (4, 5, 6, 4),
+ (4, 5, 6, 5),
+ (4, 5, 6, 6),
+ (4, 6, 1, 1),
+ (4, 6, 1, 2),
+ (4, 6, 1, 3),
+ (4, 6, 1, 4),
+ (4, 6, 1, 5),
+ (4, 6, 1, 6),
+ (4, 6, 2, 1),
+ (4, 6, 2, 2),
+ (4, 6, 2, 3),
+ (4, 6, 2, 4),
+ (4, 6, 2, 5),
+ (4, 6, 2, 6),
+ (4, 6, 3, 1),
+ (4, 6, 3, 2),
+ (4, 6, 3, 3),
+ (4, 6, 3, 4),
+ (4, 6, 3, 5),
+ (4, 6, 3, 6),
+ (4, 6, 4, 1),
+ (4, 6, 4, 2),
+ (4, 6, 4, 3),
+ (4, 6, 4, 4),
+ (4, 6, 4, 5),
+ (4, 6, 4, 6),
+ (4, 6, 5, 1),
+ (4, 6, 5, 2),
+ (4, 6, 5, 3),
+ (4, 6, 5, 4),
+ (4, 6, 5, 5),
+ (4, 6, 5, 6),
+ (4, 6, 6, 1),
+ (4, 6, 6, 2),
+ (4, 6, 6, 3),
+ (4, 6, 6, 4),
+ (4, 6, 6, 5),
+ (4, 6, 6, 6),
+ (5, 1, 1, 1),
+ (5, 1, 1, 2),
+ (5, 1, 1, 3),
+ (5, 1, 1, 4),
+ (5, 1, 1, 5),
+ (5, 1, 1, 6),
+ (5, 1, 2, 1),
+ (5, 1, 2, 2),
+ (5, 1, 2, 3),
+ (5, 1, 2, 4),
+ (5, 1, 2, 5),
+ (5, 1, 2, 6),
+ (5, 1, 3, 1),
+ (5, 1, 3, 2),
+ (5, 1, 3, 3),
+ (5, 1, 3, 4),
+ (5, 1, 3, 5),
+ (5, 1, 3, 6),
+ (5, 1, 4, 1),
+ (5, 1, 4, 2),
+ (5, 1, 4, 3),
+ (5, 1, 4, 4),
+ (5, 1, 4, 5),
+ (5, 1, 4, 6),
+ (5, 1, 5, 1),
+ (5, 1, 5, 2),
+ (5, 1, 5, 3),
+ (5, 1, 5, 4),
+ (5, 1, 5, 5),
+ (5, 1, 5, 6),
+ (5, 1, 6, 1),
+ (5, 1, 6, 2),
+ (5, 1, 6, 3),
+ (5, 1, 6, 4),
+ (5, 1, 6, 5),
+ (5, 1, 6, 6),
+ (5, 2, 1, 1),
+ (5, 2, 1, 2),
+ (5, 2, 1, 3),
+ (5, 2, 1, 4),
+ (5, 2, 1, 5),
+ (5, 2, 1, 6),
+ (5, 2, 2, 1),
+ (5, 2, 2, 2),
+ (5, 2, 2, 3),
+ (5, 2, 2, 4),
+ (5, 2, 2, 5),
+ (5, 2, 2, 6),
+ (5, 2, 3, 1),
+ (5, 2, 3, 2),
+ (5, 2, 3, 3),
+ (5, 2, 3, 4),
+ (5, 2, 3, 5),
+ (5, 2, 3, 6),
+ (5, 2, 4, 1),
+ (5, 2, 4, 2),
+ (5, 2, 4, 3),
+ (5, 2, 4, 4),
+ (5, 2, 4, 5),
+ (5, 2, 4, 6),
+ (5, 2, 5, 1),
+ (5, 2, 5, 2),
+ (5, 2, 5, 3),
+ (5, 2, 5, 4),
+ (5, 2, 5, 5),
+ (5, 2, 5, 6),
+ (5, 2, 6, 1),
+ (5, 2, 6, 2),
+ (5, 2, 6, 3),
+ (5, 2, 6, 4),
+ (5, 2, 6, 5),
+ (5, 2, 6, 6),
+ (5, 3, 1, 1),
+ (5, 3, 1, 2),
+ (5, 3, 1, 3),
+ (5, 3, 1, 4),
+ (5, 3, 1, 5),
+ (5, 3, 1, 6),
+ (5, 3, 2, 1),
+ (5, 3, 2, 2),
+ (5, 3, 2, 3),
+ (5, 3, 2, 4),
+ (5, 3, 2, 5),
+ (5, 3, 2, 6),
+ (5, 3, 3, 1),
+ (5, 3, 3, 2),
+ (5, 3, 3, 3),
+ (5, 3, 3, 4),
+ (5, 3, 3, 5),
+ (5, 3, 3, 6),
+ (5, 3, 4, 1),
+ (5, 3, 4, 2),
+ (5, 3, 4, 3),
+ (5, 3, 4, 4),
+ (5, 3, 4, 5),
+ (5, 3, 4, 6),
+ (5, 3, 5, 1),
+ (5, 3, 5, 2),
+ (5, 3, 5, 3),
+ (5, 3, 5, 4),
+ (5, 3, 5, 5),
+ (5, 3, 5, 6),
+ (5, 3, 6, 1),
+ (5, 3, 6, 2),
+ (5, 3, 6, 3),
+ (5, 3, 6, 4),
+ (5, 3, 6, 5),
+ (5, 3, 6, 6),
+ (5, 4, 1, 1),
+ (5, 4, 1, 2),
+ (5, 4, 1, 3),
+ (5, 4, 1, 4),
+ (5, 4, 1, 5),
+ (5, 4, 1, 6),
+ (5, 4, 2, 1),
+ (5, 4, 2, 2),
+ (5, 4, 2, 3),
+ (5, 4, 2, 4),
+ (5, 4, 2, 5),
+ (5, 4, 2, 6),
+ (5, 4, 3, 1),
+ (5, 4, 3, 2),
+ (5, 4, 3, 3),
+ (5, 4, 3, 4),
+ (5, 4, 3, 5),
+ (5, 4, 3, 6),
+ (5, 4, 4, 1),
+ (5, 4, 4, 2),
+ (5, 4, 4, 3),
+ (5, 4, 4, 4),
+ (5, 4, 4, 5),
+ (5, 4, 4, 6),
+ (5, 4, 5, 1),
+ (5, 4, 5, 2),
+ (5, 4, 5, 3),
+ (5, 4, 5, 4),
+ ...]</code></pre>
+</div>
+</div>
+<div id="01543a45-24a6-4145-b0e3-e19d1cbd9281" class="cell" data-outputid="b6eee83a-8d04-4861-cdf1-c71e608fb7f9" data-execution_count="81">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb177" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb177-1">lst <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> [<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">4</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">5</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">6</span>]</span>
+<span id="cb177-2"><span class="bu" style="color: null;
 background-color: null;
 font-style: inherit;">sum</span>([a<span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -2537,7 +6263,7 @@ font-style: inherit;">for</span> a,b,c,d <span class="kw" style="color: #003B4F;
 background-color: null;
 font-weight: bold;
 font-style: inherit;">in</span> itertools.product(lst,lst,lst,lst)])</span></code></pre></div></div>
-<div class="cell-output cell-output-display" data-execution_count="259">
+<div class="cell-output cell-output-display">
 <pre><code>196</code></pre>
 </div>
 </div>
@@ -2551,14 +6277,14 @@ font-style: inherit;">in</span> itertools.product(lst,lst,lst,lst)])</span></cod
 </section>
 <section id="b.-예비학습" class="level2">
 <h2 class="anchored" data-anchor-id="b.-예비학습">B. 예비학습</h2>
-<p><code>-</code> 예제: 제곱수중에서 12로 나누어서 떨어지는 수만 원소르 가지는 리스트를 만들고 싶다.</p>
+<p><code>-</code> 예제: 제곱수중에서 12로 나누어서 떨어지는 수만 원소로 가지는 리스트를 만들고 싶다.</p>
 <ul>
 <li>제곱수: 1,4,9,16,25,36,…</li>
 <li>12로 나누어서 떨어지는 수: 36</li>
 </ul>
 <p>(복습1)</p>
 <div id="905863aa-1c83-4b01-83b3-77de6819d47a" class="cell" data-outputid="fd17b66a-9dbe-4e3c-9b2b-449e4977525f">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb169" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb169-1"><span class="dv" style="color: #AD0000;
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb179" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb179-1"><span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">12</span> <span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -2572,7 +6298,7 @@ font-style: inherit;"># % 는 나머지를 계산하는 연산자, 12를 4로 �
 </div>
 </div>
 <div id="7ec0de71-b903-497f-9ae3-2c2a94ce274d" class="cell" data-outputid="6ddb888d-c414-49e1-8c2a-929faea21bae">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb171" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb171-1"><span class="dv" style="color: #AD0000;
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb181" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb181-1"><span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">12</span> <span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -2586,8 +6312,8 @@ font-style: inherit;"># 12 = 5*2 +2</span></span></code></pre></div></div>
 </div>
 </div>
 <p>(복습2)</p>
-<div id="7c5418da-e9f9-4582-bcb8-3b60352e46f3" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb173" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb173-1">a <span class="op" style="color: #5E5E5E;
+<div id="7c5418da-e9f9-4582-bcb8-3b60352e46f3" class="cell" data-execution_count="86">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb183" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb183-1">a <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
 background-color: null;
@@ -2595,34 +6321,34 @@ font-style: inherit;">3</span> <span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># a에 2를 대입하라...</span></span></code></pre></div></div>
 </div>
-<div id="9c6538f8-54fb-4e67-8e35-25a116669d56" class="cell" data-outputid="8e61356d-9033-4977-8c45-fd2e86a94cd3">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb174" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb174-1">a <span class="op" style="color: #5E5E5E;
+<div id="9c6538f8-54fb-4e67-8e35-25a116669d56" class="cell" data-outputid="8e61356d-9033-4977-8c45-fd2e86a94cd3" data-execution_count="87">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb184" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb184-1">a <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">==</span> <span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">2</span> <span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># a에 들어있는 값이 2이인지 테스트하라..</span></span></code></pre></div></div>
-<div class="cell-output cell-output-display" data-execution_count="267">
+<div class="cell-output cell-output-display">
 <pre><code>False</code></pre>
 </div>
 </div>
-<div id="d36ef681-bf15-4815-9a24-3f0a3b84e440" class="cell" data-outputid="3c7bda85-198b-45be-a3ae-35c96e818f4f">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb176" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb176-1">a <span class="op" style="color: #5E5E5E;
+<div id="d36ef681-bf15-4815-9a24-3f0a3b84e440" class="cell" data-outputid="3c7bda85-198b-45be-a3ae-35c96e818f4f" data-execution_count="88">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb186" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb186-1">a <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">==</span> <span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">3</span></span></code></pre></div></div>
-<div class="cell-output cell-output-display" data-execution_count="268">
+<div class="cell-output cell-output-display">
 <pre><code>True</code></pre>
 </div>
 </div>
 <p>(풀이1) – 비어있는 리스트를 만들고, for + if 를 사용</p>
-<div id="108b9936-5c08-459a-a045-2d71bb17a7f3" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb178" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb178-1">lst <span class="op" style="color: #5E5E5E;
+<div id="108b9936-5c08-459a-a045-2d71bb17a7f3" class="cell" data-execution_count="89">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb188" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb188-1">lst <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> []</span>
-<span id="cb178-2"><span class="cf" style="color: #003B4F;
+<span id="cb188-2"><span class="cf" style="color: #003B4F;
 background-color: null;
 font-weight: bold;
 font-style: inherit;">for</span> i <span class="kw" style="color: #003B4F;
@@ -2635,7 +6361,7 @@ background-color: null;
 font-style: inherit;">1</span>,<span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">101</span>):</span>
-<span id="cb178-3">    <span class="cf" style="color: #003B4F;
+<span id="cb188-3">    <span class="cf" style="color: #003B4F;
 background-color: null;
 font-weight: bold;
 font-style: inherit;">if</span> i<span class="op" style="color: #5E5E5E;
@@ -2653,14 +6379,16 @@ background-color: null;
 font-style: inherit;">0</span>: <span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># i^2을 12로 나누어서 나누어 떨어진다면</span></span>
-<span id="cb178-4">        lst.append(i<span class="op" style="color: #5E5E5E;
+<span id="cb188-4">        lst.append(i<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">**</span><span class="dv" style="color: #AD0000;
 background-color: null;
-font-style: inherit;">2</span>)</span></code></pre></div></div>
+font-style: inherit;">2</span>) <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#append - 원소를 추가</span></span></code></pre></div></div>
 </div>
 <div id="7215718a-670b-47da-b11f-27efed55a349" class="cell" data-outputid="d2e32374-d625-45b1-f7c8-235fc5f8e886">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb179" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb179-1">lst</span></code></pre></div></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb189" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb189-1">lst</span></code></pre></div></div>
 <div class="cell-output cell-output-display" data-execution_count="272">
 <pre><code>[36,
  144,
@@ -2682,7 +6410,7 @@ font-style: inherit;">2</span>)</span></code></pre></div></div>
 </div>
 <p>(풀이2) - if문이 포함된 리스트 컴프리헨션</p>
 <div id="653e4ca2-9b0f-4d4c-9565-dd5fb88fb6f0" class="cell" data-outputid="aa8cb678-65c9-4618-873f-42b5bd379866">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb181" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb181-1">[i<span class="op" style="color: #5E5E5E;
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb191" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb191-1">[i<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">**</span><span class="dv" style="color: #AD0000;
 background-color: null;
@@ -2737,9 +6465,8 @@ font-style: inherit;">0</span>]</span></code></pre></div></div>
 <section id="c.-풀이" class="level2">
 <h2 class="anchored" data-anchor-id="c.-풀이">C. 풀이</h2>
 <p><img src="https://github.com/guebin/PP2024/blob/main/imgs/2024-수능-19.png?raw=true" class="img-fluid"></p>
-<p>(풀이)</p>
-<div id="12871706-8095-4a1f-9290-73b7786fa146" class="cell" data-outputid="cf7fed38-7011-4bd1-ae5a-f56b8eda92c4">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb183" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb183-1">x <span class="op" style="color: #5E5E5E;
+<div id="891d11ab" class="cell" data-execution_count="95">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb193" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb193-1">x <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="bu" style="color: null;
 background-color: null;
@@ -2750,7 +6477,64 @@ background-color: null;
 font-style: inherit;">1</span>,<span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">16</span>))</span>
-<span id="cb183-2">f <span class="op" style="color: #5E5E5E;
+<span id="cb193-2">f <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">lambda</span> x: np.sin((np.pi<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">4</span>)<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span>x)</span>
+<span id="cb193-3">[xi <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> xi <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> x <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">if</span> f(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span>xi)<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span>f(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span>xi)<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">4</span>]</span></code></pre></div></div>
+<div class="cell-output cell-output-display">
+<pre><code>[2, 6, 10, 14]</code></pre>
+</div>
+</div>
+<p>(풀이)</p>
+<div id="12871706-8095-4a1f-9290-73b7786fa146" class="cell" data-outputid="cf7fed38-7011-4bd1-ae5a-f56b8eda92c4">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb195" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb195-1">x <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">list</span>(<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">range</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">16</span>))</span>
+<span id="cb195-2">f <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="kw" style="color: #003B4F;
 background-color: null;
@@ -2762,7 +6546,7 @@ background-color: null;
 font-style: inherit;">4</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">*</span>x)</span>
-<span id="cb183-3"><span class="bu" style="color: null;
+<span id="cb195-3"><span class="bu" style="color: null;
 background-color: null;
 font-style: inherit;">sum</span>([xi <span class="cf" style="color: #003B4F;
 background-color: null;
@@ -2803,7 +6587,7 @@ font-style: inherit;">4</span>])</span></code></pre></div></div>
 <p>지금까지 해결했던 다양한 문제를 넘파이의 벡터연산을 봉인하고 해결해보자.</p>
 <p><code># 예제1</code> – 아래를 리스트컴프리헨션을 이용하여 구현하라.</p>
 <div id="87161388-d471-44db-84eb-f85f011e7ddc" class="cell" data-outputid="3a6f28d6-5f48-448f-8c70-ce0785e05df3">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb185" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb185-1">arr <span class="op" style="color: #5E5E5E;
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb197" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb197-1">arr <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> np.array([<span class="dv" style="color: #AD0000;
 background-color: null;
@@ -2812,7 +6596,7 @@ background-color: null;
 font-style: inherit;">2</span>,<span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">3</span>])</span>
-<span id="cb185-2">arr <span class="op" style="color: #5E5E5E;
+<span id="cb197-2">arr <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span> <span class="dv" style="color: #AD0000;
 background-color: null;
@@ -2822,7 +6606,7 @@ font-style: inherit;">1</span></span></code></pre></div></div>
 </div>
 </div>
 <div id="597671f5-788d-4961-904f-4c0496d6c726" class="cell" data-outputid="aea41cc6-2bf5-4ec4-b147-24b5076c3346">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb187" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb187-1">arr <span class="op" style="color: #5E5E5E;
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb199" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb199-1">arr <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">*</span> <span class="dv" style="color: #AD0000;
 background-color: null;
@@ -2831,9 +6615,47 @@ font-style: inherit;">2</span></span></code></pre></div></div>
 <pre><code>array([2, 4, 6])</code></pre>
 </div>
 </div>
+<div id="4e2b5803" class="cell" data-execution_count="108">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb201" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb201-1"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#try_1</span></span>
+<span id="cb201-2">lst <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> [<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>]</span>
+<span id="cb201-3">[i<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span> <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> i <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> lst], [i<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span> <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> i <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> lst]</span></code></pre></div></div>
+<div class="cell-output cell-output-display">
+<pre><code>([2, 3, 4], [2, 4, 6])</code></pre>
+</div>
+</div>
 <p>(풀이)</p>
 <div id="960191ff-17ff-4ffe-88d6-2c44d23b3fcd" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb189" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb189-1">lst <span class="op" style="color: #5E5E5E;
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb203" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb203-1">lst <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> [<span class="dv" style="color: #AD0000;
 background-color: null;
@@ -2844,7 +6666,7 @@ background-color: null;
 font-style: inherit;">3</span>]</span></code></pre></div></div>
 </div>
 <div id="b3618a49-3f20-419a-822f-d0c5a09af57d" class="cell" data-outputid="1740c3c0-a7d1-40f3-c017-2f9a79318a61">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb190" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb190-1">[l<span class="op" style="color: #5E5E5E;
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb204" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb204-1">[l<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span><span class="dv" style="color: #AD0000;
 background-color: null;
@@ -2860,7 +6682,7 @@ font-style: inherit;">in</span> lst]</span></code></pre></div></div>
 </div>
 </div>
 <div id="c70e550a-28d8-4257-92bf-164acb64d6fd" class="cell" data-outputid="d910bd4f-31a1-426a-d4eb-9835a12c01fc">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb192" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb192-1">[l<span class="op" style="color: #5E5E5E;
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb206" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb206-1">[l<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">*</span><span class="dv" style="color: #AD0000;
 background-color: null;
@@ -2878,14 +6700,14 @@ font-style: inherit;">in</span> lst]</span></code></pre></div></div>
 <p><code>#</code></p>
 <p><code># 예제2</code> – 아래를 리스트 컴프리헨션을 이용하여 구현하자.</p>
 <div id="ffb6401f-db54-4944-b498-ef91c772298d" class="cell" data-outputid="5ef270db-724a-46c7-84fc-bb79e76c30bc">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb194" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb194-1">n <span class="op" style="color: #5E5E5E;
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb208" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb208-1">n <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> np.arange(<span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">1</span>,<span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">11</span>)</span>
-<span id="cb194-2">an <span class="op" style="color: #5E5E5E;
+<span id="cb208-2">an <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
 background-color: null;
@@ -2896,14 +6718,46 @@ background-color: null;
 font-style: inherit;">-</span> <span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">2</span></span>
-<span id="cb194-3">an</span></code></pre></div></div>
+<span id="cb208-3">an</span></code></pre></div></div>
 <div class="cell-output cell-output-display" data-execution_count="302">
 <pre><code>array([ 1,  4,  7, 10, 13, 16, 19, 22, 25, 28])</code></pre>
 </div>
 </div>
+<div id="5dd553c9" class="cell" data-execution_count="107">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb210" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb210-1"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#try_1(아쉽지만 답은 구하긴 함)</span></span>
+<span id="cb210-2">n <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">range</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">11</span>)</span>
+<span id="cb210-3">[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span>l<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span> <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> l <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> n]</span></code></pre></div></div>
+<div class="cell-output cell-output-display">
+<pre><code>[1, 4, 7, 10, 13, 16, 19, 22, 25, 28]</code></pre>
+</div>
+</div>
 <p>(풀이)</p>
 <div id="be4e7b40-02bf-4b2a-950a-db1f6ebd6b1a" class="cell" data-outputid="b9e0a2ef-7c38-4676-b643-72a3679898c9">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb196" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb196-1">[<span class="dv" style="color: #AD0000;
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb212" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb212-1">[<span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">3</span><span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -2931,14 +6785,14 @@ font-style: inherit;">11</span>)]</span></code></pre></div></div>
 <p><code>#</code></p>
 <p><code># 예제3</code> – 아래의 코드에서 <code>list(map(f,x))</code> 대신에 리스트 컴프리헨션을 이용하라.</p>
 <div id="09c94195-1eba-4e25-bdb0-cb7b83bb6221" class="cell" data-outputid="b5a0b4df-19c0-44ed-8d07-ef11f115e172">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb198" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb198-1">x <span class="op" style="color: #5E5E5E;
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb214" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb214-1">x <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> np.arange(<span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">1</span>,<span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">11</span>)</span>
-<span id="cb198-2">f <span class="op" style="color: #5E5E5E;
+<span id="cb214-2">f <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="kw" style="color: #003B4F;
 background-color: null;
@@ -2948,7 +6802,7 @@ background-color: null;
 font-style: inherit;">+</span><span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">2</span></span>
-<span id="cb198-3"><span class="bu" style="color: null;
+<span id="cb214-3"><span class="bu" style="color: null;
 background-color: null;
 font-style: inherit;">list</span>(<span class="bu" style="color: null;
 background-color: null;
@@ -2957,9 +6811,11 @@ font-style: inherit;">map</span>(f,x))</span></code></pre></div></div>
 <pre><code>[3, 4, 5, 6, 7, 8, 9, 10, 11, 12]</code></pre>
 </div>
 </div>
-<p>(풀이)</p>
-<div id="0b590c7c-0cc1-4b23-837c-015b87e8344b" class="cell" data-outputid="8483ab2e-6298-48cb-a324-9ce9a95a8f70">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb200" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb200-1">f <span class="op" style="color: #5E5E5E;
+<div id="3fc4c242" class="cell" data-execution_count="111">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb216" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb216-1"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#try_1(실패)</span></span>
+<span id="cb216-2">f <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="kw" style="color: #003B4F;
 background-color: null;
@@ -2969,7 +6825,45 @@ background-color: null;
 font-style: inherit;">+</span><span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">2</span></span>
-<span id="cb200-2">[f(x) <span class="cf" style="color: #003B4F;
+<span id="cb216-3">[f <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> x <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">range</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">11</span>)]</span></code></pre></div></div>
+<div class="cell-output cell-output-display">
+<pre><code>[&lt;function __main__.&lt;lambda&gt;(x)&gt;,
+ &lt;function __main__.&lt;lambda&gt;(x)&gt;,
+ &lt;function __main__.&lt;lambda&gt;(x)&gt;,
+ &lt;function __main__.&lt;lambda&gt;(x)&gt;,
+ &lt;function __main__.&lt;lambda&gt;(x)&gt;,
+ &lt;function __main__.&lt;lambda&gt;(x)&gt;,
+ &lt;function __main__.&lt;lambda&gt;(x)&gt;,
+ &lt;function __main__.&lt;lambda&gt;(x)&gt;,
+ &lt;function __main__.&lt;lambda&gt;(x)&gt;,
+ &lt;function __main__.&lt;lambda&gt;(x)&gt;]</code></pre>
+</div>
+</div>
+<p>(풀이)</p>
+<div id="0b590c7c-0cc1-4b23-837c-015b87e8344b" class="cell" data-outputid="8483ab2e-6298-48cb-a324-9ce9a95a8f70">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb218" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb218-1">f <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">lambda</span> x: x<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span></span>
+<span id="cb218-2">[f(x) <span class="cf" style="color: #003B4F;
 background-color: null;
 font-weight: bold;
 font-style: inherit;">for</span> x <span class="kw" style="color: #003B4F;
@@ -2993,6 +6887,249 @@ font-style: inherit;">11</span>)]</span></code></pre></div></div>
 <li>불가능할 경우 <code>map(f,x)</code>를 쓰거나 리스트컴프리헨션을 사용한다.</li>
 <li>그래도 안되는 경우 <code>for</code>를 사용한다.</li>
 </ol>
+</section>
+<section id="quiz-실습" class="level1">
+<h1>Quiz 실습</h1>
+<ol type="1">
+<li>4개의 문자 x, x, y, y를 모두 일렬로 나열하는 경우의 수를 파이썬을 이용하여 구하라.
+<ul>
+<li>itertools.permutations()을 이용할 것.</li>
+</ul></li>
+</ol>
+<div id="f9e89b4a" class="cell" data-execution_count="120">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb220" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb220-1"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> itertools</span></code></pre></div></div>
+</div>
+<div id="c9a4a613" class="cell" data-execution_count="126">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb221" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb221-1"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#itertools.permutations -&gt; 순열, n!</span></span>
+<span id="cb221-2"><span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> i <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> [<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'x'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'x'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'y'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'y'</span>]:</span>
+<span id="cb221-3">    <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(i)</span></code></pre></div></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>x
+x
+y
+y</code></pre>
+</div>
+</div>
+<div id="9fc0b316" class="cell" data-execution_count="130">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb223" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb223-1"><span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> i <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> itertools.permutations([<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'x'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'x'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'y'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'y'</span>]):</span>
+<span id="cb223-2">    <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(i)</span></code></pre></div></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>('x', 'x', 'y', 'y')
+('x', 'x', 'y', 'y')
+('x', 'y', 'x', 'y')
+('x', 'y', 'y', 'x')
+('x', 'y', 'x', 'y')
+('x', 'y', 'y', 'x')
+('x', 'x', 'y', 'y')
+('x', 'x', 'y', 'y')
+('x', 'y', 'x', 'y')
+('x', 'y', 'y', 'x')
+('x', 'y', 'x', 'y')
+('x', 'y', 'y', 'x')
+('y', 'x', 'x', 'y')
+('y', 'x', 'y', 'x')
+('y', 'x', 'x', 'y')
+('y', 'x', 'y', 'x')
+('y', 'y', 'x', 'x')
+('y', 'y', 'x', 'x')
+('y', 'x', 'x', 'y')
+('y', 'x', 'y', 'x')
+('y', 'x', 'x', 'y')
+('y', 'x', 'y', 'x')
+('y', 'y', 'x', 'x')
+('y', 'y', 'x', 'x')</code></pre>
+</div>
+</div>
+<div id="77e9507d" class="cell" data-execution_count="132">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb225" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb225-1"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#''사이에 구분자 들어가고 join 되는데, ''안에 없으므로 붙여서 출력</span></span>
+<span id="cb225-2">[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">''</span>.join(i) <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> i <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> itertools.permutations([<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'x'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'x'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'y'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'y'</span>])]</span></code></pre></div></div>
+<div class="cell-output cell-output-display">
+<pre><code>['xxyy',
+ 'xxyy',
+ 'xyxy',
+ 'xyyx',
+ 'xyxy',
+ 'xyyx',
+ 'xxyy',
+ 'xxyy',
+ 'xyxy',
+ 'xyyx',
+ 'xyxy',
+ 'xyyx',
+ 'yxxy',
+ 'yxyx',
+ 'yxxy',
+ 'yxyx',
+ 'yyxx',
+ 'yyxx',
+ 'yxxy',
+ 'yxyx',
+ 'yxxy',
+ 'yxyx',
+ 'yyxx',
+ 'yyxx']</code></pre>
+</div>
+</div>
+<div id="6b97fb5e" class="cell" data-execution_count="134">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb227" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb227-1"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">set</span>([<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">''</span>.join(i) <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> i <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> itertools.permutations([<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'x'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'x'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'y'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'y'</span>])])</span></code></pre></div></div>
+<div class="cell-output cell-output-display">
+<pre><code>{'xxyy', 'xyxy', 'xyyx', 'yxxy', 'yxyx', 'yyxx'}</code></pre>
+</div>
+</div>
+<div id="1c35a46c" class="cell" data-execution_count="136">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb229" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb229-1"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">len</span>(<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">set</span>([<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">''</span>.join(i) <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> i <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> itertools.permutations([<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'x'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'x'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'y'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'y'</span>])]))</span></code></pre></div></div>
+<div class="cell-output cell-output-display">
+<pre><code>6</code></pre>
+</div>
+</div>
+<ol start="2" type="1">
+<li>리스트 컴프리헨션을 이용하여, <img src="https://latex.codecogs.com/png.latex?a_n%20=%5Cfrac%7B1%7D%7Bn(n+1)%7D"> 을 만족하는 수열을 선언하라. (a1, a2, a3, a4, a5까지만 선언하면 정답)</li>
+</ol>
+<div id="61e31676" class="cell" data-execution_count="139">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb231" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb231-1">[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span>(i<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span>(i<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>)) <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> i <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">range</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">6</span>)]</span></code></pre></div></div>
+<div class="cell-output cell-output-display">
+<pre><code>[0.5, 0.16666666666666666, 0.08333333333333333, 0.05, 0.03333333333333333]</code></pre>
+</div>
+</div>
+<ol start="3" type="1">
+<li><ol type="1">
+<li>for 문을 사용하여 아래와 같은 수열을 정의하라. (<img src="https://latex.codecogs.com/png.latex?a_1,%20...,%20a_n"> 까지 선언)</li>
+</ol>
+<ul>
+<li>$a_1 = a_2 = 1 $</li>
+<li><img src="https://latex.codecogs.com/png.latex?a_n%20=%20a_%7Bn-1%7D+a_%7Bn-2%7D"> where n&gt;=2</li>
+</ul></li>
+</ol>
+<div id="64cdd6ae" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb233" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb233-1">[() <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> i <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">range</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">101</span>)]</span></code></pre></div></div>
+</div>
+<p>(ing)</p>
 
 
 </section>
