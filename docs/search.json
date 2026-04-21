@@ -105,6 +105,174 @@
     "text": "F. np.argmax, np.argmin\n- 예시1\n\narr = np.array([1,2,3,2,1,0])\narr\n\narray([1, 2, 3, 2, 1, 0])\n\n\n\nnp.argmax(arr),np.argmin(arr)\n\n(np.int64(2), np.int64(5))\n\n\n# 예제 – 두 함수의 교점\n\\(-1 \\leq x \\leq 3\\) 에서\n\n\\(f(x)=(x-1)^2\\) 와\n\\(g(x)=-2x+5\\)\n\n의 교점의 좌표를 구하여라.\n\nx = np.linspace(1.8,2.2,101)\nf = (x-1)**2\ng = -2*x+5\nplt.plot(x,f,'.')\nplt.plot(x,g,'.')\n\n\n\n\n\n\n\n\n(풀이)\n\nx = np.linspace(-1,3,101)\nf = (x-1)**2\ng = -2*x+5\nplt.plot(x,f,label=r\"$f(x)=(x-1)^2$\")\nplt.plot(x,g,label=r\"$g(x)=-2x+5$\")\nplt.legend()\n\n\n\n\n\n\n\n\n\nx[np.argmin(abs(f-g))]\n\nnp.float64(2.0)\n\n\n\n2,(2-1)**2\n\n(2, 1)\n\n\n\n이것이 교점의 좌표"
   },
   {
+    "objectID": "posts/04wk_2.html#a.-사용자가-직접형태변환",
+    "href": "posts/04wk_2.html#a.-사용자가-직접형태변환",
+    "title": "04wk-2: 파이썬의 자료형 (1)",
+    "section": "A. 사용자가 직접형태변환",
+    "text": "A. 사용자가 직접형태변환\n- 형태변환: float \\(\\to\\) int\n(예시1)\n\na=3.0\ntype(a)\n\nfloat\n\n\n\na=int(a)\n\n\ntype(a)\n\nint\n\n\n(예시2) 이경우는 정보의 손실이 발생\n\na=3.14\nint(a)\n\n3\n\n\n- 형태변환: int \\(\\to\\) float\n\na=3\ntype(a)\n\nint\n\n\n\na=float(a)\ntype(a), a\n\n(float, 3.0)\n\n\n- 형태변환: bool \\(\\to\\) int/float, int/float \\(\\to\\) bool\n(예시1)\n\na=True\ntype(a)\n\nbool\n\n\n\nint(a)\n\n1\n\n\n\nfloat(a)\n\n1.0\n\n\n(예시2)\n\na=1\nbool(a)\n\nTrue\n\n\n\na=0\nbool(a)\n\nFalse\n\n\n\na=2\nbool(a)\n\nTrue\n\n\n(예시3)\n\na=1.0\nbool(a)\n\nTrue\n\n\n\na=0.0\nbool(a)\n\nFalse\n\n\n- 이상한 형태변환도 가능하다. (이런것도 바꿔주나 싶은것도 바꿔줌)\n\nbool(-3.14)\n\nTrue\n\n\n\n저는 이런 코드를 의도적으로 사용하지 않아요..\n\n\nint(3.14)\n\n3\n\n\n- 형태변환이 항상가능한것도 아님\n\ntype(3+0j) #complex = 복소수 (굉장히 오랜만에 들어본다ㅎ)\n\ncomplex\n\n\n\nfloat(3+0j) # 사실상 3+0j=3 이므로 float으로 형변환하면 3.0이 되어야 할 것 같은데 변환불가능하다.\n\n\n---------------------------------------------------------------------------\n\nTypeError                                 Traceback (most recent call last)\n\nCell In[19], line 1\n\n----&gt; 1 float(3+0j) # 사실상 3+0j=3 이므로 float으로 형변환하면 3.0이 되어야 할 것 같은데 변환불가능하다.\n\n\n\nTypeError: float() argument must be a string or a real number, not 'complex'"
+  },
+  {
+    "objectID": "posts/04wk_2.html#b.-암묵적형변환",
+    "href": "posts/04wk_2.html#b.-암묵적형변환",
+    "title": "04wk-2: 파이썬의 자료형 (1)",
+    "section": "B. 암묵적형변환",
+    "text": "B. 암묵적형변환\n- 암묵적형변환 (implicit)\n(예비학습) implicit의 의미\n\n추운날씨 -&gt; 보일러좀 틀자! (explicit) / 오늘 날씨 좀 추운 것 같지 않아? (implicit)\n짜장면 먹을래? -&gt; 싫어! (explicit) / 난 어제 짜장면 먹었는데.. (implicit)\n\n(예제)\n\nTrue * 1 # 1을 곱할건데 너 계속 True로 있을꺼야? \n#int(true)*1 과 동일한 결과 도출됨\n\n1\n\n\n\n1 * 1.0 # 1.0을 곱할건데 너 계속 int로 있을꺼야?\n\n1.0\n\n\n\nTrue+True # +연산을 할건데 계속 True로 있을꺼야?\n\n2"
+  },
+  {
+    "objectID": "posts/04wk_2.html#a.-선언",
+    "href": "posts/04wk_2.html#a.-선언",
+    "title": "04wk-2: 파이썬의 자료형 (1)",
+    "section": "A. 선언",
+    "text": "A. 선언\n- 예시1\n\na='guebin'\n\n\na\n\n'guebin'\n\n\n- 예시2\n\na=\"guebin\"\n\n\na\n\n'guebin'\n\n\n- 예시3\n\na=\"asdf'a'sdf\" #\"asdf\"a\"sdf\" &lt;- 이런 꼴이라면 asdf sdf가 따로 묶여보임(모호함)\na\n\n\"asdf'a'sdf\"\n\n\n- 예시4\n\na='asdf\"a\"sdf'\na\n\n'asdf\"a\"sdf'"
+  },
+  {
+    "objectID": "posts/04wk_2.html#b.-연산",
+    "href": "posts/04wk_2.html#b.-연산",
+    "title": "04wk-2: 파이썬의 자료형 (1)",
+    "section": "B. 연산",
+    "text": "B. 연산\n- 더하기(+)연산\n\na='X'\nb='2'\n\n\nc=a+b\nc\n\n'X2'\n\n\n\n'x'+'y'\n\n'xy'\n\n\n\n'xy'-'y'\n\n\n---------------------------------------------------------------------------\n\nTypeError                                 Traceback (most recent call last)\n\nCell In[44], line 1\n\n----&gt; 1 'xy'-'y'\n\n\n\nTypeError: unsupported operand type(s) for -: 'str' and 'str'\n\n\n\n- 빼기(-)연산\n\na='X2'\nb='2'\na-b\n\n\n---------------------------------------------------------------------------\nTypeError                                 Traceback (most recent call last)\nCell In[102], line 3\n      1 a='X2'\n      2 b='2'\n----&gt; 3 a-b\n\nTypeError: unsupported operand type(s) for -: 'str' and 'str'\n\n\n\n\n이런건 없다.\n\n- 곱하기(*)연산\n\na='X'\n\n\na+a+a\n\n'XXX'\n\n\n\na*3 # a*3 = a+a+a = 'X'+'X+'X'\n\n'XXX'\n\n\n아래도 가능하다.\n\n3*a\n\n'XXX'\n\n\n그리고 아래도 가능하다.\n\na='X'\nb=3\na*b\n\n'XXX'\n\n\n대신에 의미상 맞지 않는 것은 수행되지 않고 에러가 난다.\n\na='X'\nb='Y'\na+b\n\n'XY'\n\n\n\na*b\n\n\n---------------------------------------------------------------------------\n\nTypeError                                 Traceback (most recent call last)\n\nCell In[48], line 1\n\n----&gt; 1 a*b\n\n\n\nTypeError: can't multiply sequence by non-int of type 'str'\n\n\n\n- 나눗셈(/)연산\n\n2*'X'\n\n'XX'\n\n\n\na='XX'\n\n\na/2\n\n\n---------------------------------------------------------------------------\n\nTypeError                                 Traceback (most recent call last)\n\nCell In[51], line 1\n\n----&gt; 1 a/2\n\n\n\nTypeError: unsupported operand type(s) for /: 'str' and 'int'\n\n\n\n\n이런건 없다.."
+  },
+  {
+    "objectID": "posts/04wk_2.html#c.-인덱싱",
+    "href": "posts/04wk_2.html#c.-인덱싱",
+    "title": "04wk-2: 파이썬의 자료형 (1)",
+    "section": "C. 인덱싱",
+    "text": "C. 인덱싱\n- str은 하나의 벡터 문자가 여러개 있는 형태라고 생각하면 된다.\n\na='guebin'\ntype(a)\n\nstr\n\n\n\na\n\n'guebin'\n\n\n\n6개의 칸에 글씨가 하나씩 들어가 있음.\n\n- 대괄호 []안에 숫자를 넣는 방식으로 벡터의 원소를 호출할 수 있다. (주의: 인덱스가 0부터 시작함)\n\na[0] #첫번째원소\n\n'g'\n\n\n\na[1] #두번째원소\n\n'u'\n\n\n마지막원소는 -1로 호출할 수도 있다.\n\na[-1]\n\n'n'\n\n\n마지막에서 2번째 원소는 -2로 호출가능하다.\n\na[-2]\n\n'i'\n\n\n- 요약하면 아래와 같은 방식으로 호출가능함.\n\n\n\ng\nu\ne\nb\ni\nn\n\n\n\n\n0\n1\n2\n3\n4\n5\n\n\n0\n-5\n-4\n-3\n-2\n-1\n\n\n\n\na[4]\n\n'i'\n\n\n\na[-2]\n\n'i'\n\n\n\na[-4]\n\n'e'\n\n\n- :을 이용하여 여러개의 원소를 호출할 수 있음.\n\na='guebin'\n\n\na[0:3] # a[0],a[1],a[2],a[3]이 아니라 a[0],a[1],a[2]까지만 뽑힌다. 즉 마지막의 3은 호출되지 않는다.\n\n'gue'\n\n\n\na[1:3] # a[1], a[2] 만 호출 // start=1,  stop=3\n\n'ue'\n\n\nindex=1부터 시작해서 마지막원소까지 호출하려면?\n\n#try\na[1:]\n\n'uebin'\n\n\n\na='guebin'\n\n\na[5] # guebin의 마지막원소 'n'이 출력\n\n'n'\n\n\n\na[1:5] # 5는 포함되지 않으므로 틀림\n\n'uebi'\n\n\n\na[1:6] # 정답\n\n'uebin'\n\n\n안 헷갈리는 방법은 없을까? 생략한다.\n\na[1:]\n\n'uebin'\n\n\n- 생략의 응용1\n\na='k-pop'\na\n\n'k-pop'\n\n\n\na[2:]\n\n'pop'\n\n\n- 생략의 응용2\n\na='k-pop'\na\n\n'k-pop'\n\n\n\n#0,1 -&gt; 0,1,2\n\n\na[0:2] # a[0],a[1]\n\n'k-'\n\n\n\na[:2] # a[0],a[1]\n\n'k-'\n\n\n\na[:2] 는 a의 원소중 처음 2개를 뽑는다는 의미\n\n- 생략의 응용3\n\na='k-pop'\na\n\n'k-pop'\n\n\n\na[0:5] # a[0],...,a[4]\n\n'k-pop'\n\n\n\na[:]\n\n'k-pop'"
+  },
+  {
+    "objectID": "posts/04wk_2.html#d.-str-특수기능",
+    "href": "posts/04wk_2.html#d.-str-특수기능",
+    "title": "04wk-2: 파이썬의 자료형 (1)",
+    "section": "D. str 특수기능",
+    "text": "D. str 특수기능\n- 파이썬의 변수는 단순히 정보를 담는 그릇이 아니다. 유용한 기능을 제공하는 경우가 있다.\n\na='ABCD' # a라는 변수는 'ABCD'라는 정보를 담는 그릇의 역할만 하지 않고, 특화된 어떠한 기능도 제공한다.\na\n\n'ABCD'\n\n\n\na.lower() # a.lower()를 쓰면 a의 모든 문자를 소문자로 바꾸는 기능을 제공, lower(a)라고 읽자!\n\n'abcd'\n\n\n여기에서 lower()는 문자열에 특화된 기능임. 따라서 당연히 아래는 불가능\n\na=3.14\na.lower() # lower(a)\n\n\n---------------------------------------------------------------------------\n\nAttributeError                            Traceback (most recent call last)\n\nCell In[78], line 2\n\n      1 a=3.14\n\n----&gt; 2 a.lower() # lower(a)\n\n\n\nAttributeError: 'float' object has no attribute 'lower'\n\n\n\n- 자료형에 특화된 기능(=함수)을 확인하는 방법? a.+ tab 으로 목록 확인 가능\n\na='guebin'\n\n\na.upper? #기능을 모를때는, 끝에 ?(물음표) 입력해볼 것(주피터 등)\n\n\n  Cell In[83], line 1\n\n    a.upper? #기능을 모를때는, 끝에 ?(물음표) 입력해볼 것(주피터 등)\n\n           ^\n\nSyntaxError: invalid syntax\n\n\n\n\n\na.upper() # upper(a)\n\n'GUEBIN'\n\n\n\na.capitalize() # capitalize(a)\n\n'Guebin'\n\n\n- 유용한 특수기능 \\((\\star\\star\\star)\\)\n\n'-'.join(['1','2','3'])  #합성\n\n'1-2-3'\n\n\n\n'1-2-3'.split('-')  #분해\n\n['1', '2', '3']\n\n\n\n'1-2-3'.replace('-','*')\n\n'1*2*3'"
+  },
+  {
+    "objectID": "posts/04wk_2.html#e.-len",
+    "href": "posts/04wk_2.html#e.-len",
+    "title": "04wk-2: 파이썬의 자료형 (1)",
+    "section": "E. len",
+    "text": "E. len\n- len함수 소개: 원소의 갯수를 알려주는 함수.\n\na='ABCD'\nlen(a)\n\n4\n\n\n- 참고: len은 0차원 변수형에서는 동작하지 않고 1차원 변수형에서만 동작한다.\n(0차원) len 함수가 동작하지 않음.\n\na=3.14\n\n\nlen(a)\n\n\n---------------------------------------------------------------------------\n\nTypeError                                 Traceback (most recent call last)\n\nCell In[91], line 1\n\n----&gt; 1 len(a)\n\n\n\nTypeError: object of type 'float' has no len()\n\n\n\n\nb=True\n\n\nlen(b)\n\n\n---------------------------------------------------------------------------\nTypeError                                 Traceback (most recent call last)\nCell In[212], line 1\n----&gt; 1 len(b)\n\nTypeError: object of type 'bool' has no len()\n\n\n\n(1차원) len 함수가 잘 동작함.\n\na='3.14'\nlen(a), type(a)\n\n(4, str)\n\n\n\nb=[1,2,3]\n\n\nlen(b)\n\n3"
+  },
+  {
+    "objectID": "posts/04wk_2.html#f.-fstring",
+    "href": "posts/04wk_2.html#f.-fstring",
+    "title": "04wk-2: 파이썬의 자료형 (1)",
+    "section": "F. fstring",
+    "text": "F. fstring\n- 예제1\n\na=1\nb=2\nprint(f'a+b = {a+b}') #약간, 한글의 메일머지 느낌?\n\na+b = 3\n\n\n- 예제2\n\na=2\nb=3.141592\nprint(f'a*b = {a*b:.2f}')\n\na*b = 6.28\n\n\n- 예제3\n\na=3.141592\nprint(f'2a = {2*a:.2f}\\t3a = {3*a:.2f}')\n\n2a = 6.28   3a = 9.42\n\n\n- 예제4\n\nlst = ['장하니','최다호','주성재','이슬기'] \n\n\n[f'{l}학생 안녕하세요, 통계학과 최규빈 교수입니다. 다름이 아니라 전공진로설계관련 상담일자를 잡고자 메일을 보냈습니다.' for l in lst] #맞네! 완전 메일머지임\n\n['장하니학생 안녕하세요, 통계학과 최규빈 교수입니다. 다름이 아니라 전공진로설계관련 상담일자를 잡고자 메일을 보냈습니다.',\n '최다호학생 안녕하세요, 통계학과 최규빈 교수입니다. 다름이 아니라 전공진로설계관련 상담일자를 잡고자 메일을 보냈습니다.',\n '주성재학생 안녕하세요, 통계학과 최규빈 교수입니다. 다름이 아니라 전공진로설계관련 상담일자를 잡고자 메일을 보냈습니다.',\n '이슬기학생 안녕하세요, 통계학과 최규빈 교수입니다. 다름이 아니라 전공진로설계관련 상담일자를 잡고자 메일을 보냈습니다.']"
+  },
+  {
+    "objectID": "posts/04wk_2.html#g.-string과-for문",
+    "href": "posts/04wk_2.html#g.-string과-for문",
+    "title": "04wk-2: 파이썬의 자료형 (1)",
+    "section": "G. string과 for문",
+    "text": "G. string과 for문\n- 예제1\n\nfor s in 'jbnu':\n    print(2*s)\n\njj\nbb\nnn\nuu\n\n\n\n[s for s in 'jbnu']\n\n['j', 'b', 'n', 'u']\n\n\n- 예제2\n\n[s*4 for s in 'jbnu']\n\n['jjjj', 'bbbb', 'nnnn', 'uuuu']"
+  },
+  {
+    "objectID": "posts/04wk_2.html#h.-in-연산자",
+    "href": "posts/04wk_2.html#h.-in-연산자",
+    "title": "04wk-2: 파이썬의 자료형 (1)",
+    "section": "H. in 연산자",
+    "text": "H. in 연산자\n\ns = 'jbnu'\n\n\n'b' in s\n\nTrue\n\n\n\n'c' in s\n\nFalse\n\n\n\n'jb' in s\n\nTrue\n\n\n\n'jn' in s\n\nFalse"
+  },
+  {
+    "objectID": "posts/04wk_2.html#i.-연습문제들",
+    "href": "posts/04wk_2.html#i.-연습문제들",
+    "title": "04wk-2: 파이썬의 자료형 (1)",
+    "section": "I. 연습문제들",
+    "text": "I. 연습문제들\n전북대학교 – 아래와 같은 문자열이 있다고 하자.\n\na='Jeonbuk National University'\n\n# 문제. 적당한 인덱싱을 통하여 출력결과가 아래와 같도록 하라.\n\n#try1\na[-10:]\n\n'University'\n\n\n\n#try2\na.split(' ')[2]\n\n'University'\n\n\nhint: University는 10글자이다.\n(풀이)\n\na[-10:]\n\n'University'\n\n\n# 문제. 출력결과가 아래와 같도록 하는 코드를 작성하라. (lower 함수를 이용할 것)\n\n# 결과 'jeonbuk national university'\n\n(풀이)\n\na.lower()\n\n'jeonbuk national university'\n\n\n# 문제. 아래의 코드를 관찰하고 isupper()의 기능이 무엇인지 스스로 정리해보라.\n\n'A'.isupper()\n\nTrue\n\n\n\n'AA'.isupper()\n\nTrue\n\n\n\n'Aa'.isupper()\n\nFalse\n\n\n\n'aa'.isupper()\n\nFalse\n\n\n\n'aA'.isupper()\n\nFalse\n\n\n유추한 기능이 맞는지 ChatGPT를 통하여 확인하라.\n\n#유추 -&gt; 대문자 판별기(단, 모든글자가 대문자일 경우)\n#GPT의 답 -&gt; 문자열이 모두 대문자이면 True, 하나라도 소문자 섞이면 False\n\nDitto – 다음은 인터넷에서 긁어온 어떠한 텍스트이다.\n\ntext = \"국내뿐 아니라 해외 인기도 심상치 않다. 2023년 1월 18일 'Ditto'가 빌보드 핫 100에 96위로 진입했다. 이는 K-pop 역사상 데뷔후 최단 빌보드 Hot 100 차트 입성 기록이다. 다른 뮤지션들이 보통 데뷔 후 수년간 쌓아온 팬덤을 기반으로 빌보드에 입성한데 비해, 뉴진스의 기록은 이례적인 것으로 평가받고 있다. 또한 'OMG'가 빌보드 핫 100에 91위로 진입한 동시에 'Ditto'는 85위로 순위가 상승, 핫 100 주간차트에 두 곡을 올려놓았다. K-Pop 역사상 이 차트에 두 곡 이상을 진입시킨 아티스트는 방탄소년단과 블랙핑크가 유일하다. 'Ditto'는 1월 셋째주 기준, 빌보드뿐만 아니라 영국 오피셜 싱글 차트 '톱 100'에 2주 연속 진입하기도 했다.\"\n\n# 문제. text는 총 몇개의 문장으로 이루어져 있는가?\n\n#try\nt = text.split('. ')\nlen(t)\n\n7\n\n\nhint: 이 텍스트의 문장은 모두 .로 끝난다.\n(풀이)\n\nlen(text.split('. '))\n\n7\n\n\n# 문제. 각 문장은 몇개의 단어로 이루어져 있는가?\nhint: 각 단어는 공백으로 구분된다.\n\n#try\ntext.split('. ')\n\n['국내뿐 아니라 해외 인기도 심상치 않다',\n \"2023년 1월 18일 'Ditto'가 빌보드 핫 100에 96위로 진입했다\",\n '이는 K-pop 역사상 데뷔후 최단 빌보드 Hot 100 차트 입성 기록이다',\n '다른 뮤지션들이 보통 데뷔 후 수년간 쌓아온 팬덤을 기반으로 빌보드에 입성한데 비해, 뉴진스의 기록은 이례적인 것으로 평가받고 있다',\n \"또한 'OMG'가 빌보드 핫 100에 91위로 진입한 동시에 'Ditto'는 85위로 순위가 상승, 핫 100 주간차트에 두 곡을 올려놓았다\",\n 'K-Pop 역사상 이 차트에 두 곡 이상을 진입시킨 아티스트는 방탄소년단과 블랙핑크가 유일하다',\n \"'Ditto'는 1월 셋째주 기준, 빌보드뿐만 아니라 영국 오피셜 싱글 차트 '톱 100'에 2주 연속 진입하기도 했다.\"]\n\n\n\nlst = text.split('. ')\n\n\n[len(l.split(' ')) for l in lst] #한번 더 해보기\n\n[6, 9, 11, 18, 18, 12, 16]\n\n\n(풀이)\n\nlst = text.split('. ')\n[len(l.split(' ')) for l in lst]\n\n[6, 9, 11, 18, 18, 12, 16]\n\n\n# 문제. 100이라는 단어가 포함된 문장은 모두 몇 개 인가?\n\nlst\n\n['국내뿐 아니라 해외 인기도 심상치 않다',\n \"2023년 1월 18일 'Ditto'가 빌보드 핫 100에 96위로 진입했다\",\n '이는 K-pop 역사상 데뷔후 최단 빌보드 Hot 100 차트 입성 기록이다',\n '다른 뮤지션들이 보통 데뷔 후 수년간 쌓아온 팬덤을 기반으로 빌보드에 입성한데 비해, 뉴진스의 기록은 이례적인 것으로 평가받고 있다',\n \"또한 'OMG'가 빌보드 핫 100에 91위로 진입한 동시에 'Ditto'는 85위로 순위가 상승, 핫 100 주간차트에 두 곡을 올려놓았다\",\n 'K-Pop 역사상 이 차트에 두 곡 이상을 진입시킨 아티스트는 방탄소년단과 블랙핑크가 유일하다',\n \"'Ditto'는 1월 셋째주 기준, 빌보드뿐만 아니라 영국 오피셜 싱글 차트 '톱 100'에 2주 연속 진입하기도 했다.\"]\n\n\n\n#try\n['100' in lst[l] for l in lst]\n\n\n---------------------------------------------------------------------------\n\nTypeError                                 Traceback (most recent call last)\n\nCell In[187], line 2\n\n      1 #try\n\n----&gt; 2 ['100' in lst[l] for l in lst]\n\n\n\nTypeError: list indices must be integers or slices, not str\n\n\n\nhint: 아래의 코드를 관찰\n\n'a' in 'abcd'\n\nTrue\n\n\n(풀이)\n\n['100' in l for l in lst], sum(['100' in l for l in lst])\n\n([False, True, True, False, True, False, True], 4)"
+  },
+  {
+    "objectID": "posts/04wk_2.html#a.-선언-1",
+    "href": "posts/04wk_2.html#a.-선언-1",
+    "title": "04wk-2: 파이썬의 자료형 (1)",
+    "section": "A. 선언",
+    "text": "A. 선언\n- 리스트의 선언\n\na= [1,2,3,22]\n\n- 비어있는 리스트의 선언\n\na= []\na\n\n[]\n\n\n\na= list()\na\n\n[]\n\n\n\n#참고(비어있는 스트링 선언)\na = str()\na\n\n''\n\n\n\na = ''\na\n\n''"
+  },
+  {
+    "objectID": "posts/04wk_2.html#b.-연산-1",
+    "href": "posts/04wk_2.html#b.-연산-1",
+    "title": "04wk-2: 파이썬의 자료형 (1)",
+    "section": "B. 연산",
+    "text": "B. 연산\n- 더하기연산\n\n[1,2,3] + [-3,4,5]\n\n[1, 2, 3, -3, 4, 5]\n\n\n\n우리의 예상과 다른 결과가 나옴 \\(\\to\\) 파이썬은 R처럼 자체적으로 좋은 계산기능을 내장하고 있지 않음.\n\n- 브로드캐스팅과 같이 R에서는 당연히 가능했던 기능을 사용할 수 없음.\n\n[1,2,3,4,5] + 1\n\n\n---------------------------------------------------------------------------\n\nTypeError                                 Traceback (most recent call last)\n\nCell In[25], line 1\n\n----&gt; 1 [1,2,3,4,5] + 1\n\n\n\nTypeError: can only concatenate list (not \"int\") to list\n\n\n\n\n[1, 2, 3, 4] + []\n\n[1, 2, 3, 4]\n\n\n- 뺄셈은 정의되지 않음\n\na= [1,2,1,2]\na-[1,2]\n\n\n---------------------------------------------------------------------------\n\nTypeError                                 Traceback (most recent call last)\n\nCell In[29], line 2\n\n      1 a= [1,2,1,2]\n\n----&gt; 2 a-[1,2]\n\n\n\nTypeError: unsupported operand type(s) for -: 'list' and 'list'\n\n\n\n- 곱하기는 정의가능\n\n[1,2]*3\n\n[1, 2, 1, 2, 1, 2]\n\n\n- 나눗셈은 정의되지 않음\n\n[1,2,1,2,1,2] /3\n\n\n---------------------------------------------------------------------------\n\nTypeError                                 Traceback (most recent call last)\n\nCell In[31], line 1\n\n----&gt; 1 [1,2,1,2,1,2] /3\n\n\n\nTypeError: unsupported operand type(s) for /: 'list' and 'int'\n\n\n\n- 더하기와 곱하기는 원소의 추가와 반복추가를 의미하지만 그렇다고 해서 뺄셈과 나눗셈이 원소의 삭제를 의미하는것은 아님\n- 더하기와 곱하기가 원소의 추가와 반복추가를 의미하여 편리할때도 있긴하지만, 우리는 산술적인 +, * 를 원하는 경우도 있다. 이럴 경우는 어떻게 할 수 있을까?\n(예제)\n\na=[1,2]\nb=[3,4]\n\na+b = [4,6] 이 되도록 하려면?\n(풀이1)\n\ntype(a), type(a[0])\n\n(list, int)\n\n\n\n[a[0]+b[0],a[1]+b[1]]\n\n[4, 6]\n\n\n풀이가 가능한 이유? a,b는 리스트이지만 a[0], a[1], b[0], b[1] 은 각각 인트형임. 인트형은 + 연산이 가능했음.\n(풀이2)\nnumpy 패키지 (파이썬의 여러 수치연산들을 담당하는 라이브러리)\n\n이러한 벡터연산은 누구나 필요로 하는 연산임.\n내가 아니더라도 누군가가 프로그램화 해놓았을 것임.\n그 누군가가 자신이 만든 코드를 잘 정리하여 무료로 배포했을 수도 있음. (패키지를 배포한다고 표현)\n그 패키지를 우리는 가져와서 설치한뒤 사용하기만 하면된다.\n\n설치된 패키지를 사용하는 방법\n\nimport numpy 한뒤에 numpy.??로 기능을 사용\nimport numpy as np 한뒤에 np.??로 기능을 사용\n\n\nimport numpy\n\n\na=[1,2]\nb=[3,4]\n\n\naa = numpy.array(a)\nbb = numpy.array(b)\n\n\naa+bb\n\narray([4, 6])\n\n\n여러가지 연산 가능 (마치 R처럼 쓸 수 있음)\n\n2*aa\n\narray([2, 4])\n\n\n\n2*aa+1\n\narray([3, 5])\n\n\n\n2*aa+1+bb\n\narray([6, 9])\n\n\n(풀이3)\n\nimport numpy as np ## 설치가 되어있는 numpy라는 패키지를 쓰겠음. 그런데 numpy말고 np라는 이름으로 쓰겠음\n\n\nnp.array(a)+np.array(b)\n\narray([4, 6])"
+  },
+  {
+    "objectID": "posts/04wk_2.html#c.-인덱싱-1",
+    "href": "posts/04wk_2.html#c.-인덱싱-1",
+    "title": "04wk-2: 파이썬의 자료형 (1)",
+    "section": "C. 인덱싱",
+    "text": "C. 인덱싱\n- str형과 동일한 방식\n\na=[11,22,33,44,55] # 0 -4 -3 -2 -1\n\n\na[-2:] # 끝의 2개의 원소를 뽑음\n\n[44, 55]"
+  },
+  {
+    "objectID": "posts/04wk_2.html#d.-콘테이너형-객체로서의-리스트",
+    "href": "posts/04wk_2.html#d.-콘테이너형-객체로서의-리스트",
+    "title": "04wk-2: 파이썬의 자료형 (1)",
+    "section": "D. 콘테이너형 객체로서의 리스트",
+    "text": "D. 콘테이너형 객체로서의 리스트\n- 리스트의 원소는 int, float 따위만 가능한 것이 아니다. (리스트는 컨테이너형 객체이므로)\n\nlst = [1,3.14,True,'a',[1,2],\n       (1,2),{'name':'iu','age':27},{1,2,3}]\nlst\n\n[1, 3.14, True, 'a', [1, 2], (1, 2), {'name': 'iu', 'age': 27}, {1, 2, 3}]\n\n\n\n[type(l) for l in lst]\n\n[int, float, bool, str, list, tuple, dict, set]\n\n\n- str은 컨테이너형이 아니다.\n\n'abcd'[2]\n\n'c'\n\n\n\nstr의 모든 원소는 문자임(type이 다 똑같음)"
+  },
+  {
+    "objectID": "posts/04wk_2.html#e.-가변객체",
+    "href": "posts/04wk_2.html#e.-가변객체",
+    "title": "04wk-2: 파이썬의 자료형 (1)",
+    "section": "E. 가변객체",
+    "text": "E. 가변객체\n- 리스트는 원소를 수정할 수 있다. (리스트는 가변객체이므로)\n\na=[11,22,33]\na\n\n[11, 22, 33]\n\n\n\na[0] = -77\n\n\na\n\n[-77, 22, 33]\n\n\n- 원소수정은 당연한 기능같은데 이것이 불가능한 경우도 있다.\n(가능한경우)\n\na=['g','u','e','b','i','n']\na\n\n['g', 'u', 'e', 'b', 'i', 'n']\n\n\n\na[0] = 'G'\n\n\na\n\n['G', 'u', 'e', 'b', 'i', 'n']\n\n\n(불가능한경우)\n\na='guebin'\na\n\n'guebin'\n\n\n\na[0]\n\n'g'\n\n\n\na[0]='G'\n\n\n---------------------------------------------------------------------------\n\nTypeError                                 Traceback (most recent call last)\n\nCell In[63], line 1\n\n----&gt; 1 a[0]='G'\n\n\n\nTypeError: 'str' object does not support item assignment\n\n\n\n\nlst = list('guebin')\nlst\n\n['g', 'u', 'e', 'b', 'i', 'n']\n\n\n\nlst[0] = 'G'\nlst\n\n['G', 'u', 'e', 'b', 'i', 'n']\n\n\n\n''.join(lst)\n\n'Guebin'"
+  },
+  {
+    "objectID": "posts/04wk_2.html#f.-리스트의-원소-삭제",
+    "href": "posts/04wk_2.html#f.-리스트의-원소-삭제",
+    "title": "04wk-2: 파이썬의 자료형 (1)",
+    "section": "F. 리스트의 원소 삭제",
+    "text": "F. 리스트의 원소 삭제\n(예제1) del을 이용한 원소삭제\n아래와 같이 문자로 된 리스트를 선언하자.\n\na=['g','u','e','b','i','n']\na\n\n['g', 'u', 'e', 'b', 'i', 'n']\n\n\n사실 더 쉽게 선언할 수 있음\n\nlist('guebin')\n\n['g', 'u', 'e', 'b', 'i', 'n']\n\n\n첫번째 원소를 삭제하고 싶다면?\n\ndel a[0]\na\n\n['e', 'b', 'i', 'n']\n\n\n이 상태에서 다시 첫번째 원소를 삭제한다면?\n\ndel a[0]\na\n\n['b', 'i', 'n']\n\n\n(예제2) pop을 이용한 원소삭제 - 마지막부터 불러오고, 해당 원소는 삭제됨(특정 원소를 불러오면 해당 원소 삭제됨)\n\na=list('guebin')\na\n\n['g', 'u', 'e', 'b', 'i', 'n']\n\n\n\na.pop(0)\n\n'g'\n\n\n\na.pop(0)\n\n'u'\n\n\n\na\n\n['e', 'b', 'i', 'n']\n\n\n\na.pop(2)\n\n'i'\n\n\n\na\n\n['e', 'b', 'n']\n\n\n(예제3) remove를 이용한 원소삭제\n\na=list('guebin')\na\n\n['g', 'u', 'e', 'b', 'i', 'n']\n\n\n\na.remove('b')\na\n\n['g', 'u', 'e', 'i', 'n']"
+  },
+  {
+    "objectID": "posts/04wk_2.html#g.-리스트-원소-추가",
+    "href": "posts/04wk_2.html#g.-리스트-원소-추가",
+    "title": "04wk-2: 파이썬의 자료형 (1)",
+    "section": "G. 리스트 원소 추가",
+    "text": "G. 리스트 원소 추가\n(예제) 비어있는 리스트를 만들고 원소 0,1,2를 차례로 추가하여 보자.\n(풀이1) + 연산이용\n\na=[]\na\n\n[]\n\n\n\na= a+[0]\na\n\n[0]\n\n\n\na= a+[1] # a = [0]+[1]\na\n\n[0, 1]\n\n\n\na= a+[2] # a = [0,1] + [2]\na\n\n[0, 1, 2]\n\n\n(풀이2) += 이용\n\na=[]\na+=[0]\na+=[1]\na+=[2]\na\n\n[0, 1, 2]\n\n\n\n반복되는 문자를 제거하고 연산의 순서를 바꾼다.\n\n(풀이3) 리스트 특수기능 .append()를 이용\n\na=[]\n\n\na.append(0)\na.append(1)\na.append(2)\na\n\n[0, 1, 2]\n\n\n- 아래는 불가능하다.\n\na.append(0).append(1).append(2)\n\n\n---------------------------------------------------------------------------\n\nAttributeError                            Traceback (most recent call last)\n\nCell In[104], line 1\n\n----&gt; 1 a.append(0).append(1).append(2)\n\n\n\nAttributeError: 'NoneType' object has no attribute 'append'\n\n\n\n\n#append 사용하려면 list여야 하는데, a.append()는 리스트가 아님\na.append(0)\na, type(a), type(a.append(0))\n\n([0, 1, 2, 0, 0, 0, 0, 0, 0, 0], list, NoneType)\n\n\n\na.append(0,1,2)\n\n\n---------------------------------------------------------------------------\n\nTypeError                                 Traceback (most recent call last)\n\nCell In[118], line 1\n\n----&gt; 1 a.append(0,1,2)\n\n\n\nTypeError: list.append() takes exactly one argument (3 given)"
+  },
+  {
+    "objectID": "posts/04wk_2.html#h.-a4와-a.append4의-차이점은",
+    "href": "posts/04wk_2.html#h.-a4와-a.append4의-차이점은",
+    "title": "04wk-2: 파이썬의 자료형 (1)",
+    "section": "H. a+[4]와 a.append(4)의 차이점은?",
+    "text": "H. a+[4]와 a.append(4)의 차이점은?\n(관찰1)\n\na=[1,2,3]\na+[4] ## 리스트 a와 리스트 [4]의 연산결과를 알려줘\n\n[1, 2, 3, 4]\n\n\n\na ## a는 그대로임. 변화없음\n\n[1, 2, 3]\n\n\n(관찰2)\n\na=[1,2,3]\na.append(4)\n\n\na ## a자체가 변화함\n\n[1, 2, 3, 4]\n\n\n비슷해보이지만 굉장히 미묘한 차이가 있음\na.append(4): a에 4를 append하라 \\(\\to\\) a가 변함\na+[4]: a와 [4]를 연산하라"
+  },
+  {
+    "objectID": "posts/04wk_2.html#i.-리스트-특수기능",
+    "href": "posts/04wk_2.html#i.-리스트-특수기능",
+    "title": "04wk-2: 파이썬의 자료형 (1)",
+    "section": "I. 리스트 특수기능",
+    "text": "I. 리스트 특수기능\n(append)\n\na=[1,2,3,4]\na.append?\n\n\na.append(5)\na\n\n[1, 2, 3, 4, 5]\n\n\n(clear)\n\na=[1,2,3,4]\na.clear?\n\n\nSignature: a.clear()\nDocstring: Remove all items from list.\nType:      builtin_function_or_method\n\n\n\n\n\na.clear()\na\n\n[]\n\n\n(copy)\n\na=[1,2,3,4]\na.copy?\n\n\nb=a.copy()\nb\n\n[1, 2, 3, 4]\n\n\n(count)\n\na=['a','a','b','b','b','c']\na.count?\n\n\na.count('a')\n\n2\n\n\n\na.count('b')\n\n3\n\n\n\na.count('c')\n\n1\n\n\n(extend)\n\na=[1,2,3,4]\nb=[-1,-2,-3,-4]\n\n\na.extend(b)\na\n\n[1, 2, 3, 4, -1, -2, -3, -4]\n\n\n\na=[1,2,3,4]\nb=[-1,-2,-3,-4]\n\n\na.append(b)\n\n\na  #b가 원소의 하나로 추가됨\n\n[1, 2, 3, 4, [-1, -2, -3, -4]]\n\n\n(index)\n\na=[11,22,'a',True, 22,'a']\na.index?\n\n\na.index(11)\n\n0\n\n\n\na.index(22) #앞에있는 원소 출력\n\n1\n\n\n\na.index('a')\n\n2\n\n\n\na.index(True)\n\n3\n\n\n(insert)\n\na=[1,2,3]\na.insert?\n\n\na.insert(1,88)\na\n\n[1, 88, 2, 3]\n\n\n(pop)\n\na=['a',1,2,'d']\na.pop?\n\n\na.pop() # index=-1 이므로 마지막원소가 나타남\n\n'd'\n\n\n\na # a는 마지막 원소가 사라진 상태\n\n['a', 1, 2]\n\n\n\na.pop(0) # index=0 이므로 첫번쨰 원소가 나타남\n\n'a'\n\n\n\na # a에는 첫번째 원소가 사라진 상태\n\n[1, 2]\n\n\n(remove)\n\na=['a',2,3,'d']\na.remove?\n\n\na.remove('d')\n\n\na\n\n['a', 2, 3]\n\n\n\na.remove('a')\n\n\na\n\n[2, 3]\n\n\n(reverse)\n\na=[1,2,3,4]\na.reverse?\n\n\na.reverse()\na\n\n[4, 3, 2, 1]\n\n\n(sort)\n\na=[1,3,2,4]\na.sort?\n\n\na.sort()\na\n\n[1, 2, 3, 4]\n\n\n(다른예제들)\n\na=list('guebin')\na\n\n['g', 'u', 'e', 'b', 'i', 'n']\n\n\n\na.sort()\na\n\n['b', 'e', 'g', 'i', 'n', 'u']\n\n\n\na.sort(reverse=True)\na\n\n['u', 'n', 'i', 'g', 'e', 'b']"
+  },
+  {
+    "objectID": "posts/04wk_2.html#j.-중첩리스트",
+    "href": "posts/04wk_2.html#j.-중첩리스트",
+    "title": "04wk-2: 파이썬의 자료형 (1)",
+    "section": "J. 중첩리스트",
+    "text": "J. 중첩리스트\n- 리스트는 리스트를 원소로 받을 수 있으므로 아래와 같이 중첩된 리스트를 만들 수 있다.\n\nA = [[1,2,3],\n     [4,5,6],\n     [7,8,9]]\nA\n\n[[1, 2, 3], [4, 5, 6], [7, 8, 9]]\n\n\n\ntype(A)\n\nlist\n\n\n- A는 1차원인 벡터가 아니라 2차원인 매트릭스로 이해할 수 있다. 구체적으로는 아래와 같은 매트릭스로 이해할 수 있다\n\\[\\bf{A}=\\begin{bmatrix}\n1 & 2 & 3 \\\\\n4 & 5 & 6 \\\\\n7 & 8 & 9\n\\end{bmatrix}\\]\n- A에서 (2,1)의 원소를 뽑고싶다 = 4를 뽑고싶다\n\nA[1,0] # R에서는 이게 가능했죠\n\n\n---------------------------------------------------------------------------\n\nTypeError                                 Traceback (most recent call last)\n\nCell In[176], line 1\n\n----&gt; 1 A[1,0] # R에서는 이게 가능했죠\n\n\n\nTypeError: list indices must be integers or slices, not tuple\n\n\n\n\n실패\n\n\nA[1][0]\n\n4\n\n\n\n성공\n\n- 성공의 이유를 분석해보자.\n\nA\n\n[[1, 2, 3], [4, 5, 6], [7, 8, 9]]\n\n\n\nA[1]\n\n[4, 5, 6]\n\n\n\nA[1][0]\n\n4\n\n\n- 매트릭스는 아니지만 매트릭스 같음!\n\n1차원 배열을 다차원 배열로 확장할 수 있는 기본 아이디어를 제공함\n\n\nnp.array([[[1,2],[3,4]], [[1,2],[3,4]]]).shape\n\n(2, 2, 2)"
+  },
+  {
+    "objectID": "posts/04wk_2.html#k.-리스트-컴프리헨션-연습",
+    "href": "posts/04wk_2.html#k.-리스트-컴프리헨션-연습",
+    "title": "04wk-2: 파이썬의 자료형 (1)",
+    "section": "K. 리스트 컴프리헨션 연습",
+    "text": "K. 리스트 컴프리헨션 연습\n- 예제1: 리스트 컴프리헨션을 이용하여 아래와 같은 리스트를 만들어라.\n\n['SSSS','PPPP','AAAA','MMMM']\n\n['SSSS', 'PPPP', 'AAAA', 'MMMM']\n\n\n\n[s*4 for s in 'SPAM']\n\n['SSSS', 'PPPP', 'AAAA', 'MMMM']\n\n\n(풀이)\n\n[s*4 for s in 'SPAM']\n\n['SSSS', 'PPPP', 'AAAA', 'MMMM']\n\n\n- 예제2: 리스트컴프리헨션을 이용하여 아래와 같은 리스트를 만들어라.\n\n['X1','X2','X3','Y1','Y2','Y3']\n\n['X1', 'X2', 'X3', 'Y1', 'Y2', 'Y3']\n\n\n(풀이1)\n\nimport itertools\n\n\n[i+j for i,j in itertools.product('XY','123')]\n\n['X1', 'X2', 'X3', 'Y1', 'Y2', 'Y3']\n\n\n(풀이2)\n\n[i+j for i in 'XY' for j in '123']\n\n['X1', 'X2', 'X3', 'Y1', 'Y2', 'Y3']\n\n\n- 예제: 리스트컴프리헨션을 이용하여 아래와 같은 리스트를 만들어라.\n\n['stat1', 'stat2', 'stat3', 'math1', 'math2', 'math3']\n\n['stat1', 'stat2', 'stat3', 'math1', 'math2', 'math3']\n\n\n\n#try\n[i+j for i,j in itertools.product(['stat','math'],'123')]\n\n['stat1', 'stat2', 'stat3', 'math1', 'math2', 'math3']\n\n\n(풀이1)\n\n[i+j for i,j in itertools.product(['stat','math'], '123')]\n\n['stat1', 'stat2', 'stat3', 'math1', 'math2', 'math3']\n\n\n(풀이2)\n\n[i+j for i in ['stat','math'] for j in '123']\n\n['stat1', 'stat2', 'stat3', 'math1', 'math2', 'math3']\n\n\n\n#for문\nfor i in ['stat', 'math']:\n    for j in '123':\n        print(i+j)\n\nstat1\nstat2\nstat3\nmath1\nmath2\nmath3\n\n\n(다른풀이) 비어있는 리스트를 만들고 for문을 쓰면 좀 복잡해진다.\n\nlst = []\nfor x in ['stat','math']:\n    for y in '123':\n        lst.append(x+y)\nlst\n\n['stat1', 'stat2', 'stat3', 'math1', 'math2', 'math3']\n\n\n\nlst = []\nfor x in ['stat','math']:\n    for y in '123':\n        lst = lst + [x+y]\nlst\n\n['stat1', 'stat2', 'stat3', 'math1', 'math2', 'math3']\n\n\n- 예제: 리스트컴프리헨션과 문자열 'jbnu'를 이용하여 아래와 같은 리스트를 만들어라.\n\n['j','b','n','u']\n\n['j', 'b', 'n', 'u']\n\n\n\n#try\n[s for s in 'jbnu']\n\n['j', 'b', 'n', 'u']\n\n\n(풀이)\n\n[s for s in 'jbnu']\n\n['j', 'b', 'n', 'u']\n\n\n(다른풀이) 아래와 같이 풀면 된다는것은 알고 있음\n\nlist('jbnu')\n\n['j', 'b', 'n', 'u']\n\n\n- 예제: 리스트컴프리헨션을 이용하여 아래와 같은 리스트를 만들어라.\n\n['X1', 'X2', 'X3', 'X4', 'X5', 'X6', 'X7', 'X8', 'X9', 'X10', 'X11', 'X12']\n\n['X1', 'X2', 'X3', 'X4', 'X5', 'X6', 'X7', 'X8', 'X9', 'X10', 'X11', 'X12']\n\n\n\n#try\n'X'+'1'\n\n'X1'\n\n\n(풀이)\n\n['X'+str(i) for i in range(1,13)]\n\n['X1', 'X2', 'X3', 'X4', 'X5', 'X6', 'X7', 'X8', 'X9', 'X10', 'X11', 'X12']"
+  },
+  {
+    "objectID": "posts/04wk_2.html#l.-리스트-컴프리헨션과-for문의-미묘한-차이",
+    "href": "posts/04wk_2.html#l.-리스트-컴프리헨션과-for문의-미묘한-차이",
+    "title": "04wk-2: 파이썬의 자료형 (1)",
+    "section": "L. 리스트 컴프리헨션과 for문의 미묘한 차이",
+    "text": "L. 리스트 컴프리헨션과 for문의 미묘한 차이\n(경우1)\n\nx=777\nlst = []\nfor x in 'jbnu':\n    lst = lst + [x]\nlst\n\n['j', 'b', 'n', 'u']\n\n\n\nx\n\n'u'\n\n\n(경우2)\n\nx=777\nlst = [x for x in 'jbnu']\nlst\n\n['j', 'b', 'n', 'u']\n\n\n\nx\n\n777\n\n\n\n진짜 미묘하게 다르죠?"
+  },
+  {
+    "objectID": "posts/04wk_2.html#m.-연습문제들",
+    "href": "posts/04wk_2.html#m.-연습문제들",
+    "title": "04wk-2: 파이썬의 자료형 (1)",
+    "section": "M. 연습문제들",
+    "text": "M. 연습문제들\n# 문제. 길이가 0인 리스트를 만들어라. (비어있는 리스트를 만들어라)\n\n#try\nlst = []\nlst\n\n[]\n\n\n(풀이1)\n\na = list()\na\n\n[]\n\n\n(풀이2)\n\na = []\na\n\n[]\n\n\n# 문제. 다음의 실행값 중 가장 큰 숫자가 나오는 보기를 골라라. (에러가 나는 코드는 정답에서 제외함)\n(a) len(3.14)\n(b) len([3.14])\n(c) len('3.14')\n(풀이)\n\nlen(3.14)\n\n\n---------------------------------------------------------------------------\n\nTypeError                                 Traceback (most recent call last)\n\nCell In[246], line 1\n\n----&gt; 1 len(3.14)\n\n\n\nTypeError: object of type 'float' has no len()\n\n\n\n\nlen([3.14])\n\n1\n\n\n\nlen('3.14')\n\n4\n\n\n답은 (c)\n# 문제. 리스트자료형의 +와 * 연산을 이용하여 아래와 같은 list를 생성하라.\n\n[1, 2, 2, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 5]\n\n[1, 2, 2, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 5]\n\n\n\n#try1\n[1]+[2]*2+[3]*3+[4]*4+[5]*5\n\n[1, 2, 2, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 5]\n\n\n\n#try2\na = [[i]*i for i in range(1,6)]\na[0]+a[1]\n\n[1, 2, 2]\n\n\nhint: 아래의 코드를 관찰해보세요\n\n[1]*1+[2]*2\n\n[1, 2, 2]\n\n\n(풀이)\n\nlst = []\nfor i in range(1,6):\n    lst = lst + [i]*i\nlst\n\n[1, 2, 2, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 5]\n\n\n# 문제. 다음과 같은 리스트를 고려하자.\n\nx = [80,60,80,90,55,85,95,100,35,70,75,65,95]\nx\n\n[80, 60, 80, 90, 55, 85, 95, 100, 35, 70, 75, 65, 95]\n\n\n이를 수식으로 표현하면 아래와 같다.\n\\({\\bf x} = [x_1,\\dots,x_{13}]=[80,60,80,90,55,85,95,100,35,70,75,65,95]\\)\n리스트의 원소중 “\\(x_i&gt;80\\)” 의 조건을 만족하는 원소는 모두 몇개인가?\n(풀이)\n\nsum(np.array(x)&gt;80)\n\nnp.int64(5)\n\n\n\nsum([xi&gt;80 for xi in x])\n\n5\n\n\n# 문제. 다음과 같은 리스트를 고려하자.\n\nlst = ['A','B','C','D','A','A','B','A','F','C','C','C','A']\n\n이 리스트에서 ‘A’ 혹은 ’B’의 숫자는 모두 몇개인가?\n\n#try\naa = [a=='A' for a in lst]\nbb = [b=='B' for b in lst]\nsum(aa)+sum(bb)\n\n7\n\n\n(풀이1)\n\nlst = ['A','B','C','D','A','A','B','A','F','C','C','C','A']\nlst.count('A') + lst.count('B')\n\n7\n\n\n(풀이2)\n\nsum([l&lt;'C' for l in lst])\n\n7\n\n\n# 문제. 아래와 같은 문자열이 있다고 하자.\n\ntest_arr = 'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAklOUpkDHrfHY17SbrmTIpNLTGK9Tjom/BWDSUGPl+nafzlHDTYW7hdI4yZ5ew18JH4JW9jbhUFrviQzM7xlELEVf4h9lFX5QVkbPppSwg0cda3Pbv7kOdJ/MTyBlWXFCR+HAo3FXRitBqxiX1nKhXpHAZsMciLq8V6RjsNAQwdsdMFvSlVK/7XAt3FaoJoAsncM1Q9x5+3V0Ww68/eIFmb1zuUFljQJKprrX88XypNDvjYNby6vw/Pb0rwert/EnmZ+AW4OZPnTPI89ZPmVMLuayrD2cE86Z/il8b+gw3r3+1nKatmIkjn2so1d01QraTlMqVSsbxNrRFi9wrf+M7Q== schacon@mylaptop.local'\n\n이 문자열에서 대문자의 수를 count하라. (2022년 파이썬입문 중간고사 1-(5) 참고)\n(풀이)\n\nsum([s.isupper() for s in test_arr])\n\n155\n\n\n# 문제. 리스트컴프리헨션을 이용하여 아래와 같은 리스트를 생성하라. (2022년 파이썬입문 중간고사 1-(7) 참고)\n['a',\n 'aa',\n 'aaa',\n 'aaaa',\n 'aaaaa',\n 'aaaaaa',\n 'aaaaaaa',\n 'aaaaaaaa',\n 'aaaaaaaaa',\n 'aaaaaaaaaa'] &lt;- a가 10개있음\n\n#try\n['a'*i for i in range(1,11)]\n\n['a',\n 'aa',\n 'aaa',\n 'aaaa',\n 'aaaaa',\n 'aaaaaa',\n 'aaaaaaa',\n 'aaaaaaaa',\n 'aaaaaaaaa',\n 'aaaaaaaaaa']\n\n\n(풀이)\n\n['a'*i for i in range(1,11)]\n\n['a',\n 'aa',\n 'aaa',\n 'aaaa',\n 'aaaaa',\n 'aaaaaa',\n 'aaaaaaa',\n 'aaaaaaaa',\n 'aaaaaaaaa',\n 'aaaaaaaaaa']\n\n\n# 문제. 아래와 같은 리스트를 관찰하라.\n\nlst = ['2022/09/21','2022/10/30','2022/12/25','2023/01/01','2023/01/31','2023/03/20']\n\n\n[a.replace('/','-') for a in lst]\n\n['2022-09-21',\n '2022-10-30',\n '2022-12-25',\n '2023-01-01',\n '2023-01-31',\n '2023-03-20']\n\n\n이러한 리스트를 아래와 같은 리스트로 변환하는 코드를 작성하라.\n\n['2022-09-21', '2022-10-30', '2022-12-25', '2023-01-01', '2023-01-31', '2023-03-20']\n\n['2022-09-21',\n '2022-10-30',\n '2022-12-25',\n '2023-01-01',\n '2023-01-31',\n '2023-03-20']\n\n\nhint: string의 .replace()기능과 리스트 컴프리헨션의 응용\n(풀이)\n\n[l.replace('/','-') for l in lst]\n\n['2022-09-21',\n '2022-10-30',\n '2022-12-25',\n '2023-01-01',\n '2023-01-31',\n '2023-03-20']\n\n\n# 문제. 아래와 같은 문자열을 고려하라.\n\n'2021. 01. 05.'\n\n'2021. 01. 05.'\n\n\n띄어쓰기를 제거하는 코드를 구현하라. 즉 출력결과가 아래와 같도록 만드는 코드를 구현하라.\n\n'2021.01.05'\n\n'2021.01.05'\n\n\n(풀이)\n\n'2021. 01. 05.'.replace(' ','')\n\n'2021.01.05.'\n\n\n# 문제. 아래와 같이 하나의 특수문자로 이루어진 리스트를 고려하자.\n\nblock = ['■']\n\n이를 이용하여 아래와 같은 결과를 출력하라.\n\n'■-■-■-■-■-■-■-■-■-■' # 여기에서 '■'는 모두 10개 있음\n\n'■-■-■-■-■-■-■-■-■-■'\n\n\n\n#try\n'-'.join(block*10)\n\n'■-■-■-■-■-■-■-■-■-■'\n\n\n(풀이)\n\n'-'.join(block*10)\n\n'■-■-■-■-■-■-■-■-■-■'"
+  },
+  {
     "objectID": "posts/03wk_2.html#a.-벡터화연산브로드캐스팅-불가능",
     "href": "posts/03wk_2.html#a.-벡터화연산브로드캐스팅-불가능",
     "title": "03wk-2: 리스트는 쓰레기인가?",
@@ -214,6 +382,6 @@
     "href": "index.html",
     "title": "mini2",
     "section": "",
-    "text": "03wk-2: 리스트는 쓰레기인가?\n\n\n\n\n\n\n\n\nMar 30, 2026\n\n\n이민희\n\n\n\n\n\n\n\n\n\n\n\n\n260325_review\n\n\n\n\n\n\n\n\nMar 25, 2026\n\n\n이민희\n\n\n\n\n\n\n\n\n\n\n\n\n02wk-2: 파이썬은 좋은 계산기다 (2)\n\n\n\n\n\n\n\n\nMar 23, 2026\n\n\n이민희\n\n\n\n\n\n\n\n\n\n\n\n\n01wk-2: 파이썬은 좋은 계산기다 (1)\n\n\n\n\n\n\n\n\nFeb 14, 2026\n\n\n이민희\n\n\n\n\n\nNo matching items"
+    "text": "04wk-2: 파이썬의 자료형 (1)\n\n\n\n\n\n\n\n\nApr 20, 2026\n\n\n이민희\n\n\n\n\n\n\n\n\n\n\n\n\n03wk-2: 리스트는 쓰레기인가?\n\n\n\n\n\n\n\n\nMar 30, 2026\n\n\n이민희\n\n\n\n\n\n\n\n\n\n\n\n\n260325_review\n\n\n\n\n\n\n\n\nMar 25, 2026\n\n\n이민희\n\n\n\n\n\n\n\n\n\n\n\n\n02wk-2: 파이썬은 좋은 계산기다 (2)\n\n\n\n\n\n\n\n\nMar 23, 2026\n\n\n이민희\n\n\n\n\n\n\n\n\n\n\n\n\n01wk-2: 파이썬은 좋은 계산기다 (1)\n\n\n\n\n\n\n\n\nFeb 14, 2026\n\n\n이민희\n\n\n\n\n\nNo matching items"
   }
 ]
