@@ -2,12 +2,16 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/12wk_2.html",
+      "/posts/14wk_1.html",
+      "/posts/13wk_1.html",
       "/posts/11wk_2.html",
       "/posts/04wk_2.html",
       "/posts/03wk_2.html",
       "/posts/0325_review.html",
       "/posts/02wk_2.html",
-      "/posts/01wk_2.html"
+      "/posts/01wk_2.html",
+      "/posts/15wk_1.html"
     ]
   }
 ]
